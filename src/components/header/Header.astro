@@ -1,25 +1,49 @@
 ---
 import Navigation from '../Navigation.astro'
-import Hamburger from '../Hamburger.astro'
+import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
+import Logotype from '@components/uikit/logotype/logotype.astro'
+import Searchbar from '@components/uikit/searchbar/searchbar.astro'
+import Language from '@components/uikit/language/language.astro'
+import Location from '@components/uikit/Location/Location.astro'
 import Social from '../Social.astro'
-import './style.scss'
+import './styles.scss'
 ---
 
 <header class="header">
     <div class="header__base">
-        <div class="header__searchbar"></div>
-        <div class="logotype"></div>
-        <Hamburger />
+        <Searchbar />
+        <Logotype />
+        <Hamburger/>
     </div>
     <div class="header__functional">
-        <div class="language"></div>
-        <div class="location"></div>
-        <div class="header__close-button"></div>
-        <div class="call-back"></div>
-        <div class="personal">
-            <div class="personal__likes"></div>
-            <div class="personal__basket"></div>
-        </div>
+        <header class="header__inner">
+            <Searchbar />
+            <Language />
+            <Location />
+            <Hamburger type="close"/>
+            <div class="call-back">
+                <picture class="call-back__wrapper">
+                    <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="26px" height="26px">
+                </picture>
+                <p class="call-back__text">
+                    Обратный звонок
+                </p>
+            </div>
+            <div class="personal">
+                <div class="personal__likes">
+                    <butotn class="personal__button">
+                        <img src="/src/assets/images/icons/like.svg" alt="like" width="21px" height="18px">
+                    </butotn>
+                    <div class="personal__quantity">100</div>
+                </div>
+                <div class="personal__basket">
+                    <butotn class="personal__button">
+                        <img src="/src/assets/images/icons/basket.svg" alt="like" width="21px" height="20px">
+                    </butotn>
+                    <div class="personal__quantity">100</div>
+                </div>
+            </div>
+        </header>
         <nav>
             <Navigation />
         </nav>

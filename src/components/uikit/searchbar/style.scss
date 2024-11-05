@@ -1,0 +1,16 @@
+@use '/src/assets/styles/global.scss' as *;
+
+
+.searchbar {
+    &__button {
+        border: 0px solid transparent;
+        background-color: transparent;
+
+        display: block;
+        padding: 0;
+    }
+
+    &__icon {
+        display: block;
+    }
+}

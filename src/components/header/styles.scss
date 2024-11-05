@@ -1,0 +1,35 @@
+@use '/src/assets/styles/global.scss';
+
+.header {
+    color: global.$cl-white;
+    background-color: global.$cl-black;
+
+    padding-top: 18px;
+
+    &__base {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__functional {
+        background-color: green;
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: #{global.$tablet}) {
+    .header {
+        background-color: global.$cl-black;
+    }
+}
+
+@media (min-width: #{global.$desktop}) {
+    .header {
+        background-color: global.$cl-black;
+    }
+}
