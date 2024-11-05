@@ -1,0 +1,18 @@
+@import '../../assets/styles/global.scss';
+
+.container {
+    padding: 0 25px;
+}
+
+@media (min-width: #{$tablet}) {
+    .container {
+        padding: 0 85px;
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: #{$desktop}) {
+    .container {
+        padding: 0 200px;
+    }
+}

@@ -1,6 +1,6 @@
 @use "sass:math";
 // Fonts
-$font-base: 'Montserrat-Regular';
+$font-base: 'opensans';
 
 // Animation
 $animation-time: 0.3s;
@@ -86,8 +86,22 @@ $desktop-vh: 660px;
     --cl-gray: #dddddd;
     --cl-pure-or-mostly-pure-red: #ff0000;
     --cl-very-dark-gray-mostly-black: #212121;
-    // --cl-green: #1E8A47;
-    // --cl-light-green: #00C34A;
+    --cl-very-dark-gray: #3c3c3c;
+    --cl-dark-gray-nine: #999999;
+    --cl-dark-cyan-lime-green: #1e8a47;
+    --cl-light-gray-eight: #d8d8d8;
+    --cl-very-light-gray-mostly-white: #f7f7f7;
+    --cl-dark-gray: #979797;
+    --cl-light-gray: #cdcdcd;
+    --cl-gray: #bababa;
+    --cl-very-light-gray-mostly-white: #fefefe;
+    --cl-very-dark-gray-mostly-black: #313131;
+    --cl-very-light-gray: #e0e0e0;
+    --cl-very-light-gray-full: #f0f0f0;
+    --cl-very-light-gray-mostly-white: #f9f9f9;
+    --cl-light-grayish-pink: #faf8f9;
+    --cl-pure-or-mostly-pure-orange: #ff5200;
+    --cl-strong-cyan-lime-green: #00c34a;
 }
 
 // Основные цвета
@@ -105,15 +119,27 @@ $cl-very-dark-gray-mostly-black: var(--cl-very-dark-gray-mostly-black);
 $cl-font-main: var(--cl-black);
 $cl-font-light: var(--cl-gray);
 // Colors
+$cl-very-dark-gray: var(--cl-very-dark-gray);
+$cl-dark-gray-nine: var(--cl-dark-gray-nine);
+$cl-dark-cyan-lime-green: var(--cl-dark-cyan-lime-green);
+$cl-light-gray-eight: var(--cl-light-gray-eight);
+$cl-very-light-gray-mostly-white: var(--cl-very-light-gray-mostly-white);
+$cl-dark-gray: var(--cl-dark-gray);
+$cl-light-gray: var(--cl-light-gray);
+$cl-gray: var(--cl-gray);
+$cl-very-light-gray-mostly-white: var(--cl-very-light-gray-mostly-white);
+$cl-very-dark-gray-mostly-black: var(--cl-very-dark-gray-mostly-black);
+$cl-very-light-gray: var(--cl-very-light-gray);
+$cl-very-light-gray-full: var(--cl-very-light-gray-full);
+$cl-very-light-gray-mostly-white: var(--cl-very-light-gray-mostly-white);
+$cl-light-grayish-pink: var(--cl-light-grayish-pink);
+$cl-pure-or-mostly-pure-orange: var(--cl-pure-or-mostly-pure-orange);
+$cl-strong-cyan-lime-green: var(--cl-strong-cyan-lime-green);
 // Цвета theme. Не трогать!!!
 $cl-theme-global: var(--cl-font-main);
 $cl-theme-link: var(--cl-font-main);
 $cl-theme-link-hover: var(--cl-font-light);
 $cl-theme-grey: var(--cl-gray);
-
-// Цвета текста
-$cl-font-main: var(--cl-black);
-$cl-font-light: var(--cl-gray);
 
 /* Добавлять по категориям cl-элемент
 /* $cl-button-bg: $Var */
