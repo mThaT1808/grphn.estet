@@ -86,12 +86,16 @@ $desktop-vh: 660px;
     --cl-gray: #dddddd;
     --cl-pure-or-mostly-pure-red: #ff0000;
     --cl-very-dark-gray-mostly-black: #212121;
+    // --cl-green: #1E8A47;
+    // --cl-light-green: #00C34A;
 }
 
 // Основные цвета
 // $cl-transparent: transparent;
 $cl-white: var(--cl-white);
 $cl-black: var(--cl-black);
+// $cl-green: var(--cl-green);
+// $cl-light-green: var(--cl-light-green);
 // $cl-gray: #dddddd;
 // $cl-pure-or-mostly-pure-red: #ff0000;
 $cl-very-dark-gray-mostly-black: var(--cl-very-dark-gray-mostly-black);

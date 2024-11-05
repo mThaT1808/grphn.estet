@@ -1,0 +1,63 @@
+---
+import Navigation from '../Navigation.astro'
+import Hamburger from '../Hamburger.astro'
+import Social from '../Social.astro'
+import './style.scss'
+---
+
+<header class="header">
+    <div class="header__base">
+        <div class="header__searchbar"></div>
+        <div class="logotype"></div>
+        <Hamburger />
+    </div>
+    <div class="header__functional">
+        <div class="language"></div>
+        <div class="location"></div>
+        <div class="header__close-button"></div>
+        <div class="call-back"></div>
+        <div class="personal">
+            <div class="personal__likes"></div>
+            <div class="personal__basket"></div>
+        </div>
+        <nav>
+            <Navigation />
+        </nav>
+        <div class="header__contacts">
+            <div class="number">
+                8 800 551 32 40
+            </div>
+            <Social />
+        </div>
+    </div>
+
+</header>
+
+<!--
+    Список элементов
+
+    searchbar m
+    logotype m
+    hamburger m
+
+    language-button m
+    location m
+    close-button m
+    call-button m
+    likes m
+    basket m
+    {navigation
+        catalog -> m
+        collection -> m
+        to-customers -> m
+        company -> m
+
+        to-designers m
+        company m
+    }
+    nummber m
+    socials m
+
+
+
+-->

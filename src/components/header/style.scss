@@ -1,0 +1,18 @@
+@import '../../assets/styles/global.scss';
+
+.header {
+    color: $cl-white;
+    background-color: $cl-black;
+}
+
+@media (min-width: #{$tablet}) {
+    .header {
+        background-color: $cl-black;
+    }
+}
+
+@media (min-width: #{$desktop}) {
+    .header {
+        background-color: $cl-black;
+    }
+}
