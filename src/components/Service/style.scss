@@ -1,0 +1,41 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.service {
+    margin-bottom: 85px;
+}
+
+.service__list {
+    margin: 0;
+    padding: 0;
+}
+
+.service__item {
+    margin-bottom: 56px;
+    padding-top: 303px;
+    list-style: none;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--guarantee {
+        background-image: url("public/images/service/guarantee.jpg");
+        background-size: 207px 275px;
+        background-repeat: no-repeat;
+    }
+}
+
+.service__title {
+    margin-bottom: 38px;
+    text-align: right;
+}
+
+.service__text {
+    margin-bottom: 39px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.service__link {
+    color: $cl-dark-cyan-lime-green;
+}

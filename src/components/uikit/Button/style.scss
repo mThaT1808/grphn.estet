@@ -22,6 +22,12 @@
         display: block;
     }
 
+    &--no-border {
+        font-size: 14px;
+        line-height: 25px;
+        border: none;
+    }
+
     &:disabled {
         opacity: .5;
         pointer-events: none;
