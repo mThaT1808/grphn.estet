@@ -1,0 +1,20 @@
+stages:
+  - front
+
+server1_deploy:
+  stage: front
+  tags:
+    - all_html
+  script:
+    - 'nvm use 14.21.2 && cd /home/sfe/sfe.grphn-dev.ru/www && git reset --hard && git pull origin && npm i && yarn build'
+  only:
+    - main
+
+# server2_deploy:
+#   stage: front
+#   tags:
+#     - bitrix-html
+#   script:
+#   - 'cd /home/bitrix/ext_www/test.grphn-dev.ru/src && git reset --hard && git pull origin && npm i && npm run build'
+#   only:
+#     - main
