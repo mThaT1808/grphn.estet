@@ -1,7 +1,8 @@
 @import '../../../assets/styles/global.scss';
 .link {
     display: inline;
-    text-decoration: none;
+    color: $cl-dark-cyan-lime-green;
+    text-decoration: underline;
     transition: color $animation-time;
     appearance:         none;
     -webkit-appearance: none;
@@ -14,13 +15,13 @@
 
     @media (hover: none), (pointer: coarse) {
         &:active {
-            color: green;
+            color: $cl-dark-gray;
         }
     }
 
     @media not all and (pointer: coarse) {
         &:hover {
-            color: red;
+            color: $cl-dark-gray;
         }
     }
 }
