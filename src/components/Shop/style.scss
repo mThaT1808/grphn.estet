@@ -1,6 +1,59 @@
 @import '../../assets/styles/global.scss';
 
 .shop {
-    padding-top: 61px;
+    padding-top: 46px;
+    background-color: #F9F9F9;
 }
+
+.choice--shop {
+    margin-bottom: 39px;
+}
+
+.slider--shop {
+    display: flex;
+    margin-right: -25px;
+    padding-left: 43px;
+    background-color: $cl-white;
+    width: 100%;
+
+    & .slider__item {
+        min-width: 210px;
+        padding-top: 49px;
+        padding-right: 37px;
+        padding-bottom: 39px;
+        background-color: $cl-white;
+        list-style: none;
+    }
+
+    & .slider__text {
+        font-size: 14px;
+        font-style: normal;
+        color: #3C3C3C;
+    }
+
+}
+
+@media (min-width: #{$tablet + 'px'}) {}
+
+@media (min-width: #{$desktop-min + 'px'}) {}
+
+@media (min-width: #{$desktop + 'px'}) {}
+
+
+.title--h2 {
+    font-family: 'opensans', sans-serif;
+    font-size: 41px;
+    font-weight: 600;
+    color: #3C3C3C;
+    margin-bottom: 27px;
+}
+
+.title--shop {
+    font-family: 'opensans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #3C3C3C;
+}
+
+
 

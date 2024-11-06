@@ -1,11 +1,13 @@
 ---
+import Container from '@components/container/container.astro'
 import Link from '@components/uikit/Link/Link.astro'
+import Title from '@components/uikit/Title/Title.astro'
 import Choice from '@components/uikit/Choice/Choice.astro'
 import './style.scss'
 ---
 <section class="shop">
-    <div class="container">
-        <h2 class="title">Магазины</h2>
+    <Container>
+        <Title class="title title--h2">Магазины</Title>
         <Choice class="choice--shop"></Choice>
         <ul class="slider slider--shop">
             <li class="slider__item">
@@ -40,6 +42,6 @@ import './style.scss'
             </li>
         </ul>
         <Link href='javascript:void(0);'>Все салоны</Link>
-    </div>
+    </Container>
 </section>
 <script src="./script.js"></script>
