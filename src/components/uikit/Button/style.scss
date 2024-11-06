@@ -23,6 +23,16 @@
         display: block;
     }
 
+    &--guarantee {
+        margin: 0 -10px 0 auto;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 25px;
+        border: none;
+        text-align: right;
+        color: $cl-dark-cyan-lime-green;
+    }
+
     &--size {
         width: 100%;
 
