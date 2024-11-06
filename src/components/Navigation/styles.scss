@@ -1,2 +1,57 @@
-@use '/src/assets/styles/global.scss';
+@use "/src/assets/styles/global.scss" as *;
 
+.nav {
+    display: none;
+
+    @media (min-width: ($tablet + 'px')) {
+        margin-right: -82px;
+        display: block;
+        padding-top: 88px;
+        padding-bottom: 77px;
+        background-color: $cl-very-dark-gray;
+
+        &__list {
+            margin: 0;
+            padding: 0;
+            columns: 3;
+            column-gap: 32px;
+        }
+
+        &__item {
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 700;
+            list-style: none;
+            color: $cl-white;
+            break-inside: avoid-column;
+        }
+
+        &__inner-list {
+            margin: 0 0 32px 0;
+            padding: 0;
+        }
+
+        &__inner-item {
+            list-style: none;
+            color: $cl-dark-gray-nine;
+            font-size: 14px;
+            line-height: 32px;
+        }
+
+        &__link {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        &__inner-item &__link {
+            margin-bottom: 0;
+            letter-spacing: -0.6px;
+        }
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        &__list {
+            column-gap: 96px;
+        }
+    }
+}
