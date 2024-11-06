@@ -1,6 +1,7 @@
 @use '/src/assets/styles/global.scss';
 
 .header {
+    position: relative;
     color: global.$cl-white;
     background-color: global.$cl-black;
 
@@ -13,6 +14,12 @@
     }
 
     &__functional {
+        position: absolute;
+        top: 100%;
+        left: 0%;
+
+        width: 100%;
+        min-height: 100vh;
         background-color: green;
     }
 

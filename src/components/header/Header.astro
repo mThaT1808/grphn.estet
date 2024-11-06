@@ -7,6 +7,7 @@ import Language from '@components/uikit/language/language.astro'
 import Location from '@components/uikit/Location/Location.astro'
 import Personal from '@components/uikit/Personal/Personal.astro'
 import Social from '@components/uikit/Social/Social.astro'
+import Container from '@components/container/container.astro'
 import './styles.scss'
 
 
@@ -20,65 +21,37 @@ const socials = [
 ---
 
 <header class="header">
-    <div class="header__base">
-        <Searchbar />
-        <Logotype />
-        <Hamburger/>
-    </div>
-    <div class="header__functional">
-        <header class="header__inner">
+    <Container>
+        <div class="header__base">
             <Searchbar />
-            <Language />
-            <Location />
-            <Hamburger type="close"/>
-            <div class="call-back">
-                <picture class="call-back__wrapper">
-                    <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="26px" height="26px">
-                </picture>
-                <p class="call-back__text">
-                    Обратный звонок
-                </p>
-            </div>
-            <Personal />
-        </header>
-        <Navigation />
-        <div class="header__contacts">
-            <div class="number">
-                8 800 551 32 40
-            </div>
-            <Social
-                socials = {socials}
-            />
+            <Logotype />
+            <Hamburger/>
         </div>
-    </div>
-
+        <div class="header__functional">
+            <header class="header__inner">
+                <Searchbar />
+                <Language />
+                <Location />
+                <Hamburger type="close"/>
+                <div class="call-back">
+                    <picture class="call-back__wrapper">
+                        <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="26px" height="26px">
+                    </picture>
+                    <p class="call-back__text">
+                        Обратный звонок
+                    </p>
+                </div>
+                <Personal />
+            </header>
+            <Navigation />
+            <div class="header__contacts">
+                <div class="number">
+                    8 800 551 32 40
+                </div>
+                <Social
+                    socials = {socials}
+                />
+            </div>
+        </div>
+    </Container>
 </header>
-
-<!--
-    Список элементов
-
-    searchbar m
-    logotype m
-    hamburger m
-
-    language-button m
-    location m
-    close-button m
-    call-button m
-    likes m
-    basket m
-    {navigation
-        catalog -> m
-        collection -> m
-        to-customers -> m
-        company -> m
-
-        to-designers m
-        company m
-    }
-    nummber m
-    socials m
-
-
-
--->
