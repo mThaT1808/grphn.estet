@@ -20,6 +20,10 @@
         display: flex;
         flex-wrap: wrap;
     }
+
+    &__contacts {
+        background-color: black;
+    }
 }
 
 @media (min-width: #{global.$tablet}) {

@@ -1,12 +1,22 @@
 ---
-import Navigation from '../Navigation.astro'
+import Navigation from '@components/Navigation/Navigation.astro'
 import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
 import Logotype from '@components/uikit/logotype/logotype.astro'
 import Searchbar from '@components/uikit/searchbar/searchbar.astro'
 import Language from '@components/uikit/language/language.astro'
 import Location from '@components/uikit/Location/Location.astro'
-import Social from '../Social.astro'
+import Personal from '@components/uikit/Personal/Personal.astro'
+import Social from '@components/uikit/Social/Social.astro'
 import './styles.scss'
+
+
+const socials = [
+    {id: 1, href: "javascript:void(0);", title: "like", src: "/src/assets/images/icons/like-white.svg"},
+    {id: 2, href: "javascript:void(0);", title: "telegram", src: "/src/assets/images/icons/telegram.svg"},
+    {id: 3, href: "javascript:void(0);", title: "vk", src: "/src/assets/images/icons/vk.svg"},
+    {id: 4, href: "javascript:void(0);", title: "facebook", src: "/src/assets/images/icons/facebook.svg"},
+    {id: 5, href: "javascript:void(0);", title: "instagram", src: "/src/assets/images/icons/instagram.svg"}
+]
 ---
 
 <header class="header">
@@ -29,29 +39,16 @@ import './styles.scss'
                     Обратный звонок
                 </p>
             </div>
-            <div class="personal">
-                <div class="personal__likes">
-                    <butotn class="personal__button">
-                        <img src="/src/assets/images/icons/like.svg" alt="like" width="21px" height="18px">
-                    </butotn>
-                    <div class="personal__quantity">100</div>
-                </div>
-                <div class="personal__basket">
-                    <butotn class="personal__button">
-                        <img src="/src/assets/images/icons/basket.svg" alt="like" width="21px" height="20px">
-                    </butotn>
-                    <div class="personal__quantity">100</div>
-                </div>
-            </div>
+            <Personal />
         </header>
-        <nav>
-            <Navigation />
-        </nav>
+        <Navigation />
         <div class="header__contacts">
             <div class="number">
                 8 800 551 32 40
             </div>
-            <Social />
+            <Social
+                socials = {socials}
+            />
         </div>
     </div>
 
