@@ -1,0 +1,29 @@
+
+---
+import Container from '@components/container/container.astro';
+import './style.scss';
+import Button from '@components/uikit/Button/Button.astro';
+const services = [
+    {
+        name: 'Гарантия', 
+        titleAlign: 'right', 
+        text: 'Мы предоставляем клиентам выезд на замер, консультации на объекте; доставку и подъем продукции; врезку фурнитуры на профессиональном оборудовании; демонтаж и установку межкомнатных дверей; укладку массивной и паркетной доски.', 
+        linkText: 'Подробнее'
+    }
+];
+---
+
+<section class="service">
+    <Container>
+        <ul class="service__list">
+            {services.map((service) => (
+                <li class:list={`service__item service__item${service.name === 'Гарантия' ? '--guarantee' : '--service'}`}>
+                    <h2 class:list={`service__title ${service.titleAlign === 'left' ? "service__title--left" : ""}`}>{service.name}</h2>
+                    <p class="service__text">{service.text}</p>
+                    <Button TagButton='a' href="javascript:void(0);" class="button--guarantee button--block">{service.linkText}</Button>
+                    {/* <a href="javascript:void(0);" class="service__link">{service.linkText}</a> */}
+                </li>
+            ))}
+        </ul>
+    </Container>
+</section>
