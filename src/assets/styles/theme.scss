@@ -165,6 +165,16 @@ select {
     font-family: $font-base;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
 input[type="file"] {
     display: block;
     position: relative;

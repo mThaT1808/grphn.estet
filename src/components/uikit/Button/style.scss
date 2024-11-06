@@ -3,11 +3,13 @@
     display: inline-block;
     text-decoration: none;
     font-size: 18px;
-    line-height: 1;
-    padding-top: 17px;
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-bottom: 19px;
+    // line-height: 1;
+    color: $cl-dark-cyan-lime-green;
+    padding: 19px 17px;
+    // padding-top: 17px;
+    // padding-left: 17px;
+    // padding-right: 17px;
+    // padding-bottom: 19px;
     background-color: transparent;
     border: 1px solid $cl-dark-cyan-lime-green;
     text-align: center;
@@ -36,6 +38,14 @@
             font-size: 16px;
             line-height: 38px;
             text-align: left;
+        }
+    }
+
+    &--size {
+        width: 100%;
+
+        @media (min-width: #{$desktop-min + 'px'}) {
+            max-width: 280px;
         }
     }
 
