@@ -4,7 +4,6 @@
     text-decoration: none;
     font-size: 18px;
     line-height: 1;
-    color: $cl-dark-cyan-lime-green;
     padding-top: 17px;
     padding-left: 17px;
     padding-right: 17px;
@@ -20,6 +19,16 @@
 
     &--block {
         display: block;
+    }
+
+    &--guarantee {
+        margin: 0 -10px 0 auto;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 25px;
+        border: none;
+        text-align: right;
+        color: $cl-dark-cyan-lime-green;
     }
 
     &:disabled {
