@@ -9,19 +9,21 @@ const {
     } = Astro.props;
 ---
 
-<div {...rest}
-class:list={[
+<div
+    {...rest}
+    class:list={[
     "choice",
     className,
-]}>
-    <img src="" alt="" class="choice__icon">
-     <select name="location" class="choice__list">
-        <option value="Нижний новгород" selected>Нижний новгород</option>
-        <option value="Новокузнецк">Новокузнецк</option>
-        <option value="Ульяновск">Ульяновск</option>
-        <option value="Самара">Самара</option>
-        <option value="Хабаровск">Хабаровск</option>
-     </select>
+    ]}
+>
+    <i class="choice__icon"></i>
+        <select name="location" class="choice__list">
+            <option value="Нижний новгород" selected class="choice__item">Нижний новгород</option>
+            <option value="Новокузнецк" class="choice__item">Новокузнецк</option>
+            <option value="Ульяновск" class="choice__item">Ульяновск</option>
+            <option value="Самара" class="choice__item">Самара</option>
+            <option value="Хабаровск" class="choice__item">Хабаровск</option>
+        </select>
 </div>
 
 <script src="./script.js"></script>
