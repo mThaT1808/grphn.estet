@@ -20,7 +20,7 @@ const services = [
                 <li class:list={`service__item service__item${service.name === 'Гарантия' ? '--guarantee' : '--service'}`}>
                     <h2 class:list={`service__title ${service.titleAlign === 'left' ? "service__title--left" : ""}`}>{service.name}</h2>
                     <p class="service__text">{service.text}</p>
-                    <Button TagButton='a' class="button--no-border button--block">{service.linkText}</Button>
+                    <Button TagButton='a' href="javascript:void(0);" class="button--guarantee button--block">{service.linkText}</Button>
                     {/* <a href="javascript:void(0);" class="service__link">{service.linkText}</a> */}
                 </li>
             ))}
