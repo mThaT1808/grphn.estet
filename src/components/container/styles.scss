@@ -4,14 +4,14 @@
     padding: 0 25px;
 }
 
-@media (min-width: #{$tablet}) {
+@media (min-width: #{$tablet + 'px'}) {
     .container {
         padding: 0 85px;
         max-width: 1200px;
     }
 }
 
-@media (min-width: #{$desktop}) {
+@media (min-width: #{$desktop + 'px'}) {
     .container {
         padding: 0 200px;
     }
