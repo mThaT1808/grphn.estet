@@ -1,19 +1,12 @@
 ---
+import Link from '@components/uikit/Link/Link.astro'
+import Choice from '@components/uikit/Choice/Choice.astro'
 import './style.scss'
 ---
 <section class="shop">
     <div class="container">
         <h2 class="title">Магазины</h2>
-        <div class="choice">
-            <img src="" alt="" class="choice__icon">
-             <select name="location" class="choice__list">
-                <option value="Нижний новгород" selected>Нижний новгород</option>
-                <option value="Новокузнецк">Новокузнецк</option>
-                <option value="Ульяновск">Ульяновск</option>
-                <option value="Самара">Самара</option>
-                <option value="Хабаровск">Хабаровск</option>
-             </select>
-        </div>
+        <Choice class="choice--shop"></Choice>
         <ul class="slider slider--shop">
             <li class="slider__item">
                 <h3 class="title title--shop">Фирменный салон ESTET</h3>
@@ -46,6 +39,7 @@ import './style.scss'
                 </address>
             </li>
         </ul>
+        <Link href='javascript:void(0);'>Все салоны</Link>
     </div>
 </section>
 <script src="./script.js"></script>

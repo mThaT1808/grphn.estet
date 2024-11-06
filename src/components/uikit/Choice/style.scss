@@ -1,0 +1,41 @@
+@import '../../../assets/styles/global.scss';
+
+.choice {
+    position: relative;
+    display: inline-block;
+
+    &__list {
+        width:  100%;
+        border: none;
+        color: $cl-dark-cyan-lime-green;
+        padding-right: 18px;
+    }
+
+    &__list:focus-visible {
+        outline: 1px solid $cl-dark-cyan-lime-green;
+        outline-offset: 4px;
+        border-radius: 1px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 5px;
+        height: 5px;
+        border-right: 1px solid $cl-dark-cyan-lime-green;
+        border-bottom: 1px solid $cl-dark-cyan-lime-green;
+        transform: rotate(45deg);
+    }
+
+    &__icon {
+        font-size: 26px;
+        color: $cl-dark-cyan-lime-green;
+    }
+
+    &__item {
+        font-size: 14px;
+        color: $cl-dark-cyan-lime-green;
+    }
+}
