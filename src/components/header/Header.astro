@@ -17,6 +17,12 @@ const socials = [
     {id: 3, href: "javascript:void(0);", title: "vk", src: "/src/assets/images/icons/vk.svg"},
     {id: 4, href: "javascript:void(0);", title: "facebook", src: "/src/assets/images/icons/facebook.svg"},
     {id: 5, href: "javascript:void(0);", title: "instagram", src: "/src/assets/images/icons/instagram.svg"}
+];
+const locations = [
+    {id: 1, city: "Новокузнецк"},
+    {id: 1, city: "Ульяновск"},
+    {id: 1, city: "Самара"},
+    {id: 1, city: "Хабаровск"},
 ]
 ---
 
@@ -29,13 +35,21 @@ const socials = [
         </div>
         <div class="header__functional">
             <header class="header__inner">
-                <Searchbar />
-                <Language />
-                <Location />
+                <ul class="header__list">
+                    <li class="header__item">
+                        <Searchbar />
+                    </li>
+                    <li class="header__item">
+                        <Language />
+                    </li>
+                    <li class="header__item">
+                        <Location location={locations} modifier="--header"/>
+                    </li>
+                </ul>
                 <Hamburger type="close"/>
                 <div class="call-back">
                     <picture class="call-back__wrapper">
-                        <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="26px" height="26px">
+                        <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="20px" height="20px">
                     </picture>
                     <p class="call-back__text">
                         Обратный звонок
@@ -55,3 +69,5 @@ const socials = [
         </div>
     </Container>
 </header>
+
+<script src="./script.js"></script>

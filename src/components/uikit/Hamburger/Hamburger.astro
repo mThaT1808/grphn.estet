@@ -1,4 +1,6 @@
 ---
+import './styles.scss'
+
 const { type } = Astro.props;
 
 var imageSrc = "/src/assets/images/icons/burger.svg";
@@ -8,8 +10,8 @@ if (type == "close") {
 }
 ---
 
-<div class="hamburger">
+<button class="hamburger">
     <picture class="hamburger__icon">
-        <img class="hamburger__image" src={ imageSrc } alt="menu" width="29px" height="20px">
+        <img class="hamburger__image" src={ imageSrc } alt="menu" width="29px" height="29px">
     </picture>
-</div>
+</button>
