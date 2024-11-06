@@ -7,12 +7,13 @@
     &__list {
         width:  100%;
         border: none;
-        color: $cl-dark-cyan-lime-green;
+        color: $cl-green;
         padding-right: 18px;
+        background-color: transparent;
     }
 
     &__list:focus-visible {
-        outline: 1px solid $cl-dark-cyan-lime-green;
+        outline: 1px solid $cl-green;
         outline-offset: 4px;
         border-radius: 1px;
     }
@@ -24,18 +25,18 @@
         right: 0;
         width: 5px;
         height: 5px;
-        border-right: 1px solid $cl-dark-cyan-lime-green;
-        border-bottom: 1px solid $cl-dark-cyan-lime-green;
+        border-right: 1px solid $cl-green;
+        border-bottom: 1px solid $cl-green;
         transform: rotate(45deg);
     }
 
     &__icon {
         font-size: 26px;
-        color: $cl-dark-cyan-lime-green;
+        color: $cl-green;
     }
 
     &__item {
         font-size: 14px;
-        color: $cl-dark-cyan-lime-green;
+        color: $cl-green;
     }
 }
