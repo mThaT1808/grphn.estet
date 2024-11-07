@@ -1,0 +1,31 @@
+---
+import './style.scss'
+
+export interface Props {
+	location: any;
+    modifier: any;
+}
+
+const { location, modifier } = Astro.props;
+
+var className = 'location' + ` location${modifier}`;
+---
+
+<div class={className}>
+    <button class="location__button">
+        <img class="location__image" src="/src/assets/images/icons/location.svg" alt="location" width="26px" height="26px">
+    </button>
+    <div class="location__inner">
+        <ul>
+            {
+                location?.map((location) => (
+                    <li>
+                        ${location.city}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+
+<script src="./script.js"></script>
