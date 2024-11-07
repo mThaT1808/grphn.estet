@@ -6,9 +6,20 @@ $(function() {
         arrow: true,
         infinite: false,
         initialSlide: 0,
-        centerMode: true,
-        initialSlide: 0,
-        centerPadding: '0',
+        rows:4,
+        slidesPerRow: 2,
+        centerMode: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                centerMode: true,
+                centerPadding: '0',
+                rows: 1,
+                slidesPerRow: 1,
+                }
+            }
+        ]
     })
 
     // (document).ready

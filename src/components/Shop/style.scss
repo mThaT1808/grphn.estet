@@ -1,6 +1,4 @@
 @import '../../assets/styles/global.scss';
-// @import 'slick-slider/slick/slick.scss';
-// @import 'slick-slider/slick/slick-theme.scss';
 
 .shop {
     position: relative;
@@ -8,8 +6,26 @@
     padding-bottom: 65px;
     background-color: $cl-cl-gray-f9;
 
+    & .title--h2 {
+        font-family: 'opensans', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: normal;
+        color: $cl-gray-3c;
+        margin-bottom: 27px;
+    }
+
     & .link {
         font-size: 12px;
+    }
+
+    & .title--shop {
+        font-family: 'opensans', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: normal;
+        color: $cl-gray-3c;
+        margin-bottom: 14px;
     }
 }
 
@@ -107,40 +123,86 @@
         transform: translateY(-50%);
         background-color: $cl-green;
     }
-
 }
 
+@media (min-width: #{$tablet + 'px'}) {
+    .shop {
+        padding-top: 61px;
+        padding-bottom: 90px;
 
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 35px;
+        }
 
+        & .title--h2 {
+            font-size: 36px;
+            grid-column: 1 / 2;
+            margin-bottom: 29px;
+        }
 
+        & .title--shop {
+            margin-bottom: 23px;
+        }
 
+        &__cell {
+            align-self: flex-end;
+        }
+    }
 
+    .choice--shop {
+        margin-bottom: 42px;
+    }
 
+    .slider--shop {
+        margin-right: -84px;
+        margin-bottom: 42px;
+        grid-column: span 2;
 
-@media (min-width: #{$tablet + 'px'}) {}
+        & .slider__item {
+            padding-top: 0;
+            padding-right: 56px;
+            padding-bottom: 0;
+            max-width: 282px;
+        }
 
-@media (min-width: #{$desktop-min + 'px'}) {}
+        & .slick-track {
+            padding-top: 49px;
+            padding-left: 40px;
+            padding-bottom: 56px;
+        }
+
+        & .slick-slide {
+            max-width: 100%;
+        }
+
+        & .slick-slide > div {
+            display: flex;
+            padding-bottom: 51px;
+        }
+
+        & .slick-slide > div:last-child {
+            padding-bottom: 0;
+        }
+
+        & .slick-arrow {
+            bottom: 79px;
+        }
+
+        & .slick-prev {
+            right: 161px;
+        }
+
+        & .slick-next {
+            right: 79px;
+        }
+    }
+}
+
+@media (min-width: #{$desktop-min + 'px'}) {
+    
+}
 
 @media (min-width: #{$desktop + 'px'}) {}
-
-
-.title--h2 {
-    font-family: 'opensans', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: normal;
-    color: $cl-gray-3c;
-    margin-bottom: 27px;
-}
-
-.title--shop {
-    font-family: 'opensans', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: normal;
-    color: $cl-gray-3c;
-    margin-bottom: 14px;
-}
-
-
 
