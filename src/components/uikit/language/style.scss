@@ -3,13 +3,11 @@
 .language {
 
     &__button {
+        font-size: 26px;
+
         background-color: transparent;
         border: 0px solid transparent;
         display: block;
         padding: 0%;
-    }
-
-    &__image {
-        display: block;
     }
 }
