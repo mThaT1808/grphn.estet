@@ -1,0 +1,47 @@
+---
+import Container from '@components/container/container.astro'
+import Link from '@components/uikit/Link/Link.astro'
+import Title from '@components/uikit/Title/Title.astro'
+import Choice from '@components/uikit/Choice/Choice.astro'
+import './style.scss'
+---
+<section class="shop">
+    <Container>
+        <Title class="title title--h2">Магазины</Title>
+        <Choice class="choice--shop"></Choice>
+        <ul class="slider slider--shop">
+            <li class="slider__item">
+                <h3 class="title title--shop">Фирменный салон ESTET</h3>
+                <address class="slider__text">
+                    Советский район, ул. Бекетова, д.13, литер "А", СЦ Бекетов, 3
+                </address>
+            </li>
+            <li class="slider__item">
+                <h3 class="title title--shop">Фирменный салон ESTET</h3>
+                <address class="slider__text">
+                    г. Хабаровск, ул. Ленинградская 28, ТЦ ЭкоДом, сектор дверей
+                </address>
+            </li>
+            <li class="slider__item">
+                <h3 class="title title--shop">Фирменный салон ESTET</h3>
+                <address class="slider__text">
+                    г. Новокузнецк, Октябрьский проспект, 13
+                </address>
+            </li>
+            <li class="slider__item">
+                <h3 class="title title--shop">Фирменный салон ESTET</h3>
+                <address class="slider__text">
+                    г. Самара, ул. Красноармейская, д.1, ТЦ "Кубатура", к. 1, 1 этаж, секция 117.6
+                </address>
+            </li>
+            <li class="slider__item">
+                <h3 class="title title--shop">Фирменный салон ESTET</h3>
+                <address class="slider__text">
+                    г. Ульяновск, ул.Шолмова 20, ТЦ СтройГрад, 3 этаж, салон 85
+                </address>
+            </li>
+        </ul>
+        <Link href='javascript:void(0);'>Все салоны</Link>
+    </Container>
+</section>
+<script src="./script.js"></script>

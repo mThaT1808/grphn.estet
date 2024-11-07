@@ -52,3 +52,6 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ## Необходимые расширения для VS Code:
 
 Официальный [плагин](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
+
+
+меняю изменяю
