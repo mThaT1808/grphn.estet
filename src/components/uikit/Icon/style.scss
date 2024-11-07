@@ -5,7 +5,20 @@
         font-size: 33px;
     }
 
+    &--kontora {
+        color: $cl-black;
+        opacity: 0.22;
+
+        @media (min-width: ($tablet + 'px')) {
+            font-size: 18px;
+        }
+    }
+
     &--white {
         color: $cl-white;
+    }
+
+    &--gray {
+        color: $cl-cl-gray-fe;
     }
 }
