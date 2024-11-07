@@ -2,6 +2,7 @@
 
 .navigation {
     padding-top: 50px;
+    padding-bottom: 66px;
 
     &__list {
         font-size: 22px;
@@ -46,11 +47,12 @@
             line-height: 48px;
             text-transform: uppercase;
             font-size: 16px;
-            color: #3c3c3c;
+            color: global.$cl-black;
             letter-spacing: 0px;
             font-weight: bold;
 
             background-color: silver;
+            margin-right: -22px;
             margin-top: 25px;
             margin-bottom: -25px;
             padding: 47px 0px 17px 32px;
@@ -67,8 +69,21 @@
         }
 
         &--background {
-            background-image: url("/public/images/shtukaturka.webbp");
+            color: #3c3c3c;
+
+            background-image: url("/images/shtukaturka.webbp");
             background-position: top right;
+        }
+
+        &--arrow {
+            &::after {
+                opacity: 1;
+                top: 64px;
+                right: 40px;
+                width: 108px;
+                background-size: cover;
+                background-image: url("/src/assets/images/icons/arrow-108.svg");
+            }
         }
     }
 }

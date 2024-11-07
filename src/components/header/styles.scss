@@ -83,7 +83,18 @@
     }
 
     &__contacts {
+        margin: 0 -22px -22px;
+        padding: 40px 0 50px 60px;
         background-color: global.$cl-black;
+    }
+
+    &__number {
+        display: block;
+        font-size: 37px;
+        line-height: normal;
+        letter-spacing: 0px;
+
+        margin-bottom: 24px;
     }
 }
 
