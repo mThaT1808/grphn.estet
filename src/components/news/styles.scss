@@ -8,35 +8,88 @@
         list-style: none;
     }
     &__title{
+        display: inline-block;
         font-size: 36px;
         font-weight: 600;
         line-height: 49px;
-        margin-bottom: 60px;
+        padding-right: 25px;
         color: var(--cl-gray-3c);
+    }
+    &__text{
+        font-size: 12px;
+        line-height: 24px;
+        padding-right: 1px;
+        border-bottom: 1px solid var(--cl-gray-cd);
+        color: var(--cl-green);
+    }
+    &__button{
+        background: none;
+        border: none;
+        color: var(--cl-gray-3c);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+    }
+    &__button--news{
+        padding: 0;
+        text-align: left;
+    }
+    &__button--suggestions{
+        padding: 0;
+        text-align: right;
+    }
+    &__button-wrapper{
+        display: inline-flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--cl-gray-cd);
+        width: 170px;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+    &__link{
+        position: relative;
+        left: 50%;
+    }
+    &__link--suggestions{
+        display: none;
     }
 }
 
 .news{
-    p{
-        margin: 0;
+    display: inline;
+    &__list{
+        margin-bottom: 44px;
     }
     &__title{
-        display: inline-block;
         font-size: 12px;
         line-height: 16px;
         color: var(--cl-green);
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        padding-right: 10px;
     }
     &__text{
         font-weight: 600;
         font-size: 16px;
         line-height: 22px;
         color: var(--cl-gray-3c);
+        max-width: 258px;
+        margin-top: 0;
+        margin-bottom: 24px;
+        padding-right: 10px;
     }
     &__text--big{
         font-size: 24px;
         line-height: 37.67px;
         margin-bottom: 12px;
+        max-width: 100%;
+    }
+    &__content-wrapper{
+        display: inline-block;
+        padding: 17px 0 39px 0;
     }
     &__content-wrapper--big{
         padding: 40px 154px 98px 51px;
@@ -54,6 +107,9 @@
     }
     &__time--big{
         margin-bottom: 98px;
+    }
+    &__image{
+        display: block;
     }
     &__image-group{
         display: block;

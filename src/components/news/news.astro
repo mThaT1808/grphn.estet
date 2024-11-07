@@ -5,9 +5,14 @@ import Container from '@components/container/container.astro'
 
 <div class="news-and-suggestions">
     <Container>
-        <h2 class="news-and-suggestions__title">Новости и советы</h2>
+        <div class="news-and-suggestions__wrapper">
+            <h2 class="news-and-suggestions__title">Новости и советы</h2>
+            <div class="news-and-suggestions__button-wrapper">
+                <button class="news-and-suggestions__button news-and-suggestions__button--news">Новости</button>
+                <button class="news-and-suggestions__button news-and-suggestions__button--suggestions">Советы</button>
+            </div>
+        </div>
         <div class="news">
-            <button class="news__button">Новости</button>
             <ul class="news__list">
                 <li class="news__item news__item--big">
                     <div class="news__media-wrapper news__media-wrapper--big">
@@ -60,7 +65,7 @@ import Container from '@components/container/container.astro'
                 <li class="news__item news__item--small">
                     <div class="news__media-wrapper">
                         <a class="news__link" href="javascript:void(0);">
-                            <video class="news__video" src="javascript:void(0);"></video>
+                            <img class="news__svg" src="/src/assets/images/icons/video.svg" alt="video" width="32px" height="32px">
                         </a>
                     </div>
                     <div class="news__content-wrapper">
@@ -103,8 +108,7 @@ import Container from '@components/container/container.astro'
                 </li>
             </ul>
         </div>
-        <div class="suggestions">
-            <button class="suggestions__button">Советы</button>
+        <!-- <div class="suggestions">
             <ul class="suggestions__list">
                 <li class="suggestions__item suggestions__item--big">
                     <div class="news__media-wrapper news__media-wrapper--big">
@@ -185,12 +189,12 @@ import Container from '@components/container/container.astro'
                     </div>
                 </li>
             </ul>
-        </div>
-        <a class="link--news" href="javascript:void(0);">
-            <span>Все новости</span>
+        </div> -->
+        <a class="news-and-suggestions__link news-and-suggestions__link--news" href="javascript:void(0);">
+            <span class="news-and-suggestions__text">Все новости</span>
         </a>
-        <a class="link--suggestions" href="javascript:void(0);">
-            <span>Все советы</span>
+        <a class="news-and-suggestions__link news-and-suggestions__link--suggestions" href="javascript:void(0);">
+            <span class="news-and-suggestions__text">Все советы</span>
         </a>
     </Container>
 </div>
