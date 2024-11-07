@@ -3,15 +3,10 @@
     display: inline-block;
     text-decoration: none;
     font-size: 18px;
-    // line-height: 1;
-    color: $cl-dark-cyan-lime-green;
+    color: $cl-green;
     padding: 19px 17px;
-    // padding-top: 17px;
-    // padding-left: 17px;
-    // padding-right: 17px;
-    // padding-bottom: 19px;
     background-color: transparent;
-    border: 1px solid $cl-dark-cyan-lime-green;
+    border: 1px solid $cl-green;
     text-align: center;
     transition: background-color $animation-time;
     -webkit-appearance: none;
@@ -31,7 +26,7 @@
         border: none;
         text-align: right;
         text-decoration: underline;
-        color: $cl-dark-cyan-lime-green;
+        color: $cl-green;
 
         @media (min-width: ($tablet + 'px')) {
             margin-left: -10px;
@@ -56,14 +51,14 @@
 
     @media (hover: none), (pointer: coarse) {
         &:active {
-            background-color: $cl-dark-cyan-lime-green;
+            background-color: $cl-green;
             color: $cl-white;
         }
     }
 
     @media not all and (pointer: coarse) {
         &:hover {
-            background-color: $cl-dark-cyan-lime-green;
+            background-color: $cl-green;
             color: $cl-white;
         }
     }
