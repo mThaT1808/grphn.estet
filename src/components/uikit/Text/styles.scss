@@ -1,0 +1,11 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.text {
+    font-size: 14px;
+    line-height: 25px;
+    color: $cl-gray-3c;
+
+    @media(min-width: ($tablet + 'px')) {
+        line-height: 31px;
+    }
+}
