@@ -1,5 +1,11 @@
+@use "/src/assets/styles/global.scss" as *;
+
 .icon {
     &--social {
         font-size: 33px;
+    }
+
+    &--white {
+        color: $cl-white;
     }
 }

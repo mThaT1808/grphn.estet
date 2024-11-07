@@ -1,4 +1,5 @@
 ---
+import Icon from '../Icon/Icon.astro';
 import './style.scss'
 
 export interface Props {
@@ -13,7 +14,7 @@ const { socials, class: className } = Astro.props;
         {socials?.map((social) => (
             <li class="social__item">
                 <a href={social.href} title={social.title} class="social__link">
-                    <img src={social.src} class="social__icon" height="18" width="18"/>
+                    <Icon name={social.icon} mod="white"/>
                 </a>
             </li>
         ))}
