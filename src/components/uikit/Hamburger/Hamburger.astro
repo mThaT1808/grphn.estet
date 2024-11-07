@@ -1,0 +1,17 @@
+---
+import './styles.scss'
+
+const { type } = Astro.props;
+
+var imageSrc = "/src/assets/images/icons/burger.svg";
+
+if (type == "close") {
+    imageSrc = "/src/assets/images/icons/burger-close.svg"
+}
+---
+
+<button class="hamburger">
+    <picture class="hamburger__icon">
+        <img class="hamburger__image" src={ imageSrc } alt="menu" width="29px" height="29px">
+    </picture>
+</button>

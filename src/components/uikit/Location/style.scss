@@ -1,0 +1,20 @@
+
+.location {
+
+    &__button {
+        background-color: transparent;
+        border: 0px solid transparent;
+        display: block;
+        padding: 0%;
+        cursor: pointer;
+    }
+
+    &__image {
+        display: block;
+    }
+
+    &__inner {
+        display: none;
+    }
+
+}

@@ -1,17 +1,24 @@
 ---
 import Container from '@components/container/container.astro'
 import './styles.scss'
-const list = Astro.props.list
+const list = Astro.props.list;
+const modifier = Astro.props.modifier;
+
+var className = "nav";
+
+if (modifier) {
+    className += ` nav${modifier}`
+}
 ---
 
-<nav class="nav">
+<nav class={className}>
     <Container>
         <ul class="nav__list">
             {
               list.map((item) => (
                 <li class="nav__item">
                     <a class="nav__link" href="javascript:void(0);">{item.title}</a>
-                    {item.links.length > 0 ? 
+                    {item.links?
                         <ul class="nav__inner-list">
                             {item.links.map((link) => (
                                 <li class="nav__inner-item">
