@@ -27,10 +27,10 @@
         justify-content: space-between;
         overflow-y: auto;
 
-        transition: left global.$animation-time;
+        transition: transform global.$animation-time;
 
         &--open {
-            left: 0%;
+            transform: translateX(-100%);
         }
     }
 
@@ -97,9 +97,12 @@
     }
 }
 
-@media (min-width: #{global.$tablet}) {
+@media (min-width: (global.$tablet + 'px')) {
     .header {
-        background-color: global.$cl-black;
+
+        &__functional {
+            max-width: 400px;
+        }
     }
 }
 
