@@ -1,0 +1,134 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.service {
+    padding: 63px 0 42px;
+
+
+    &__list {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin: 0 0 56px -25px;
+        list-style: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--guarantee {
+            position: relative;
+            padding-top: 216px;
+            background-image: url("/images/service/guarantee.jpg");
+            background-repeat: no-repeat;
+
+            &::before {
+                font-family: 'Lora', 'Times New Roman', 'serif';
+                font-size: 150px;
+                font-weight: 700;
+                position: absolute;
+                content: '5';
+                top: 154px;
+                left: 30px;
+                color: $cl-white;
+            }
+
+            &::after {
+                font-family: 'Lora', 'Times New Roman', 'serif';
+                font-size: 60px;
+                font-weight: 700;
+                letter-spacing: 0;
+                position: absolute;
+                content: 'Лет';
+                top: 186px;
+                right: 48px;
+                color: $cl-dark-cyan-lime-green;
+            }
+        }
+    }
+
+    &__title {
+        margin: 0 0 38px;
+        padding-right: 14px;
+        text-align: right;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 57px;
+    }
+
+    &__text {
+        margin: 0 0 30px;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: right;
+    }
+
+    &__link {
+        color: $cl-dark-cyan-lime-green;
+    }
+
+    @media (min-width: ($tablet + 'px')) {
+        &__list {
+            display: flex;
+            margin: 0 -82px 0;
+        }
+
+        &__item {
+            width: 50%;
+            padding-top: 270px;
+
+            &--guarantee {
+                margin-left: 0;
+                padding-left: 82px;
+                background-image: url('/images/service/guarantee-tablet.jpg');
+
+                &::before {
+                    top: 172px;
+                    left: 34px;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        &__title {
+            margin-bottom: 62px;
+            font-size: 48px;
+            line-height: 57px;
+            text-align: left;
+        }
+
+        &__text {
+            margin-bottom: 32px;
+            padding-right: 4px;
+            font-size: 16px;
+            line-height: 38px;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        &__item {
+            &--guarantee {
+                padding-top: 410px;
+                padding-left: 62px;
+                background-image: url("images/service/guarantee-desktop.jpg");
+
+                &::before {
+                    top: 254px;
+                    left: 54px;
+                    font-size: 200px;
+                }
+            }
+        }
+
+        &__title {
+            margin-bottom: 34px;
+            font-size: 60px;
+            line-height: 57px;
+        }
+    }
+}

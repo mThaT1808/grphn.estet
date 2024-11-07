@@ -1,29 +1,35 @@
 ---
+import Container from '@components/container/container.astro'
 import './styles.scss'
+const list = Astro.props.list;
+const modifier = Astro.props.modifier;
+
+var className = "nav";
+
+if (modifier) {
+    className += ` nav${modifier}`
+}
 ---
 
-<nav class="navigation">
-    <ul class="navigation__list">
-        <li class="navigation__item">
-            Каталог
-        </li>
-        <li class="navigation__item navigation__item--mobile">
-            Коллекция
-        </li>
-        <li class="navigation__item">
-            Покупателям
-        </li>
-        <li class="navigation__item">
-            Компания
-        </li>
-        <li class="navigation__item navigation__item--special navigation__item--background">
-            Дизайнерам
-        </li>
-        <li class="navigation__item navigation__item--special navigation__item--arrow">
-            Где купить
-        </li>
-    </ul>
+<nav class={className}>
+    <Container>
+        <ul class="nav__list">
+            {
+              list.map((item) => (
+                <li class="nav__item">
+                    <a class="nav__link" href="javascript:void(0);">{item.title}</a>
+                    {item.links?
+                        <ul class="nav__inner-list">
+                            {item.links.map((link) => (
+                                <li class="nav__inner-item">
+                                    <a class="nav__link" href="javascript:void(0);">{link}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    : ''}
+                </li>
+              ))
+            }
+        </ul>
+    </Container>
 </nav>
-
-
-<script src="./script.js"></script>

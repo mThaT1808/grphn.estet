@@ -1,16 +1,73 @@
-@use '/src/assets/styles/global.scss';
+@use "/src/assets/styles/global.scss" as *;
 
-.navigation {
-    padding-top: 50px;
-    padding-bottom: 66px;
+.nav {
+    display: none;
 
-    &__list {
+    @media (min-width: ($tablet + 'px')) {
+        margin-right: -82px;
+        display: block;
+        padding-top: 88px;
+        padding-bottom: 77px;
+        background-color: $cl-gray-3c;
+
+        &__list {
+            margin: 0;
+            padding: 0;
+            columns: 3;
+            column-gap: 32px;
+        }
+
+        &__item {
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 700;
+            list-style: none;
+            color: $cl-white;
+            break-inside: avoid-column;
+        }
+
+        &__inner-list {
+            margin: 0 0 32px 0;
+            padding: 0;
+        }
+
+        &__inner-item {
+            list-style: none;
+            color: $cl-gray-99;
+            font-size: 14px;
+            line-height: 32px;
+        }
+
+        &__link {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        &__inner-item &__link {
+            margin-bottom: 0;
+            letter-spacing: -0.6px;
+        }
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        &__list {
+            column-gap: 96px;
+        }
+    }
+
+    &--header {
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 66px;
+    }
+    &--header &__list {
         font-size: 22px;
 
         padding-left: 38px;
+        margin: 0 -25px;
     }
 
-    &__item {
+    &--header &__item {
         list-style: none;
         padding: 19px 0;
         position: relative;
@@ -47,7 +104,7 @@
             line-height: 48px;
             text-transform: uppercase;
             font-size: 16px;
-            color: global.$cl-black;
+            color: $cl-black;
             letter-spacing: 0px;
             font-weight: bold;
 
@@ -69,7 +126,7 @@
         }
 
         &--background {
-            color: #3c3c3c;
+            color: $cl-gray-3c;
 
             background-image: url("/images/shtukaturka.webbp");
             background-position: top right;
@@ -86,4 +143,5 @@
             }
         }
     }
+
 }

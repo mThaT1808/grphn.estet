@@ -1,5 +1,121 @@
+@import '../../assets/styles/global.scss';
 .banner {
-	&__content {
+    padding-top: 50px;
+    padding-bottom: 33px;
+
+    &__content {
         display: flex;
+        justify-content: center;
+    }
+
+    &__wrapper {
+        max-width: 325px;
+    }
+
+    &__title {
+        margin-bottom: 27px;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 117%;
+        color: var(--cl-very-dark-gray);
+    }
+
+    &__descr {
+        margin: 0;
+        margin-bottom: 47px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 185%;
+        color: var(--cl-dark-gray-nine);
+    }
+
+    &__picture {
+        display: none;
+    }
+
+}
+
+@media (min-width: #{$tablet + 'px'}) {
+    .banner {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        &__content {
+            gap: 45px;
+            justify-content: space-between;
+        }
+
+        &__wrapper {
+            max-width: 280px;
+        }
+
+        &__title {
+            margin-bottom: 90px;
+            max-width: 600px;
+            font-size: 48px;
+            line-height: 119%;
+        }
+
+        &__descr {
+            margin-bottom: 315px;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        &__picture {
+            display: flex;
+            margin-right: -85px;
+            min-height: 485px;
+            height: 100%;
+            align-self: flex-end;
+        }
+
+        &__image {
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: #{$desktop-min + 'px'}) {
+    .banner {
+
+        &__wrapper {
+            max-width: 420px;
+        }
+
+        &__picture {
+            margin-right: -85px;
+            align-items: center;
+        }
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .banner {
+
+        &__wrapper {
+            padding-top: 220px;
+            padding-bottom: 115px;
+        }
+
+        &__title {
+            margin-bottom: 100px;
+            font-size: 60px;
+            line-height: 96%;
+        }
+
+        &__descr {
+            max-width: 335px;
+            margin-bottom: 80px
+        }
+
+        &__picture {
+            margin-right: -200px;
+            min-height: 800px;
+        }
+
+        &__image {
+            min-height: 800px;
+        }
     }
 }
