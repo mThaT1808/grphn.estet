@@ -13,12 +13,13 @@
 
     &__link {
         // placeholder пока не будет иконки компании
-        display: block;
-        width: 57px;
-        height: 57px;
-        background-color: gray;
-        flex-shrink: 0;
-        // конец 
+        // display: block;
+        // width: 57px;
+        // height: 57px;
+        // background-color: gray;
+        // flex-shrink: 0;
+        // конец
+        font-size: 57px; 
         margin-right: 21px;
     }
 
