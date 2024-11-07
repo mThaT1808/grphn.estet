@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?a71824514e294382b67fec1b6c051232") format("woff"),
-url("icons.woff2?a71824514e294382b67fec1b6c051232") format("woff2");
+  src: url("icons.woff?d81386d9b95b8b87b330fe58b23b0d07") format("woff"),
+url("icons.woff2?d81386d9b95b8b87b330fe58b23b0d07") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -50,3 +50,7 @@ url("icons.woff2?a71824514e294382b67fec1b6c051232") format("woff2");
 
 .icon-burger:before { content: "\f101"; }
 .icon-glass:before { content: "\f102"; }
+.icon-kontora:before { content: "\f103"; }
+.icon-next-arrow:before { content: "\f104"; }
+.icon-prev-arrow:before { content: "\f105"; }
+.icon-video:before { content: "\f106"; }

@@ -1,5 +1,16 @@
+@use "/src/assets/styles/global.scss" as *;
+
 .icon {
     &--social {
         font-size: 33px;
+    }
+
+    &--kontora {
+        color: $cl-black;
+        opacity: 0.22;
+
+        @media (min-width: ($tablet + 'px')) {
+            font-size: 18px;
+        }
     }
 }
