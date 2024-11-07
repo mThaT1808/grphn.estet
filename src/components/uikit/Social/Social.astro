@@ -1,0 +1,33 @@
+---
+import Icon from '../Icon/Icon.astro';
+import './style.scss'
+
+export interface Props {
+	socials: any;
+}
+
+const { socials, class: className } = Astro.props;
+---
+
+<div class:list={["social", `${className}`]}>
+    <ul class="social__list">
+        {socials?.map((social) => (
+            <li class="social__item">
+                <a href={social.href} title={social.title} class="social__link">
+                    <Icon name={social.icon} mod="white"/>
+                </a>
+            </li>
+        ))}
+    </ul>
+    <!-- {
+        socials.map((social) => (
+            <li class="social__item">
+                <a href={social.href} title={social.title} class="social__link">
+                    <img src={social.src} class="social__icon"/>
+                </a>
+            </li>
+        ))
+    } -->
+</div>
+
+<script src="./script.js"></script>

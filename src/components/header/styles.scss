@@ -1,0 +1,110 @@
+@use '/src/assets/styles/global.scss';
+
+.header {
+    position: relative;
+    color: global.$cl-white;
+    background-color: global.$cl-black;
+
+    padding: 18px 0;
+
+    &__base {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__functional {
+        padding: 22px;
+
+        position: fixed;
+        top: 0%;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        background-color: global.$cl-green;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-y: auto;
+
+        transition: left global.$animation-time;
+
+        &--open {
+            left: 0%;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__list {
+        padding: 0 0 20px;
+        display: flex;
+        justify-content: space-between;
+
+        width: 55%;
+    }
+
+    &__item {
+        list-style: none;
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .call-back {
+        line-height: 18px;
+        text-transform: uppercase;
+
+        width: 68%;
+        margin-left: -22px;
+        padding: 26px 0px 20px 22px;
+        display: flex;
+
+        border: 1px solid global.$cl-white;
+        border-right-width: 0;
+        border-left-width: 0;
+
+        &__icon {
+            margin-right: 16px;
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        &__text {
+            margin: 0;
+        }
+    }
+
+    &__contacts {
+        margin: 0 -22px -22px;
+        padding: 40px 0 50px 60px;
+        background-color: global.$cl-black;
+    }
+
+    &__number {
+        display: block;
+        font-size: 37px;
+        line-height: normal;
+        letter-spacing: 0px;
+
+        margin-bottom: 24px;
+    }
+}
+
+@media (min-width: #{global.$tablet}) {
+    .header {
+        background-color: global.$cl-black;
+    }
+}
+
+@media (min-width: #{global.$desktop}) {
+    .header {
+        background-color: global.$cl-black;
+    }
+}

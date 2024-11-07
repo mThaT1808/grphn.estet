@@ -1,0 +1,16 @@
+---
+import Icon from '../Icon/Icon.astro';
+import './styles.scss'
+
+const { type } = Astro.props;
+
+var iconName = "burger";
+
+if (type == "close") {
+    iconName = "burger-close"
+}
+---
+
+<button class="hamburger">
+        <Icon name={iconName} mod="white"/>
+</button>

@@ -1,0 +1,98 @@
+---
+import Navigation from '@components/Navigation/Navigation.astro'
+import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
+import Logotype from '@components/uikit/logotype/logotype.astro'
+import Searchbar from '@components/uikit/searchbar/searchbar.astro'
+import Language from '@components/uikit/language/language.astro'
+import Location from '@components/uikit/Location/Location.astro'
+import Personal from '@components/uikit/Personal/Personal.astro'
+import Social from '@components/uikit/Social/Social.astro'
+import Container from '@components/container/container.astro'
+import './styles.scss'
+import Icon from '@components/uikit/Icon/Icon.astro'
+
+
+const socials = [
+    {id: 1, href: "javascript:void(0);", title: "like", icon: "like-white"},
+    {id: 2, href: "javascript:void(0);", title: "telegram", icon: "telegram"},
+    {id: 3, href: "javascript:void(0);", title: "vk", icon: "vk"},
+    {id: 4, href: "javascript:void(0);", title: "facebook", icon: "facebook"},
+    {id: 5, href: "javascript:void(0);", title: "instagram", icon: "instagram"}
+];
+const locations = [
+    {id: 1, city: "Новокузнецк"},
+    {id: 1, city: "Ульяновск"},
+    {id: 1, city: "Самара"},
+    {id: 1, city: "Хабаровск"},
+];
+const navList = [
+    {
+        title: 'Каталог'
+    },
+    {
+        title: 'Коллекции'
+    },
+    {
+        title: 'Покупателям'
+    },
+    {
+        title: 'Компания'
+    },
+    {
+        title: 'Дизайнерам',
+        isSpecial: true,
+        isBackground: true
+    },
+    {
+        title: 'Где купить',
+        isSpecial: true,
+        isArrow: true
+    }
+];
+---
+
+<header class="header">
+    <Container>
+        <div class="header__base">
+            <Searchbar />
+            <Logotype />
+            <Hamburger/>
+        </div>
+        <div class="header__functional">
+            <header class="header__inner">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <Searchbar />
+                    </li>
+                    <li class="header__item">
+                        <Language />
+                    </li>
+                    <li class="header__item">
+                        <Location location={locations} modifier="--header"/>
+                    </li>
+                </ul>
+                <Hamburger type="close"/>
+                <div class="call-back">
+                    <div class="call-back__icon">
+                        <Icon name="phone" mod="white"/>
+                    </div>
+                    <p class="call-back__text">
+                        Обратный звонок
+                    </p>
+                </div>
+                <Personal />
+            </header>
+            <Navigation list={navList} modifier="--header"/>
+            <div class="header__contacts">
+                <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
+                    8 800 551 32 40
+                </a>
+                <Social
+                    socials = {socials}
+                />
+            </div>
+        </div>
+    </Container>
+</header>
+
+<script src="./script.js"></script>

@@ -1,0 +1,21 @@
+@use "/src/assets/styles/global.scss";
+
+.social {
+
+
+    &__list {
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    &__item {
+        list-style: none;
+        font-size: 17px;
+    }
+
+    &__icon {
+        display: block;
+        min-height: 18px;
+    }
+}
