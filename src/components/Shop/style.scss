@@ -41,8 +41,6 @@
     min-width: 0;
 
     & .slider__item {
-        padding-top: 56px;
-        padding-bottom: 16px;
         padding-right: 37px;
         background-color: $cl-white;
         list-style: none;
@@ -63,6 +61,8 @@
     & .slick-track {
         display: flex;
         padding-left: 43px;
+        padding-top: 56px;
+        padding-bottom: 16px;
     }
 
     & .slick-slide {
@@ -161,9 +161,7 @@
         grid-column: span 2;
 
         & .slider__item {
-            padding-top: 0;
             padding-right: 56px;
-            padding-bottom: 0;
             max-width: 282px;
         }
 
@@ -201,7 +199,77 @@
 }
 
 @media (min-width: #{$desktop-min + 'px'}) {
-    
+    .shop {
+        padding-top: 61px;
+        padding-bottom: 59px;
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0 50px;
+        }
+
+        & .title--h2 {
+            font-size: 36px;
+            grid-column: 1 / 2;
+        }
+
+        // & .title--shop {
+        //     margin-bottom: 23px;
+        // }
+
+        &__cell {
+            grid-column: 4 / 5;
+        }
+
+        &__cell:has(.choice--shop) {
+            grid-column: 2 / 3;
+        }
+    }
+
+    // .choice--shop {
+    //     margin-bottom: 42px;
+    // }
+
+    .slider--shop {
+        margin-right: -200px;
+        grid-column: span 4;
+
+        & .slider__item {
+            padding-right: 56px;
+        }
+
+        & .slick-list {
+            padding: 0 !important;
+        }
+
+        & .slick-track {
+            padding-top: 49px;
+            padding-left: 40px;
+            padding-bottom: 56px;
+        }
+
+        & .slick-slide {
+            max-width: 300px;
+        }
+
+        & .slick-slide > div {
+            display: block;
+            padding-bottom: 0;
+        }
+
+        & .slick-arrow {
+            bottom: 60px;
+        }
+
+        & .slick-prev {
+            right: 282px;
+        }
+
+        & .slick-next {
+            right: 200px;
+        }
+    }
 }
 
 @media (min-width: #{$desktop + 'px'}) {}
