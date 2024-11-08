@@ -1,26 +1,25 @@
 @import '../../assets/styles/global.scss';
 
 .shop {
+    position: relative;
     padding-top: 46px;
-    background-color: #F9F9F9;
-}
+    padding-bottom: 65px;
+    background-color: $cl-cl-gray-f9;
 
-.choice--shop {
-    margin-bottom: 39px;
+    & .link {
+        font-size: 12px;
+    }
 }
 
 .slider--shop {
-    display: flex;
     margin-right: -25px;
-    padding-left: 43px;
+    margin-bottom: 29px;
+    padding-left: 0;
     background-color: $cl-white;
-    width: 100%;
+    min-width: 0;
 
     & .slider__item {
-        min-width: 210px;
-        padding-top: 49px;
         padding-right: 37px;
-        padding-bottom: 39px;
         background-color: $cl-white;
         list-style: none;
     }
@@ -28,32 +27,195 @@
     & .slider__text {
         font-size: 14px;
         font-style: normal;
-        color: #3C3C3C;
+        color: $cl-gray-3c;
+        line-height: normal;
     }
 
+    & .slick-list {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    & .slick-track {
+        display: flex;
+        padding-left: 43px;
+        padding-top: 56px;
+        padding-bottom: 16px;
+    }
+
+    & .slick-slide {
+        max-width: 210px;
+    }
+
+    & .slick-arrow {
+        position: absolute;
+        bottom: 57px;
+        font-size: 0;
+        padding: 0;
+        width: 61px;
+        height: 31px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    & .slick-prev {
+        right: 107px;
+
+    }
+
+    & .slick-next {
+        right: 23px;
+    }
+
+    & .slick-prev::after,
+    & .slick-next::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid $cl-green;
+        border-top: 1px solid $cl-green;
+    }
+
+    & .slick-prev::after {
+        transform: translateY(-50%) rotate(-45deg);
+        left: 0;
+    }
+
+    & .slick-next::after {
+        transform: translateY(-50%) rotate(135deg);
+        right: 0;
+    }
+
+    & .slick-prev::before,
+    & .slick-next::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width:100%;
+        height: 1px;
+        transform: translateY(-50%);
+        background-color: $cl-green;
+    }
 }
 
-@media (min-width: #{$tablet + 'px'}) {}
+@media (min-width: #{$tablet + 'px'}) {
+    .shop {
+        padding-top: 61px;
+        padding-bottom: 90px;
 
-@media (min-width: #{$desktop-min + 'px'}) {}
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 135px;
+        }
+    }
 
-@media (min-width: #{$desktop + 'px'}) {}
+    .slider--shop {
+        margin-right: -84px;
+        margin-bottom: 42px;
 
+        & .slider__item {
+            padding-right: 56px;
+            max-width: 282px;
+        }
 
-.title--h2 {
-    font-family: 'opensans', sans-serif;
-    font-size: 41px;
-    font-weight: 600;
-    color: #3C3C3C;
-    margin-bottom: 27px;
+        & .slick-track {
+            padding-top: 49px;
+            padding-left: 40px;
+            padding-bottom: 56px;
+        }
+
+        & .slick-slide {
+            max-width: 100%;
+        }
+
+        & .slick-slide > div {
+            display: flex;
+            padding-bottom: 51px;
+        }
+
+        & .slick-slide > div:last-child {
+            padding-bottom: 0;
+        }
+
+        & .slick-arrow {
+            bottom: 79px;
+        }
+
+        & .slick-prev {
+            right: 161px;
+        }
+
+        & .slick-next {
+            right: 79px;
+        }
+    }
 }
 
-.title--shop {
-    font-family: 'opensans', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: #3C3C3C;
+@media (min-width: #{$desktop-min + 'px'}) {
+    .shop {
+        padding-top: 61px;
+        padding-bottom: 90px;
+
+        &__wrapper {
+            gap: 0 155px;
+        }
+
+        & .link {
+            margin-left: auto;
+            margin-right: 350px;
+        }
+    }
+
+    .slider--shop {
+        margin-right: -200px;
+        flex: 0 0 auto;
+
+        & .slider__item {
+            padding-right: 56px;
+        }
+
+        & .slick-list {
+            padding: 0 !important;
+        }
+
+        & .slick-track {
+            padding-top: 49px;
+            padding-left: 40px;
+            padding-bottom: 56px;
+        }
+
+        & .slick-slide {
+            max-width: 300px;
+        }
+
+        & .slick-slide > div {
+            display: block;
+            padding-bottom: 0;
+        }
+
+
+    }
 }
 
+@media (min-width: #{$desktop + 'px'}) {
+    .slider--shop {
+        & .slick-arrow {
+            bottom: 75px;
+        }
 
+        & .slick-prev {
+            right: 282px;
+        }
+
+        & .slick-next {
+            right: 200px;
+        }
+    }
+}
 
