@@ -49,6 +49,7 @@
 
     @media (min-width: ($tablet + 'px')) {
         padding: 73px 17px 74px 0;
+        order: 2;
 
         &__link {
             margin-right: 27px;
