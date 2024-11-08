@@ -16,13 +16,13 @@
         margin-bottom: 27px;
         font-weight: 700;
         font-size: 30px;
-        line-height: 117%;
+        line-height: 122%;
         color: var(--cl-very-dark-gray);
     }
 
     &__descr {
         margin: 0;
-        margin-bottom: 47px;
+        margin-bottom: 45px;
         font-weight: 400;
         font-size: 14px;
         line-height: 185%;
@@ -65,7 +65,7 @@
         &__picture {
             display: flex;
             margin-right: -85px;
-            min-height: 485px;
+            max-height: 600px;
             height: 100%;
             align-self: flex-end;
         }
@@ -85,13 +85,16 @@
 
         &__picture {
             margin-right: -85px;
-            align-items: center;
         }
     }
 }
 
 @media (min-width: #{$desktop + 'px'}) {
     .banner {
+
+        &__content {
+            gap: 60px;
+        }
 
         &__wrapper {
             padding-top: 220px;
