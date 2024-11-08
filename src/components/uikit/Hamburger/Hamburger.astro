@@ -1,17 +1,16 @@
 ---
+import Icon from '../Icon/Icon.astro';
 import './styles.scss'
 
 const { type } = Astro.props;
 
-var imageSrc = "/src/assets/images/icons/burger.svg";
+var iconName = "burger";
 
 if (type == "close") {
-    imageSrc = "/src/assets/images/icons/burger-close.svg"
+    iconName = "burger-close"
 }
 ---
 
 <button class="hamburger">
-    <picture class="hamburger__icon">
-        <img class="hamburger__image" src={ imageSrc } alt="menu" width="29px" height="29px">
-    </picture>
+        <Icon name={iconName} mod="white"/>
 </button>

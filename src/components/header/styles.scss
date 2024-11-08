@@ -59,6 +59,7 @@
 
     .call-back {
         line-height: 18px;
+        text-transform: uppercase;
 
         width: 68%;
         margin-left: -22px;
@@ -69,16 +70,14 @@
         border-right-width: 0;
         border-left-width: 0;
 
-        &__wrapper {
-            margin-right: 10px;
+        &__icon {
+            margin-right: 16px;
+            font-size: 20px;
+            line-height: 20px;
         }
 
         &__text {
             margin: 0;
-        }
-
-        &__image {
-            display: block;
         }
     }
 

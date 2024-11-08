@@ -1,0 +1,11 @@
+---
+import './styles.scss';
+const {class: className} = Astro.props;
+---
+
+<p class:list={[
+    "text",
+    `text--${className}`,
+]}>
+    <slot/>
+</p>
