@@ -96,14 +96,13 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        margin-right: -82px;
         display: block;
         padding-top: 88px;
         padding-bottom: 77px;
         background-color: $cl-gray-3c;
 
         &__list {
-            margin: 0;
+            margin: 0 -82px 0 0;
             padding: 0;
             columns: 3;
             column-gap: 32px;
@@ -125,7 +124,7 @@
 
         &__inner-item {
             list-style: none;
-            color: $cl-gray-99;
+            color: $cl-gray-97;
             font-size: 14px;
             line-height: 32px;
         }
@@ -152,8 +151,11 @@
     }
 
     @media (min-width: ($desktop + 'px')) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         &__list {
-            column-gap: 96px;
+            column-gap: 42px;
+            margin-right: -171px;
         }
 
         &--header {

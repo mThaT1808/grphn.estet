@@ -1,0 +1,92 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.copyright {
+    padding: 61px 17px 71px 0;
+    color: $cl-gray-99;
+    background-color: $cl-cl-gray-31;
+    font-size: 12px;
+    line-height: 16px;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__link {
+        // placeholder пока не будет иконки компании
+        // display: block;
+        // width: 57px;
+        // height: 57px;
+        // background-color: gray;
+        // flex-shrink: 0;
+        // конец
+        font-size: 57px; 
+        margin-right: 21px;
+    }
+
+    &__text {
+        margin: 0;
+
+        &--adress {
+            margin-bottom: 26px;
+        }
+    }
+
+    &__confidential {
+        position: relative;
+        display: block;
+        margin-bottom: 40px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 82%;
+            height: 1px;
+            bottom: -3px;
+            left: 0;
+            background-color: $cl-gray-97;
+        }
+    }
+
+    @media (min-width: ($tablet + 'px')) {
+        padding: 73px 17px 74px 0;
+
+        &__link {
+            margin-right: 27px;
+        }
+
+        &__text {
+            &--adress {
+                margin-bottom: 5px;
+            }
+        }
+
+        &__confidential {
+            &::after {
+                width: 40%;
+            }
+        }
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding: 125px 17px 94px 0;
+
+        &__info {
+            display: flex;
+            margin-right: -126px;
+        }
+
+        &__container {
+            margin-right: 127px;
+        }
+
+        &__confidential {
+            margin-bottom: 0;
+        }
+
+        &__kontora {
+            align-self: flex-end;
+        }
+    }
+}
