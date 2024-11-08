@@ -46,16 +46,25 @@
                 color: $cl-green;
             }
         }
+        &--service {
+            position: relative;
+            padding-top: 224px;
+            background-image: url("/images/service/service.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0 -25px;
+        }
     }
 
     @media (min-width: ($tablet + 'px')) {
         &__list {
             display: flex;
             margin: 0 -82px 0;
+            justify-content: space-between;
         }
 
         &__item {
-            width: 50%;
+            width: 48.3%;
             padding-top: 270px;
 
             &--guarantee {
@@ -72,10 +81,16 @@
                     display: none;
                 }
             }
+
+            &--service {
+                padding-top: 258px;
+                margin: 70px 0 0 0;
+                background-image: url("/images/service/service-tablet.jpg");
+            }
         }
     }
 
-    @media (min-width: ($desktop + 'px')) {
+    @media (min-width: ($desktop-min + 'px')) {
         &__item {
             &--guarantee {
                 padding-top: 410px;
@@ -87,6 +102,12 @@
                     left: 54px;
                     font-size: 200px;
                 }
+            }
+
+            &--service {
+                margin-top: 109px;
+                padding-top: 412px;
+                background-image: url("/images/service/service-desktop.jpg");
             }
         }
     }

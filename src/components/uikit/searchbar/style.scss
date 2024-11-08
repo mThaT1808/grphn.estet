@@ -12,3 +12,12 @@
         padding: 0;
     }
 }
+
+@media (min-width: ($desktop + 'px')) {
+
+    .searchbar {
+        &__button {
+            font-size: 21px;
+        }
+    }
+}

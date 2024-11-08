@@ -11,5 +11,11 @@
     font-size: 29px;
 
     cursor: pointer;
+}
 
+@media (min-width: ($desktop + 'px')) {
+
+    .hamburger {
+        display: none;
+    }
 }

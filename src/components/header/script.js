@@ -6,3 +6,11 @@ for (let i = 0; i < burgers.length; i++) {
         functional.classList.toggle('header__functional--open');
     })
 }
+
+function updateWidth() {
+
+}
+
+updateWidth();
+
+window.addEventListener('resize', updateWidth);

@@ -1,14 +1,14 @@
 @import '../../../assets/styles/global.scss';
 
 .title {
-    font-family: 'Open Sans';
-    font-weight: 700;
+    font-family: 'opensans';
+    font-weight: 600;
     font-size: 30px;
     line-height: 57px;
     margin-bottom: 38px;
     padding: 0;
     margin: 0 0 38px 0;
-    color: $cl-gray-3c;   
+    color: $cl-gray-3c;
 
     &--intro {
         margin: 0 0 8px 0;
@@ -16,6 +16,7 @@
     }
 
     &--service {
+        font-weight: 700;
         padding-right: 14px;
         text-align: right;
     }
@@ -23,12 +24,24 @@
     &--left {
         padding-left: 25px;
         text-align: left;
+        margin-bottom: 9px;
+    }
+
+    &--shop {
+        line-height: normal;
+        margin-bottom: 27px;
+    }
+
+    &--shop-slider {
+        font-size: 18px;
+        line-height: normal;
+        margin-bottom: 14px;
     }
 
     &--review {
         margin-bottom: 16px;
-        font-weight: 600;
     }
+
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -43,6 +56,19 @@
         &--service {
             margin-bottom: 62px;
             text-align: left;
+        }
+
+        &--shop {
+            margin-bottom: 29px;
+        }
+
+        &--shop-slider {
+            font-size: 18px;
+            margin-bottom: 23px;
+        }
+        &--left {
+            padding-left: 31px;
+            margin-bottom: 94px;
         }
     }
 }
@@ -59,6 +85,19 @@
             margin-bottom: 34px;
             font-size: 60px;
             line-height: 57px;
+        }
+
+        &--shop {
+            font-size: 36px;
+        }
+
+        &--shop-slider {
+            font-size: 18px;
+            margin-bottom: 23px;
+        }
+        &--left{
+            padding-left: 51px;
+            margin-bottom: 30px;
         }
 
         &--review {
