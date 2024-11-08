@@ -1,0 +1,30 @@
+---
+import Icon from '../Icon/Icon.astro';
+import './style.scss'
+interface Props {
+    class?: string;
+}
+const {
+    class: className,
+    ...rest
+    } = Astro.props;
+---
+
+<div
+    {...rest}
+    class:list={[
+    "choice",
+    `choice--${className}`,
+    ]}
+>
+    <Icon name="shape" mod='green'></Icon>
+    <select name="location" class="choice__list">
+            <option value="Нижний новгород" selected class="choice__item">Нижний новгород</option>
+            <option value="Новокузнецк" class="choice__item">Новокузнецк</option>
+            <option value="Ульяновск" class="choice__item">Ульяновск</option>
+            <option value="Самара" class="choice__item">Самара</option>
+            <option value="Хабаровск" class="choice__item">Хабаровск</option>
+    </select>
+</div>
+
+<script src="./script.js"></script>

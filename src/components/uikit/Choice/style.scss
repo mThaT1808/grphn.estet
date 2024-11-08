@@ -1,0 +1,64 @@
+@import '../../../assets/styles/global.scss';
+
+.choice {
+    position: relative;
+    display: flex;
+    max-width: max-content;
+
+    &__list {
+        // width:  100%;
+        border: none;
+        color: $cl-green;
+        padding-left: 17px;
+        padding-right: 18px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__list:focus-visible {
+        outline: none;
+        // outline: 1px solid $cl-green;
+        // outline-offset: 4px;
+        // border-radius: 1px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 5px;
+        height: 5px;
+        border-right: 1px solid $cl-green;
+        border-bottom: 1px solid $cl-green;
+        transform: rotate(45deg);
+    }
+
+    &__item {
+        font-size: 14px;
+        color: $cl-green;
+    }
+
+    // mod
+
+    &--shop {
+        margin-bottom: 39px;
+    }
+}
+
+@media (min-width: #{$tablet + 'px'}) {
+    .choice {
+        &--shop {
+            margin-bottom: 42px;
+            align-self: flex-end;
+        }
+    }
+}
+
+@media (min-width: #{$desktop-min + 'px'}) {
+    .choice {
+        &--shop {
+            margin-bottom: 42px;
+        }
+    }
+}
