@@ -1,5 +1,12 @@
-
+@use '/src/assets/styles/global.scss' as *;
 
 .logotype {
     font-size: 40px;
+}
+
+@media (min-width: ($desktop + 'px')) {
+
+    .logotype {
+        font-size: 57px;
+    }
 }

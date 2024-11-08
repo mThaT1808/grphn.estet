@@ -40,3 +40,13 @@
         background-color: $cl-white;
     }
 }
+
+
+@media (min-width: ($desktop + 'px')) {
+    .personal {
+        margin: 0;
+        border: 0px solid transparent;
+        padding: 0;
+        gap: 44px;
+    }
+}

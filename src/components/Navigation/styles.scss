@@ -3,7 +3,6 @@
 .nav {
     display: none;
 
-    
     &--header {
         display: block;
         padding-top: 50px;
@@ -11,9 +10,11 @@
     }
     &--header &__list {
         font-size: 22px;
-        
+
         padding-left: 38px;
         margin: 0 -25px;
+        display: flex;
+        flex-direction: column;
     }
 
     &--header &__item {
@@ -62,6 +63,7 @@
             margin-top: 25px;
             margin-bottom: -25px;
             padding: 47px 0px 17px 32px;
+            order: 1;
 
 
             &:last-child{
@@ -153,5 +155,71 @@
         &__list {
             column-gap: 96px;
         }
+
+        &--header {
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+            flex-grow: 1;
+        }
+
+        &--header &__list {
+            margin-left: -200px;
+            margin-right: -200px;
+            padding: 0;
+
+            flex-direction: row;
+            justify-content: left;
+            column-gap: 10px;
+        }
+
+        &--header &__item{
+            line-height: normal;
+            margin-right: 76px;
+
+
+            padding: 0 16px 0 0;
+
+            &::before {
+                opacity: 0;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+
+            &--special {
+                color: $cl-white;
+                text-transform: none;
+
+                background: transparent;
+                margin-right: 217px;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 0;
+                order: 0;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &--mobile {
+                display: none;
+            }
+        }
+
+        &--header &__link {
+            line-height: 32px;
+            font-weight: 600;
+            letter-spacing: -1px;
+
+            margin-bottom: 0;
+        }
+
     }
 }

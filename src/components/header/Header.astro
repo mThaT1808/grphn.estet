@@ -30,13 +30,11 @@ const navList = [
         title: 'Каталог'
     },
     {
-        title: 'Коллекции'
+        title: 'Коллекции',
+        isMobile: true
     },
     {
         title: 'Покупателям'
-    },
-    {
-        title: 'Компания'
     },
     {
         title: 'Дизайнерам',
@@ -44,10 +42,13 @@ const navList = [
         isBackground: true
     },
     {
+        title: 'Компания'
+    },
+    {
         title: 'Где купить',
         isSpecial: true,
         isArrow: true
-    }
+    },
 ];
 ---
 
@@ -61,13 +62,13 @@ const navList = [
         <div class="header__functional">
             <header class="header__inner">
                 <ul class="header__list">
-                    <li class="header__item">
+                    <li class="header__item header__item--searchbar">
                         <Searchbar />
                     </li>
-                    <li class="header__item">
+                    <li class="header__item header__item--language">
                         <Language />
                     </li>
-                    <li class="header__item">
+                    <li class="header__item header__item--location">
                         <Location location={locations} modifier="--header"/>
                     </li>
                 </ul>

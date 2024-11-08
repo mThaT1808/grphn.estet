@@ -106,8 +106,65 @@
     }
 }
 
-@media (min-width: #{global.$desktop}) {
+@media (min-width: (global.$desktop + 'px')) {
     .header {
-        background-color: global.$cl-black;
+        padding: 63px 0;
+
+        &__base {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            left: calc(50% - 28px);
+            top: 50px;
+
+            .searchbar {
+                display: none;
+            }
+        }
+
+        &__functional {
+            background: transparent;
+            overflow: visible;
+            position: relative;
+            left: 0;
+            top: 0;
+            padding: 0;
+            max-width: 100%;
+            height: auto;
+            flex-direction: row;
+        }
+
+        &__inner {
+            order: 1;
+        }
+
+        &__list {
+            width: auto;
+            align-items: center;
+            padding: 0;
+            margin-right: 40px;
+        }
+
+        &__item {
+
+            &--language {
+                position: absolute;
+                left: -123px;
+            }
+
+            &--location {
+                display: none;
+            }
+        }
+
+        .call-back {
+            display: none;
+        }
+
+        &__contacts {
+            display: none;
+        }
     }
 }
