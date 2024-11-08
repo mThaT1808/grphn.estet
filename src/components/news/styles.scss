@@ -7,4 +7,170 @@
     ul li{
         list-style: none;
     }
+    &__title{
+        display: block;
+        font-size: 30px;
+        line-height: 41px;
+        font-weight: 600;
+        padding-right: 25px;
+        color: var(--cl-gray-3c);
+        @media (min-width: ($tablet + 'px')){
+            display: inline-block;
+            font-size: 36px;
+            line-height: 49px;
+        }
+    }
+    &__text{
+        font-size: 12px;
+        line-height: 24px;
+        padding-right: 1px;
+        border-bottom: 1px solid var(--cl-gray-cd);
+        color: var(--cl-green);
+    }
+    &__button{
+        background: none;
+        border: none;
+        color: var(--cl-gray-3c);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+    }
+    &__button--news{
+        padding: 0;
+        text-align: left;
+    }
+    &__button--suggestions{
+        padding: 0;
+        text-align: right;
+    }
+    &__button-wrapper{
+        display: inline-flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--cl-gray-cd);
+        width: 170px;
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 41px;
+        @media (min-width: ($tablet + 'px')){
+            gap: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        @media (min-width: ($desktop + 'px')){
+            margin-bottom: 58px;
+        }
+    }
+    &__link{
+        position: relative;
+        padding-bottom: 41px;
+        display: inline-block;
+        @media (min-width: ($tablet + 'px')){
+            left: 50%;
+            padding-bottom: 117px;
+        }
+        @media (min-width: ($desktop + 'px')){
+            left: 70%;
+            padding-bottom: 90px;
+        }
+    }
+    &__link--suggestions{
+        display: none;
+    }
+}
+
+.news{
+    display: inline;
+    &__item--big{
+        display: none;
+        @media (min-width: ($tablet + 'px')){
+            display: block;
+        }
+    }
+    &__list{
+        margin-bottom: 14px;
+        @media (min-width: ($tablet + 'px')){
+            margin-bottom: 44px;
+        }
+        @media (min-width: ($desktop + 'px')){
+            margin-bottom: 4px;
+        }
+    }
+    &__title{
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--cl-green);
+        margin-bottom: 12px;
+        padding-right: 10px;
+    }
+    &__title--big{
+        margin-bottom: 15px;
+        @media (min-width: ($desktop + 'px')){
+            margin-bottom: 13px;
+        }
+    }
+    &__text{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--cl-gray-3c);
+        max-width: 258px;
+        margin-top: 0;
+        margin-bottom: 24px;
+        padding-right: 10px;
+    }
+    &__text--big{
+        font-size: 24px;
+        line-height: 37.67px;
+        margin-bottom: 12px;
+        max-width: 100%;
+        @media (min-width: ($desktop + 'px')){
+            margin-bottom: 11px;
+        }
+    }
+    &__content-wrapper{
+        display: inline-block;
+        padding: 17px 0 39px 0;
+    }
+    &__content-wrapper--big{
+        padding: 40px 154px 98px 51px;
+        @media (min-width: ($desktop + 'px')){
+            padding-top: 37px 154px 98px 48px;
+        }
+    }
+    &__dash{
+        font-family: 'lucida';
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--cl-gray-3c);
+    }
+    &__time{
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--cl-gray-99);
+    }
+    &__time--big{
+        margin-bottom: 98px;
+    }
+    &__image{
+        display: block;
+    }
+    &__image-group{
+        display: block;
+    }
+    &__media-wrapper{
+        width: 258px;
+        height: 139px;
+    }
+    &__media-wrapper--big{
+        width: 100%;
+        height: auto;
+        @media (min-width: ($desktop + 'px')){
+            width: 34.875vw;
+        }
+    }
 }

@@ -9,14 +9,15 @@ import Personal from '@components/uikit/Personal/Personal.astro'
 import Social from '@components/uikit/Social/Social.astro'
 import Container from '@components/container/container.astro'
 import './styles.scss'
+import Icon from '@components/uikit/Icon/Icon.astro'
 
 
 const socials = [
-    {id: 1, href: "javascript:void(0);", title: "like", src: "/src/assets/images/icons/like-white.svg"},
-    {id: 2, href: "javascript:void(0);", title: "telegram", src: "/src/assets/images/icons/telegram.svg"},
-    {id: 3, href: "javascript:void(0);", title: "vk", src: "/src/assets/images/icons/vk.svg"},
-    {id: 4, href: "javascript:void(0);", title: "facebook", src: "/src/assets/images/icons/facebook.svg"},
-    {id: 5, href: "javascript:void(0);", title: "instagram", src: "/src/assets/images/icons/instagram.svg"}
+    {id: 1, href: "javascript:void(0);", title: "like", icon: "like-white"},
+    {id: 2, href: "javascript:void(0);", title: "telegram", icon: "telegram"},
+    {id: 3, href: "javascript:void(0);", title: "vk", icon: "vk"},
+    {id: 4, href: "javascript:void(0);", title: "facebook", icon: "facebook"},
+    {id: 5, href: "javascript:void(0);", title: "instagram", icon: "instagram"}
 ];
 const locations = [
     {id: 1, city: "Новокузнецк"},
@@ -26,7 +27,7 @@ const locations = [
 ];
 const navList = [
     {
-        title: 'Катакалог'
+        title: 'Каталог'
     },
     {
         title: 'Коллекции'
@@ -38,10 +39,14 @@ const navList = [
         title: 'Компания'
     },
     {
-        title: 'Дизайнерам'
+        title: 'Дизайнерам',
+        isSpecial: true,
+        isBackground: true
     },
     {
-        title: 'Где купить'
+        title: 'Где купить',
+        isSpecial: true,
+        isArrow: true
     }
 ];
 ---
@@ -68,9 +73,9 @@ const navList = [
                 </ul>
                 <Hamburger type="close"/>
                 <div class="call-back">
-                    <picture class="call-back__wrapper">
-                        <img src="/src/assets/images/icons/phone.svg" class="call-back__icon" alt="" width="20px" height="20px">
-                    </picture>
+                    <div class="call-back__icon">
+                        <Icon name="phone" mod="white"/>
+                    </div>
                     <p class="call-back__text">
                         Обратный звонок
                     </p>
