@@ -5,7 +5,6 @@ const list = Astro.props.list;
 const modifier = Astro.props.modifier;
 
 var className = "nav";
-var itemClass = "nav__item"
 
 if (modifier) {
     className += ` nav${modifier}`
@@ -21,7 +20,8 @@ if (modifier) {
                     'nav__item': true,
                     'nav__item--special': item.isSpecial,
                     'nav__item--background': item.isBackground,
-                    'nav__item--arrow': item.isArrow
+                    'nav__item--arrow': item.isArrow,
+                    'nav__item--mobile': item.isMobile
                 }}>
                     <a class="nav__link" href="javascript:void(0);">{item.title}</a>
                     {item.links?

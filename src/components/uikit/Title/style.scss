@@ -1,7 +1,7 @@
 @import '../../../assets/styles/global.scss';
 
 .title {
-    font-family: 'Open Sans';
+    font-family: 'opensans';
     font-weight: 600;
     font-size: 30px;
     line-height: 57px;
@@ -24,6 +24,7 @@
     &--left {
         padding-left: 25px;
         text-align: left;
+        margin-bottom: 9px;
     }
 
     &--shop {
@@ -36,6 +37,11 @@
         line-height: normal;
         margin-bottom: 14px;
     }
+
+    &--review {
+        margin-bottom: 16px;
+    }
+
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -59,6 +65,10 @@
         &--shop-slider {
             font-size: 18px;
             margin-bottom: 23px;
+        }
+        &--left {
+            padding-left: 31px;
+            margin-bottom: 94px;
         }
     }
 }
@@ -84,6 +94,15 @@
         &--shop-slider {
             font-size: 18px;
             margin-bottom: 23px;
+        }
+        &--left{
+            padding-left: 51px;
+            margin-bottom: 30px;
+        }
+
+        &--review {
+            margin-bottom: 102px;
+            font-size: 36px;
         }
     }
 }

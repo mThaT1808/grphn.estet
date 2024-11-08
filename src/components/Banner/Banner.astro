@@ -13,6 +13,8 @@ import Container from '@components/container/container.astro'
                 <Button class="button button--size">Подобрать</Button>
             </div>
             <picture class="banner__picture">
+                <source srcset="../public/images/banner/banner-desktop.webp" type="image/webp" media="(min-width:1024px)" >
+                <source srcset="../public/images/banner/banner-desktop.jpg" type="image/jpg" media="(min-width:1024px)" >
                 <source srcset="../public/images/banner/banner.webp" type="image/webp"/>
                 <img class="banner__image" src="../public/images/banner/banner.jpg" alt="">
             </picture>
