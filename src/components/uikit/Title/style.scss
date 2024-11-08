@@ -7,11 +7,22 @@
     line-height: 57px;
     margin-bottom: 38px;
     padding: 0;
-    margin: 0 0 38px 0;   
+    margin: 0 0 38px 0;
+    color: $cl-gray-3c;   
 
     &--intro {
         margin: 0 0 8px 0;
         font-size: 50px;
+    }
+
+    &--service {
+        padding-right: 14px;
+        text-align: right;
+    }
+
+    &--left {
+        padding-left: 25px;
+        text-align: left;
     }
 }
 
@@ -23,6 +34,11 @@
             margin-bottom: 68px;
             font-size: 100px;
         }
+
+        &--service {
+            margin-bottom: 62px;
+            text-align: left;
+        }
     }
 }
 
@@ -32,6 +48,12 @@
 
         &--intro {
             font-size: 150px;
+        }
+
+        &--service {
+            margin-bottom: 34px;
+            font-size: 60px;
+            line-height: 57px;
         }
     }
 }
