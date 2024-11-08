@@ -24,6 +24,11 @@
         padding-left: 25px;
         text-align: left;
     }
+
+    &--review {
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -54,6 +59,11 @@
             margin-bottom: 34px;
             font-size: 60px;
             line-height: 57px;
+        }
+
+        &--review {
+            margin-bottom: 102px;
+            font-size: 36px;
         }
     }
 }

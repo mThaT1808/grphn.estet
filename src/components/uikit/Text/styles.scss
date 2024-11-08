@@ -1,6 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .text {
+    margin: 0;
     font-size: 14px;
     line-height: 25px;
     color: $cl-gray-3c;
@@ -8,6 +9,19 @@
     &--service {
         margin: 0 0 30px;
         text-align: right;
+    }
+
+    &--review {
+        width: 53%;
+        color: $cl-white;
+        line-height: 20px;
+
+        &-small {
+            width: 100%;
+            padding-left: 45px;
+            font-size: 12px;
+            line-height: 21px;
+        }
     }
 
     @media(min-width: ($tablet + 'px')) {
@@ -20,5 +34,17 @@
             line-height: 38px;
             text-align: left;
         }
+
+        &--review {
+            width: 100%;
+            line-height: 22px;
+        }
     }
+
+    @media (min-width: ($desktop + 'px')) {
+        &--review-small {
+            max-width: 230px;
+            margin-left: auto;
+        }
+    } 
 }
