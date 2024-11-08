@@ -48,5 +48,12 @@
         border: 0px solid transparent;
         padding: 0;
         gap: 44px;
+
+        &__button {
+
+            &--basket {
+                font-size: 21px;
+            }
+        }
     }
 }
