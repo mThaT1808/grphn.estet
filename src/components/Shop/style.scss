@@ -6,31 +6,9 @@
     padding-bottom: 65px;
     background-color: $cl-cl-gray-f9;
 
-    & .title--h2 {
-        font-family: 'opensans', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        line-height: normal;
-        color: $cl-gray-3c;
-        margin-bottom: 27px;
-    }
-
     & .link {
         font-size: 12px;
     }
-
-    & .title--shop {
-        font-family: 'opensans', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: normal;
-        color: $cl-gray-3c;
-        margin-bottom: 14px;
-    }
-}
-
-.choice--shop {
-    margin-bottom: 39px;
 }
 
 .slider--shop {
@@ -135,21 +113,6 @@
             flex-wrap: wrap;
             gap: 0 135px;
         }
-
-        & .title--h2 {
-            font-size: 36px;
-            margin-bottom: 29px;
-        }
-
-        & .title--shop {
-            margin-bottom: 23px;
-        }
-
-    }
-
-    .choice--shop {
-        margin-bottom: 42px;
-        align-self: flex-end;
     }
 
     .slider--shop {
@@ -203,22 +166,10 @@
             gap: 0 155px;
         }
 
-        & .title--h2 {
-            font-size: 36px;
-        }
-
-        & .title--shop {
-            margin-bottom: 23px;
-        }
-
         & .link {
             margin-left: auto;
             margin-right: 350px;
         }
-    }
-
-    .choice--shop {
-        margin-bottom: 42px;
     }
 
     .slider--shop {
