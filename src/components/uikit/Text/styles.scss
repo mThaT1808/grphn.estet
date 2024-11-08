@@ -10,15 +10,35 @@
         text-align: right;
     }
 
+    &--left {
+        text-align: left;
+        padding-left: 25px;
+        padding-right: 54px;
+        margin-bottom: 39px;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 
         &--service {
             margin-bottom: 32px;
-            padding-right: 4px;
             font-size: 16px;
             line-height: 38px;
             text-align: left;
+        }
+
+        &--left {
+            padding-left: 31px;
+            padding-right: 46px;
+            margin-bottom: 41px;
+        }
+    }
+
+    @media(min-width: ($desktop-min + 'px')) {
+        &--left {
+            padding-left: 51px;
+            padding-right: 71px;
+            margin-bottom: 61px;
         }
     }
 }
