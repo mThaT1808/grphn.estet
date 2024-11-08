@@ -1,9 +1,10 @@
 ---
+import Banner from '@components/Banner/Banner.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Intro from '@components/Intro/Intro.astro';
 const pageTitle = "Home Page";
 ---
 <BaseLayout title={pageTitle} pageTitle={pageTitle}>
-    <h1>Главная страница</h1>
+    <Intro />
     <Banner />
-    <About />
 </BaseLayout>

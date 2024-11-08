@@ -1,0 +1,32 @@
+---
+import './style.scss'
+import Title from '@components/uikit/Title/Title.astro';
+import Text from '@components/uikit/Text/Text.astro'
+import Link from '@components/uikit/Link/Link.astro'
+import Choice from '@components/uikit/Choice/Choice.astro';
+import CallBack from '@components/uikit/CallBack/CallBack.astro';
+---
+
+<section class="intro">
+    <div class="intro__Slider">
+        <div class="intro__slide">
+            <picture class="intro__wrapper">
+                <source srcset='/images/intro/framgula-urban-desktop.webp'>
+                <img class="intro__image" src='/images/intro/framgula-urban-desktop.jpg'>
+            </picture>
+            <Title Tag="h1" class="intro">
+                Stylish doors
+            </Title>
+            <Text className="intro">
+                сделанные по новейшим разработкам из проверенных материалов
+            </Text>
+        </div>
+    </div>
+    <div class="intro__functional">
+        <Link href="tel:88005513240">8 800 551 32 40</Link>
+        <Choice />
+        <CallBack />
+    </div>
+<section/>
+
+<script src="./script.js"></script>
