@@ -2,20 +2,24 @@
 
 .choice {
     position: relative;
-    display: inline-block;
+    display: flex;
+    max-width: max-content;
 
     &__list {
         width:  100%;
         border: none;
         color: $cl-green;
+        padding-left: 17px;
         padding-right: 18px;
         background-color: transparent;
+        cursor: pointer;
     }
 
     &__list:focus-visible {
-        outline: 1px solid $cl-green;
-        outline-offset: 4px;
-        border-radius: 1px;
+        outline: none;
+        // outline: 1px solid $cl-green;
+        // outline-offset: 4px;
+        // border-radius: 1px;
     }
 
     &::after {

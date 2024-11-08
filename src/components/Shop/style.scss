@@ -248,6 +248,12 @@
             padding-bottom: 0;
         }
 
+
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .slider--shop {
         & .slick-arrow {
             bottom: 75px;
         }
@@ -261,6 +267,4 @@
         }
     }
 }
-
-// @media (min-width: #{$desktop + 'px'}) {}
 
