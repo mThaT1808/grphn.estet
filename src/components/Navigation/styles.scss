@@ -41,7 +41,7 @@
             background-repeat: no-repeat;
             position: absolute;
             right: 0;
-            top: calc(50% - 3.5px);
+            top: calc(50% - 3px);
         }
 
         &:first-child {
@@ -169,13 +169,13 @@
             padding: 0;
 
             flex-direction: row;
-            justify-content: left;
+            justify-content: space-between;
             column-gap: 10px;
         }
 
         &--header &__item{
             line-height: normal;
-            margin-right: 76px;
+            margin-right: calc(-45px + 12%);
 
 
             padding: 0 16px 0 0;
@@ -193,18 +193,22 @@
                 text-transform: none;
 
                 background: transparent;
-                margin-right: 217px;
+                margin-right: calc(57px + (-45px + 12%) * 2);
                 margin-top: 0;
                 margin-bottom: 0;
                 padding: 0;
                 order: 0;
 
                 &:last-child {
-                    margin-right: 0;
+                    margin-right: calc(-54px + 12%);
                 }
 
                 &::after {
                     display: none;
+                }
+
+                & ~ .nav__item:not(:last-child) {
+                    margin-right: 0
                 }
             }
 
