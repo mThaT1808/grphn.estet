@@ -37,6 +37,11 @@
         line-height: normal;
         margin-bottom: 14px;
     }
+
+    &--review {
+        margin-bottom: 16px;
+    }
+
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -93,6 +98,11 @@
         &--left{
             padding-left: 51px;
             margin-bottom: 30px;
+        }
+
+        &--review {
+            margin-bottom: 102px;
+            font-size: 36px;
         }
     }
 }
