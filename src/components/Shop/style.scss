@@ -131,14 +131,13 @@
         padding-bottom: 90px;
 
         &__wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 35px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 135px;
         }
 
         & .title--h2 {
             font-size: 36px;
-            grid-column: 1 / 2;
             margin-bottom: 29px;
         }
 
@@ -146,19 +145,16 @@
             margin-bottom: 23px;
         }
 
-        &__cell {
-            align-self: flex-end;
-        }
     }
 
     .choice--shop {
         margin-bottom: 42px;
+        align-self: flex-end;
     }
 
     .slider--shop {
         margin-right: -84px;
         margin-bottom: 42px;
-        grid-column: span 2;
 
         & .slider__item {
             padding-right: 56px;
@@ -201,39 +197,33 @@
 @media (min-width: #{$desktop-min + 'px'}) {
     .shop {
         padding-top: 61px;
-        padding-bottom: 59px;
+        padding-bottom: 90px;
 
         &__wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 0 50px;
+            gap: 0 155px;
         }
 
         & .title--h2 {
             font-size: 36px;
-            grid-column: 1 / 2;
         }
 
-        // & .title--shop {
-        //     margin-bottom: 23px;
-        // }
-
-        &__cell {
-            grid-column: 4 / 5;
+        & .title--shop {
+            margin-bottom: 23px;
         }
 
-        &__cell:has(.choice--shop) {
-            grid-column: 2 / 3;
+        & .link {
+            margin-left: auto;
+            margin-right: 350px;
         }
     }
 
-    // .choice--shop {
-    //     margin-bottom: 42px;
-    // }
+    .choice--shop {
+        margin-bottom: 42px;
+    }
 
     .slider--shop {
         margin-right: -200px;
-        grid-column: span 4;
+        flex: 0 0 auto;
 
         & .slider__item {
             padding-right: 56px;
@@ -259,7 +249,7 @@
         }
 
         & .slick-arrow {
-            bottom: 60px;
+            bottom: 75px;
         }
 
         & .slick-prev {
@@ -272,5 +262,5 @@
     }
 }
 
-@media (min-width: #{$desktop + 'px'}) {}
+// @media (min-width: #{$desktop + 'px'}) {}
 

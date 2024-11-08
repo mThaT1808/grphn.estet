@@ -15,6 +15,14 @@ $(function() {
                 breakpoint: 1024,
                 settings: {
                     rows:4,
+                    slidesPerRow: 3,
+                    centerMode: false,
+                }
+            },
+            {
+                breakpoint: 910,
+                settings: {
+                    rows:4,
                     slidesPerRow: 2,
                     centerMode: false,
                 }
@@ -31,7 +39,6 @@ $(function() {
         ]
     })
 
-    // (document).ready
     $(function () {
         function updateArrowOpacity(currentSlide, slideCount) {
             // Сброс стилей стрелок
