@@ -1,5 +1,7 @@
 ---
+import logotype from '@components/uikit/logotype/logotype.astro'
 import './style.scss'
+import Logotype from '@components/uikit/logotype/logotype.astro'
 ---
 
 <section class="about">
@@ -21,10 +23,12 @@ import './style.scss'
         <div class="about__inner">
             <div class="about__main">
                 <h2 class="about__title">ESTET</h2>
-                <p class="about__subtitle">Дверные технологии ESTET превращают квадратные метры в&nbsp;уютный Дом, пространство в&nbsp;удобное и&nbsp;прекрасное Жильё. Наши двери создают неповторимые ощущения, когда каждый день&nbsp;Вы открываете дверь и&nbsp;вместе с&nbsp;тем что-то новое, а&nbsp;главное&nbsp;&mdash; открываете с&nbsp;удовольствием!</p>
+                <p class="about__subtitle">Дверные технологии ESTET превращают квадратные метры в&nbsp;уютный Дом, пространство в&nbsp;удобное и&nbsp;прекрасное Жильё. Наши двери создают неповторимые ощущения, когда каждый день&nbsp;Вы открываете дверь и&nbsp;вместе с&nbsp;тем что-то новое, а&nbsp;главное&nbsp;&mdash; открываете с удовольствием!</p>
             </div>
             <div class="about__wrapper about__wrapper--solution">
                 <picture class="about__image-box about__image-box--solution">
+                    <source srcset="/public/images/about/solution-tablet.webp" type="image/webp" media="(min-width:768px)" >
+                    <source srcset="/public/images/about/solution-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
                     <source srcset="/public/images/about/solution-mobile.webp" type="image/webp">
                     <img class="about__image about__image--solution" src="/public/images/about/solution-mobile.jpg" alt="">
                 </picture>
@@ -35,14 +39,16 @@ import './style.scss'
             </div>
             <div class="about__wrapper about__wrapper--empty">
                 <picture class="about__image-box about__image-box--empty">
-                    <source srcset="/public/images/about/solution-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--empty" src="/public/images/about/solution-mobile.jpg" alt="">
+                    <source srcset="/public/images/about/empty-tablet.webp" type="image/webp">
+                    <img class="about__image about__image--empty" src="/public/images/about/empty-tablet.jpg" alt="">
                 </picture>
             </div>
             <div class="about__wrapper about__wrapper--quality">
                 <picture class="about__image-box about__image-box--quality">
-                    <source srcset="/public/images/about/solution-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--quality" src="/public/images/about/solution-mobile.jpg" alt="">
+                    <source srcset="/public/images/about/quality-tablet.webp" type="image/webp" media="(min-width:768px)" >
+                    <source srcset="/public/images/about/quality-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
+                    <source srcset="/public/images/about/quality-mobile.webp" type="image/webp">
+                    <img class="about__image about__image--quality" src="/public/images/about/quality-mobile.jpg" alt="">
                 </picture>
                 <div class="about__descr about__descr--quality">
                     <p class="about__caption">Высокое качество</p>
@@ -51,8 +57,10 @@ import './style.scss'
             </div>
             <div class="about__wrapper about__wrapper--tech">
                 <picture class="about__image-box about__image-box--tech">
-                    <source srcset="/public/images/about/solution-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--tech" src="/public/images/about/solution-mobile.jpg" alt="">
+                    <source srcset="/public/images/about/tech-tablet.webp" type="image/webp" media="(min-width:768px)" >
+                    <source srcset="/public/images/about/tech-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
+                    <source srcset="/public/images/about/tech-mobile.webp" type="image/webp">
+                    <img class="about__image about__image--tech" src="/public/images/about/tech-mobile.jpg" alt="">
                 </picture>
                 <div class="about__descr about__descr--tech">
                     <p class="about__caption">Новые технологии</p>
@@ -61,16 +69,17 @@ import './style.scss'
             </div>
             <div class="about__wrapper about__wrapper--company">
                 <picture class="about__image-box about__image-box--company">
-                    <source srcset="/public/images/about/solution-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--company" src="/public/images/about/solution-mobile.jpg" alt="">
+                    <source srcset="/public/images/about/company-mobile.webp" type="image/webp">
+                    <img class="about__image about__image--company" src="/public/images/about/company-mobile.jpg" alt="">
                 </picture>
                 <div class="about__descr about__descr--company">
                     <p class="about__caption">Компания</p>
                     <p class="about__subcaption">Мы&nbsp;работаем на&nbsp;рынке производства дверей с&nbsp;2002&nbsp;года. За&nbsp;это время мы&nbsp;зарекомендовали себя как надежный партнер и&nbsp;динамично развивающаяся компания.</p>
                 </div>
             </div>
-            <!-- <div class="logo">
-            </div> -->
+            <div class="about__wrapper about__wrapper--logo">
+                <Logotype />
+            </div>
         </div>
     </div>
 </section>
