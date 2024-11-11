@@ -247,6 +247,20 @@
             opacity: 0;
         }
 
+        &__dot--quality {
+            top: 24%;
+            right: 41%;
+        }
+
+        &__dot--quality:hover ~ &__image-box--quality {
+            transform: translateY(-53%);
+            height: 700px;
+        }
+
+        &__dot--quality:hover ~ &__descr--quality {
+            display: block;
+        }
+
         &__dot--company {
             top: 8%;
             right: 4%;
@@ -315,11 +329,24 @@
         }
 
         &__wrapper--quality {
+            position: relative;
             margin-bottom: 0;
             width: 40%;
             height: 63.5%;
             order: 5;
-            transform: translate(0, -57.5%)
+            transform: translate(0, -57.5%);
+        }
+
+        &__descr--quality {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 45px;
+            height: 42.5%;
+            width: 100%;
+            color: $cl-white;
+            background-color: $cl-green;
+            transform: translateY(100%);
         }
 
         &__wrapper--tech {
