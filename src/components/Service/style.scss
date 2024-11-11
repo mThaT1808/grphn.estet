@@ -1,7 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .service {
-    padding: 63px 0 42px;
+    padding: 63px 0 78px;
 
 
     &__list {
@@ -10,7 +10,7 @@
     }
 
     &__item {
-        margin: 0 0 56px -25px;
+        margin: 0 0 46px -25px;
         list-style: none;
 
         &:last-child {
@@ -91,6 +91,12 @@
     }
 
     @media (min-width: ($desktop-min + 'px')) {
+
+        &__list {
+            margin: 0;
+            column-gap: 42px;
+        }
+
         &__item {
             &--guarantee {
                 padding-top: 410px;
