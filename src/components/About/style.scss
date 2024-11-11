@@ -1,8 +1,8 @@
 @import "../../../node_modules/slick-slider/slick/slick.scss";
-@import "../../../node_modules/slick-slider/slick/slick-theme.scss";
 @import '../../assets/styles/global.scss';
 
 .about {
+    margin: 0 auto;
     padding: 50px 0;
 
 	&__container {
@@ -57,6 +57,7 @@
     }
 
     &__inner {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -109,6 +110,10 @@
             order: 1;
         }
 
+        &__subtitle {
+            margin-bottom: 0;
+        }
+
         &__wrapper {
             display: inline-block;
             width: 42%;
@@ -116,6 +121,7 @@
 
         &__image-box {
             margin-bottom: 0;
+            height: 100%;
         }
 
         &__caption {
@@ -182,6 +188,84 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .about {
+        max-width: 1600px;
+
+        &__container {
+            position: relative;
+            max-height: 900px;
+            height: 56.25vw;
+            overflow: hidden;
+        }
+
+        &__dot {
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+
+        }
+
+        &__main {
+            padding: 20px;
+            width: 40%;
+            height: 36.5%;
+        }
+
+        &__wrapper--solution {
+            margin-bottom: 0;
+            padding-right: 0;
+            width: 40%;
+            height: 73%;
+        }
+
+        &__image-box--solution,
+        &__image-box--quality {
+            max-height: fit-content;
+        }
+
+        &__wrapper--empty {
+            width: 20%;
+            max-height: 36.5%;
+        }
+
+        &__wrapper--quality {
+            margin-bottom: 0;
+            width: 40%;
+            height: 63.5%;
+            order: 5;
+            transform: translate(0, -57.5%)
+        }
+
+        &__wrapper--tech {
+            width: 45%;
+            height: 27%;
+        }
+
+        &__wrapper--company {
+            display: block;
+            position: absolute;
+            top: 36.5%;
+            left: 40%;
+            padding: 20px;
+            width: 20%;
+            height: 36.5%;
+            order: 3;
+        }
+
+        &__descr--company {
+            padding: 0;
+        }
+
+        &__wrapper--logo {
+            order: 3;
+            width: 15%;
+            height: 27%;
         }
     }
 }

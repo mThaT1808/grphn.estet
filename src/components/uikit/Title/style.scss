@@ -41,6 +41,11 @@
         line-height: normal;
         margin-bottom: 14px;
     }
+
+    &--review {
+        margin-bottom: 16px;
+    }
+
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -53,8 +58,14 @@
         }
 
         &--service {
+            font-size: 48px;
+            line-height: 57px;
             margin-bottom: 62px;
             text-align: left;
+        }
+
+        &--review {
+            margin-bottom: 47px;
         }
 
         &--shop {
@@ -98,6 +109,11 @@
         &--left{
             padding-left: 51px;
             margin-bottom: 30px;
+        }
+
+        &--review {
+            margin-bottom: 102px;
+            font-size: 36px;
         }
     }
 }
