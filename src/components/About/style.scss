@@ -1,8 +1,8 @@
 @import "../../../node_modules/slick-slider/slick/slick.scss";
-@import "../../../node_modules/slick-slider/slick/slick-theme.scss";
 @import '../../assets/styles/global.scss';
 
 .about {
+    margin: 0 auto;
     padding: 50px 0;
 
 	&__container {
@@ -57,6 +57,7 @@
     }
 
     &__inner {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -193,15 +194,21 @@
 
 @media (min-width: #{$desktop + 'px'}) {
     .about {
-        width: 100%;
-        height: 56.25vw;
         max-width: 1600px;
-        max-height: 900px;
 
         &__container {
-            width: 100%;
-            height: 100%;
+            position: relative;
+            max-height: 900px;
+            height: 56.25vw;
             overflow: hidden;
+        }
+
+        &__dot {
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+
         }
 
         &__main {
@@ -217,6 +224,11 @@
             height: 73%;
         }
 
+        &__image-box--solution,
+        &__image-box--quality {
+            max-height: fit-content;
+        }
+
         &__wrapper--empty {
             width: 20%;
             max-height: 36.5%;
@@ -226,15 +238,20 @@
             margin-bottom: 0;
             width: 40%;
             height: 63.5%;
-            order: 4;
+            order: 5;
+            transform: translate(0, -57.5%)
         }
 
         &__wrapper--tech {
             width: 45%;
+            height: 27%;
         }
 
         &__wrapper--company {
             display: block;
+            position: absolute;
+            top: 36.5%;
+            left: 40%;
             padding: 20px;
             width: 20%;
             height: 36.5%;
@@ -246,8 +263,9 @@
         }
 
         &__wrapper--logo {
-            height: 15.5%;
-            width: 15.5%;
+            order: 3;
+            width: 15%;
+            height: 27%;
         }
     }
 }
