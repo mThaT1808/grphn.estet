@@ -46,7 +46,7 @@
     }
 
     &--intro {
-        display:none
+        display: none;
     }
 }
 
@@ -55,6 +55,18 @@
         &--shop {
             margin-bottom: 42px;
             align-self: flex-end;
+        }
+
+        &--intro {
+            display: flex;
+
+            .icon {
+                color: $cl-white;
+            }
+        }
+
+        &--intro &__list {
+            color: $cl-white;
         }
     }
 }

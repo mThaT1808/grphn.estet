@@ -77,6 +77,7 @@
 
 @media (min-width: (global.$tablet + 'px')) {
     .header {
+        padding: 50px 0;
 
         &__functional {
             max-width: 400px;

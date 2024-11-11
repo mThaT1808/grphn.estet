@@ -2,7 +2,9 @@
 
 .intro {
     position: relative;
+    margin: 0 auto;
     height: 670px;
+    max-width: 1600px;
 
 
     &__functional {
@@ -16,6 +18,7 @@
     &__slider {
         position: absolute;
         height: 100%;
+        width: 100%;
     }
 
     &__slide {
@@ -28,6 +31,7 @@
 
     &__image {
         height: 100%;
+        width: 100%;
         object-fit: cover;
         object-position: -170px;
     }
@@ -56,6 +60,7 @@
         position: absolute;
         bottom: 42px;
         width:  43px;
+        height: 32px;
         line-height: 9px;
         font-size: 9px;
         direction: rtl;
@@ -74,12 +79,40 @@
 
 @media (min-width: ($tablet + 'px')) {
     .intro {
+        height: 1024px;
 
+        &__container {
+            padding: 0 82px;
+            top: 426px;
+        }
+
+        &__button {
+            top: 446px;
+            width: 56px;
+
+            &--left {
+                left: 13px;
+            }
+
+            &--right {
+                left: calc(100% - (13px + 56px));
+            }
+        }
+
+        &__functional {
+            width: calc(100% - 82px);
+            padding-top: 45px;
+            padding-left: 60px;
+            padding-bottom: 147px;
+        }
     }
 }
 
 @media (min-width: ($desktop + 'px')) {
     .intro {
 
+        &__image {
+            object-position: 0px;
+        }
     }
 }

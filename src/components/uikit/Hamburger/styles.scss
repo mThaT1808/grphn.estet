@@ -16,6 +16,12 @@
     padding-bottom: 5px;
 }
 
+@media (min-width: ($tablet + 'px')) {
+    .hamburger {
+        padding: 0;
+    }
+}
+
 @media (min-width: ($desktop + 'px')) {
 
     .hamburger {
