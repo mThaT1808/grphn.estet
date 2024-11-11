@@ -8,21 +8,21 @@ import './style.scss'
         <ul class="product__list">
             <li class="product__item product__item--full product__item--rank-one product__item--right">
                 <p class="product__text product__text--inner">Межкомнатные двери</p>
-                <picture class="product__container">
+                <picture class="product__container product__container--big">
                     <img class="product__image" src="/images/product/inner-mobile.jpg" 
                     width="100%" height="251" alt="">
                 </picture>    
             </li>
             <li class="product__item product__item--rank-three product__item--no-gap">
-                <picture class="product__container">
+                <picture class="product__container product__container--desktop-small product__container--right">
                     <img class="product__image product__image--small" src="/images/product/hidden-mobile.jpg" 
                     width="100%" height="226" alt="">
                 </picture> 
                 <p class="product__text product__text--hidden">Скрытые двери</p>
             </li>
-            <li class="product__item product__item--rank-three">
+            <li class="product__item product__item--rank-three product__item--tablet-no-gap">
                 <p class="product__text product__text--decorate">Декоративные рейки</p>
-                <picture class="product__container">
+                <picture class="product__container product__container--desktop-small">
                     <img class="product__image product__image--small" src="/images/product/decorate-mobile.jpg" 
                     width="100%" height="226" alt="">
                 </picture> 
@@ -34,17 +34,18 @@ import './style.scss'
                     оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.
                 </p>        
             </li>
-            <li class="product__item product__item--desktop-rank-four">
+            <li class="product__item product__item--desktop-rank-four product__item--full product__item--overflow">
                 <p class="product__text product__text--slide">Раздвижные двери</p>
-                <picture class="product__container">
-                    <img class="product__image" src="/images/product/sliding-mobile.jpg" 
-                    width="100%" height="251" alt="">
+                <picture class="product__container product__container--overflow">
+                    <source srcset="images/product/door-tablet.png" media="(min-width:768px)"> 
+                    <img class="product__image product__image--big" src="/images/product/door-mobile.png" 
+                    width="112" height="235" alt="">
                 </picture> 
             </li>
-            <li class="product__item product__item--desktop-rank-two">
+            <li class="product__item product__item--desktop-rank-two product__item--tablet-no-gap">
                 <p class="product__text product__text--enter">Входные двери</p>
-                <picture class="product__container">
-                    <img class="product__image" src="/images/product/enter-mobile.jpg" 
+                <picture class="product__container product__container--small product__container--big">
+                    <img class="product__image product__image--tablet-small" src="/images/product/enter-mobile.jpg" 
                     width="100%" height="251" alt="">
                 </picture> 
             </li>
@@ -55,24 +56,24 @@ import './style.scss'
                     успеха партнеров.
                 </p>
             </li>
-            <li class="product__item product__item--rank-last product__item--right">
+            <li class="product__item product__item--rank-last product__item--right product__item--full">
                 <p class="product__text product__text--partition">Межкомнатные перегородки</p>
-                <picture class="product__container">
+                <picture class="product__container product__container--big">
                     <img class="product__image" src="/images/product/partition-mobile.jpg" 
                     width="100%" height="251" alt="">
                 </picture> 
             </li>
-            <li class="product__item product__item--no-gap">
+            <li class="product__item product__item--no-gap product__item--only-left">
                 <picture class="product__container">
-                    <img class="product__image product__image--small" src="/images/product/panels-mobile.jpg" 
+                    <img class="product__image product__image--small product__image--tiny" src="/images/product/panels-mobile.jpg" 
                     width="100%" height="226" alt="">
                 </picture> 
                 <p class="product__text product__text--panels">Стеновые панели</p>
             </li>
-            <li class="product__item product__item--full product__item--desktop-rank-last">
+            <li class="product__item product__item--desktop-rank-last product__item--only-right">
                 <p class="product__text product__text--boards">Плинтусы</p>
-                <picture class="product__container">
-                    <img class="product__image product__image--small" src="/images/product/boards-mobile.jpg" 
+                <picture class="product__container product__container--right">
+                    <img class="product__image product__image--small product__image--tiny" src="/images/product/boards-mobile.jpg" 
                     width="100%" height="226" alt="">
                 </picture> 
             </li>
