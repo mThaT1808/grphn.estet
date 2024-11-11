@@ -5,6 +5,14 @@
     line-height: 25px;
     color: $cl-gray-3c;
 
+    &--intro {
+        line-height: 25px;
+        letter-spacing: 0px;
+        color: $cl-white;
+
+        margin-top: 0;
+    }
+
     &--service {
         margin: 0 0 30px;
         text-align: right;

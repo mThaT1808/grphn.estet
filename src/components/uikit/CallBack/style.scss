@@ -23,6 +23,23 @@
     &__text {
         margin: 0;
     }
+
+    &--intro {
+        margin: 0;
+        padding: 27px;
+        width: auto;
+        display: inline-block;
+        font-size: 0;
+        line-height: 0;
+        background-color: global.$cl-lite-green;
+        border-width: 0;
+    }
+
+    &--intro &__icon {
+        font-size: 25px;
+
+        margin-right: 0;
+    }
 }
 
 

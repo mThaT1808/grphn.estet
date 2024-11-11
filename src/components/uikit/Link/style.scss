@@ -39,4 +39,10 @@
             background-color: $cl-gray-97;
         }
     }
+
+    // Специфичные
+
+    &--intro {
+        display: none;
+    }
 }

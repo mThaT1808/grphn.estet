@@ -11,8 +11,12 @@
     color: $cl-gray-3c;
 
     &--intro {
-        margin: 0 0 8px 0;
+        font-family: 'Lora';
+        color: $cl-white;
         font-size: 50px;
+        font-weight: 400;
+
+        margin: 0 0 12px 0;
     }
 
     &--service {

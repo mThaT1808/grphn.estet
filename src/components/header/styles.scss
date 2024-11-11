@@ -1,9 +1,10 @@
 @use '/src/assets/styles/global.scss';
 
 .header {
-    position: relative;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
     color: global.$cl-white;
-    background-color: global.$cl-black;
 
     padding: 18px 0;
 

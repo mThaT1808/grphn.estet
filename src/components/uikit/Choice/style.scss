@@ -44,6 +44,10 @@
     &--shop {
         margin-bottom: 39px;
     }
+
+    &--intro {
+        display:none
+    }
 }
 
 @media (min-width: #{$tablet + 'px'}) {
