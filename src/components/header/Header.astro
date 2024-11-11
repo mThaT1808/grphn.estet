@@ -10,6 +10,7 @@ import Social from '@components/uikit/Social/Social.astro'
 import Container from '@components/container/container.astro'
 import './styles.scss'
 import Icon from '@components/uikit/Icon/Icon.astro'
+import CallBack from '@components/uikit/CallBack/CallBack.astro'
 
 
 const socials = [
@@ -73,14 +74,7 @@ const navList = [
                     </li>
                 </ul>
                 <Hamburger type="close"/>
-                <div class="call-back">
-                    <div class="call-back__icon">
-                        <Icon name="phone" mod="white"/>
-                    </div>
-                    <p class="call-back__text">
-                        Обратный звонок
-                    </p>
-                </div>
+                <CallBack modifier="header"/>
                 <Personal />
             </header>
             <Navigation list={navList} modifier="--header"/>

@@ -16,8 +16,7 @@
   "dependencies": {
     "astro": "^1.9.0",
     "fontagon": "^1.1.1",
-    "jquery": "^3.7.1",
-    "slick-slider": "^1.8.2"
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "@octokit/rest": "^19.0.7",
@@ -41,6 +40,7 @@
     "prettier-plugin-astro": "^0.8.0",
     "sass": "^1.57.1",
     "slick-carousel": "^1.8.1",
+    "slick-slider": "^1.8.2",
     "template-file": "^6.0.1",
     "touch": "^3.1.0"
   }

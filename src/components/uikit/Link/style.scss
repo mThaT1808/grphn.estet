@@ -39,4 +39,42 @@
             background-color: $cl-gray-97;
         }
     }
+
+    // Специфичные
+
+    &--intro {
+        display: none;
+    }
+}
+
+@media (min-width: ($tablet + 'px')) {
+
+    .link {
+
+        &--intro {
+            letter-spacing: 1px;
+            color: $cl-white;
+            font-size: 24px;
+            line-height: 33px;
+            font-weight: bold;
+            margin-bottom: 31px;
+
+            display: inline-block;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+
+    .link {
+
+        &--intro {
+            margin-left: 77px;
+            margin-bottom: 20px;
+        }
+    }
 }
