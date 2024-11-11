@@ -19,7 +19,6 @@
         background-color: $cl-green;
     }
 
-    // Общие
     &--block {
         display: block;
     }
@@ -38,5 +37,31 @@
         &:hover::after {
             background-color: $cl-gray-97;
         }
+    }
+
+    &--white {
+        color: $cl-white;
+
+        &::after {
+            background-color: $cl-white;
+        }
+    }
+
+    &--no-line {
+        &::after {
+            display: none;
+        }
+    }
+
+    &--tel {
+        font-size: 36px;
+        line-height: normal;
+        font-weight: 700;
+    }
+
+    &--footer {
+        font-size: 16px;
+        margin-bottom: 30px;
+        width: max-content;
     }
 }

@@ -2,6 +2,7 @@
 import Copyright from "@components/Copyright/Copyright.astro";
 import Navigation from "@components/Navigation/Navigation.astro";
 import Feedback from "@components/Feedback/Feedback.astro";
+import Contact from "@components/Contact/Contact.astro";
 import './styles.scss';
 const navList = [
     {
@@ -42,6 +43,7 @@ const navList = [
 
 <footer class="footer">
     <Feedback />
+    <Contact />
     <Navigation list={navList} modifier="--footer"/>
     <Copyright />
 </footer>

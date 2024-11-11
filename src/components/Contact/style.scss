@@ -1,0 +1,12 @@
+@import '../../assets/styles/global.scss';
+
+.contact {
+    padding-top: 58px;
+    padding-bottom: 58px;
+    background-color: $cl-black;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}

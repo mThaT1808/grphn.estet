@@ -1,0 +1,24 @@
+---
+import Container from "@components/container/container.astro";
+import Social from "@components/uikit/Social/Social.astro";
+import Link from "@components/uikit/Link/Link.astro";
+import './style.scss'
+
+const socials = [
+    {href: "javascript:void(0);", title: "instagram", icon: "instagram"},
+    {href: "javascript:void(0);", title: "viber", icon: "viber"},
+    {href: "javascript:void(0);", title: "youtube", icon: "youtube"},
+];
+---
+
+<div class="contact">
+    <Container>
+        <div class="contact__wrapper">
+            <Social socials = {socials} class="social--footer"/>
+            <Link href='javascript:void(0);' class="link--white link--footer">Заказать звонок</Link>
+            <Link href="tel:88005513240" class="link--white link--no-line link--tel">8 800 551 32 40</Link>
+    </div>
+    </Container>
+</div>
+
+<script src="./script.js"></script>
