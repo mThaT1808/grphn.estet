@@ -1,0 +1,29 @@
+---
+import Title from '@components/uikit/Title/Title.astro'
+import './style.scss'
+import Text from '@components/uikit/Text/Text.astro'
+import Container from '@components/container/container.astro'
+---
+
+
+<section class="sale">
+    <Container>
+        <div class="sale-slider">
+            <div class="sale-slider__container">
+                <picture class="sale-slider__wrapper">
+                    <source srcset="/images/sale/sale-banner.webp">
+                    <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
+                </picture>
+                <Title class='sale-slider' Tag='h3'>–20%</Title>
+                <Text class="sale-slider">
+                    на&nbsp;коллекции MIO,&nbsp;ENGLAND,&nbsp;FIGURE
+                </Text>
+            </div>
+            <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title>
+            <Text class="sale">Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
+            <Text  class="sale__end">Акция действует до 15 февраля 2021 г.</p>
+        </div>
+    </Container>
+</section>
+
+<script src="./script.js"></script>
