@@ -11,8 +11,12 @@
     color: $cl-gray-3c;
 
     &--intro {
-        margin: 0 0 8px 0;
+        font-family: 'Lora';
+        color: $cl-white;
         font-size: 50px;
+        font-weight: 400;
+
+        margin: 0 0 12px 0;
     }
 
     &--service {
@@ -49,7 +53,7 @@
         font-size: 36px;
 
         &--intro {
-            margin-bottom: 68px;
+            margin-bottom: 108px;
             font-size: 100px;
         }
 
@@ -79,12 +83,13 @@
     }
 }
 
-@media (min-width: ($desktop-min + 'px')) {
+@media (min-width: ($desktop + 'px')) {
     .title {
         font-size: 49px;
 
         &--intro {
             font-size: 150px;
+            margin-bottom: 75px;
         }
 
         &--service {

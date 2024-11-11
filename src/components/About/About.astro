@@ -69,6 +69,8 @@ import Logotype from '@components/uikit/logotype/logotype.astro'
             <div class="about__wrapper about__wrapper--company">
                 <a href="javascript:void(0);" class="about__dot about__dot--company"></a>
                 <picture class="about__image-box about__image-box--company">
+                    <source srcset="/images/about/company-desktop.webp" type="image/webp" media="(min-width:1366px)" >
+                    <source srcset="/images/about/company-desktop.jpg" type="image/jpg" media="(min-width:1366px)" >
                     <source srcset="/images/about/company-mobile.webp" type="image/webp">
                     <img class="about__image about__image--company" src="/images/about/company-mobile.jpg" alt="">
                 </picture>

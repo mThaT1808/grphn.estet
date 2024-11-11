@@ -1,0 +1,17 @@
+---
+import Icon from '../Icon/Icon.astro'
+import './style.scss'
+
+const modifier = Astro.props.modifier;
+---
+
+<a href="javascript:void(0);" class={modifier? `call-back  call-back--${modifier}`:'call-back '}>
+    <div class="call-back__icon">
+        <Icon name="phone" mod="white"/>
+    </div>
+    <p class="call-back__text">
+        Обратный звонок
+    </p>
+</a>
+
+<script src="./script.js"></script>
