@@ -55,6 +55,11 @@
     &__button {
         display: block;
         background-color: transparent;
+        background-image: url("/images/intro/arrow-344.svg");
+        background-size: auto 9px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        z-index: 1;
         border: 0px;
         padding: 0;
         position: absolute;
@@ -95,7 +100,8 @@
             }
 
             &--right {
-                left: calc(100% - (13px + 56px));
+                left: unset;
+                right: 13px;
             }
         }
 
@@ -110,9 +116,37 @@
 
 @media (min-width: ($desktop + 'px')) {
     .intro {
+        height: 900px;
+
 
         &__image {
             object-position: 0px;
+        }
+
+        &__container {
+            padding: 0px 172px;
+            top: 550px;
+        }
+
+        &__functional {
+            width: auto;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-top: 121px;
+        }
+
+        &__button {
+            top: 507px;
+
+            &--left {
+                left: 80px;
+            }
+
+            &--right {
+                right: 78px;
+                width: 344px;
+                top: 616px;
+            }
         }
     }
 }

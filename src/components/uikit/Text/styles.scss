@@ -49,11 +49,16 @@
         }
     }
 
-    @media(min-width: ($desktop-min + 'px')) {
+    @media(min-width: ($desktop + 'px')) {
         &--left {
             padding-left: 51px;
             padding-right: 71px;
             margin-bottom: 61px;
+        }
+
+        &--intro {
+            padding-left: 5px;
+            max-width: 500px;
         }
     }
 }

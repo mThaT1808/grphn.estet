@@ -67,3 +67,14 @@
         }
     }
 }
+
+@media (min-width: ($desktop + 'px')) {
+
+    .link {
+
+        &--intro {
+            margin-left: 77px;
+            margin-bottom: 20px;
+        }
+    }
+}

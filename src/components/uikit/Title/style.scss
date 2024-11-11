@@ -72,12 +72,13 @@
     }
 }
 
-@media (min-width: ($desktop-min + 'px')) {
+@media (min-width: ($desktop + 'px')) {
     .title {
         font-size: 49px;
 
         &--intro {
             font-size: 150px;
+            margin-bottom: 75px;
         }
 
         &--service {
