@@ -11,8 +11,12 @@
     color: $cl-gray-3c;
 
     &--intro {
-        margin: 0 0 8px 0;
+        font-family: 'Lora';
+        color: $cl-white;
         font-size: 50px;
+        font-weight: 400;
+
+        margin: 0 0 12px 0;
     }
 
     &--service {
@@ -37,6 +41,11 @@
         line-height: normal;
         margin-bottom: 14px;
     }
+
+    &--review {
+        margin-bottom: 16px;
+    }
+
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -44,13 +53,19 @@
         font-size: 36px;
 
         &--intro {
-            margin-bottom: 68px;
+            margin-bottom: 108px;
             font-size: 100px;
         }
 
         &--service {
+            font-size: 48px;
+            line-height: 57px;
             margin-bottom: 62px;
             text-align: left;
+        }
+
+        &--review {
+            margin-bottom: 47px;
         }
 
         &--shop {
@@ -68,12 +83,13 @@
     }
 }
 
-@media (min-width: ($desktop-min + 'px')) {
+@media (min-width: ($desktop + 'px')) {
     .title {
         font-size: 49px;
 
         &--intro {
             font-size: 150px;
+            margin-bottom: 75px;
         }
 
         &--service {
@@ -93,6 +109,11 @@
         &--left{
             padding-left: 51px;
             margin-bottom: 30px;
+        }
+
+        &--review {
+            margin-bottom: 102px;
+            font-size: 36px;
         }
     }
 }

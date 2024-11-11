@@ -1,13 +1,35 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .text {
+    margin: 0;
     font-size: 14px;
     line-height: 25px;
     color: $cl-gray-3c;
 
+    &--intro {
+        line-height: 25px;
+        letter-spacing: 0px;
+        color: $cl-white;
+
+        margin-top: 0;
+    }
+
     &--service {
-        margin: 0 0 30px;
+        margin: 0 0 18px;
         text-align: right;
+    }
+
+    &--review {
+        width: 53%;
+        color: $cl-white;
+        line-height: 20px;
+
+        &-small {
+            width: 100%;
+            padding-left: 38px;
+            font-size: 12px;
+            line-height: 21px;
+        }
     }
 
     &--left {
@@ -27,18 +49,46 @@
             text-align: left;
         }
 
+        &--review {
+            width: 100%;
+            line-height: 22px;
+        }
+
         &--left {
             padding-left: 31px;
             padding-right: 46px;
             margin-bottom: 41px;
         }
+
+        &--intro {
+            line-height: 27px;
+            font-size: 21px;
+            letter-spacing: 0px;
+            padding-left: 96px;
+        }
     }
 
-    @media(min-width: ($desktop-min + 'px')) {
+    @media(min-width: ($desktop + 'px')) {
         &--left {
             padding-left: 51px;
             padding-right: 71px;
             margin-bottom: 61px;
         }
+
+        &--intro {
+            padding-left: 5px;
+            max-width: 500px;
+        }
     }
+
+    @media (min-width: ($desktop + 'px')) {
+        &--review-small {
+            max-width: 230px;
+            margin-left: auto;
+        }
+
+        &--service {
+            padding-right: 60px;
+        }
+    } 
 }

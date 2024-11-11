@@ -1,0 +1,81 @@
+---
+import Container from '@components/container/container.astro'
+import './style.scss'
+---
+
+<section class="product">
+    <Container>
+        <ul class="product__list">
+            <li class="product__item product__item--full product__item--rank-one product__item--right">
+                <p class="product__text product__text--inner">Межкомнатные двери</p>
+                <picture class="product__container">
+                    <img class="product__image" src="/images/product/inner-mobile.jpg" 
+                    width="100%" height="251" alt="">
+                </picture>    
+            </li>
+            <li class="product__item product__item--rank-three product__item--no-gap">
+                <picture class="product__container">
+                    <img class="product__image product__image--small" src="/images/product/hidden-mobile.jpg" 
+                    width="100%" height="226" alt="">
+                </picture> 
+                <p class="product__text product__text--hidden">Скрытые двери</p>
+            </li>
+            <li class="product__item product__item--rank-three">
+                <p class="product__text product__text--decorate">Декоративные рейки</p>
+                <picture class="product__container">
+                    <img class="product__image product__image--small" src="/images/product/decorate-mobile.jpg" 
+                    width="100%" height="226" alt="">
+                </picture> 
+                </li>
+            <li class="product__item product__item--rank-two">
+                <p class="product__text product__text--right">
+                    В компании ESTET вы можете купить качественные межкомнатные двери. 
+                    Богатый выбор является гарантией того, что вы обязательно найдете модель, 
+                    оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.
+                </p>        
+            </li>
+            <li class="product__item product__item--desktop-rank-four">
+                <p class="product__text product__text--slide">Раздвижные двери</p>
+                <picture class="product__container">
+                    <img class="product__image" src="/images/product/sliding-mobile.jpg" 
+                    width="100%" height="251" alt="">
+                </picture> 
+            </li>
+            <li class="product__item product__item--desktop-rank-two">
+                <p class="product__text product__text--enter">Входные двери</p>
+                <picture class="product__container">
+                    <img class="product__image" src="/images/product/enter-mobile.jpg" 
+                    width="100%" height="251" alt="">
+                </picture> 
+            </li>
+            <li class="product__item product__item--rank-four">
+                <p class="product__text product__text--left">
+                    Мы украшаем жизнь покупателей своей качественной продукцией, 
+                    даря тепло и уют в их дома, создаем все условия для самореализации сотрудников и 
+                    успеха партнеров.
+                </p>
+            </li>
+            <li class="product__item product__item--rank-last product__item--right">
+                <p class="product__text product__text--partition">Межкомнатные перегородки</p>
+                <picture class="product__container">
+                    <img class="product__image" src="/images/product/partition-mobile.jpg" 
+                    width="100%" height="251" alt="">
+                </picture> 
+            </li>
+            <li class="product__item product__item--no-gap">
+                <picture class="product__container">
+                    <img class="product__image product__image--small" src="/images/product/panels-mobile.jpg" 
+                    width="100%" height="226" alt="">
+                </picture> 
+                <p class="product__text product__text--panels">Стеновые панели</p>
+            </li>
+            <li class="product__item product__item--full product__item--desktop-rank-last">
+                <p class="product__text product__text--boards">Плинтусы</p>
+                <picture class="product__container">
+                    <img class="product__image product__image--small" src="/images/product/boards-mobile.jpg" 
+                    width="100%" height="226" alt="">
+                </picture> 
+            </li>
+        </ul>
+    </Container>
+</section>

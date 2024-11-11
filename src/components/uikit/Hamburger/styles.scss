@@ -8,9 +8,18 @@
     align-items: center;
     background-color: transparent;
     border: 0px transparent;
-    font-size: 29px;
+    font-size: 30px;
 
     cursor: pointer;
+
+    padding-left: 8px;
+    padding-bottom: 5px;
+}
+
+@media (min-width: ($tablet + 'px')) {
+    .hamburger {
+        padding: 0;
+    }
 }
 
 @media (min-width: ($desktop + 'px')) {
