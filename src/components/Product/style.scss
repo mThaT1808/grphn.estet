@@ -1,0 +1,180 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.product {
+    padding: 25px 0 50px 0;
+
+    &__list {
+        margin: 0 -25px;
+        padding: 0;
+    }
+
+    &__item {
+        list-style: none;
+        width: 100%;
+        position: relative;
+        display: flex;
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--no-gap {
+            margin-bottom: 0;
+        }
+
+        &--right {
+            padding-left: 25px;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 600;
+        color: $cl-gray-3c;
+
+        &--inner {
+            position: absolute;
+            width: 145px;
+            top: 21px;
+            right: 21px;
+            color: $cl-white;
+        }
+
+        &--hidden {
+            padding: 24px 82px 0 21px;
+        }
+
+        &--decorate {
+            margin-top: auto;
+            padding: 0 24px 39px 22px;
+        }
+
+        &--right {
+            padding: 25px 25px 0 111px;
+            font-size: 14px;
+            line-height: 25px;
+            text-align: right;
+        }
+
+        &--slide {
+            position: absolute;
+            top: 114px;
+            right: 44px;
+            width: 122px;
+        }
+
+        &--enter {
+            position: absolute;
+            left: 26px;
+            top: 21px;
+            width: 122px;
+            color: $cl-white;
+        }
+
+        &--left {
+            padding: 25px 111px 30px 25px;
+        }
+
+        &--partition {
+            position: absolute;
+            left: 47px;
+            bottom: 31px;
+            width: 153px;
+        }
+
+        &--panels {
+            margin-top: auto;
+            padding: 0 74px 37px 21px;
+        }
+
+        &--boards {
+            padding: 49px 27px 0 70px;
+        }
+    }
+
+    &__container {
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+
+    &__image {
+        width: 100%;
+        display: flex;
+        aspect-ratio: 350 / 251;
+
+        &--small {
+            aspect-ratio: 188 / 226;
+        }
+    }
+
+    @media (min-width: ($tablet + 'px')) {
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 50%;
+
+           &--full {
+            width: 100%;
+           }
+
+           &--rank-one {
+            order: -4;
+           }
+
+           &--rank-two {
+            order: -3;
+           }
+
+           &--rank-three {
+            order: -2;
+           }
+
+           &--rank-four {
+            order: -1;
+           }
+
+           &--rank-last {
+            order: 1;
+           }
+        }
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        &__item {
+            &--full {
+                width: 50%;
+            }
+
+            &--rank-two,
+            &--rank-last {
+                order: 0;
+            }
+
+            &--desktop-rank-two {
+                order: -3;
+            }
+
+            &--rank-three {
+                order: -2;
+            }
+
+            &--desktop-rank-four {
+                order: -1;
+            }
+
+            &--rank-four {
+                order: 1;
+            }
+
+            &--desktop-rank-last {
+                order: 2;
+            }
+        }
+    }
+}
