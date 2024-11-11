@@ -19,7 +19,6 @@
         background-color: $cl-green;
     }
 
-    // Общие
     &--block {
         display: block;
     }
@@ -41,6 +40,41 @@
     }
 
     // Специфичные
+
+    &--white {
+        color: $cl-white;
+
+        &::after {
+            background-color: $cl-white;
+        }
+    }
+
+    &--no-line {
+        &::after {
+            display: none;
+        }
+    }
+
+    &--tel {
+        font-size: 36px;
+        line-height: normal;
+        font-weight: 700;
+    }
+
+    &--footer {
+        font-size: 16px;
+        margin-bottom: 23px;
+        width: max-content;
+
+        @media (min-width: #{$tablet + 'px'}) {
+            display: none;
+        }
+
+        @media (min-width: #{$desktop + 'px'}) {
+            display: block;
+            margin-bottom: 25px;
+        }
+    }
 
     &--intro {
         display: none;

@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?8fd9b536cfc61df9f2fcf939e3ba4089") format("woff"),
-url("icons.woff2?8fd9b536cfc61df9f2fcf939e3ba4089") format("woff2");
+  src: url("icons.woff?19d70fbbd9e338643d9295d06ff365c6") format("woff"),
+url("icons.woff2?19d70fbbd9e338643d9295d06ff365c6") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -68,5 +68,7 @@ url("icons.woff2?8fd9b536cfc61df9f2fcf939e3ba4089") format("woff2");
 .icon-shape:before { content: "\f112"; }
 .icon-telegram:before { content: "\f113"; }
 .icon-tiny-arrow:before { content: "\f114"; }
-.icon-video:before { content: "\f115"; }
-.icon-vk:before { content: "\f116"; }
+.icon-viber:before { content: "\f115"; }
+.icon-video:before { content: "\f116"; }
+.icon-vk:before { content: "\f117"; }
+.icon-youtube:before { content: "\f118"; }
