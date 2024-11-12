@@ -1,0 +1,42 @@
+---
+import Arrow from '../Arrow/Arrow.astro'
+import Text from '../Text/Text.astro'
+import Title from '../Title/Title.astro'
+import './style.scss'
+---
+
+<div class="sale-slider">
+    <div class="slick-slide sale-slider__container">
+        <picture class="sale-slider__wrapper">
+            <source srcset="/images/sale/sale-banner.webp">
+            <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
+        </picture>
+        <div class="sale-slider__text">
+            <Title class='sale-slider' Tag='h3'>–20%</Title>
+            <Text class="sale-collection">
+                на&nbsp;коллекции MIO, ENGLAND, FIGURE
+            </Text>
+        </div>
+        <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title>
+        <Text class="sale">Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
+        <Text  class="sale__end">Акция действует до 15 февраля 2021 г.</p>
+    </div>
+    <div class="slick-slide sale-slider__container">
+        <picture class="sale-slider__wrapper">
+            <source srcset="/images/sale/sale-banner.webp">
+            <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
+        </picture>
+        <div class="sale-slider__text">
+            <Title class='sale-slider' Tag='h3'>–20%</Title>
+            <Text class="sale-collection">
+                на&nbsp;коллекции MIO, ENGLAND, FIGURE
+            </Text>
+        </div>
+        <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title>
+        <Text class="sale">Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
+        <Text  class="sale__end">Акция действует до 15 февраля 2021 г.</p>
+    </div>
+ </div>
+
+
+<script src="./script.js"></script>

@@ -46,6 +46,18 @@
         margin-bottom: 16px;
     }
 
+    &--sale {
+        display: none;
+    }
+
+    &--sale-slider {
+        font-size: 21px;
+        line-height: normal;
+        letter-spacing: 0px;
+        font-weight: bold;
+
+        display: inline;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {

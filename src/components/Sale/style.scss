@@ -1,0 +1,11 @@
+@use '/src/assets/styles/global.scss' as *;
+
+.sale {
+    position: relative;
+
+    &__arrow-box{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

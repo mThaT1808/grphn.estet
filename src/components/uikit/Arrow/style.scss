@@ -1,0 +1,50 @@
+@use '/src/assets/styles/global.scss' as *;
+
+.arrow {
+    font-size: 9px;
+    color: $cl-white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background-color: $cl-green;
+    border: 0;
+    cursor: pointer;
+
+    transition: color, background-color $animation-time;
+
+    &:hover {
+        background-color: $cl-lite-green;
+    }
+
+    // Направления
+
+    &--left,
+    &--top {
+        color: $cl-green;
+        background-color: $cl-white;
+
+        &:hover {
+            color: $cl-white;
+            background-color: $cl-lite-green;
+        }
+    }
+
+    &--left {
+        transform: rotate(180deg);
+    }
+
+    &--top {
+        transform: rotate(270deg);
+    }
+
+    &--down {
+        transform: rotate(90deg);
+    }
+
+    //модификаторы
+
+    &--sale-slider.arrow--left {
+        display: none;
+    }
+
+}
