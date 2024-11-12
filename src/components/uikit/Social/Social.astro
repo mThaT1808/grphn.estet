@@ -6,7 +6,7 @@ export interface Props {
 	socials: any;
 }
 
-const { socials, class: className } = Astro.props;
+const { socials, class: className, mod="white" } = Astro.props;
 ---
 
 <div class:list={["social", `${className}`]}>
@@ -14,7 +14,7 @@ const { socials, class: className } = Astro.props;
         {socials?.map((social) => (
             <li class="social__item">
                 <a href={social.href} title={social.title} class="social__link">
-                    <Icon name={social.icon} mod="white"/>
+                    <Icon name={social.icon} mod={mod}/>
                 </a>
             </li>
         ))}

@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?c07b11ec3bbef5b609e16c73a5bf92cf") format("woff"),
-url("icons.woff2?c07b11ec3bbef5b609e16c73a5bf92cf") format("woff2");
+  src: url("icons.woff?01768521b0167e3784588f7452e125de") format("woff"),
+url("icons.woff2?01768521b0167e3784588f7452e125de") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -49,24 +49,27 @@ url("icons.woff2?c07b11ec3bbef5b609e16c73a5bf92cf") format("woff2");
 }
 
 .icon-arrow-108:before { content: "\f101"; }
-.icon-basket:before { content: "\f102"; }
-.icon-burger-close:before { content: "\f103"; }
-.icon-burger:before { content: "\f104"; }
-.icon-facebook:before { content: "\f105"; }
-.icon-glass:before { content: "\f106"; }
-.icon-instagram:before { content: "\f107"; }
-.icon-kontora:before { content: "\f108"; }
-.icon-language:before { content: "\f109"; }
-.icon-like-white:before { content: "\f10a"; }
-.icon-like:before { content: "\f10b"; }
-.icon-location:before { content: "\f10c"; }
-.icon-logo-white:before { content: "\f10d"; }
-.icon-loupe:before { content: "\f10e"; }
-.icon-next-arrow:before { content: "\f10f"; }
-.icon-phone:before { content: "\f110"; }
-.icon-prev-arrow:before { content: "\f111"; }
-.icon-shape:before { content: "\f112"; }
-.icon-telegram:before { content: "\f113"; }
-.icon-tiny-arrow:before { content: "\f114"; }
-.icon-video:before { content: "\f115"; }
-.icon-vk:before { content: "\f116"; }
+.icon-arrow-26:before { content: "\f102"; }
+.icon-basket:before { content: "\f103"; }
+.icon-burger-close:before { content: "\f104"; }
+.icon-burger:before { content: "\f105"; }
+.icon-facebook:before { content: "\f106"; }
+.icon-glass:before { content: "\f107"; }
+.icon-instagram:before { content: "\f108"; }
+.icon-kontora:before { content: "\f109"; }
+.icon-language:before { content: "\f10a"; }
+.icon-like-white:before { content: "\f10b"; }
+.icon-like:before { content: "\f10c"; }
+.icon-location:before { content: "\f10d"; }
+.icon-logo-white:before { content: "\f10e"; }
+.icon-loupe:before { content: "\f10f"; }
+.icon-next-arrow:before { content: "\f110"; }
+.icon-phone:before { content: "\f111"; }
+.icon-prev-arrow:before { content: "\f112"; }
+.icon-shape:before { content: "\f113"; }
+.icon-telegram:before { content: "\f114"; }
+.icon-tiny-arrow:before { content: "\f115"; }
+.icon-viber:before { content: "\f116"; }
+.icon-video:before { content: "\f117"; }
+.icon-vk:before { content: "\f118"; }
+.icon-youtube:before { content: "\f119"; }

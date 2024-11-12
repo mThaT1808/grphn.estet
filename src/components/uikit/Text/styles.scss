@@ -6,6 +6,14 @@
     line-height: 25px;
     color: $cl-gray-3c;
 
+    &--intro {
+        line-height: 25px;
+        letter-spacing: 0px;
+        color: $cl-white;
+
+        margin-top: 0;
+    }
+
     &--service {
         margin: 0 0 18px;
         text-align: right;
@@ -31,6 +39,28 @@
         margin-bottom: 39px;
     }
 
+    &--sale {
+        color: $cl-gray-99;
+        line-height: 25px;
+        letter-spacing: 0.4px;
+        font-weight: 600;
+
+        margin-bottom: 20px;
+    }
+
+    &--sale-collection {
+        font-size: 21px;
+        line-height: normal;
+        letter-spacing: 0px;
+        font-weight: bold;
+
+        display: inline;
+
+        br {
+            display: none;
+        }
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 
@@ -51,13 +81,60 @@
             padding-right: 46px;
             margin-bottom: 41px;
         }
+
+        &--intro {
+            line-height: 27px;
+            font-size: 21px;
+            letter-spacing: 0px;
+            padding-left: 96px;
+        }
+
+        &--sale-collection {
+            color: $cl-white;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 0px;
+            font-weight: 400;
+
+            display: inline;
+
+            br {
+                display: inline;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -7px;
+                left: 0;
+                width: 100%;
+                border-bottom: 1px solid $cl-white;
+            }
+        }
+
+        &--sale {
+            font-size: 16px;
+            line-height: 1.35;
+
+            padding-right: 100px;
+            margin-bottom: 28px;
+        }
+
+        &--sale__end {
+            color: $cl-gray-99;
+        }
     }
 
-    @media(min-width: ($desktop-min + 'px')) {
+    @media(min-width: ($desktop + 'px')) {
         &--left {
             padding-left: 51px;
             padding-right: 71px;
             margin-bottom: 61px;
+        }
+
+        &--intro {
+            padding-left: 5px;
+            max-width: 500px;
         }
     }
 
@@ -70,5 +147,27 @@
         &--service {
             padding-right: 60px;
         }
-    } 
+
+        &--sale-collection {
+            padding-top: 40px;
+            width: 200px;
+            position: relative;
+            height: fit-content;
+        }
+
+        &--sale {
+            width: 50%;
+            padding: 0;
+        }
+
+        &--sale__end {
+            color: $cl-gray-99;
+            letter-spacing: -0.2px;
+            line-height: 36px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
 }

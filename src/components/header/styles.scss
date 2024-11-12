@@ -1,9 +1,10 @@
 @use '/src/assets/styles/global.scss';
 
 .header {
-    position: relative;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
     color: global.$cl-white;
-    background-color: global.$cl-black;
 
     padding: 18px 0;
 
@@ -58,30 +59,6 @@
         align-items: center;
     }
 
-    .call-back {
-        line-height: 18px;
-        text-transform: uppercase;
-
-        width: 68%;
-        margin-left: -22px;
-        padding: 26px 0px 20px 22px;
-        display: flex;
-
-        border: 1px solid global.$cl-white;
-        border-right-width: 0;
-        border-left-width: 0;
-
-        &__icon {
-            margin-right: 16px;
-            font-size: 20px;
-            line-height: 20px;
-        }
-
-        &__text {
-            margin: 0;
-        }
-    }
-
     &__contacts {
         margin: 0 -22px -22px;
         padding: 40px 0 50px 60px;
@@ -100,6 +77,7 @@
 
 @media (min-width: (global.$tablet + 'px')) {
     .header {
+        padding: 50px 0;
 
         &__functional {
             max-width: 400px;
@@ -158,10 +136,6 @@
             &--location {
                 display: none;
             }
-        }
-
-        .call-back {
-            display: none;
         }
 
         &__contacts {
