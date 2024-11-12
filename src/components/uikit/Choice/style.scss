@@ -22,6 +22,10 @@
         // border-radius: 1px;
     }
 
+    & .icon {
+        font-size: 26px;
+    }
+
     &::after {
         content: '';
         position: absolute;

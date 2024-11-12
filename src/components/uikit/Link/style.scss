@@ -79,6 +79,11 @@
     &--intro {
         display: none;
     }
+
+    &--shop {
+        font-size: 12px;
+        margin-right: 110px;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
