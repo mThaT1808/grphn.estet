@@ -1,8 +1,11 @@
 @import '../../assets/styles/global.scss';
 
 .feedback {
-    width: 100%;
+    margin-left: -25px;
+    margin-right: -25px;
     padding-top: 71px;
+    padding-left: 25px;
+    padding-right: 25px;
     background-color: $cl-green;
 
     &__text {
@@ -16,16 +19,12 @@
         white-space: pre-line;
     }
 
-    &__line {
-        margin-left: -25px;
-        margin-right: -25px;
-        width: calc(200%);
-        height: 1px;
-        background-color: $cl-white;
-    }
-
     @media(min-width: ($tablet + 'px')) {
+        margin-left: -84px;
+        margin-right: -84px;
         padding-top: 90px;
+        padding-left: 84px;
+        padding-right: 84px;
         order: 1;
 
         &__wrapper {
@@ -36,24 +35,21 @@
         &__text {
             margin-bottom: 55px;
         }
-
-        &__line {
-            margin-left: -84px;
-            margin-right: -84px;
-            width: calc(200%);
-        }
     }
 
     @media(min-width: ($desktop + 'px')) {
+        margin-left: 0;
+        margin-right: -200px;
         padding-top: 88px;
+        padding-left: 74px;
+        padding-right: 74px;
         order: 0;
 
         &__wrapper {
             flex-direction: column;
             justify-content: end;
+            align-items: start;
             flex-wrap: nowrap;
-            margin-left: -126px;
-            margin-right: -126px;
         }
 
         &__text {
