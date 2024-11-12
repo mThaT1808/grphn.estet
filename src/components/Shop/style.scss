@@ -3,7 +3,7 @@
 
 .shop {
     padding-top: 46px;
-    padding-bottom: 65px;
+    padding-bottom: 53px;
     background-color: $cl-cl-gray-f9;
     overflow-x: hidden;
 
@@ -18,8 +18,9 @@
     }
 
     & .arrow-box {
-        position: relative;
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 145px;
         height: 31px;
         margin-right: 25px;
@@ -28,25 +29,34 @@
 
     & .arrow--shop-prev,
     & .arrow--shop-next {
+        position: relative;
+        width: 61px;
+        height: 1px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+    }
+
+    & .arrow--shop-prev::before,
+    & .arrow--shop-next::before {
+        content: '';
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         width: 61px;
         height: 1px;
-        padding: 0;
         background-color: $cl-green;
-        border: none;
     }
 
-    & .arrow--shop-prev {
+    & .arrow--shop-prev::before {
         left: 0;
     }
 
-    & .arrow--shop-next {
+    & .arrow--shop-next::before {
         right: 0;
     }
 
-    & .arrow--shop-prev::before,
+    & .arrow--shop-prev::after,
     & .arrow--shop-next::after {
         content: '';
         position: absolute;
@@ -57,7 +67,7 @@
         border-top: 1px solid $cl-green;
     }
 
-    & .arrow--shop-prev::before {
+    & .arrow--shop-prev::after {
         transform: translateY(-50%) rotate(-45deg);
         left: 0;
     }
@@ -71,6 +81,7 @@
 .slider--shop {
     display: flex;
     margin-bottom: 29px;
+    padding-left: 43px;
     background-color: $cl-white;
     width: 100%;
 
@@ -87,7 +98,7 @@
 
     & .slick-track {
         display: flex;
-        padding-top: 56px;
+        padding-top: 50px;
         padding-bottom: 16px;
     }
 
@@ -169,43 +180,3 @@
         }
     }
 }
-
-// @media (min-width: #{$desktop-min + 'px'}) {
-//     .shop {
-//         & .link {
-//             margin-left: auto;
-//             margin-right: 350px;
-//         }
-//     }
-
-//     .slider--shop {
-//         // margin-right: -200px;
-//         flex: 0 0 auto;
-
-//         & .slider__item {
-//             padding-right: 56px;
-//         }
-
-//         & .slick-list {
-//             padding: 0 !important;
-//         }
-
-//         & .slick-track {
-//             padding-top: 49px;
-//             padding-left: 40px;
-//             padding-bottom: 56px;
-//         }
-
-//         & .slick-slide {
-//             max-width: 300px;
-//         }
-
-//         & .slick-slide > div {
-//             display: block;
-//             padding-bottom: 0;
-//         }
-
-
-//     }
-// }
-
