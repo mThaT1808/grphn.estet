@@ -40,9 +40,10 @@
     }
 
     &--sale {
+        color: $cl-gray-99;
         line-height: 25px;
         letter-spacing: 0.4px;
-        font-weight: 500;
+        font-weight: 600;
 
         margin-bottom: 20px;
     }
@@ -118,6 +119,10 @@
             padding-right: 100px;
             margin-bottom: 28px;
         }
+
+        &--sale__end {
+            color: $cl-gray-99;
+        }
     }
 
     @media(min-width: ($desktop + 'px')) {
@@ -142,5 +147,27 @@
         &--service {
             padding-right: 60px;
         }
-    } 
+
+        &--sale-collection {
+            padding-top: 40px;
+            width: 200px;
+            position: relative;
+            height: fit-content;
+        }
+
+        &--sale {
+            width: 50%;
+            padding: 0;
+        }
+
+        &--sale__end {
+            color: $cl-gray-99;
+            letter-spacing: -0.2px;
+            line-height: 36px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
 }

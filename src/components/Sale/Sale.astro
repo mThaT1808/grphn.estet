@@ -8,10 +8,12 @@ import SaleSlider from '@components/uikit/sale-slider/sale-slider.astro'
 
 <section class="sale">
     <Container>
-        <SaleSlider />
-        <div class="sale__arrow-box">
-            <Arrow modifier='sale-slider' direction='left'/>
-            <Arrow modifier='sale-slider' direction='right'/>
+        <div class="sale__wrapper">
+            <SaleSlider />
+            <div class="sale__arrow-box">
+                <Arrow modifier='sale-slider' direction='left'/>
+                <Arrow modifier='sale-slider' direction='right'/>
+            </div>
         </div>
     </Container>
 </section>

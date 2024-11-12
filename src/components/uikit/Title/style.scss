@@ -161,5 +161,18 @@
             margin-bottom: 102px;
             font-size: 36px;
         }
+
+        &--sale-slider {
+            font-size: 150px;
+            line-height: 192px;
+            position: relative;
+        }
+
+        &--sale {
+            font-size: 36px;
+            line-height: 1.35;
+
+            margin-bottom: 14px;
+        }
     }
 }

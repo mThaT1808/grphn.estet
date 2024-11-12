@@ -15,8 +15,7 @@
   },
   "dependencies": {
     "astro": "^1.9.0",
-    "fontagon": "^1.1.1",
-    "jquery": "^3.7.1"
+    "fontagon": "^1.1.1"
   },
   "devDependencies": {
     "@octokit/rest": "^19.0.7",
@@ -30,6 +29,7 @@
     "inputmask": "^5.0.8",
     "inquirer": "^9.1.4",
     "install": "^0.13.0",
+    "jquery": "^3.7.1",
     "jQuery": "^1.7.4",
     "just-validate": "^4.2.0",
     "lodash": "^4.17.21",

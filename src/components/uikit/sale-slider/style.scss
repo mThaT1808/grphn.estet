@@ -51,12 +51,40 @@
         }
 
         &__image {
-            height: calc(100vw / 1.54);
+            min-height: 497px;
             margin-bottom: 32px;
+
+            object-position: left 0 bottom 0;
         }
 
         &__description {
             padding: 0 82px;
+        }
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+    .sale-slider {
+        margin: 0;
+
+        &__image {
+            object-position: center;
+        }
+
+        &__text {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            column-gap: 24px;
+            width: auto;
+            max-width: 50%;
+            top: 40px;
+            right: 100px;
+        }
+
+        &__description {
+            padding: 0;
+            position: relative;
         }
     }
 }

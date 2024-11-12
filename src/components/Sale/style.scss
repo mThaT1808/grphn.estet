@@ -2,10 +2,25 @@
 
 .sale {
     position: relative;
+    background-image: linear-gradient(to top, $cl-gray-f7 80%, transparent 80%);
+    padding-bottom: 35px;
 
     &__arrow-box{
         position: absolute;
         top: 0;
         right: 0;
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+    .sale {
+
+        &__wrapper {
+            position: relative;
+        }
+
+        &__arrow-box{
+            display: flex;
+        }
     }
 }

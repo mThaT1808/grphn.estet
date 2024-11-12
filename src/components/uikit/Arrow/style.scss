@@ -48,3 +48,12 @@
     }
 
 }
+
+@media (min-width: ($desktop + 'px')) {
+    .arrow {
+
+        &--sale-slider.arrow--left {
+            display: block;
+        }
+    }
+}
