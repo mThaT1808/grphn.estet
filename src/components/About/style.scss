@@ -258,7 +258,8 @@
         }
 
         &__dot--quality:hover ~ &__descr--quality {
-            display: block;
+            transform: translateY(0);
+            opacity: 1;
         }
 
         &__dot--company {
@@ -277,7 +278,6 @@
         }
 
         &__dot--company:hover ~ &__image-box--company {
-            display: block;
             transform: translateX(-100%);
             opacity: 1;
         }
@@ -337,7 +337,16 @@
             transform: translate(0, -57.5%);
         }
 
+        &__image-box--quality {
+            transition: transform 0.9s ease;
+        }
+
+        &__image--quality {
+            object-position: top;
+        }
+
         &__descr--quality {
+            display: block;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -347,6 +356,8 @@
             color: $cl-white;
             background-color: $cl-green;
             transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.9s ease, opacity 0.9s ease;
         }
 
         &__wrapper--tech {
