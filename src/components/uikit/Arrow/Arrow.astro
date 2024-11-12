@@ -1,14 +1,17 @@
 ---
+import Icon from '../Icon/Icon.astro';
 import './style.scss'
+
+export interface Props {
+    modifier?: string;
+    direction?: string;
+}
+
+const { modifier, direction } = Astro.props
 ---
 
-<div class="arrow-box">
-	<button class="arrow arrow--bg arrow--bg-green">
-        
-    </button>
-	<button class="arrow arrow--bg arrow--bg-green">
-
-    </button>
-</div>
+<button class:list={['arrow', modifier?`arrow--${modifier}`: '', direction? `arrow--${direction}`: '']}>
+    <Icon name='arrow-26'/>
+</button>
 
 <script src="./script.js"></script>
