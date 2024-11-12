@@ -231,13 +231,16 @@
             height: 30%;
         }
 
+        &__dot:hover {
+            opacity: 0;
+        }
+
         &__dot--solution {
             top: 18%;
             left: 15%;
         }
 
         &__dot--solution:hover ~ &__descr--solution {
-            display: block;
             transform: translateX(72%);
             opacity: 1;
         }
@@ -260,6 +263,26 @@
         &__dot--quality:hover ~ &__descr--quality {
             transform: translateY(0);
             opacity: 1;
+        }
+
+        &__dot--tech {
+            bottom: 13%;
+            left: 40%;
+        }
+
+        &__dot--tech:hover ~ &__inner &__wrapper--tech {
+            height: 63.5%;
+            transform: translateY(-57.5%);
+        }
+
+        &__dot--tech:hover ~ &__inner &__descr--tech {
+            transform: translateY(135%);
+            opacity: 1;
+        }
+
+        &__dot--tech:hover ~ &__inner &__wrapper--company {
+            z-index: 0;
+            opacity: 0;
         }
 
         &__dot--company {
@@ -334,7 +357,7 @@
             width: 40%;
             height: 63.5%;
             order: 5;
-            transform: translate(0, -57.5%);
+            transform: translateY(-57.5%);
         }
 
         &__image-box--quality {
@@ -361,8 +384,24 @@
         }
 
         &__wrapper--tech {
+            position: relative;
             width: 45%;
             height: 27%;
+            transform: translate(0);
+            transition: transform 0.9s ease;
+        }
+
+        &__descr--tech {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 42.5%;
+            color: $cl-white;
+            background-color: $cl-green;
+            transform: translateY(230%);
+            opacity: 0;
+            transition: transform 0.9s ease, opacity 0.9s ease;
         }
 
         &__wrapper--company {
