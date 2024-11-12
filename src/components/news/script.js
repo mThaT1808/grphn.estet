@@ -26,7 +26,7 @@ function checkWidth() {
             infinite: false,
             slidesToShow: 3,
             slidesToScroll: 1,
-            rows:2,
+            rows: 2,
         });
 
         $('.arrow--info-prev').on('click', function(e) {
