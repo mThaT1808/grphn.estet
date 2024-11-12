@@ -136,6 +136,9 @@
         &--intro {
             font-size: 150px;
             margin-bottom: 75px;
+
+            position: relative;
+            z-index: 1;
         }
 
         &--service {

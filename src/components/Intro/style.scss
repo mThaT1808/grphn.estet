@@ -59,7 +59,6 @@
         background-size: auto 9px;
         background-repeat: no-repeat;
         background-position: right center;
-        z-index: 1;
         border: 0px;
         padding: 0;
         position: absolute;
@@ -137,6 +136,7 @@
 
         &__button {
             top: 507px;
+            z-index: 1;
 
             &--left {
                 left: 80px;
