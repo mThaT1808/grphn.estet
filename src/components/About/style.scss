@@ -39,14 +39,6 @@
         background-color: $cl-lite-green;
     }
 
-    &__title {
-        margin-bottom: 14px;
-        font-weight: 600;
-        font-size: 36px;
-        color: #3c3c3c;
-        line-height: normal;
-    }
-
     &__subtitle {
         margin: 0;
         margin-bottom: 65px;
@@ -209,6 +201,20 @@
         }
 
         // css for hover-dots
+        @keyframes pulse {
+            0%  {   opacity: 1;
+                    height: 25px;
+                    width: 25px;
+                    transition: opacity .8s ease;
+                }
+            50% {   opacity: 0;
+                    transform: scale(1.1);
+                    transition: opacity .5s ease;
+                }
+            100% { opacity: 0;
+                    transition: opacity .5s ease;
+                }
+          }
 
         &__dot {
             display: block;
@@ -219,6 +225,7 @@
             border-radius: 50%;
             box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.9);
             background-color: $cl-white;
+            animation: pulse 1s infinite;
         }
 
         &__dot::before {
@@ -445,7 +452,7 @@
         &__image-box--company {
             display: block;
             width: 655px;
-            transform: translateX(100%);
+            transform: translateX(0%);
             transition: opacity 0.9s ease, transform 0.9s ease;
             opacity: 0;
         }
