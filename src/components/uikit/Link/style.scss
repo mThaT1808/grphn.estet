@@ -82,7 +82,10 @@
 
     &--shop {
         font-size: 12px;
-        margin-right: 110px;
+
+        @media (min-width: #{$desktop + 'px'}) {
+            margin-right: 110px;
+        }
     }
 }
 
