@@ -46,6 +46,18 @@
         margin-bottom: 16px;
     }
 
+    &--sale {
+        display: none;
+    }
+
+    &--sale-slider {
+        font-size: 21px;
+        line-height: normal;
+        letter-spacing: 0px;
+        font-weight: bold;
+
+        display: inline;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -79,6 +91,40 @@
         &--left {
             padding-left: 31px;
             margin-bottom: 94px;
+        }
+
+        &--sale-slider {
+            font-family: 'Lora';
+            color: $cl-white;
+            font-size: 100px;
+            letter-spacing: -1px;
+            line-height: 128px;
+            font-weight: 400;
+
+            display: block;
+            margin-bottom: 8px;
+
+            &::first-letter {
+                font-size: 0;
+                line-height: 0;
+                letter-spacing: 0;
+            }
+            &::before {
+                content: '—';
+                position: absolute;
+                right: 100%;
+            }
+        }
+
+        &--sale {
+            font-size: 36px;
+            line-height: 49px;
+            letter-spacing: 0px;
+            font-weight: 600;
+
+            display: block;
+            margin-bottom: 34px;
+
         }
     }
 }
@@ -114,6 +160,19 @@
         &--review {
             margin-bottom: 102px;
             font-size: 36px;
+        }
+
+        &--sale-slider {
+            font-size: 150px;
+            line-height: 192px;
+            position: relative;
+        }
+
+        &--sale {
+            font-size: 36px;
+            line-height: 1.35;
+
+            margin-bottom: 14px;
         }
     }
 }

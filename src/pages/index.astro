@@ -8,11 +8,13 @@ import News from '@components/News/News.astro';
 import Shop from '@components/Shop/Shop.astro';
 import Product from '@components/Product/Product.astro';
 import Intro from '@components/Intro/Intro.astro';
+import Sale from '@components/Sale/Sale.astro'
 const pageTitle = "Home Page";
 ---
 <BaseLayout title={pageTitle} pageTitle={pageTitle}>
     <Intro />
     <Product />
+    <Sale />
     <Banner />
     <Service />
     <Review />
