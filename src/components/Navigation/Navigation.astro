@@ -12,30 +12,28 @@ if (modifier) {
 ---
 
 <nav class={className}>
-    <Container>
-        <ul class="nav__list">
-            {
-                list.map((item) => (
-                <li class:list={{
-                    'nav__item': true,
-                    'nav__item--special': item.isSpecial,
-                    'nav__item--background': item.isBackground,
-                    'nav__item--arrow': item.isArrow,
-                    'nav__item--mobile': item.isMobile
-                }}>
-                    <a class="nav__link" href="javascript:void(0);">{item.title}</a>
-                    {item.links?
-                        <ul class="nav__inner-list">
-                            {item.links.map((link) => (
-                                <li class="nav__inner-item">
-                                    <a class="nav__link" href="javascript:void(0);">{link}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    : ''}
-                </li>
-              ))
-            }
-        </ul>
-    </Container>
+    <ul class="nav__list">
+        {
+            list.map((item) => (
+            <li class:list={{
+                'nav__item': true,
+                'nav__item--special': item.isSpecial,
+                'nav__item--background': item.isBackground,
+                'nav__item--arrow': item.isArrow,
+                'nav__item--mobile': item.isMobile
+            }}>
+                <a class="nav__link" href="javascript:void(0);">{item.title}</a>
+                {item.links?
+                    <ul class="nav__inner-list">
+                        {item.links.map((link) => (
+                            <li class="nav__inner-item">
+                                <a class="nav__link" href="javascript:void(0);">{link}</a>
+                            </li>
+                        ))}
+                    </ul>
+                : ''}
+            </li>
+            ))
+        }
+    </ul>
 </nav>
