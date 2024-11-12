@@ -1,7 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .service {
-    padding: 63px 0 78px;
+    padding: 63px 0 42px;
 
 
     &__list {
@@ -57,6 +57,7 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
+        padding-bottom: 78px;
         &__list {
             display: flex;
             margin: 0 -82px 0;
