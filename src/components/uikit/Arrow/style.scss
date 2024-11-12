@@ -12,7 +12,7 @@
 
     transition: color, background-color $animation-time;
 
-    &:hover {
+    &:active {
         background-color: $cl-lite-green;
     }
 
@@ -23,7 +23,7 @@
         color: $cl-green;
         background-color: $cl-white;
 
-        &:hover {
+        &:active {
             color: $cl-white;
             background-color: $cl-lite-green;
         }

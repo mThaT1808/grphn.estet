@@ -3,7 +3,7 @@ import 'slick-slider';
 
 function checkWidth() {
     const slider = $('.sale-slider');
-    if ($(window).width() < 768) {
+    if ($(window).width() < 1366) {
 
         slider.slick({
             slidesToShow: 1,

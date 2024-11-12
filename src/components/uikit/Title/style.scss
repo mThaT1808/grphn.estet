@@ -92,6 +92,40 @@
             padding-left: 31px;
             margin-bottom: 94px;
         }
+
+        &--sale-slider {
+            font-family: 'Lora';
+            color: $cl-white;
+            font-size: 100px;
+            letter-spacing: -1px;
+            line-height: 128px;
+            font-weight: 400;
+
+            display: block;
+            margin-bottom: 8px;
+
+            &::first-letter {
+                font-size: 0;
+                line-height: 0;
+                letter-spacing: 0;
+            }
+            &::before {
+                content: '—';
+                position: absolute;
+                right: 100%;
+            }
+        }
+
+        &--sale {
+            font-size: 36px;
+            line-height: 49px;
+            letter-spacing: 0px;
+            font-weight: 600;
+
+            display: block;
+            margin-bottom: 34px;
+
+        }
     }
 }
 
