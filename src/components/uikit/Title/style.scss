@@ -58,6 +58,13 @@
 
         display: inline;
     }
+
+    &--about {
+        margin-bottom: 14px;
+        font-size: 36px;
+        color: $cl-gray-3c;
+        line-height: normal;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
