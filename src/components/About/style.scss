@@ -186,11 +186,13 @@
             background-color: $cl-green;
         }
 
-        &__wrapper--logo .logotype {
+        &__wrapper--logo .icon {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            font-size: 57px;
+            transition: color 0.6s ease;
         }
     }
 }
@@ -250,6 +252,18 @@
             opacity: 0;
         }
 
+        &__inner:has(&__dot--solution:hover) &__wrapper--logo,
+        &__inner:has(&__dot--quality:hover) &__wrapper--logo,
+        &__inner:has(&__dot--company:hover) &__wrapper--logo {
+            background-color: $cl-white;
+        }
+
+        &__inner:has(&__dot--solution:hover) &__wrapper--logo .icon,
+        &__inner:has(&__dot--quality:hover) &__wrapper--logo .icon,
+        &__inner:has(&__dot--company:hover) &__wrapper--logo .icon {
+            color: $cl-green;
+        }
+
         &__dot--quality {
             top: 24%;
             right: 41%;
@@ -283,6 +297,14 @@
         &__dot--tech:hover ~ &__inner &__wrapper--company {
             z-index: 0;
             opacity: 0;
+        }
+
+        &__dot--tech:hover ~ &__inner &__wrapper--logo {
+            background-color: $cl-white;
+        }
+
+        &__dot--tech:hover ~ &__inner &__wrapper--logo .icon {
+            color: $cl-green;
         }
 
         &__dot--company {
@@ -391,6 +413,10 @@
             transition: transform 0.9s ease;
         }
 
+        &__image--tech {
+            object-position: 0% 90%;
+        }
+
         &__descr--tech {
             position: absolute;
             display: block;
@@ -401,7 +427,7 @@
             background-color: $cl-green;
             transform: translateY(230%);
             opacity: 0;
-            transition: transform 0.9s ease, opacity 0.9s ease;
+            transition: transform 0.6s ease, opacity 0.6s ease;
         }
 
         &__wrapper--company {
@@ -436,6 +462,7 @@
             order: 3;
             width: 15%;
             height: 27%;
+            transition: background-color 0.6s ease;
         }
     }
 }

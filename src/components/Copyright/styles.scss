@@ -1,7 +1,8 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .copyright {
-    padding: 61px 17px 71px 0;
+    margin: 0 -25px;
+    padding: 61px 42px 71px 25px;
     color: $cl-gray-99;
     background-color: $cl-cl-gray-31;
     font-size: 12px;
@@ -12,13 +13,6 @@
     }
 
     &__link {
-        // placeholder пока не будет иконки компании
-        // display: block;
-        // width: 57px;
-        // height: 57px;
-        // background-color: gray;
-        // flex-shrink: 0;
-        // конец
         font-size: 57px; 
         margin-right: 21px;
     }
@@ -48,7 +42,8 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        padding: 73px 17px 74px 0;
+        margin: 0 -84px;
+        padding: 73px 100px 74px 84px;
         order: 2;
 
         &__link {
@@ -71,7 +66,8 @@
     @media (min-width: ($desktop + 'px')) {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        padding: 125px 17px 94px 0;
+        margin: 0 0 0 -200px;
+        padding: 125px 17px 94px 200px;
 
         &__info {
             display: flex;

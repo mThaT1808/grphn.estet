@@ -97,6 +97,8 @@
 
     @media (min-width: ($tablet + 'px')) {
         display: block;
+        margin: 0 -84px;
+        padding: 88px 84px 77px;
         padding-top: 88px;
         padding-bottom: 77px;
         background-color: $cl-gray-3c;
@@ -153,9 +155,11 @@
     @media (min-width: ($desktop + 'px')) {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        margin: 0 0 0 -200px;
+        padding: 88px 0 0 200px;
+
         &__list {
             column-gap: 42px;
-            margin-right: -171px;
         }
 
         &--header {

@@ -11,11 +11,11 @@ function checkWidth() {
             infinite: false,
         });
 
-        $('.arrow--info-prev').on('click', function(e) {
+        $('.arrow-info--prev').on('click', function(e) {
             e.preventDefault();
             slider.slick('slickPrev');
         });
-        $('.arrow--info-next').on('click', function(e) {
+        $('.arrow-info--next').on('click', function(e) {
             e.preventDefault();
             slider.slick('slickNext');
         });
@@ -29,11 +29,11 @@ function checkWidth() {
             rows: 2,
         });
 
-        $('.arrow--info-prev').on('click', function(e) {
+        $('.arrow-info--prev').on('click', function(e) {
             e.preventDefault();
             slider.slick('slickPrev');
         });
-        $('.arrow--info-next').on('click', function(e) {
+        $('.arrow-info--next').on('click', function(e) {
             e.preventDefault();
             slider.slick('slickNext');
         });
