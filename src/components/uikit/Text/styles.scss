@@ -61,6 +61,10 @@
         }
     }
 
+    &--about {
+        font-size: 14px;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 
@@ -126,6 +130,10 @@
 
         &--guarantee {
             padding-left: 82px;
+        }
+
+        &--about {
+            line-height: 25px;
         }
     }
 
