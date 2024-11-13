@@ -102,6 +102,7 @@ $desktop-vh: 660px;
     --cl-pink-f9: #faf8f9;
     --cl-orange: #ff5200;
     --cl-lite-green: #00c34a;
+    --cl-gray-f2: #f3f1f2;
 }
 
 // Основные цвета
@@ -138,6 +139,7 @@ $cl-cl-gray-f9: var(--cl-gray-f9);
 $cl-pink-f9: var(--cl-pink-f9);
 $cl-orange: var(--cl-orange);
 $cl-lite-green: var(--cl-lite-green);
+$cl-gray-f2: var(--cl-gray-f2);
 // Цвета theme. Не трогать!!!
 $cl-theme-global: var(--cl-font-main);
 $cl-theme-link: var(--cl-font-main);

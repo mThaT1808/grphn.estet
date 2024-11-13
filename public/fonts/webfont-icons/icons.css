@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?01768521b0167e3784588f7452e125de") format("woff"),
-url("icons.woff2?01768521b0167e3784588f7452e125de") format("woff2");
+  src: url("icons.woff?ed78588d794e7e3da76e5b38582e1df9") format("woff"),
+url("icons.woff2?ed78588d794e7e3da76e5b38582e1df9") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -54,22 +54,24 @@ url("icons.woff2?01768521b0167e3784588f7452e125de") format("woff2");
 .icon-burger-close:before { content: "\f104"; }
 .icon-burger:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
-.icon-glass:before { content: "\f107"; }
-.icon-instagram:before { content: "\f108"; }
-.icon-kontora:before { content: "\f109"; }
-.icon-language:before { content: "\f10a"; }
-.icon-like-white:before { content: "\f10b"; }
-.icon-like:before { content: "\f10c"; }
-.icon-location:before { content: "\f10d"; }
-.icon-logo-white:before { content: "\f10e"; }
-.icon-loupe:before { content: "\f10f"; }
-.icon-next-arrow:before { content: "\f110"; }
-.icon-phone:before { content: "\f111"; }
-.icon-prev-arrow:before { content: "\f112"; }
-.icon-shape:before { content: "\f113"; }
-.icon-telegram:before { content: "\f114"; }
-.icon-tiny-arrow:before { content: "\f115"; }
-.icon-viber:before { content: "\f116"; }
-.icon-video:before { content: "\f117"; }
-.icon-vk:before { content: "\f118"; }
-.icon-youtube:before { content: "\f119"; }
+.icon-five:before { content: "\f107"; }
+.icon-glass:before { content: "\f108"; }
+.icon-instagram:before { content: "\f109"; }
+.icon-kontora:before { content: "\f10a"; }
+.icon-language:before { content: "\f10b"; }
+.icon-like-white:before { content: "\f10c"; }
+.icon-like:before { content: "\f10d"; }
+.icon-location:before { content: "\f10e"; }
+.icon-logo-white:before { content: "\f10f"; }
+.icon-loupe:before { content: "\f110"; }
+.icon-next-arrow:before { content: "\f111"; }
+.icon-phone:before { content: "\f112"; }
+.icon-prev-arrow:before { content: "\f113"; }
+.icon-shape:before { content: "\f114"; }
+.icon-telegram:before { content: "\f115"; }
+.icon-tiny-arrow:before { content: "\f116"; }
+.icon-viber:before { content: "\f117"; }
+.icon-video:before { content: "\f118"; }
+.icon-vk:before { content: "\f119"; }
+.icon-year:before { content: "\f11a"; }
+.icon-youtube:before { content: "\f11b"; }
