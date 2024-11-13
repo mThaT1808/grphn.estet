@@ -11,41 +11,17 @@
         padding: 0 25px;
     }
 
-    .arrow-box {
+    &__arrow-box {
         display: flex;
         margin-left: auto;
     }
 
-    .arrow {
-        display: block;
-        padding: 0;
-        width: 60px;
-        height: 60px;
-        border: none;
-        cursor: pointer;
-        background-color: transparent;
-        transition: background-color 0.3s ease;
+    &__dot {
+        display: none;
     }
 
-    .arrow--prev {
-        background-color: $cl-white;
-    }
-
-    .arrow--next {
-        background-color: $cl-green;
-    }
-
-    .arrow:hover {
-        background-color: $cl-lite-green;
-    }
-
-    &__subtitle {
-        margin: 0;
-        margin-bottom: 65px;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 179%;
-        color: #3c3c3c;
+    &__main {
+        margin-bottom: 67px;
     }
 
     &__inner {
@@ -58,7 +34,7 @@
 
     &__image-box {
         display: flex;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
 
     &__image {
@@ -93,7 +69,7 @@
             padding: 0;
         }
 
-        .arrow-box {
+        &__arrow-box {
             display: none;
         }
 
@@ -202,18 +178,29 @@
 
         // css for hover-dots
         @keyframes pulse {
-            0%  {   opacity: 1;
-                    height: 25px;
-                    width: 25px;
-                    transition: opacity .8s ease;
-                }
-            50% {   opacity: 0;
-                    transform: scale(1.1);
-                    transition: opacity .5s ease;
-                }
-            100% { opacity: 0;
-                    transition: opacity .5s ease;
-                }
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6),
+                            0 0 0 0 rgba(255, 255, 255, 0.8);
+              }
+              70% {
+                box-shadow: 0 0 0 15px transparent, 0 0 0 7px transparent;
+              }
+              to {
+                box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+              }
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(30, 138, 71, 0.6),
+                            0 0 0 0 rgba(30, 138, 71, 0.8);
+            }
+            70% {
+                box-shadow: 0 0 0 15px transparent, 0 0 0 7px transparent;
+            }
+            to {
+                box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+            }
           }
 
         &__dot {
@@ -240,7 +227,7 @@
             height: 30%;
         }
 
-        &__dot:hover {
+        &__container:has(&__dot:hover) &__dot {
             opacity: 0;
         }
 
@@ -315,6 +302,7 @@
         }
 
         &__dot--company {
+            animation: pulse-green 1s infinite;
             top: 8%;
             right: 4%;
             background-color: $cl-green;

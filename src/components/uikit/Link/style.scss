@@ -83,8 +83,12 @@
     &--shop {
         font-size: 12px;
 
+        &::after {
+            bottom: 3px;
+        }
+
         @media (min-width: #{$desktop + 'px'}) {
-            margin-right: 110px;
+            margin-right: 67px;
         }
     }
 }

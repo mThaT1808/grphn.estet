@@ -72,8 +72,9 @@
         font-size: 36px;
 
         &--intro {
-            margin-bottom: 108px;
+            line-height: 1.28;
             font-size: 100px;
+            margin-bottom: 72px;
         }
 
         &--service {
@@ -88,7 +89,7 @@
         }
 
         &--shop {
-            margin-bottom: 29px;
+            margin-bottom: 26px;
         }
 
         &--shop-slider {
@@ -133,6 +134,10 @@
             margin-bottom: 34px;
 
         }
+
+        &--about {
+            font-size: 36px;;
+        }
     }
 }
 
@@ -142,7 +147,10 @@
 
         &--intro {
             font-size: 150px;
-            margin-bottom: 75px;
+            margin-bottom: 8px;
+
+            position: relative;
+            z-index: 1;
         }
 
         &--service {
