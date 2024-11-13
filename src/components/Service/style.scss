@@ -1,7 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .service {
-    padding: 63px 0 42px;
+    padding: 85px 0 42px;
 
 
     &__list {
@@ -18,33 +18,39 @@
         }
 
         &--guarantee {
+            // position: relative;
+            // padding-top: 216px;
             position: relative;
-            padding-top: 216px;
-            background-image: url("/images/service/guarantee.jpg");
-            background-repeat: no-repeat;
+            padding-top: 53px;
+            background: 
+                linear-gradient(transparent 0%, $cl-white) no-repeat,
+                url("/images/service/guarantee.svg") no-repeat;
+            background-size: 
+                156px 274px,
+                156px 274px;
 
-            &::before {
-                font-family: 'Lora', 'Times New Roman', 'serif';
-                font-size: 150px;
-                font-weight: 700;
-                position: absolute;
-                content: '5';
-                top: 154px;
-                left: 30px;
-                color: $cl-white;
-            }
+            // &::before {
+            //     font-family: 'Lora', 'Times New Roman', 'serif';
+            //     font-size: 150px;
+            //     font-weight: 700;
+            //     position: absolute;
+            //     content: '5';
+            //     top: 154px;
+            //     left: 30px;
+            //     color: $cl-white;
+            // }
 
-            &::after {
-                font-family: 'Lora', 'Times New Roman', 'serif';
-                font-size: 60px;
-                font-weight: 700;
-                letter-spacing: 0;
-                position: absolute;
-                content: 'Лет';
-                top: 186px;
-                right: 48px;
-                color: $cl-green;
-            }
+            // &::after {
+            //     font-family: 'Lora', 'Times New Roman', 'serif';
+            //     font-size: 60px;
+            //     font-weight: 700;
+            //     letter-spacing: 0;
+            //     position: absolute;
+            //     content: 'Лет';
+            //     top: 186px;
+            //     right: 48px;
+            //     color: $cl-green;
+            // }
         }
         &--service {
             position: relative;
@@ -57,30 +63,38 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        padding-bottom: 78px;
+        padding: 70px 0 78px 0;
         &__list {
             display: flex;
-            margin: 0 -82px 0;
-            justify-content: space-between;
+            margin: 0 -84px;
+            column-gap: 30px;
         }
 
         &__item {
-            width: 48.3%;
+            width: 50%;
             padding-top: 270px;
 
             &--guarantee {
                 margin-left: 0;
-                padding-left: 82px;
-                background-image: url('/images/service/guarantee-tablet.jpg');
+                padding: 0;
+                background: 
+                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
+                background-size:
+                    100% 335px, 
+                    170px 365px,
+                    100% 335px;
+                // background-image: url('/images/service/guarantee-tablet.jpg');
 
-                &::before {
-                    top: 172px;
-                    left: 34px;
-                }
+                // &::before {
+                //     top: 172px;
+                //     left: 34px;
+                // }
 
-                &::after {
-                    display: none;
-                }
+                // &::after {
+                //     display: none;
+                // }
             }
 
             &--service {
@@ -100,15 +114,23 @@
 
         &__item {
             &--guarantee {
-                padding-top: 410px;
-                padding-left: 62px;
-                background-image: url("images/service/guarantee-desktop.jpg");
+                padding-top: 176px;
+                // padding-top: 410px;
+                // padding-left: 62px;
+                background: 
+                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
+                background-size:
+                    100% 60%, 
+                    270px 535px,
+                    100% 60%;
 
-                &::before {
-                    top: 254px;
-                    left: 54px;
-                    font-size: 200px;
-                }
+                // &::before {
+                //     top: 254px;
+                //     left: 54px;
+                //     font-size: 200px;
+                // }
             }
 
             &--service {

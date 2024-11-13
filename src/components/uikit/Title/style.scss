@@ -65,6 +65,11 @@
         color: $cl-gray-3c;
         line-height: normal;
     }
+
+    &--guarantee {
+        margin-bottom: 46px;
+        line-height: 44px;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -89,7 +94,7 @@
         }
 
         &--shop {
-            margin-bottom: 29px;
+            margin-bottom: 26px;
         }
 
         &--shop-slider {
@@ -133,6 +138,14 @@
             display: block;
             margin-bottom: 34px;
 
+        }
+
+        &--guarantee {
+            padding: 32px 0 0 82px;
+        }
+
+        &--about {
+            font-size: 36px;
         }
     }
 }
@@ -184,6 +197,14 @@
             line-height: 1.35;
 
             margin-bottom: 14px;
+        }
+
+        &--guarantee {
+            padding:  66px 0 0 64px;
+        }
+
+        &--about {
+            font-size: 36px;
         }
     }
 }

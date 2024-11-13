@@ -1,7 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .review {
-    padding: 84px 0 30px 0;
+    padding: 34px 0 30px 0;
     background-color:  $cl-white;
     color: $cl-white;
 
@@ -73,7 +73,7 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        padding-bottom: 33px;
+        padding: 84px 0 33px 0 ;
 
         &__video {
             width: calc(100% + 168px);
