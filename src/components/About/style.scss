@@ -24,6 +24,11 @@
         margin-bottom: 67px;
     }
 
+    // .slick-slide:has(&__wrapper--empty),
+    // .slick-slide:has(&__wrapper--logo) {
+    //     display: none!important;
+    // }
+
     &__inner {
         position: relative;
         display: flex;
@@ -72,6 +77,11 @@
         &__arrow-box {
             display: none;
         }
+
+        // .slick-slide:has(&__wrapper--empty),
+        // .slick-slide:has(&__wrapper--logo) {
+        //     display: inline-block!important;
+        // }
 
         &__main {
             margin: 0;
