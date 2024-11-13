@@ -125,10 +125,6 @@
         }
     }
 
-    &__item--mobile-off {
-        order: 3;
-    }
-
     &__list {
         @media (min-width: ($tablet + 'px')){
             display: block;
@@ -344,5 +340,19 @@
     }
     @media (min-width: ($desktop-lg + 'px')){
         width: 900px;
+    }
+}
+
+.slick-active {
+    opacity: 0.4;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+@media (min-width: ($tablet + 'px')){
+    .slick-current + .slick-active {
+        opacity: 1;
     }
 }
