@@ -10,7 +10,7 @@
         border: none;
         color: $cl-green;
         padding-left: 17px;
-        padding-right: 18px;
+        padding-right: 20px;
         background-color: transparent;
         cursor: pointer;
     }
@@ -29,10 +29,10 @@
     &::after {
         content: '';
         position: absolute;
-        top: 25%;
+        top: 7px;
         right: 0;
-        width: 5px;
-        height: 5px;
+        width: 7px;
+        height: 7px;
         border-right: 1px solid $cl-green;
         border-bottom: 1px solid $cl-green;
         transform: rotate(45deg);
