@@ -74,6 +74,7 @@
         }
 
         &__main {
+            margin: 0;
             width: 58%;
             padding-left: 60px;
             padding-right: 45px;
@@ -115,11 +116,15 @@
         }
 
         &__image-box--solution {
-            max-height: 650px;
+            max-height: 653px;
         }
 
         &__wrapper--empty {
             order: 0;
+        }
+
+        &__image-box--empty {
+            max-height: 328px;
         }
 
         &__wrapper--quality {
@@ -129,12 +134,16 @@
         }
 
         &__image-box--quality {
-            max-height: 540px;
+            max-height: 573px;
         }
 
         &__wrapper--tech {
-            width: 70%;
+            width: 69%;
             order: 4;
+        }
+
+        &__image-box-tech {
+            max-height: 248px;
         }
 
         &__wrapper--company {
@@ -149,7 +158,7 @@
 
         &__wrapper--logo {
             position: relative;
-            width: 30%;
+            width: 31%;
             order: 5;
             background-color: $cl-green;
         }

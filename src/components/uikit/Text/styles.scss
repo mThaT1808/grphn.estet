@@ -63,7 +63,6 @@
 
     &--about {
         font-size: 14px;
-        line-height: 179%;
     }
 
     @media(min-width: ($tablet + 'px')) {
@@ -127,6 +126,10 @@
 
         &--sale__end {
             color: $cl-gray-99;
+        }
+
+        &--about {
+            line-height: 25px;
         }
     }
 
