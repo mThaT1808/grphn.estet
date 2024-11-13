@@ -67,10 +67,10 @@ $(window).on('resize', function() {
     checkWidth();
 });
 
-const dots = document.querySelectorAll('.dot');
 
-dots.forEach((dot, index) => {
-    // Устанавливаем задержку для каждой точки
-    const delay = index * 0.2; // Задержка в секундах
-    dot.style.animationDelay = `${delay}s`;
+const dots = $('.about__dot');
+
+dots.each(function() {
+    const randomDelay = Math.random() * 2; 
+    $(this).css('animation-delay', `${randomDelay}s`); 
 });
