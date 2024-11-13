@@ -86,6 +86,27 @@
         &__button {
             font-size: 21px;
         }
+
+        &--burger.searchbar--open {
+            width: 180px;
+            padding-right: 46px;
+        }
+
+        &--burger {
+            position: relative;
+        }
+
+        &--burger &__button {
+            margin: 0;
+        }
+
+        &--burger.searchbar--open &__button{
+            left: 142px;
+        }
+
+        &--burger.searchbar--open &__input {
+            width: 180px;
+        }
     }
 }
 
