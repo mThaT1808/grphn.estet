@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'slick-slider';
 
-$(document).ready(function(){
+$(function(){
     const slider = $('.news__slider');
 
         slider.slick({

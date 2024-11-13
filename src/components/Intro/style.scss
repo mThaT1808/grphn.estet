@@ -102,7 +102,7 @@ $intro-height: 670px;
 
         &__container {
             padding: 0 82px;
-            top: 390px;
+            bottom: 380px;
         }
 
         &__button {
@@ -124,6 +124,11 @@ $intro-height: 670px;
             padding-top: 45px;
             padding-left: 60px;
             padding-bottom: 147px;
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: end;
         }
     }
 }

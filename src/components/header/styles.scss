@@ -12,6 +12,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
     &__functional {
@@ -57,6 +58,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: padding global.$animation-time;
+
+        &:has(.searchbar--open) ~ & {
+            // padding-top: 62px;
+            // padding-bottom: 25px;
+            display: none;
+        }
     }
 
     &__contacts {
@@ -117,6 +125,7 @@
 
         &__inner {
             order: 1;
+            width: 180px;
         }
 
         &__list {
@@ -124,6 +133,10 @@
             align-items: center;
             padding: 0;
             margin-right: 40px;
+        }
+
+        &__list:has(.searchbar--open) ~ * {
+            display: none;
         }
 
         &__item {
@@ -136,10 +149,15 @@
             &--location {
                 display: none;
             }
+
+            &:has(.searchbar--open) ~ &--language {
+                display: block;
+            }
         }
 
         &__contacts {
             display: none;
         }
+
     }
 }

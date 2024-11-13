@@ -2,7 +2,33 @@
 
 
 .searchbar {
+    width: 32px;
+    height: 32px;
+
+    &__input {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        opacity: 0;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: width $animation-time;
+
+        &::placeholder {
+            transition: color $animation-time;
+        }
+
+        &:focus {
+            outline: 0;
+            &::placeholder {
+                color: transparent;
+            }
+        }
+
+    }
+
     &__button {
+        position: absolute;
+        left: 0;
         text-align: left;
         line-height: 18px;
         font-size: 21px;
@@ -10,13 +36,47 @@
 
         width: 32px;
         height: 32px;
-        border: 0px solid transparent;
+        border: 1px solid transparent;
         background-color: transparent;
-
         display: block;
         padding: 0;
-
         padding-left: 2px;
+        cursor: pointer;
+        transition: $animation-time;
+
+        &:active {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: $cl-white;
+
+            .icon-loupe {
+                transform: scale(0.8);
+            }
+        }
+
+    }
+
+    &--open &__button {
+        position: absolute;
+        left: calc(40% - 30px);
+
+        animation: loupe-slide $double-animation ;
+    }
+
+    &--open &__input {
+        opacity: 1;
+        width: 40%;
+    }
+
+    &--burger &__button{
+        margin-left: 25px;
+    }
+
+    &--burger.searchbar--open &__input{
+        width: calc(100% - 90px);
+    }
+
+    &--burger.searchbar--open &__button{
+        left: calc(calc(100% - 90px - 32px));
     }
 }
 
@@ -26,5 +86,28 @@
         &__button {
             font-size: 21px;
         }
+
+        &--burger.searchbar--open {
+            width: 180px;
+            padding-right: 46px;
+        }
+
+        &--burger {
+            position: relative;
+        }
+
+        &--burger &__button {
+            margin: 0;
+        }
+
+        &--burger.searchbar--open &__button{
+            left: 142px;
+        }
+
+        &--burger.searchbar--open &__input {
+            width: 180px;
+        }
     }
 }
+
+// animations
