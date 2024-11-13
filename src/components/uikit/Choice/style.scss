@@ -6,7 +6,6 @@
     max-width: max-content;
 
     &__list {
-        // width:  100%;
         border: none;
         color: $cl-green;
         padding-left: 17px;
@@ -17,9 +16,6 @@
 
     &__list:focus-visible {
         outline: none;
-        // outline: 1px solid $cl-green;
-        // outline-offset: 4px;
-        // border-radius: 1px;
     }
 
     & .icon {
@@ -57,8 +53,8 @@
 @media (min-width: #{$tablet + 'px'}) {
     .choice {
         &--shop {
-            margin-bottom: 42px;
-            align-self: flex-end;
+            margin-bottom: 20px;
+            align-self: center;
         }
 
         &--intro {
@@ -77,10 +73,6 @@
 
 @media (min-width: #{$desktop-min + 'px'}) {
     .choice {
-        &--shop {
-            margin-bottom: 42px;
-        }
-
         &--intro {
             margin-bottom: 42px;
             margin-left: 77px;

@@ -1,4 +1,6 @@
 ---
+import Text from '@components/uikit/Text/Text.astro'
+import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import './style.scss'
@@ -6,25 +8,15 @@ import './style.scss'
 
 <section class="about">
     <div class="about__container">
-        <div class="arrow-box">
-            <button class="arrow arrow--prev ">
-                <svg width="26" height="9" viewBox="0 0 26 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.5 4.5H0.5H25.5Z" fill="#D8D8D8" />
-                    <path d="M25.5 4H26V5H25.5V4ZM0.146446 4.85355C-0.0488148 4.65829 -0.0488148 4.34171 0.146446 4.14645L3.32843 0.964466C3.52369 0.769204 3.84027 0.769204 4.03553 0.964466C4.2308 1.15973 4.2308 1.47631 4.03553 1.67157L1.20711 4.5L4.03553 7.32843C4.2308 7.52369 4.2308 7.84027 4.03553 8.03553C3.84027 8.2308 3.52369 8.2308 3.32843 8.03553L0.146446 4.85355ZM25.5 5H0.5V4H25.5V5Z" fill="#1E8A47" />
-                </svg>
-            </button>
-            <button class="arrow arrow--next ">
-                <svg width="26" height="9" viewBox="0 0 26 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 4.5H25.5H0.5Z" fill="white" />
-                    <path d="M0.5 4H0V5H0.5V4ZM25.8536 4.85355C26.0488 4.65829 26.0488 4.34171 25.8536 4.14645L22.6716 0.964466C22.4763 0.769204 22.1597 0.769204 21.9645 0.964466C21.7692 1.15973 21.7692 1.47631 21.9645 1.67157L24.7929 4.5L21.9645 7.32843C21.7692 7.52369 21.7692 7.84027 21.9645 8.03553C22.1597 8.2308 22.4763 8.2308 22.6716 8.03553L25.8536 4.85355ZM0.5 5H25.5V4H0.5V5Z" fill="white" />
-                </svg>
-            </button>
+        <div class="about__arrow-box">
+            <Arrow modifier='about' direction='left'/>
+            <Arrow modifier='about' direction='right'/>
         </div>
         <a href="javascript:void(0);" class="about__dot about__dot--tech"></a>
         <div class="about__inner">
             <div class="about__main">
                 <Title class="about" Tag='h2'>ESTET</Title>
-                <p class="about__subtitle">Дверные технологии ESTET превращают квадратные метры в&nbsp;уютный Дом, пространство в&nbsp;удобное и&nbsp;прекрасное Жильё. Наши двери создают неповторимые ощущения, когда каждый день&nbsp;Вы открываете дверь и&nbsp;вместе с&nbsp;тем что-то новое, а&nbsp;главное&nbsp;&mdash; открываете с удовольствием!</p>
+                <Text class="about">Дверные технологии ESTET превращают квадратные метры в&nbsp;уютный Дом, пространство в&nbsp;удобное и&nbsp;прекрасное Жильё. Наши двери создают неповторимые ощущения, когда каждый день&nbsp;Вы открываете дверь и&nbsp;вместе с&nbsp;тем что-то новое, а&nbsp;главное&nbsp;&mdash; открываете с удовольствием!</Text>
             </div>
             <div class="about__wrapper about__wrapper--solution">
                 <a href="javascript:void(0);" class="about__dot about__dot--solution"></a>
