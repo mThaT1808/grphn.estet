@@ -23,21 +23,21 @@ import Title from '@components/uikit/Title/Title.astro'
                     <li class="review__item">
                         <Text class="review">Современный ремонт квартиры-студии!</Text>
                     </li>
-                    <li class="review__item">
+                    <li class="review__item review__item--hide-mobile">
                         <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
                     </li>
-                    <li class="review__item review__item--hidden">
+                    <li class="review__item review__item--hide-mobile review__item--hide-desktop">
                         <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
                     </li>
                 </ul>
                 <button class="review__button review__button--prev" type="button">Назад</button>
                 <button class="review__button" type="button">Вперёд</button>
             </div>
-        </div>
-        <div class="review__container">
-            <Text class='review-small'>
-                Еще больше новых обзоров вы найдете  на нашем <a class="review__link">Youtube</a> канале
-            </Text>
+            <div class="review__container">
+                <Text class='review-small'>
+                    Еще больше новых обзоров вы найдете  на нашем <a class="review__link">Youtube</a> канале
+                </Text>
+            </div>
         </div>
     </Container>
 </section>

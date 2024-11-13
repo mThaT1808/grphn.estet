@@ -182,7 +182,11 @@
         }
 
         &--review {
-            margin-bottom: 102px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            // margin-bottom: 102px;
             font-size: 36px;
         }
 
