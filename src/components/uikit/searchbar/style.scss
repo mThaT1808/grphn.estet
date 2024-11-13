@@ -83,6 +83,11 @@
 @media (min-width: ($desktop + 'px')) {
 
     .searchbar {
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
         &__button {
             font-size: 21px;
         }
