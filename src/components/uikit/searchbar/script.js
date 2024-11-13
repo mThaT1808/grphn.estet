@@ -1,18 +1,26 @@
-const searchbar = document.querySelector('.searchbar')
-const button = searchbar.querySelector('.searchbar__button')
+const searchbars = document.querySelectorAll('.searchbar');
+const buttons = document.querySelectorAll('.searchbar__button');
 
-function searchButtonListener () {
-    searchbar.classList.contains('searchbar--open')?
-    alert('что то ищем'):
-    searchbar.classList.add('searchbar--open');
-    window.addEventListener('click', anotherClickHandler)
+window.addEventListener('click', anotherClickHandler);
+
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', searchButtonListener)
 }
 
-function anotherClickHandler (e) {
-    if (!searchbar.contains(e.target)) {
-        searchbar.classList.remove('searchbar--open');
-        window.removeEventListener('click', anotherClickHandler)
+function searchButtonListener (e) {
+    for (var i = 0; i < searchbars.length; i++) {
+        if (searchbars[i].contains(e.target)) {
+            searchbars[i].classList.contains('searchbar--open')?
+            alert('что то ищем'):
+            searchbars[i].classList.add('searchbar--open');
+        }
     }
 }
 
-button.addEventListener('click', searchButtonListener)
+function anotherClickHandler (e) {
+    for (var i = 0; i < searchbars.length; i++) {
+        if (!searchbars[i].contains(e.target)) {
+            searchbars[i].classList.remove('searchbar--open');
+        }
+    }
+}

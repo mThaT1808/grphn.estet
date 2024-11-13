@@ -52,6 +52,7 @@
                 transform: scale(0.8);
             }
         }
+
     }
 
     &--open &__button {
@@ -64,6 +65,18 @@
     &--open &__input {
         opacity: 1;
         width: 40%;
+    }
+
+    &--burger &__button{
+        margin-left: 25px;
+    }
+
+    &--burger.searchbar--open &__input{
+        width: calc(100% - 90px);
+    }
+
+    &--burger.searchbar--open &__button{
+        left: calc(calc(100% - 90px - 32px));
     }
 }
 

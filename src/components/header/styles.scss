@@ -58,6 +58,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: padding global.$animation-time;
+
+        &:has(.searchbar--open) ~ & {
+            // padding-top: 62px;
+            // padding-bottom: 25px;
+            display: none;
+        }
     }
 
     &__contacts {

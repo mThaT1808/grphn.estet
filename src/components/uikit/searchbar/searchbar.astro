@@ -1,9 +1,11 @@
 ---
 import Icon from '../Icon/Icon.astro'
 import './style.scss'
+
+const { modifier } = Astro.props;
 ---
 
-<div class="searchbar">
+<div class:list={['searchbar', modifier?`searchbar--${modifier}`: '']}>
     <input type="text" class="searchbar__input" placeholder="Поиск...">
     <button class="searchbar__button">
         <Icon  name="loupe" mod="white"/>

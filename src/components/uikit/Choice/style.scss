@@ -67,6 +67,10 @@
             .icon {
                 color: $cl-white;
             }
+
+            &::after {
+                border-color: $cl-white;
+            }
         }
 
         &--intro &__list {
