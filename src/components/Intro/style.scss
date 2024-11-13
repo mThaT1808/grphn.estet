@@ -1,9 +1,11 @@
 @use '/src/assets/styles/global.scss' as *;
 
+$intro-height: 670px;
+
 .intro {
     position: relative;
     margin: 0 auto;
-    height: 670px;
+    height: $intro-height;
     max-width: 1600px;
 
 
@@ -22,15 +24,12 @@
     }
 
     &__slide {
-        height: 100%;
-    }
-
-    &__wrapper {
+        position: relative;
         height: 100%;
     }
 
     &__image {
-        height: 100%;
+        height: $intro-height;
         width: 100%;
         object-fit: cover;
         object-position: -170px;
@@ -47,8 +46,9 @@
     }
 
     &__container {
+        max-width: 100%;
         position: absolute;
-        bottom: 173px;
+        bottom: 130px;
         padding: 0 25px;
     }
 
@@ -59,36 +59,50 @@
         background-size: auto 9px;
         background-repeat: no-repeat;
         background-position: right center;
-        z-index: 1;
         border: 0px;
         padding: 0;
         position: absolute;
-        bottom: 42px;
+        bottom: 30px;
         width:  43px;
         height: 32px;
-        line-height: 9px;
         font-size: 9px;
-        direction: rtl;
         overflow: hidden;
+
+        cursor: pointer;
+        transition: transform $animation-time;
 
         &--left {
             left: 25px;
-            transform: scaleX(-1);
+            transform: scale(-1);
+
+            &:hover {
+                transform: scale(-1.1);
+            }
         }
 
         &--right {
             left: 115px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 }
 
 @media (min-width: ($tablet + 'px')) {
+    $intro-height: 1024px;
+
     .intro {
-        height: 1024px;
+        height: $intro-height;
+
+        &__image {
+            height: $intro-height;
+        }
 
         &__container {
             padding: 0 82px;
-            top: 426px;
+            top: 390px;
         }
 
         &__button {
@@ -115,17 +129,22 @@
 }
 
 @media (min-width: ($desktop + 'px')) {
+    $intro-height: 900px;
+
     .intro {
-        height: 900px;
+        height: $intro-height;
 
 
         &__image {
+            height: $intro-height;
+
             object-position: 0px;
         }
 
         &__container {
             padding: 0px 172px;
-            top: 550px;
+            top: 481px;
+            z-index: 1;
         }
 
         &__functional {
@@ -137,6 +156,7 @@
 
         &__button {
             top: 507px;
+            z-index: 1;
 
             &--left {
                 left: 80px;
