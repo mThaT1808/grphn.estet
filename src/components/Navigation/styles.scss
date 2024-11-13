@@ -12,7 +12,6 @@
         font-size: 22px;
 
         padding-left: 38px;
-        margin: 0 -25px;
         display: flex;
         flex-direction: column;
     }
@@ -147,7 +146,7 @@
         }
 
         &--header &__list {
-            margin: 0 -84px;
+            margin: 0;
             columns: 1;
         }
     }
@@ -170,8 +169,6 @@
         }
 
         &--header &__list {
-            margin-left: -200px;
-            margin-right: -200px;
             padding: 0;
 
             flex-direction: row;
