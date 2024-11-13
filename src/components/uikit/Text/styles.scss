@@ -61,6 +61,11 @@
         }
     }
 
+    &--about {
+        font-size: 14px;
+        line-height: 179%;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 

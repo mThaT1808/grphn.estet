@@ -18,23 +18,25 @@ function checkWidth() {
         if (!slider.hasClass('slick-initialized')) {
             slider.slick({
                 arrows: false,
+                infinite: true,
                 autoplay: true,
                 mobileFirst: true,
                 easing: "ease-in-out",
                 speed: 1000,
             });
 
-            $('.arrow--prev').on('click', function(e) {
+            $('.arrow--left').on('click', function(e) {
                 e.preventDefault();
                 slider.slick('slickPrev');
             });
 
-            $('.arrow--next').on('click', function(e) {
+            $('.arrow--right').on('click', function(e) {
                 e.preventDefault();
                 slider.slick('slickNext');
             });
 
-            // slider.slick('slickRemove', 2, true);
+            slider.slick('slickRemove', 2, true);
+            slider.slick('slickRemove', 5, true);
             slider.slick('setPosition');
         }
     } else {
