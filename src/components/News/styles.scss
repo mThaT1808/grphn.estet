@@ -343,16 +343,16 @@
     }
 }
 
-.slick-active {
+.news__slider .slick-active {
     opacity: 0.4;
 }
 
-.slick-current {
+.news__slider .slick-current {
     opacity: 1;
 }
 
 @media (min-width: ($tablet + 'px')){
-    .slick-current + .slick-active {
+    .news__slider .slick-current + .slick-active {
         opacity: 1;
     }
 }
