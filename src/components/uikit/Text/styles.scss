@@ -63,7 +63,6 @@
 
     &--about {
         font-size: 14px;
-        line-height: 179%;
     }
 
     @media(min-width: ($tablet + 'px')) {
@@ -128,6 +127,14 @@
         &--sale__end {
             color: $cl-gray-99;
         }
+
+        &--guarantee {
+            padding-left: 82px;
+        }
+
+        &--about {
+            line-height: 25px;
+        }
     }
 
     @media(min-width: ($desktop + 'px')) {
@@ -173,6 +180,11 @@
             position: absolute;
             top: 0;
             right: 0;
+        }
+
+        &--guarantee {
+            padding-left: 70px;
+            padding-right: 38px;
         }
     }
 }
