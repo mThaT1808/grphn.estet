@@ -104,7 +104,7 @@
         margin-left: -25px;
         margin-right: -25px;
         padding: 40px 25px 44px 25px;
-        border-top: 1px solid $cl-white;
+        border-top: 1px solid $cl-gray-d8;
         border-bottom: none;
         border-left: none;
         border-right: none;
@@ -121,7 +121,7 @@
             width: calc(100% + 74px + 74px);
             margin-left: -74px;
             margin-right: -200px;
-            padding: 67px 74px 66px 74px;
+            padding: 71px 74px 66px 74px;
         }
     }
 
@@ -134,6 +134,7 @@
         }
 
         @media(min-width: ($desktop + 'px')) {
+            white-space: nowrap;
             margin-right: 27px;
         }
     }
@@ -183,7 +184,7 @@
             margin-bottom: 57px;
         }
         @media(min-width: ($desktop + 'px')) {
-            margin-bottom: 87px;
+            margin-bottom: 86px;
             align-self: flex-start;
         }
     }
