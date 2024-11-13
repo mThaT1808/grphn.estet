@@ -56,3 +56,20 @@ $(window).on('resize', function() {
     changeTemplate();
     checkWidth();
 });
+
+// function randomBlink() {
+
+//     const randomIndex = Math.floor(Math.random() * $('.dot').length);
+//     const dot = $('.dot').eq(randomIndex);
+
+//     const blinkDuration = Math.random() * 1000 + 500;
+
+//     dot.css('opacity', 1);
+//     setTimeout(function() {
+//         dot.css('opacity', 0);
+//     }, blinkDuration / 2);
+
+//     setTimeout(randomBlink, blinkDuration);
+// }
+
+// randomBlink();
