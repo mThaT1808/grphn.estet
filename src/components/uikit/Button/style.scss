@@ -47,8 +47,9 @@
         height: 60px;
         @media (min-width: ($tablet + 'px')) {
             margin: 0 85px 0 32px;
+            max-width: 254px;
         }
-        @media (min-width: ($desktop-min + 'px')) {
+        @media (min-width: ($desktop-lg + 'px')) {
             margin: 0 281px 0 51px;
         }
     }
