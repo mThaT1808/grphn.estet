@@ -218,6 +218,10 @@
             margin-left: auto;
             padding: 0;
         }
+
+        @media(min-width: ($desktop + 'px')) {
+            display: none;
+        }
     }
     // &--close {}
     // &--only-action {}

@@ -18,6 +18,10 @@
         margin-bottom: 22px;
     }
 
+    &__button-wrapper {
+        display: flex;
+    }
+
     &__filter {
         display: none;
     }
@@ -26,11 +30,43 @@
         margin-bottom: 75px;
         padding-right: 66px;
         padding-left: 66px;
-
-        &__button-wrapper {
-            display: flex;
-        }
     }
 
-    @media(min-width: ($desktop + 'px')) {}
+    @media(min-width: ($desktop + 'px')) {
+        width: 320px;
+
+        &__header {
+            display: block;
+        }
+
+        &__text {
+            color: $cl-white;
+        }
+
+        &__button-wrapper {
+            display: block;
+        }
+
+        &__filter {
+            display: block;
+
+            & .filter {
+                &__button {
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 48px;
+                    color: $cl-black;
+                    text-align: start;
+                    padding: 0 10px 0 0;
+                    margin-right: 31px;
+                    width: calc(100% - 31px);
+                    border-top: 0;
+                    border-right: 0;
+                    border-left: 0;
+                    border-bottom: 1px solid $cl-gray-e0;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
 }

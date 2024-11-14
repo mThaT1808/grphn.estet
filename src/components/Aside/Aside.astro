@@ -3,71 +3,61 @@ import Button from '@components/uikit/Button/Button.astro'
 import Link from '@components/uikit/Link/Link.astro'
 import Logotype from '@components/uikit/logotype/logotype.astro'
 import CallBack from '@components/uikit/CallBack/CallBack.astro'
-import Select from '@components/uikit/Select/Select.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import './style.scss'
-
-const selectCollection = [
-    {
-        title: 'bliss'
-    },
-    {
-        title: 'urban'
-    },
-    {
-        title: 'perfect'
-    },
-    {
-        title: 'sonata'
-    },
-    {
-        title: 'novella'
-    },
-    {
-        title: 'mio'
-    },
-    {
-        title: 'ways'
-    },
-    {
-        title: 'royal'
-    },
-    {
-        title: 'perfect volume'
-    },
-];
-
-const selectStyle = [];
-const selectTrim = [];
-const selectPrice = [];
 ---
 
 <aside class="aside">
-    <!-- <div class="aside__wrapper"> -->
-        <div class="aside__header">
-            <div class="aside__logo-wrapper">
-                <Logotype />
-            </div>
-            <CallBack modifier="aside"/>
-            <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
+    <div class="aside__header">
+        <div class="aside__logo-wrapper">
+            <Logotype />
         </div>
-        <p class="aside__text">1567 дверей</p>
-        <div class="aside__button-wrapper">
-            <Button class="button--aside button--pink">Коллекции</Button>
-            <Button class="button--aside button--green">Все двери</Button>
-            <Button class="button--filter">
-                <Icon name="filter" mod="aside"/>
-            </Button>
+        <CallBack modifier="aside"/>
+        <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
+    </div>
+    <p class="aside__text">1567 дверей</p>
+    <div class="aside__button-wrapper">
+        <Button class="button--aside button--pink button--block">Коллекции</Button>
+        <Button class="button--aside button--green button--block">Все двери</Button>
+        <Button class="button--filter">
+            <Icon name="filter" mod="aside"/>
+        </Button>
+    </div>
+    <div class="aside__filter">
+        <div class="filter">
+            <button class="filter__button">Коллекции</button>
+            <ul class="filter__list filter__list--collection">
+                <li class="filter__item">bliss</li>
+                <li class="filter__item">urban</li>
+                <li class="filter__item">perfect</li>
+                <li class="filter__item">novella</li>
+                <li class="filter__item">mio</li>
+                <li class="filter__item">ways</li>
+                <li class="filter__item">royal</li>
+                <li class="filter__item">perfect volume</li>
+            </ul>
         </div>
-        <div class="aside__filter">
-            <Select select={ selectCollection } name="collection" placeholder="Коллекции" class="select--aside" />
-            <Select select={ selectStyle } name="style" placeholder="Стиль" class="select--aside" />
-            <Select select={ selectTrim } name="trim" placeholder="Отделка" class="select--aside" />
-            <Select select={ selectPrice } name="price" placeholder="Цена" class="select--aside" />
-            <Button class="button--close">Сбросить все</Button>
-            <Button class="button--only-action">Сбросить все</Button>
+        <div class="filter">
+            <button class="filter__button">Стиль</button>
+            <ul class="filter__list filter__list--style">
+                <li class="filter__item"></li>
+            </ul>
         </div>
-    <!-- </div> -->
+        <div class="filter">
+            <button class="filter__button">Отделка</button>
+            <ul class="filter__list filter__list--trim">
+                <li class="filter__item"></li>
+            </ul>
+        </div>
+        <div class="filter">
+            <button class="filter__button">Цена</button>
+            <ul class="filter__list filter__list--price">
+                <li class="filter__item"></li>
+            </ul>
+        </div>
+        <Button class="button--close">Сбросить все</Button>
+        <Button class="button--only-action">Только по акции</Button>
+    </div>
 </aside>
 
 <script src="./script.js"></script>
