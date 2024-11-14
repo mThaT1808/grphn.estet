@@ -2,10 +2,14 @@
 
 .logotype {
     font-size: 40px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
 
     @media (min-width: ($tablet + 'px')) {
         font-size: 57px;
     }
+
     @media (min-width: ($desktop + 'px')) {
 
         font-size: 57px;
