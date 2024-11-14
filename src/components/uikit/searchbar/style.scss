@@ -83,8 +83,14 @@
 @media (min-width: ($desktop + 'px')) {
 
     .searchbar {
+
+
         &__button {
             font-size: 21px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         &--burger.searchbar--open {
