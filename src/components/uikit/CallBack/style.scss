@@ -3,11 +3,13 @@
 .call-back {
     display: block;
     line-height: 18px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
     text-transform: uppercase;
 
     width: 68%;
     margin-left: -22px;
-    padding: 26px 0px 20px 22px;
+    padding: 26px 0px 23px 20px;
     display: flex;
 
     border: 1px solid global.$cl-white;
@@ -15,9 +17,9 @@
     border-left-width: 0;
 
     &__icon {
-        margin-right: 16px;
+        margin-right: 18px;
         font-size: 20px;
-        line-height: 20px;
+        line-height: 16px;
     }
 
     &__text {
@@ -88,7 +90,9 @@
         }
 
         &--intro {
-            position: static;
+            position: relative;
+            top: 0;
+            z-index: 1;
 
             &::after {
                 display: none;

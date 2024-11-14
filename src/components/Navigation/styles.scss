@@ -28,7 +28,7 @@
             left: 0;
             width: 100%;
             height: 0;
-            border-bottom: 1px solid #e0e0e0
+            border-bottom: 1px solid rgba(224, 224, 224, 0.2)
         }
 
         &::after {
@@ -193,7 +193,12 @@
             }
 
             &::after {
-                transform: rotate(90deg);
+                background-image: none;
+                width: 7px;
+                height: 7px;
+                border-right: 1px solid $cl-white;
+                border-bottom: 1px solid $cl-white;
+                transform: rotate(45deg);
             }
 
             &--special {

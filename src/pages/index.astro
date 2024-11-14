@@ -9,9 +9,11 @@ import Shop from '@components/Shop/Shop.astro';
 import Product from '@components/Product/Product.astro';
 import Intro from '@components/Intro/Intro.astro';
 import Sale from '@components/Sale/Sale.astro'
-const pageTitle = "Home Page";
+const pageTitle = "Estet | Дверные технологии";
+const pageDescription = "Межкомнатные и офисные двери с богатой цветовой гаммой, стильным дизайном, различными вариантами исполнения и нестандартными размерами";
+const pageKeywords = "двери, межкомнатные двери, входные двери, установка дверей";
 ---
-<BaseLayout title={pageTitle} pageTitle={pageTitle}>
+<BaseLayout title={pageTitle} pageTitle={pageTitle} description={pageDescription} pageDescription={pageDescription} keywords={pageKeywords} pageKeywords={pageKeywords} >
     <Intro />
     <Product />
     <Banner />
