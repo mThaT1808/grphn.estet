@@ -1,0 +1,73 @@
+---
+import Button from '@components/uikit/Button/Button.astro'
+import Link from '@components/uikit/Link/Link.astro'
+import Logotype from '@components/uikit/logotype/logotype.astro'
+import CallBack from '@components/uikit/CallBack/CallBack.astro'
+import Select from '@components/uikit/Select/Select.astro'
+import Icon from '@components/uikit/Icon/Icon.astro'
+import './style.scss'
+
+const selectCollection = [
+    {
+        title: 'bliss'
+    },
+    {
+        title: 'urban'
+    },
+    {
+        title: 'perfect'
+    },
+    {
+        title: 'sonata'
+    },
+    {
+        title: 'novella'
+    },
+    {
+        title: 'mio'
+    },
+    {
+        title: 'ways'
+    },
+    {
+        title: 'royal'
+    },
+    {
+        title: 'perfect volume'
+    },
+];
+
+const selectStyle = [];
+const selectTrim = [];
+const selectPrice = [];
+---
+
+<aside class="aside">
+    <!-- <div class="aside__wrapper"> -->
+        <div class="aside__header">
+            <div class="aside__logo-wrapper">
+                <Logotype />
+            </div>
+            <CallBack modifier="aside"/>
+            <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
+        </div>
+        <p class="aside__text">1567 дверей</p>
+        <div class="aside__button">
+            <Button class="button--aside button-gray">Коллекции</Button>
+            <Button class="button--aside">Все двери</Button>
+            <Button class="button--aside button--filter">
+                <Icon name="filter" mod="black"/>
+            </Button>
+        </div>
+        <div class="aside__filter">
+            <Select select={ selectCollection } name="collection" placeholder="Коллекции" class="select--aside" />
+            <Select select={ selectStyle } name="style" placeholder="Стиль" class="select--aside" />
+            <Select select={ selectTrim } name="trim" placeholder="Отделка" class="select--aside" />
+            <Select select={ selectPrice } name="price" placeholder="Цена" class="select--aside" />
+            <Button class="button--close">Сбросить все</Button>
+            <Button class="button--only-action">Сбросить все</Button>
+        </div>
+    <!-- </div> -->
+</aside>
+
+<script src="./script.js"></script>
