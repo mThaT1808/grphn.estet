@@ -84,12 +84,13 @@
 
     .searchbar {
 
-        &:hover {
-            transform: scale(1.1);
-        }
 
         &__button {
             font-size: 21px;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         &--burger.searchbar--open {

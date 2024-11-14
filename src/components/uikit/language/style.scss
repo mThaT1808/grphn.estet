@@ -2,8 +2,12 @@
 
 .language {
 
+    transition: all $animation-time;
+
     &__button {
         font-size: 26px;
+        width: 32px;
+        height: 32px;
 
         background-color: transparent;
         border: 0px solid transparent;
@@ -12,31 +16,46 @@
         cursor: pointer;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 
     &--open {
-        position: relative;
-        left: -20%;
-        display: flex;
-        gap: 10px;
+        z-index: 1;
     }
 
     &__list {
         padding: 0;
-        display: none;
-        gap: 10px;
-    }
-
-    &--open &__list {
         display: flex;
+        position: relative;
+        max-width: 0px;
+        max-height: 0px;
+        gap: 0px;
+        overflow: hidden;
+
+        transition: all $animation-time;
+    }
+
+    &--open .current {
+        opacity: 0;
     }
 
     &--open &__list {
+
+        position: absolute;
+        max-width: unset;
+        max-height: unset;
+        width: calc((100vw - 50px) * 0.55);
+        left: 25px;
+        top: 22px;
+        gap: 30px;
+        justify-content: space-between;
+        background-color: $cl-green;
+
+        overflow: unset;
     }
 
-    &--open &__item {
+    &__item {
         list-style: none;
     }
 }
@@ -44,13 +63,18 @@
 @media (min-width: ($desktop + 'px')) {
     .language {
 
+        &--open {
+            left: 0;
+        }
+
         &__list {
             position: absolute;
+            display: flex;
+            flex-direction: column;
             top: 100%;
             height: 0;
             opacity: 0;
 
-            transition: all $animation-time;
         }
 
         &__item {
