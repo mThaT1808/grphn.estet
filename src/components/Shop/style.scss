@@ -76,6 +76,40 @@
         transform: translateY(-50%) rotate(135deg);
         right: 0;
     }
+
+    &--doors {
+        padding-bottom: 110px;
+    }
+
+    &__show-map {
+        font-size: 16px;
+        line-height: 28px;
+        color: $cl-white;
+
+        display: flex;
+        gap: 18px;
+        background-color: $cl-green;
+        width: fit-content;
+        padding: 15px 28px 15px 18px;
+        margin-left: auto;
+        margin-bottom: 26px;
+
+        &:active {
+            background-color: $cl-lite-green;
+        }
+    }
+
+    &__map-icon {
+        font-size: 28px;
+    }
+
+    &__map-text  {
+        margin: 0;
+    }
+
+    &--doors .title--shop {
+        margin-bottom: 40px;
+    }
 }
 
 .slider--shop {
@@ -123,6 +157,26 @@
 
         & .arrow-box {
             margin-right: 84px;
+        }
+
+        &--doors .slider--shop {
+
+            & .slick-slide {
+
+                & > div {
+                    margin-bottom: 66px;
+                }
+            }
+        }
+
+        &--doors &__wrapper {
+            margin-left: -6px;
+            gap: 0 90px;
+        }
+
+
+        &__show-map {
+            margin-bottom: 44px;
         }
     }
 
@@ -175,7 +229,12 @@
         }
 
         &--doors &__wrapper {
+            margin-left: 0;
             column-gap: 190px;
+        }
+
+        &__show-map {
+            display: none;
         }
     }
 
