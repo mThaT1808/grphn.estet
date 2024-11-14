@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?ed78588d794e7e3da76e5b38582e1df9") format("woff"),
-url("icons.woff2?ed78588d794e7e3da76e5b38582e1df9") format("woff2");
+  src: url("icons.woff?999568b4017013ff1f482a4773a271a2") format("woff"),
+url("icons.woff2?999568b4017013ff1f482a4773a271a2") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -74,4 +74,5 @@ url("icons.woff2?ed78588d794e7e3da76e5b38582e1df9") format("woff2");
 .icon-video:before { content: "\f118"; }
 .icon-vk:before { content: "\f119"; }
 .icon-year:before { content: "\f11a"; }
-.icon-youtube:before { content: "\f11b"; }
+.icon-youtube-video:before { content: "\f11b"; }
+.icon-youtube:before { content: "\f11c"; }

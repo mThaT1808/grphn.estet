@@ -3,37 +3,50 @@ import Text from '@components/uikit/Text/Text.astro'
 import './style.scss'
 import Container from '@components/container/container.astro'
 import Title from '@components/uikit/Title/Title.astro'
+import Icon from '@components/uikit/Icon/Icon.astro'
+import Arrow from '@components/uikit/Arrow/Arrow.astro'
 ---
 <section class="review">
     <Container >
         <Title Tag='h2' class="review">Видео обзор</Title>
         <div class="review__slider">
-            <video class="review__video" muted="true" poster="/images/review/placeholder-desktop.jpg" controls/>
+            <video class="review__video" muted="true" poster="/images/review/placeholder-desktop.jpg"/>
             <div class="review__wrapper">
                 <ul class="review__list">
                     <li class="review__item">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">Современный ремонт квартиры-студии!</Text>
                     </li>
                     <li class="review__item review__item--active">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">ESTET воплощает мечты</Text>
                     </li>
                     <li class="review__item">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
                     </li>
                     <li class="review__item">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">Современный ремонт квартиры-студии!</Text>
                     </li>
                     <li class="review__item review__item--hide-mobile">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
                     </li>
                     <li class="review__item review__item--hide-mobile review__item--hide-desktop">
+                        <Icon name='video' mod='video-review'/>
                         <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
                     </li>
                 </ul>
-                <button class="review__button review__button--prev" type="button">Назад</button>
-                <button class="review__button" type="button">Вперёд</button>
+                <div class="review__arrow-container">
+                    <Arrow modifier='adaptive-left'/>
+                    <Arrow modifier='adaptive-right'/>
+                </div>
+                <!-- <button class="review__button review__button--prev" type="button">Назад</button>
+                <button class="review__button" type="button">Вперёд</button> -->
             </div>
             <div class="review__container">
+                <Icon name="youtube-video" mod="youtube-video"/>
                 <Text class='review-small'>
                     Еще больше новых обзоров вы найдете  на нашем <a class="review__link">Youtube</a> канале
                 </Text>
