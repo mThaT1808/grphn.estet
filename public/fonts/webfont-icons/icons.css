@@ -2,8 +2,13 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
+<<<<<<< HEAD
   src: url("icons.woff?40fd019cc122d2b31776e44501f8f4cb") format("woff"),
 url("icons.woff2?40fd019cc122d2b31776e44501f8f4cb") format("woff2");
+=======
+  src: url("icons.woff?6380afa30fba7637283cf92767563e90") format("woff"),
+url("icons.woff2?6380afa30fba7637283cf92767563e90") format("woff2");
+>>>>>>> 21cdfecca7ae28fe1741292fabadb521dc64dccd
 }
 
 .icon, .icon-icons {
@@ -54,6 +59,7 @@ url("icons.woff2?40fd019cc122d2b31776e44501f8f4cb") format("woff2");
 .icon-burger-close:before { content: "\f104"; }
 .icon-burger:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
+<<<<<<< HEAD
 .icon-filter:before { content: "\f107"; }
 .icon-five:before { content: "\f108"; }
 .icon-glass:before { content: "\f109"; }
@@ -67,6 +73,21 @@ url("icons.woff2?40fd019cc122d2b31776e44501f8f4cb") format("woff2");
 .icon-location:before { content: "\f111"; }
 .icon-logo-white:before { content: "\f112"; }
 .icon-loupe:before { content: "\f113"; }
+=======
+.icon-five:before { content: "\f107"; }
+.icon-glass:before { content: "\f108"; }
+.icon-instagram:before { content: "\f109"; }
+.icon-kontora:before { content: "\f10a"; }
+.icon-language-be:before { content: "\f10b"; }
+.icon-language-en:before { content: "\f10c"; }
+.icon-language:before { content: "\f10d"; }
+.icon-like-white:before { content: "\f10e"; }
+.icon-like:before { content: "\f10f"; }
+.icon-location:before { content: "\f110"; }
+.icon-logo-white:before { content: "\f111"; }
+.icon-loupe:before { content: "\f112"; }
+.icon-map-pin:before { content: "\f113"; }
+>>>>>>> 21cdfecca7ae28fe1741292fabadb521dc64dccd
 .icon-next-arrow:before { content: "\f114"; }
 .icon-phone:before { content: "\f115"; }
 .icon-prev-arrow:before { content: "\f116"; }
@@ -77,4 +98,9 @@ url("icons.woff2?40fd019cc122d2b31776e44501f8f4cb") format("woff2");
 .icon-video:before { content: "\f11b"; }
 .icon-vk:before { content: "\f11c"; }
 .icon-year:before { content: "\f11d"; }
+<<<<<<< HEAD
 .icon-youtube:before { content: "\f11e"; }
+=======
+.icon-youtube-video:before { content: "\f11e"; }
+.icon-youtube:before { content: "\f11f"; }
+>>>>>>> 21cdfecca7ae28fe1741292fabadb521dc64dccd

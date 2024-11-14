@@ -53,8 +53,8 @@
 @media (min-width: #{$tablet + 'px'}) {
     .choice {
         &--shop {
-            margin-bottom: 20px;
-            align-self: center;
+            margin-bottom: 35px;
+            align-self: flex-end;
         }
 
         &--intro {

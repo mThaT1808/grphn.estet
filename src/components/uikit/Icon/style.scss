@@ -55,6 +55,25 @@
         }
     }
 
+    &--video-review {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 31px;
+
+        @media (min-width: ($tablet + 'px')) {
+            top: 0;
+        }
+    }
+
+    &--youtube-video {
+        color: $cl-green;
+
+        @media (min-width: ($desktop + 'px')) {
+            font-size: 16px;
+        }
+    }
+
     &--aside {
         font-size: 32px;
         color: $cl-black;
