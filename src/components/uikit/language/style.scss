@@ -60,11 +60,24 @@
     }
 }
 
+@media (min-width: ($tablet + 'px')) {
+    .language {
+
+        &--open &__list {
+            width: calc((400px - 50px) * 0.55);
+        }
+    }
+}
+
 @media (min-width: ($desktop + 'px')) {
     .language {
 
         &--open {
             left: 0;
+        }
+
+        &--open .current {
+            opacity: 0.5;
         }
 
         &__list {
@@ -82,6 +95,9 @@
         }
 
         &--open &__list {
+            gap: 10px;
+            background-color: transparent;
+            left: 0;
             top: calc(100% + 10px);
             height: auto;
             opacity: 1;
