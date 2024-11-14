@@ -4,11 +4,22 @@ import Link from '@components/uikit/Link/Link.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Choice from '@components/uikit/Choice/Choice.astro'
 import './style.scss'
+
+export interface Props {
+    title?: string;
+    modifier?: string;
+}
+
+const { title, modifier } = Astro.props;
 ---
-<section class="shop">
+<section class:list={["shop", modifier? `shop--${modifier}`:'']}>
     <Container>
         <div class="shop__wrapper">
-            <Title Tag="h2" class="shop">Магазины</Title>
+            <Title Tag="h2" class="shop">{
+                    title?
+                    `${title}`:
+                    'Магазины'
+                }</Title>
             <Choice class="shop"></Choice>
             <ul class="slider slider--shop">
                 <li class="slider__item">

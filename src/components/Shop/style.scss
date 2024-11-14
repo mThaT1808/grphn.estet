@@ -173,6 +173,10 @@
         & .arrow-box {
             margin-right: 200px;
         }
+
+        &--doors &__wrapper {
+            column-gap: 190px;
+        }
     }
 
     .slider--shop {
