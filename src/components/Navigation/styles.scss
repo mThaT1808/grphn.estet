@@ -158,7 +158,12 @@
         padding: 88px 0 0 200px;
 
         &__list {
-            column-gap: 42px;
+            margin: 0;
+            column-gap: 22px;
+        }
+
+        &__item {
+            max-width: 259px;
         }
 
         &--header {

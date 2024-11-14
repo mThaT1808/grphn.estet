@@ -20,6 +20,7 @@
         font-weight: 600;
         padding-right: 25px;
         color: var(--cl-gray-3c);
+
         @media (min-width: ($tablet + 'px')){
             display: inline-block;
             font-size: 36px;
@@ -116,10 +117,9 @@
 
 .news,
 .suggestions {
-
-
     &__item--big {
         display: none;
+
         @media (min-width: ($tablet + 'px')){
             display: block;
         }
@@ -130,6 +130,7 @@
             display: block;
             margin-bottom: 37px;
         }
+
         @media (min-width: ($desktop + 'px')){
             display: flex;
             gap: 62px;
@@ -147,6 +148,7 @@
 
     &__title--big {
         margin-bottom: 15px;
+
         @media (min-width: ($desktop + 'px')){
             margin-bottom: 13px;
         }
@@ -160,12 +162,15 @@
         width: 68.8vw;
         margin-top: 0;
         margin-bottom: unset;
+
         @media (min-width: ($tablet + 'px')){
             width: 33.6vw;
         }
+
         @media (min-width: ($desktop + 'px')){
             width: 16.1vw;
         }
+
         @media (min-width: ($desktop-lg + 'px')){
             width: 258px;
         }
@@ -176,6 +181,7 @@
         line-height: 33px;
         margin-bottom: unset;
         width: auto;
+
         @media (min-width: ($desktop + 'px')){
             margin-bottom: 11px;
         }
@@ -188,12 +194,15 @@
         margin-bottom: 40px;
         width: 68.8vw;
         height: 151px;
+
         @media (min-width: ($tablet + 'px')){
             width: 33.6vw;
         }
+
         @media (min-width: ($desktop + 'px')){
             width: 16.1vw;
         }
+
         @media (min-width: ($desktop-lg + 'px')){
             width: 258px;
         }
@@ -243,14 +252,17 @@
     &__media-wrapper {
         width: 68.8vw;
         height: 37.07vw;
+
         @media (min-width: ($tablet + 'px')){
             width: 33.6vw;
             height: 18.1vw;
         }
+
         @media (min-width: ($desktop + 'px')){
             width: 16.1vw;
             height: 8.7vw;
         }
+
         @media (min-width: ($desktop-lg + 'px')){
             width: 258px;
             height: 139px;
@@ -260,9 +272,11 @@
     &__media-wrapper--big {
         width: 100%;
         height: auto;
+
         @media (min-width: ($desktop + 'px')){
             width: 34.875vw;
         }
+
         @media (min-width: ($desktop-lg + 'px')){
             width: 558px;
         }
@@ -271,13 +285,30 @@
     &__slider {
         width: 156.8vw;
         margin-bottom: 8px;
+
+        .slick-active {
+            opacity: 0.4;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        .slick-current + .slick-active {
+            @media (min-width: ($tablet + 'px')){
+                opacity: 1;
+            }
+        }
+
         @media (min-width: ($tablet + 'px')){
         width: 117.1875vw;
         }
+
         @media (min-width: ($desktop + 'px')){
             width: 56.25vw;
             margin-bottom: 0;
         }
+
         @media (min-width: ($desktop-lg + 'px')){
             width: 900px;
         }
@@ -291,6 +322,7 @@
 
 .news {
     display: inline;
+
     @media (min-width: ($desktop-lg + 'px')){
         display: block;
     }
@@ -325,6 +357,7 @@
     padding: 0;
     background-color: var(--cl-transparent);
     border: none;
+
     &:hover {
         cursor: pointer;
     }
@@ -332,27 +365,16 @@
 
 .slick-slide {
     width: 156.8vw;
+
     @media (min-width: ($tablet + 'px')){
         width: 117.19vw;
     }
+
     @media (min-width: ($desktop + 'px')){
         width: 56.25vw;
     }
+
     @media (min-width: ($desktop-lg + 'px')){
         width: 900px;
-    }
-}
-
-.slick-active {
-    opacity: 0.4;
-}
-
-.slick-current {
-    opacity: 1;
-}
-
-@media (min-width: ($tablet + 'px')){
-    .slick-current + .slick-active {
-        opacity: 1;
     }
 }
