@@ -204,11 +204,17 @@
             width: 160px;
             text-align: start;
         }
+
+        @media(min-width: ($desktop + 'px')) {
+            width: 100%;
+        }
     }
+
     &--pink {
         color: $cl-gray-3c;
         background-color: $cl-pink-f9;
     }
+
     &--filter {
         display: none;
 
@@ -223,6 +229,4 @@
             display: none;
         }
     }
-    // &--close {}
-    // &--only-action {}
 }

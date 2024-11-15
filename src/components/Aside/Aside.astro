@@ -25,7 +25,7 @@ import './style.scss'
     </div>
     <div class="aside__filter">
         <div class="filter">
-            <button class="filter__button">Коллекции</button>
+            <button class="filter__opener">Коллекции</button>
             <ul class="filter__list filter__list--collection">
                 <li class="filter__item">bliss</li>
                 <li class="filter__item">urban</li>
@@ -38,25 +38,33 @@ import './style.scss'
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__button">Стиль</button>
+            <button class="filter__opener">Стиль</button>
             <ul class="filter__list filter__list--style">
-                <li class="filter__item"></li>
+                <li class="filter__item">-</li>
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__button">Отделка</button>
+            <button class="filter__opener">Отделка</button>
             <ul class="filter__list filter__list--trim">
-                <li class="filter__item"></li>
+                <li class="filter__item">-</li>
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__button">Цена</button>
+            <button class="filter__opener">Цена</button>
             <ul class="filter__list filter__list--price">
-                <li class="filter__item"></li>
+                <li class="filter__item">
+                    <input type="range" id="price-range" min="0" max="50000" step="500">
+                </li>
             </ul>
         </div>
-        <Button class="button--close">Сбросить все</Button>
-        <Button class="button--only-action">Только по акции</Button>
+        <button class="filter__button filter__button--reset">
+            Сбросить все
+            <Icon name="reset" mod="reset"/>
+        </button>
+        <label class="filter__label">
+            <Icon name="square" mod="square"/>
+            <input type="checkbox" class="filter__button filter__button--only-action">Только по акции</input>
+        </label>
     </div>
 </aside>
 
