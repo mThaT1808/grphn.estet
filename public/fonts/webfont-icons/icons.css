@@ -2,8 +2,13 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
+<<<<<<< HEAD
   src: url("icons.woff?5e0bca61629dd1e514f9f000234664d9") format("woff"),
 url("icons.woff2?5e0bca61629dd1e514f9f000234664d9") format("woff2");
+=======
+  src: url("icons.woff?58f90b5594bc959d86952e2c809d85f0") format("woff"),
+url("icons.woff2?58f90b5594bc959d86952e2c809d85f0") format("woff2");
+>>>>>>> 76933884e5dc6ff13d7bc56cb2dd03cde5f132ff
 }
 
 .icon, .icon-icons {
@@ -54,9 +59,15 @@ url("icons.woff2?5e0bca61629dd1e514f9f000234664d9") format("woff2");
 .icon-burger-close:before { content: "\f104"; }
 .icon-burger:before { content: "\f105"; }
 .icon-facebook:before { content: "\f106"; }
+<<<<<<< HEAD
 .icon-filter:before { content: "\f107"; }
 .icon-five:before { content: "\f108"; }
 .icon-glass:before { content: "\f109"; }
+=======
+.icon-five:before { content: "\f107"; }
+.icon-glass:before { content: "\f108"; }
+.icon-heart:before { content: "\f109"; }
+>>>>>>> 76933884e5dc6ff13d7bc56cb2dd03cde5f132ff
 .icon-instagram:before { content: "\f10a"; }
 .icon-kontora:before { content: "\f10b"; }
 .icon-language-be:before { content: "\f10c"; }
