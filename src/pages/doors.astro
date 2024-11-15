@@ -1,4 +1,5 @@
 ---
+import Shop from '@components/Shop/Shop.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageConfig = {
     title: 'doors',
@@ -14,4 +15,6 @@ const pageConfig = {
     pageImage={pageConfig.image}
     >
         <h1>Page doors</h1>
+
+    <Shop title="Купить в вашем городе" modifier='doors'/>
 </BaseLayout>

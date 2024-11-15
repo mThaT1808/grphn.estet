@@ -9,6 +9,7 @@ function checkWidth() {
             rows: 1,
             easing: "ease",
             infinite: false,
+            arrows: false,
         });
 
         $('.arrow--shop-prev').on('click', function(e) {
@@ -26,6 +27,7 @@ function checkWidth() {
                 rows: 4,
                 easing: "ease",
                 infinite: false,
+                arrows: false,
             });
 
             $('.arrow--shop-prev').on('click', function(e) {
@@ -44,6 +46,7 @@ function checkWidth() {
             slidesToShow: 4.5,
             slidesToScroll: 1,
             rows:1,
+            arrows: false,
         });
 
         $('.arrow--shop-prev').on('click', function(e) {
