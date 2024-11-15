@@ -4,11 +4,35 @@ import Link from '@components/uikit/Link/Link.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Choice from '@components/uikit/Choice/Choice.astro'
 import './style.scss'
+import Icon from '@components/uikit/Icon/Icon.astro'
+
+export interface Props {
+    title?: string;
+    modifier?: string;
+}
+
+const { title, modifier } = Astro.props;
 ---
-<section class="shop">
+<section class:list={["shop", modifier? `shop--${modifier}`:'']}>
+    {
+        modifier?
+        <a href="javascript:void(0);" class="shop__show-map">
+            <div class="shop__map-icon">
+                <Icon name="map-pin" mod="white"/>
+            </div>
+            <p class="shop__map-text">
+                Показать на карте
+            </p>
+        </a>:
+        ''
+    }
     <Container>
         <div class="shop__wrapper">
-            <Title Tag="h2" class="shop">Магазины</Title>
+            <Title Tag="h2" class="shop">{
+                    title?
+                    `${title}`:
+                    'Магазины'
+                }</Title>
             <Choice class="shop"></Choice>
             <ul class="slider slider--shop">
                 <li class="slider__item">
