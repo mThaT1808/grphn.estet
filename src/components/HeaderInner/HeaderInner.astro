@@ -1,0 +1,23 @@
+---
+import './style.scss'
+import CallBack from '@components/uikit/CallBack/CallBack.astro'
+import Personal from '@components/uikit/Personal/Personal.astro'
+import Container from '@components/container/container.astro'
+import Searchbar from '@components/uikit/searchbar/searchbar.astro'
+import Logotype from '@components/uikit/logotype/logotype.astro'
+import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
+---
+
+<header class="header">
+    <Container>
+        <div class="header__base">
+            <Searchbar />
+            <CallBack />
+            <Logotype />
+            <Personal />
+            <Hamburger />
+        </div>
+    </Container>
+</header>
+
+<script src="./script.js"></script>
