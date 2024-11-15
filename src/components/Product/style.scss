@@ -44,7 +44,7 @@
         }
 
         &--only-right {
-            margin: 0 -25px 0 25px;
+            margin: 0 -25px 0 22px;
         }
     
         &--mobile-left {
@@ -63,6 +63,19 @@
 
         &__rank-last {
         width: calc(100% + 25px);
+        }
+
+        &--enter {
+            .product__image {
+                aspect-ratio: 350 / 261;
+            }
+        }
+
+        &--partition {
+            margin-bottom: 26px;
+            .product__image {
+                aspect-ratio: 350 / 311;
+            }
         }
     }
 
@@ -106,10 +119,11 @@
             margin: auto 0 0 -25px;
             padding: 0 24px 39px 0;
             width: 50%;
+            text-align: right;
         }
 
         &--right {
-            padding: 25px 0 0 66px;
+            padding: 25px 0 0 80px;
             font-size: 14px;
             line-height: 25px;
             text-align: right;
@@ -119,7 +133,7 @@
         &--slide {
             order: 1;
             width: 50%;
-            margin: auto 0;
+            margin: 116px 0 0 16px;
             padding-left: 65px;
         }
 
@@ -135,13 +149,13 @@
             font-size: 14px;
             line-height: 25px;
             font-weight: 400;
-            padding: 25px 60px 30px 25px;
+            padding: 25px 76px 30px 0;
         }
 
         &--partition {
             position: absolute;
-            left: 47px;
-            bottom: 31px;
+            left: 18px;
+            bottom: 30px;
             width: 153px;
         }
 
@@ -152,7 +166,7 @@
         }
 
         &--boards {
-            padding: 49px 20px 0 0;
+            padding: 49px 27px 0 0;
             width: 50%;
             text-align: right;
         }
@@ -183,6 +197,10 @@
         }
     }
 
+    &__link {
+        cursor: pointer;
+    }
+
     @media (min-width: ($tablet + 'px')) {
         margin-top: -135px;
         &__list {
@@ -205,6 +223,7 @@
 
            &--rank-two {
             order: -3;
+            margin-bottom: 0;
            }
 
            &--rank-three {
@@ -250,7 +269,7 @@
 
            &--left {
             margin-left: 0;
-            padding-top: 146px;
+            // padding-top: 146px;
            }
         }
 
@@ -278,6 +297,7 @@
                 width: 136px;
                 padding: 0;
                 color: $cl-white;
+                text-align: left;
             }
 
             &--left {
@@ -296,7 +316,7 @@
             &--panels {
                 position: absolute;
                 top: 35px;
-                right: 32px;
+                right: 46px;
                 padding: 0;
                 width: 80%;
                 text-align: right;
@@ -305,8 +325,8 @@
 
             &--boards {
                 position: absolute;
-                bottom: 28px;
-                right: 25px;
+                bottom: 22px;
+                right: 26px;
                 padding: 0;
                 width: 80%;
                 color: $cl-white;
@@ -314,6 +334,13 @@
 
             &--partition {
                 width: 50%;
+                left: 47px;
+                bottom: 40px;
+            }
+
+            &--inner {
+                top: 42px;
+                right: 30px;
             }
         }
 
@@ -325,6 +352,7 @@
             &--small {
                 width: 301px;
                 aspect-ratio: 301 / 362;
+                height: 362px;
             }
 
             &--big {
@@ -340,6 +368,7 @@
 
             &--tiny {
                 aspect-ratio: 301 / 225;
+                height: 225px;
             }
         }
 
@@ -355,6 +384,12 @@
         &__item--only-left &__container,
         &__item--only-right &__container {
             width: 100%;
+        }
+
+        &__item--partition &__image {
+            width: 519px;
+            height: 311px;
+            aspect-ratio: 519 / 311;
         }
 
         &__container {
@@ -377,7 +412,7 @@
     }
 
     @media (min-width: ($desktop + 'px')) {
-        margin-top: -80px;
+        margin-top: -75px;
         padding-top: 0;
 
         &__item {
@@ -393,7 +428,7 @@
             }
 
             &--rank-last {
-                margin: 0 0 0 auto;
+                margin: -115px 0 0 auto;
             }
 
             &--desktop-rank-two {
@@ -420,6 +455,10 @@
                 margin: -112px 0 0 0;
                 padding: 0;
                 background: linear-gradient($cl-white 25%, $cl-gray-f0 25%);
+            }
+
+            &:last-child {
+                margin-left: 0;
             }
         }
 
@@ -467,16 +506,15 @@
             }
 
             &--right {
-                margin: -25% 0;
+                margin: -19% 0;
                 padding: 0 0 91px 60%;
                 text-align: right;
             }
 
             &--enter {
-                left: initial;
+                left: calc(50% + 20px);
                 top: initial;
                 bottom: 154px;
-                right: 110px;
             }
 
             &--inner {
@@ -491,7 +529,7 @@
 
             &--panels {
                 top: 35px;
-                right: 33px;
+                right: 50px;
                 padding: 0;
                 z-index: 1;
                 text-align: right;
@@ -499,8 +537,8 @@
             }
 
             &--left {
-                margin: -25% 0;
-                padding: 0 60% 0 0;
+                margin: -16% 0;
+                padding: 0 61% 0 0;
             }
 
             &--boards {
