@@ -17,7 +17,7 @@
         font-weight: 700;
         font-size: 30px;
         line-height: 122%;
-        color: var(--cl-very-dark-gray);
+        color: $cl-gray-3c;
     }
 
     &__descr {
@@ -26,7 +26,7 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 185%;
-        color: var(--cl-dark-gray-nine);
+        color: $cl-gray-99;
     }
 
     &__picture {
