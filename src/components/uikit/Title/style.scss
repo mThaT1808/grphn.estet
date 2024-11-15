@@ -95,6 +95,7 @@
 
         &--shop {
             margin-bottom: 26px;
+            max-width: 50%;
         }
 
         &--shop-slider {
@@ -182,7 +183,11 @@
         }
 
         &--review {
-            margin-bottom: 102px;
+            position: absolute;
+            top: 16px;
+            left: 204px;
+            margin: 0;
+            // margin-bottom: 102px;
             font-size: 36px;
         }
 
