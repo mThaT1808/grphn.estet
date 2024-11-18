@@ -9,12 +9,12 @@
 @media (min-width: #{$tablet + 'px'}) {
     .container {
         padding: 0 84px;
-        max-width: 1600px;
+        max-width: 1200px;
     }
 }
 
 @media (min-width: #{$desktop + 'px'}) {
     .container {
-        padding: 0 200px;
+        padding: 0 ;
     }
 }
