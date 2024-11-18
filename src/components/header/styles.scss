@@ -1,4 +1,4 @@
-@use '/src/assets/styles/global.scss';
+@use '/src/assets/styles/global.scss' as *;
 
 .header {
     position: absolute;
@@ -6,7 +6,7 @@
     top: 0;
     z-index: 1;
     width: 100%;
-    color: global.$cl-white;
+    color: $cl-white;
 
     padding: 18px 0;
 
@@ -26,13 +26,13 @@
         left: 100%;
         width: 100%;
         height: 100vh;
-        background-color: global.$cl-green;
+        background-color: $cl-green;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         overflow-y: auto;
 
-        transition: transform global.$animation-time;
+        transition: transform $animation-time;
 
         &--open {
             transform: translateX(-100%);
@@ -60,7 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: padding global.$animation-time;
+        transition: padding $animation-time;
 
         &:has(.searchbar--open) ~ & {
             // padding-top: 62px;
@@ -72,7 +72,7 @@
     &__contacts {
         margin: 0 -22px -22px;
         padding: 40px 0 50px 60px;
-        background-color: global.$cl-black;
+        background-color: $cl-black;
     }
 
     &__number {
@@ -85,7 +85,7 @@
     }
 }
 
-@media (min-width: (global.$tablet + 'px')) {
+@media (min-width: ($tablet + 'px')) {
     .header {
         padding: 50px 0;
 
@@ -95,7 +95,7 @@
     }
 }
 
-@media (min-width: (global.$desktop + 'px')) {
+@media (min-width: ($desktop + 'px')) {
     .header {
         padding: 63px 0;
 
@@ -178,7 +178,7 @@
     }
 }
 
-@media (min-width: (global.$desktop-lg +'px')) {
+@media (min-width: ($desktop-lg +'px')) {
     .header {
         &__base {
 
