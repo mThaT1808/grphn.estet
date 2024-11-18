@@ -1,6 +1,7 @@
 @use '/src/assets/styles/global.scss' as *;
 
-$intro-height: 670px;
+// $intro-height: 670px;
+$intro-height: 100vh;
 
 .intro {
     position: relative;
@@ -48,7 +49,7 @@ $intro-height: 670px;
     &__container {
         max-width: 100%;
         position: absolute;
-        bottom: 130px;
+        bottom: 188px;
         padding: 0 25px;
     }
 
@@ -91,13 +92,15 @@ $intro-height: 670px;
 }
 
 @media (min-width: ($tablet + 'px')) {
-    $intro-height: 1024px;
+    // $intro-height: 1024px;
 
     .intro {
-        height: $intro-height;
+        // height: $intro-height;
+        height: calc(100vh + 109px);
 
         &__image {
-            height: $intro-height;
+            // height: $intro-height;
+            height: calc(100vh + 109px);
         }
 
         &__container {
@@ -106,7 +109,8 @@ $intro-height: 670px;
         }
 
         &__button {
-            top: 446px;
+            // top: 446px;
+            bottom: 546px;
             width: 56px;
 
             &--left {
@@ -134,7 +138,7 @@ $intro-height: 670px;
 }
 
 @media (min-width: ($desktop + 'px')) {
-    $intro-height: 900px;
+    // $intro-height: 900px;
 
     .intro {
         height: $intro-height;
@@ -142,13 +146,13 @@ $intro-height: 670px;
 
         &__image {
             height: $intro-height;
-
             object-position: 0px;
         }
 
         &__container {
             padding: 0px 172px;
-            top: 481px;
+            // top: 481px;
+            bottom: 164px;
             z-index: 1;
         }
 
@@ -160,7 +164,8 @@ $intro-height: 670px;
         }
 
         &__button {
-            top: 507px;
+            // top: 507px;
+            bottom: 375px;
             z-index: 1;
 
             &--left {
@@ -170,7 +175,8 @@ $intro-height: 670px;
             &--right {
                 right: 78px;
                 width: 344px;
-                top: 616px;
+                // top: 616px;
+                bottom: 252px;
             }
         }
     }
