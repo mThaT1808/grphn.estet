@@ -15,8 +15,12 @@
     }
 
     &--service {
-        margin: 0 0 18px 25px;
+        margin: 0 0 18px;
         text-align: right;
+    }
+
+    &--guarantee {
+        margin-left: 25px;
     }
 
     &--review {
@@ -130,6 +134,7 @@
 
         &--guarantee {
             padding-left: 82px;
+            margin-left: 0;
         }
 
         &--about {
