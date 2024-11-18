@@ -10,7 +10,12 @@
     .door {
         display: flex;
         gap: 21px;
-        margin-bottom: 46px;
+        margin-bottom: 47px;
+        width: 100%;
+    }
+
+    .door:nth-child(n+9) {
+        display: none;
     }
 
     .door:last-child {
@@ -146,5 +151,85 @@
 
     .door__choice-btn:hover {
         transform: scale(1.3);
+    }
+}
+
+@media (min-width: #{$tablet + 'px'}) {
+    .card {
+
+        padding: 50px 63px;
+        
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .door {
+            position: relative;
+            flex-direction: column;
+            gap: 23px;
+            padding: 36px 52px 18px 27px;
+            margin-bottom: 0;
+            width: 50%;
+        }
+
+        .door:nth-child(4n+4),
+        .door:nth-child(4n+3),
+        .door:nth-child(2)
+        {
+            background-color: $cl-gray-f7;
+        }
+
+        .door:nth-child(3) {
+            order: -1;
+            background-color: transparent;
+        }
+
+        .door__image-bg {
+            padding: 15px 13px 15px 37px;
+            width: 100%;
+        }
+
+        .door:nth-child(2n) .door__image-bg {
+            background-color: transparent;
+        }
+
+        .door__image-box {
+            padding: 0;
+            max-height: 500px;
+        }
+
+        .door__content {
+            padding: 0;
+            width: 100%;
+        }
+
+        .door__mark-box {
+            position: absolute;
+            top: 7px;
+            left: 16px;
+            margin-bottom: 0;
+        }
+
+        .door__mark-like {
+            display: none;
+        }
+
+        .door__title {
+            margin-bottom: 38px;
+            font-size: 21px;
+        }
+
+        .door__title::before {
+            content: none;
+        }
+
+        .door__choice-box {
+            max-width: fit-content;
+        }
+
+        .door__choice-box label:nth-of-type(n + 4) {
+            display: block;
+        }
     }
 }
