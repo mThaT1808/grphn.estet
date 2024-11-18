@@ -3,16 +3,12 @@
     padding-top: 50px;
     padding-bottom: 33px;
 
-    &__content {
-        display: flex;
-        justify-content: center;
-    }
-
     &__wrapper {
         max-width: 325px;
     }
 
     &__title {
+        max-width: 325px;
         margin-bottom: 27px;
         font-weight: 700;
         font-size: 30px;
@@ -41,6 +37,7 @@
         padding-bottom: 100px;
 
         &__content {
+            display: flex;
             column-gap: 45px;
             row-gap: 60px;
             flex-wrap: wrap;
