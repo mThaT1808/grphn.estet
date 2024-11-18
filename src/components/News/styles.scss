@@ -97,11 +97,11 @@
         line-height: 28px;
 
         @media (min-width: ($tablet + 'px')){
-            left: 299px;
+            left: 39.08vw;
         }
 
         @media (min-width: ($desktop + 'px')){
-            left: calc(93.5% - 200px);
+            left: calc(34.88vw + 362px);
         }
 
         @media (min-width: ($desktop-lg + 'px')){
@@ -305,12 +305,8 @@
         }
 
         @media (min-width: ($desktop + 'px')){
-            width: 56.25vw;
-            margin-bottom: 0;
-        }
-
-        @media (min-width: ($desktop-lg + 'px')){
             width: 900px;
+            margin-bottom: 0;
         }
     }
 
