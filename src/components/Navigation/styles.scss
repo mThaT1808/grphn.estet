@@ -193,18 +193,14 @@
             }
 
             &::after {
-                background-image: none;
-                width: 7px;
-                height: 7px;
-                border-right: 1px solid $cl-white;
-                border-bottom: 1px solid $cl-white;
-                transform: rotate(45deg);
+                background-image: url("/src/assets/images/icons/small-arrow.svg");
+                height: 9px;
+                transform: rotate(90deg);
             }
 
             &--special {
                 color: $cl-white;
                 text-transform: none;
-
                 background: transparent;
                 margin-right: calc(57px + (-10px + 5%) * 2);
                 margin-top: 0;
