@@ -42,6 +42,14 @@
             display: block;
         }
 
+        &__logo-wrapper {
+            display: inline-block;
+            width: 160px;
+            height: 160px;
+            background-color: $cl-green;
+            padding: 51px;
+        }
+
         &__text {
             padding-left: 51px;
             color: $cl-white;

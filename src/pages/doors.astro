@@ -1,5 +1,6 @@
 ---
 import Shop from '@components/Shop/Shop.astro';
+import Aside from '@components/Aside/Aside.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageConfig = {
     title: 'doors',
@@ -16,4 +17,5 @@ const pageConfig = {
     inner={true}
     >
     <Shop title="Купить в вашем городе" modifier='doors'/>
+    <Aside />
 </BaseLayout>
