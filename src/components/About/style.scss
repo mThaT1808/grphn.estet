@@ -8,12 +8,12 @@
 	&__container {
         display: flex;
         flex-wrap: wrap;
-        padding: 0 25px;
     }
 
     &__arrow-box {
         display: flex;
         margin-left: auto;
+        margin-right: 25px;
     }
 
     &__dot {
@@ -22,6 +22,7 @@
 
     &__main {
         margin-bottom: 67px;
+        padding: 0 25px;
     }
 
     // .slick-slide:has(&__wrapper--empty),
@@ -35,6 +36,14 @@
         flex-wrap: wrap;
         width: 100%;
         height: 100%;
+    }
+
+    &__inner .slick-slide {
+        padding: 0 25px;
+    }
+
+    &__wrapper {
+        width: calc(100% - 50px);
     }
 
     &__image-box {
@@ -69,10 +78,6 @@
 
 @media (min-width: #{$tablet + 'px'}) {
     .about {
-
-        &__container {
-            padding: 0;
-        }
 
         &__arrow-box {
             display: none;
@@ -187,11 +192,12 @@
 @media (min-width: #{$desktop + 'px'}) {
     .about {
         max-width: 1600px;
+        padding: 0;
 
         &__container {
             position: relative;
             max-height: 900px;
-            height: 56.25vw;
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -279,17 +285,18 @@
         }
 
         &__dot--quality {
-            top: 25%;
-            right: 42%;
+            top: 53%;
+            right: 17%;
+            z-index: 3;
         }
 
-        &__dot--quality:hover ~ &__image-box--quality {
-            transform: translateY(-53%);
-            height: 700px;
+        &__dot--quality:hover ~ &__inner &__wrapper--quality {
+            height: 100%;
+            transform: translateY(-73%);
         }
 
-        &__dot--quality:hover ~ &__descr--quality {
-            transform: translateY(0);
+        &__dot--quality:hover ~ &__inner &__descr--quality {
+            transform: translateY(0%);
             opacity: 1;
         }
 
@@ -358,6 +365,8 @@
             padding: 20px;
             width: 40%;
             height: 36.5%;
+            z-index: 2;
+            background-color: $cl-white;
         }
 
         &__wrapper--solution {
@@ -372,10 +381,6 @@
             max-height: fit-content;
         }
 
-        &__image--solution {
-            object-position: left;
-        }
-
         &__descr--solution {
             position: absolute;
             display: block;
@@ -386,9 +391,9 @@
             padding: 45px;
             color: $cl-white;
             background-color: $cl-green;
-            transform: translateX(0);
+            transform: translateX(178%);
             opacity: 0;
-            transition: opacity 0.9s ease, transform 0.9s ease;
+            transition: transform 0.9s ease;
             z-index: 1;
         }
 
@@ -404,15 +409,20 @@
             height: 63.5%;
             order: 5;
             transform: translateY(-57.5%);
+            z-index: 2;
+            transition: all 0.9s ease;
         }
 
         &__image-box--quality {
             max-height: fit-content;
-            transition: transform 0.9s ease;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
         }
 
         &__image--quality {
-            object-position: top;
+            object-position: 0 23%;
         }
 
         &__descr--quality {
@@ -421,13 +431,13 @@
             bottom: 0;
             left: 0;
             padding: 45px;
-            height: 42.5%;
+            height: 27%;
             width: 100%;
             color: $cl-white;
             background-color: $cl-green;
             transform: translateY(100%);
             opacity: 0;
-            transition: transform 0.9s ease, opacity 0.9s ease;
+            transition: transform 0.9s ease;
         }
 
         &__wrapper--tech {
@@ -435,11 +445,15 @@
             width: 45%;
             height: 27%;
             transform: translate(0);
-            transition: transform 0.9s ease;
+            transition: all 0.6s ease;
         }
 
-        &__image--tech {
-            object-position: 0% 90%;
+        &__image-box--tech {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            transition: all 0.9s ease;
         }
 
         &__descr--tech {
@@ -452,7 +466,7 @@
             background-color: $cl-green;
             transform: translateY(230%);
             opacity: 0;
-            transition: transform 0.6s ease, opacity 0.6s ease;
+            transition: transform 0.4s ease;
         }
 
         &__wrapper--company {
@@ -464,14 +478,14 @@
             height: 36.5%;
             order: 3;
             background-color: $cl-white;
-            transition: opacity 0.9s ease;
+            transition: opacity 0.6s ease;
         }
 
         &__image-box--company {
             display: block;
             width: 655px;
             transform: translateX(0%);
-            transition: opacity 0.9s ease, transform 0.9s ease;
+            transition: transform 0.9s ease;
             opacity: 0;
         }
 

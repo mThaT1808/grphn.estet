@@ -40,6 +40,48 @@
         padding: 2px 6px;
         background-color: $cl-white;
     }
+
+    &__popover {
+        width: 100%;
+        background-color: $cl-green;
+        height: 0px;
+        padding: 0 25px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+
+        transition-property: height, padding-top, padding-bottom, width;
+        transition-duration: $animation-time;
+
+        &--open {
+            padding: 25px;
+            height: 100vh;
+        }
+    }
+
+    &__title {
+        line-height: 32px;
+        padding-right: 57px;
+        margin-bottom: 25px;
+    }
+
+    &__close {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 0px transparent;
+        font-size: 30px;
+        cursor: pointer;
+
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
 }
 
 
@@ -61,6 +103,26 @@
             color: $cl-white;
 
             background-color: $cl-green;
+        }
+
+        &__popover {
+            width: 200px;
+            top: calc(100% + 25px);
+            right: 0;
+
+            &--open {
+                height: 350px;
+                width: 1200px;
+            }
+        }
+    }
+}
+
+@media (min-width: ($desktop-lg + 'px')) {
+    .personal {
+
+        &__popover {
+            right: -200px;
         }
     }
 }
