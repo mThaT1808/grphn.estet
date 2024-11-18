@@ -79,10 +79,6 @@
 @media (min-width: #{$tablet + 'px'}) {
     .about {
 
-        &__container {
-            padding: 0;
-        }
-
         &__arrow-box {
             display: none;
         }
@@ -196,11 +192,12 @@
 @media (min-width: #{$desktop + 'px'}) {
     .about {
         max-width: 1600px;
+        padding: 0;
 
         &__container {
             position: relative;
             max-height: 900px;
-            height: 56.25vw;
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -379,10 +376,6 @@
 
         &__image-box--solution {
             max-height: fit-content;
-        }
-
-        &__image--solution {
-            object-position: left;
         }
 
         &__descr--solution {
