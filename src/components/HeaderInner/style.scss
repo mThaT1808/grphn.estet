@@ -1,0 +1,83 @@
+@use '/src/assets/styles/global.scss' as*;
+
+.header-wrapper {
+
+    .header{
+        background-color: #000;
+        border-bottom: 1px solid var(--cl-gray-cd);
+
+        @media (min-width: ($mobile + 'px')){
+            padding: 9px 0 11px 0 !important;
+        }
+
+        @media (min-width: ($tablet + 'px')){
+            padding: 0 !important;
+        }
+
+        .container {
+            padding: 0 66px;
+            max-width: 1600px;
+        }
+
+        .logotype{
+            @media (min-width: ($tablet + 'px')) {
+                font-size: 40px;
+            }
+        }
+
+        .hamburger{
+            @media (min-width: ($tablet + 'px')) {
+                background-color: green;
+                width: 60px;
+                height: 58px;
+                position: relative;
+                right: -66px;
+            }
+        }
+
+        .call-back{
+            border: none;
+            width: auto;
+            padding: 6px 11px 6px 0;
+            margin-left: unset;
+
+            &__icon{
+                margin: 0;
+            }
+
+            &__text{
+                display: none;
+            }
+        }
+
+        .personal{
+            border: none;
+            width: auto;
+            flex-grow: unset;
+            margin-right: 0;
+            padding: 0;
+
+            &__item:first-child{
+                display: none;
+            }
+
+            &__button{
+                display: none;
+
+                &--basket{
+                    display: block;
+                }
+            }
+
+            &__quantity{
+                display: none;
+            }
+        }
+
+        .searchbar{
+            &__button{
+                padding-left: 0;
+            }
+        }
+    }
+}
