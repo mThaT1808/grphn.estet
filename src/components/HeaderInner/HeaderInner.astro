@@ -8,16 +8,18 @@ import Logotype from '@components/uikit/logotype/logotype.astro'
 import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
 ---
 
-<header class="header">
-    <Container>
-        <div class="header__base">
-            <Searchbar />
-            <CallBack />
-            <Logotype />
-            <Personal />
-            <Hamburger />
-        </div>
-    </Container>
-</header>
+<div class="header-wrapper">
+    <header class="header">
+        <Container>
+            <div class="header__base">
+                <Searchbar />
+                <CallBack />
+                <Logotype />
+                <Personal />
+                <Hamburger />
+            </div>
+        </Container>
+    </header>
+</div>
 
 <script src="./script.js"></script>

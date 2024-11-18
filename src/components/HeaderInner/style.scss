@@ -1,55 +1,83 @@
 @use '/src/assets/styles/global.scss' as*;
 
-.header{
-    background-color: #000;
-    border-bottom: 1px solid var(--cl-gray-cd);
+.header-wrapper {
 
-    @media (min-width: ($mobile + 'px')){
-        padding: 9px 0 11px 0 !important;
-    }
+    .header{
+        background-color: #000;
+        border-bottom: 1px solid var(--cl-gray-cd);
 
-    .call-back{
-        border: none;
-        width: auto;
-        padding: 6px 11px 6px 0;
-        margin-left: unset;
-
-        &__icon{
-            margin: 0;
+        @media (min-width: ($mobile + 'px')){
+            padding: 9px 0 11px 0 !important;
         }
 
-        &__text{
-            display: none;
-        }
-    }
-
-    .personal{
-        border: none;
-        width: auto;
-        flex-grow: unset;
-        margin-right: 0;
-        padding: 0;
-
-        &__item:first-child{
-            display: none;
+        @media (min-width: ($tablet + 'px')){
+            padding: 0 !important;
         }
 
-        &__button{
-            display: none;
+        .container {
+            padding: 0 66px;
+            max-width: 1600px;
+        }
 
-            &--basket{
-                display: block;
+        .logotype{
+            @media (min-width: ($tablet + 'px')) {
+                font-size: 40px;
             }
         }
 
-        &__quantity{
-            display: none;
+        .hamburger{
+            @media (min-width: ($tablet + 'px')) {
+                background-color: green;
+                width: 60px;
+                height: 58px;
+                position: relative;
+                right: -66px;
+            }
         }
-    }
 
-    .searchbar{
-        &__button{
-            padding-left: 0;
+        .call-back{
+            border: none;
+            width: auto;
+            padding: 6px 11px 6px 0;
+            margin-left: unset;
+
+            &__icon{
+                margin: 0;
+            }
+
+            &__text{
+                display: none;
+            }
+        }
+
+        .personal{
+            border: none;
+            width: auto;
+            flex-grow: unset;
+            margin-right: 0;
+            padding: 0;
+
+            &__item:first-child{
+                display: none;
+            }
+
+            &__button{
+                display: none;
+
+                &--basket{
+                    display: block;
+                }
+            }
+
+            &__quantity{
+                display: none;
+            }
+        }
+
+        .searchbar{
+            &__button{
+                padding-left: 0;
+            }
         }
     }
 }
