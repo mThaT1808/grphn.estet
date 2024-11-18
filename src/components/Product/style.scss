@@ -27,24 +27,24 @@
             margin-left: -25px;
         }
 
-        &--overflow {
-            background: linear-gradient($cl-white 33%, $cl-gray-f0 33%);
-            width: calc(100% + 50px);
-            margin-left: -25px;
-        }
-    
         &--image-left {
             width: 100%;
             margin: 0 0 0 -25px;
         }
-    
+        
         &--image-right {
             margin-left: 25px;
         }
-
+        
         &--full {
             width: calc(100% + 25px);
             margin-bottom: 25px;
+        }
+
+        &--overflow {
+            background: linear-gradient($cl-white 33%, $cl-gray-f0 33%);
+            width: calc(100% + 50px);
+            margin-left: -25px;
         }
     }
 
@@ -76,11 +76,19 @@
         aspect-ratio: 188 / 226;
     }
 
+    &__item--big &__image {
+        aspect-ratio: 350 / 311;
+    }
+
     &__item--overflow &__text {
         order: 1;
         width: 50%;
-        margin: 116px 0 0 16px;
+        // margin: 116px 0 0 16px;
+        margin: 30% 0 0 16px;
         padding-left: 65px;
+        // position: absolute;
+        // bottom: 92px;
+        // right: 44px;
     }
 
     &__text {
@@ -101,20 +109,17 @@
             color: $cl-white;
         }
 
-        &--top-left {
-            padding: 24px 0 0 21px;
-            width: 50%;
-        }
-
         &--relative-bottom-right {
-            margin: auto 0 0 -25px;
-            padding: 0 24px 39px 0;
+            margin: auto 24px 39px -50px;
+            // padding: 0 24px 39px 0;
             width: 50%;
             text-align: right;
         }
 
         &--relative-top-left {
-            padding: 24px 0 0 24px;
+            // padding: 24px 0 0 24px;
+            margin: 24px 0 0 24px;
+            text-align: left;
         }
 
         &--right {
@@ -148,13 +153,14 @@
         }
 
         &--relative-bottom-top {
-            margin-top: auto;
-            padding: 0 74px 37px 21px;
+            // padding: 0 74px 37px 21px;
+            margin: auto 0 37px 20px;
             width: 50%;
         }
 
         &--relative-top-bottom {
-            padding: 49px 27px 0 0;
+            // padding: 49px 27px 0 0;
+            margin: 49px 20px 0 0;
             width: 50%;
             text-align: right;
         }
@@ -172,10 +178,6 @@
         flex-grow: 1;
         aspect-ratio: 350 / 251;
         object-fit: cover;
-
-        &--big {
-            aspect-ratio: 350 / 311;
-        }
     }
 
     &__link {
@@ -209,7 +211,7 @@
            }
 
            &--right {
-            padding-left: 0;
+                margin: 0;
            }
 
            &--overflow {
@@ -218,18 +220,31 @@
             padding-top: 112px;
             justify-content: space-between;
            }
+  
+           &--image-left {
+               margin: 0 50% 0 0;
+            }
+            
+            &--image-right {
+                margin: 0 0 0 50%;
+            }
 
-           &--image-left,
-           &--image-right {
-            margin: 0;
-           }
+            &--image-vertical {
+             margin: 0;
+            }
 
            &--left {
             margin-left: 0;
            }
 
            &--scale {
-            margin: 0 0 0 50%;
+                width: 50%;
+                height: 40%;
+                margin-bottom: 0;
+           }
+
+           &--big {
+            margin-top: 42px;
            }
         }
 
@@ -252,6 +267,7 @@
                 top: 20px;
                 left: 28px;
                 padding: 0;
+                margin: 0;
                 color: $cl-white;
             }
 
@@ -261,6 +277,7 @@
                 right: 29px;
                 width: 136px;
                 padding: 0;
+                margin: 0;
                 color: $cl-white;
                 text-align: left;
             }
@@ -301,16 +318,17 @@
                 top: 42px;
                 right: 30px;
             }
+
+            &--top-left {
+                left: 24px;
+                top: 16px;
+            }
         }
 
         &__image {
             width: 601px;
             aspect-ratio: 601 / 362;
             flex-grow: 1;
-
-            &--big {
-                aspect-ratio: 600 / 311;
-            }
         }
 
         &__item--overflow &__image {
@@ -334,15 +352,27 @@
             aspect-ratio: 301 / 362;
             height: 362px;
         }
+
+        &__item--image-left &__image,
+        &__item--image-right &__image {
+            aspect-ratio: 300 / 225;
+        }
         
         &__item--scale &__image {
             aspect-ratio: 300 / 224;
         }
 
+        &__item--big &__image {
+            aspect-ratio: 600 / 311;
+        }
+
         &__item--overflow &__text {
-            margin: auto 0 0 0;
-            padding: 0 55px 43px 0;
-            text-align: right;
+            // margin: auto 0 0 0;
+            // padding: 0 55px 43px 0;
+            // text-align: right;
+            position: absolute;
+            bottom: 43px;
+            right: 0;
         }
         
         
@@ -363,11 +393,37 @@
             }
 
             &--overflow {
-                margin: -112px 0 0 0;
                 padding: 0;
                 background: linear-gradient($cl-white 25%, $cl-gray-f0 25%);
             }
+
+            &--text {
+                margin-top: 75px;
+                margin-bottom: -50%;
+            }
+
+            &--text-align {
+                margin: auto 0;
+            }
+
+            &--big {
+                margin-top: 0;
+            }
         }
+
+        &__item--text &__text {
+            padding: 25% 0 0 50%;
+        }
+
+        &__item--text-align &__text {
+            padding: 0 0 0 50%;
+        }
+
+        &__item--overflow &__text {
+            right: 55px;
+        }
+
+
         
         &__item--image-vertical &__container {
             max-width: 50%;
@@ -398,15 +454,12 @@
             }
             
             &--right {
-                margin: -19% 0;
-                padding: 0 0 91px 60%;
+                padding: 0 0 0 62px;
                 text-align: right;
             }
 
             &--top-left {
                 left: calc(50% + 20px);
-                top: initial;
-                bottom: 154px;
             }
 
             &--top-right {
@@ -421,22 +474,18 @@
 
             &--relative-bottom-top {
                 top: 35px;
-                right: 50px;
+                right: 33px;
                 padding: 0;
                 z-index: 1;
                 text-align: right;
                 width: 40%;
             }
 
-            &--left {
-                margin: -16% 0;
-                padding: 0 61% 0 0;
-            }
 
             &--relative-top-bottom {
                 z-index: 2;
                 top: initial;
-                left: 40px;
+                right: 28px;
                 bottom: 25px;
                 padding: 0;
                 width: 40%;
