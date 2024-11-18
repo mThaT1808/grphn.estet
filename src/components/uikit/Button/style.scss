@@ -127,6 +127,8 @@
             margin-left: -74px;
             margin-right: -200px;
             padding: 71px 74px 66px 74px;
+            margin-top: 86px;
+            margin-bottom: 0;
         }
     }
 
@@ -189,7 +191,9 @@
             margin-bottom: 57px;
         }
         @media(min-width: ($desktop + 'px')) {
-            margin-bottom: 86px;
+            margin-top: auto;
+            margin-bottom: 0;
+            // margin-bottom: 86px;
             align-self: flex-start;
         }
     }

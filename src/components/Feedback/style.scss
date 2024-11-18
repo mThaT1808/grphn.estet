@@ -47,15 +47,14 @@
         order: 0;
 
         &__wrapper {
+            min-height: 600px;
+            height: 100%;
             flex-direction: column;
-            justify-content: end;
-            align-items: start;
-            flex-wrap: nowrap;
         }
 
         &__text {
             margin-right: 0;
-            margin-bottom: 165px;
+            margin-bottom: 65px;
         }
     }
 }
