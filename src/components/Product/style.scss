@@ -202,7 +202,10 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        margin-top: -135px;
+        // margin-top: -135px;
+        margin-top: -109px;
+        padding-top: 0;
+        
         &__list {
             display: flex;
             flex-wrap: wrap;
