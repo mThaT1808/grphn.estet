@@ -41,6 +41,13 @@
 
     // Специфичные
 
+    &--info {
+        color: var(--cl-gray-3c);
+            &:hover{
+                color: var(--cl-green);
+            }
+    }
+
     &--white {
         color: $cl-white;
 
@@ -111,6 +118,14 @@
                 display: none;
             }
         }
+
+        &--news,
+        &--suggestions {
+            color: var(--cl-green);
+                &:hover{
+                    color: var(--cl-gray-3c);
+                }
+        }
     }
 }
 
@@ -124,5 +139,9 @@
             position: relative;
             z-index: 1;
         }
+
+        
+
+        
     }
 }

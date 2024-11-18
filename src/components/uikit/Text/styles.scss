@@ -36,6 +36,37 @@
         }
     }
 
+    &--info {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 24px;
+        padding-right: 1px;
+        color: var(--cl-green);
+
+            &:hover {
+                border-bottom: 1px solid var(--cl-green);
+            }
+    }
+
+    &--news,
+    &--suggestions {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        width: 68.8vw;
+        margin-top: 0;
+        margin-bottom: unset;
+        color: unset;
+    }
+
+    &--news-big,
+    &--suggestions-big {
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: unset;
+        width: auto;
+    }
+
     &--left {
         text-align: left;
         padding-left: 25px;
@@ -82,6 +113,22 @@
         &--review {
             width: 100%;
             line-height: 22px;
+        }
+
+        &--info{
+            line-height: 24px;
+        }
+
+        &--news,
+        &--suggestions {
+            line-height: 22px;
+            width: 33.6vw;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
         }
 
         &--left {
@@ -153,9 +200,7 @@
             padding-left: 5px;
             max-width: 500px;
         }
-    }
 
-    @media (min-width: ($desktop + 'px')) {
         &--review-small {
             max-width: 191px;
             margin-left: 22px;
@@ -165,6 +210,19 @@
 
         &--service {
             padding-right: 60px;
+        }
+
+        &--news,
+        &--suggestions {
+            line-height: 22px;
+            width: 16.1vw;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
+            margin-bottom: 11px;
         }
 
         &--sale-collection {
@@ -192,6 +250,19 @@
         &--guarantee {
             padding-left: 70px;
             padding-right: 38px;
+        }
+    }
+
+    @media (min-width: ($desktop-lg + 'px')){
+        &--news,
+        &--suggestions {
+            width: 258px;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
         }
     }
 }
