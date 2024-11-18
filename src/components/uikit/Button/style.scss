@@ -18,6 +18,33 @@
         display: block;
     }
 
+    &--news,
+    &--suggestions {
+        background: none;
+        border: none;
+        color: var(--cl-gray-3c);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+        width: 85px;
+    }
+
+    &--news{
+        color: var(--cl-green);
+        padding: 0;
+        text-align: left;
+    }
+
+    &--suggestions{
+        padding: 0;
+        text-align: right;
+    }
+
+    &--active{
+        color: var(--cl-green);
+        border-bottom: 1px solid var(--cl-green);
+    }
+
     &--guarantee {
         display: flex;
         position: relative;
