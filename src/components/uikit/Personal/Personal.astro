@@ -5,7 +5,7 @@ import './style.scss'
 
 <div class="personal">
     <div class="personal__item">
-        <button class="personal__button">
+        <button class="personal__button personal__button--like">
             <Icon name="like" mod="white"/>
         </button>
         <div class="personal__quantity">100</div>
@@ -15,6 +15,20 @@ import './style.scss'
             <Icon name="basket" mod="white"/>
         </button>
         <div class="personal__quantity">100</div>
+    </div>
+    <div class="personal__popover personal__popover--like">
+        <h3 class="personal__title">
+            Понравившееся
+        </h3>
+        <button class="personal__close"><Icon name='burger-close' mod='white'/></button>
+        Ух такое вот нравится вот прям нравится, что аж купить хочется
+    </div>
+    <div class="personal__popover personal__popover--basket">
+        <h3 class="personal__title">
+            Корзина
+        </h3>
+        <button class="personal__close"><Icon name='burger-close' mod='white'/></button>
+        Эта красота уже почти куплена, но ещё не совсем. ещё поприглядываюсь ко всякому
     </div>
 </div>
 
