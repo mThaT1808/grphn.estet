@@ -2,8 +2,8 @@
   font-family: 'icons';
   font-style: normal;
   font-weight: 400;
-  src: url("icons.woff?58f90b5594bc959d86952e2c809d85f0") format("woff"),
-url("icons.woff2?58f90b5594bc959d86952e2c809d85f0") format("woff2");
+  src: url("icons.woff?4e0459e777154858502afa9c2a06b5ee") format("woff"),
+url("icons.woff2?4e0459e777154858502afa9c2a06b5ee") format("woff2");
 }
 
 .icon, .icon-icons {
@@ -71,11 +71,12 @@ url("icons.woff2?58f90b5594bc959d86952e2c809d85f0") format("woff2");
 .icon-phone:before { content: "\f115"; }
 .icon-prev-arrow:before { content: "\f116"; }
 .icon-shape:before { content: "\f117"; }
-.icon-telegram:before { content: "\f118"; }
-.icon-tiny-arrow:before { content: "\f119"; }
-.icon-viber:before { content: "\f11a"; }
-.icon-video:before { content: "\f11b"; }
-.icon-vk:before { content: "\f11c"; }
-.icon-year:before { content: "\f11d"; }
-.icon-youtube-video:before { content: "\f11e"; }
-.icon-youtube:before { content: "\f11f"; }
+.icon-small-arrow:before { content: "\f118"; }
+.icon-telegram:before { content: "\f119"; }
+.icon-tiny-arrow:before { content: "\f11a"; }
+.icon-viber:before { content: "\f11b"; }
+.icon-video:before { content: "\f11c"; }
+.icon-vk:before { content: "\f11d"; }
+.icon-year:before { content: "\f11e"; }
+.icon-youtube-video:before { content: "\f11f"; }
+.icon-youtube:before { content: "\f120"; }
