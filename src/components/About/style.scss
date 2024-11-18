@@ -8,12 +8,12 @@
 	&__container {
         display: flex;
         flex-wrap: wrap;
-        padding: 0 25px;
     }
 
     &__arrow-box {
         display: flex;
         margin-left: auto;
+        margin-right: 25px;
     }
 
     &__dot {
@@ -22,6 +22,7 @@
 
     &__main {
         margin-bottom: 67px;
+        padding: 0 25px;
     }
 
     // .slick-slide:has(&__wrapper--empty),
@@ -35,6 +36,14 @@
         flex-wrap: wrap;
         width: 100%;
         height: 100%;
+    }
+
+    &__inner .slick-slide {
+        padding: 0 25px;
+    }
+
+    &__wrapper {
+        width: calc(100% - 50px);
     }
 
     &__image-box {
