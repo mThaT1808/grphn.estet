@@ -19,32 +19,18 @@
             margin-bottom: 0;
         }
 
-        &--no-gap {
-            margin-bottom: 0;
-        }
-
-        &--right {
-            width: calc(100% + 25px);
+        &--right {      
             margin: 0 -25px 0 auto;
         }
 
         &--left {
             margin-left: -25px;
-            width: calc(100% + 25px)
         }
 
         &--overflow {
             background: linear-gradient($cl-white 33%, $cl-gray-f0 33%);
             width: calc(100% + 50px);
             margin-left: -25px;
-        }
-
-        &--only-left {
-            margin: 0 0 0 -25px;
-        }
-
-        &--only-right {
-            margin: 0 -25px 0 22px;
         }
     
         &--image-left {
@@ -56,25 +42,9 @@
             margin-left: 25px;
         }
 
-        &__rank-last {
-        width: calc(100% + 25px);
-        }
-
         &--full {
+            width: calc(100% + 25px);
             margin-bottom: 25px;
-        }
-
-        &--enter {
-            .product__image {
-                aspect-ratio: 350 / 261;
-            }
-        }
-
-        &--partition {
-            margin-bottom: 26px;
-            .product__image {
-                aspect-ratio: 350 / 311;
-            }
         }
     }
 
@@ -83,9 +53,10 @@
         margin-left: 32px;
     }
 
+    &__item--scale &__image {
+        aspect-ratio: 350 / 261;
+    }
 
-    &__item--only-left &__container,
-    &__item--only-right &__container,
     &__item--image-left &__container,
     &__item--image-right &__container {
         width: calc(50% + 25px);
@@ -130,7 +101,7 @@
             color: $cl-white;
         }
 
-        &--relative-top-left {
+        &--top-left {
             padding: 24px 0 0 21px;
             width: 50%;
         }
@@ -142,6 +113,10 @@
             text-align: right;
         }
 
+        &--relative-top-left {
+            padding: 24px 0 0 24px;
+        }
+
         &--right {
             padding: 25px 0 0 80px;
             font-size: 14px;
@@ -150,7 +125,7 @@
             font-weight: 400;
         }
 
-        &--enter {
+        &--top-left {
             position: absolute;
             left: 26px;
             top: 21px;
@@ -165,20 +140,20 @@
             padding: 25px 76px 30px 0;
         }
 
-        &--partition {
+        &--bottom-left {
             position: absolute;
             left: 18px;
             bottom: 30px;
             width: 153px;
         }
 
-        &--panels {
+        &--relative-bottom-top {
             margin-top: auto;
             padding: 0 74px 37px 21px;
             width: 50%;
         }
 
-        &--boards {
+        &--relative-top-bottom {
             padding: 49px 27px 0 0;
             width: 50%;
             text-align: right;
@@ -189,11 +164,6 @@
         display: flex;
         flex-shrink: 0;
         width: 50%;
-
-        &--overflow {
-            width: 33%;
-            margin-bottom: 23px;
-        }
     }
 
     &__image {
@@ -202,6 +172,10 @@
         flex-grow: 1;
         aspect-ratio: 350 / 251;
         object-fit: cover;
+
+        &--big {
+            aspect-ratio: 350 / 311;
+        }
     }
 
     &__link {
@@ -234,17 +208,8 @@
             margin-bottom: 0;
            }
 
-           &--rank-last {
-            order: 1;
-            margin: 42px 0 0 0;
-           }
-
            &--right {
             padding-left: 0;
-           }
-
-           &--tablet-no-gap {
-            margin-bottom: 0;
            }
 
            &--overflow {
@@ -254,14 +219,6 @@
             justify-content: space-between;
            }
 
-           &--only-left {
-            margin:0 50% 0 0;
-           }
-
-           &--only-right {
-            margin: 0 0 0 50%;
-           }
-
            &--image-left,
            &--image-right {
             margin: 0;
@@ -269,7 +226,10 @@
 
            &--left {
             margin-left: 0;
-            // padding-top: 146px;
+           }
+
+           &--scale {
+            margin: 0 0 0 50%;
            }
         }
 
@@ -312,7 +272,7 @@
                 line-height: 31px;
             }
 
-            &--panels {
+            &--relative-bottom-top {
                 position: absolute;
                 top: 35px;
                 right: 46px;
@@ -322,7 +282,7 @@
                 color: $cl-white;
             }
 
-            &--boards {
+            &--relative-top-bottom {
                 position: absolute;
                 bottom: 22px;
                 right: 26px;
@@ -331,7 +291,7 @@
                 color: $cl-white;
             }
 
-            &--partition {
+            &--bottom-left {
                 width: 50%;
                 left: 47px;
                 bottom: 40px;
@@ -349,19 +309,7 @@
             flex-grow: 1;
 
             &--big {
-                aspect-ratio: 601 / 453;
-            }
-
-            &--tablet-small {
-                width: 300px;
-                height: 224px;
-                aspect-ratio: 300 / 224;
-                flex-shrink: 1;
-            }
-
-            &--tiny {
-                aspect-ratio: 301 / 225;
-                height: 225px;
+                aspect-ratio: 600 / 311;
             }
         }
 
@@ -371,9 +319,7 @@
         }
 
         &__item--image-left &__container,
-        &__item--image-right &__container,
-        &__item--only-left &__container,
-        &__item--only-right &__container {
+        &__item--image-right &__container {
             width: 100%;
         }
 
@@ -382,16 +328,15 @@
             margin-bottom: 0;
         }
 
-        &__item--partition &__image {
-            width: 519px;
-            height: 311px;
-            aspect-ratio: 519 / 311;
-        }
-
+        
         &__item--image-vertical &__image {
             width: 301px;
             aspect-ratio: 301 / 362;
             height: 362px;
+        }
+        
+        &__item--scale &__image {
+            aspect-ratio: 300 / 224;
         }
 
         &__item--overflow &__text {
@@ -399,48 +344,22 @@
             padding: 0 55px 43px 0;
             text-align: right;
         }
-
-
+        
+        
         &__container {
             width: 100%;
-
-            &--small {
-                flex-shrink: 1;
-                height: 224px;
-            }
-
-            &--right {
-                margin-left: auto;
-            }
-
-            &--overflow {
-                width: 36%;
-                margin-bottom: 0;
-            }
         }
     }
-
+    
     @media (min-width: ($desktop + 'px')) {
         margin-top: -75px;
         padding-top: 0;
-
+        
         &__item {
             margin-bottom: 0;
-
+            
             &--full {
                 width: 50%;
-            }
-
-            &--rank-last {
-                margin: -115px 0 0 auto;
-            }
-
-            &--desktop-rank-two {
-                order: -3;
-            }
-
-            &--desktop-rank-last {
-                order: 2;
             }
 
             &--overflow {
@@ -448,30 +367,6 @@
                 padding: 0;
                 background: linear-gradient($cl-white 25%, $cl-gray-f0 25%);
             }
-
-            &:last-child {
-                margin-left: 0;
-            }
-        }
-
-        &__container {
-            &--small {
-                margin:  auto 0 0 auto;
-                max-width: 50%;
-            }
-
-            &--right {
-                margin-left: auto;
-            }
-
-            &--half {
-                max-width: 50%;
-                margin-left: auto;
-            }
-        }
-        
-        &__item--desktop-rank-last &__container--half {
-            margin: 0 auto 0 0;
         }
         
         &__item--image-vertical &__container {
@@ -479,12 +374,17 @@
             height: 362px;   
         }
         
+        &__item--scale &__container {
+            margin:  auto 0 0 auto;
+            max-width: 50%;
+        }
+
         &__item--image-vertical &__image {
             width: 301px;
             height: 362px;
             aspect-ratio: 301 / 362;
         }
-
+        
         &__text {
             &--relative-top-left {
                 top: 20px;
@@ -496,14 +396,14 @@
                 right: calc(50% + 29px);
                 z-index: 2;
             }
-
+            
             &--right {
                 margin: -19% 0;
                 padding: 0 0 91px 60%;
                 text-align: right;
             }
 
-            &--enter {
+            &--top-left {
                 left: calc(50% + 20px);
                 top: initial;
                 bottom: 154px;
@@ -513,13 +413,13 @@
                 top: 43px;
                 right: 43px;
             }
-
-            &--partition {
+            
+            &--bottom-left {
                 width: 80%;
                 bottom: 42px;
             }
 
-            &--panels {
+            &--relative-bottom-top {
                 top: 35px;
                 right: 50px;
                 padding: 0;
@@ -533,7 +433,7 @@
                 padding: 0 61% 0 0;
             }
 
-            &--boards {
+            &--relative-top-bottom {
                 z-index: 2;
                 top: initial;
                 left: 40px;
@@ -542,11 +442,7 @@
                 width: 40%;
             }
         }
-
-        &__item--rank-last &__image {
-            aspect-ratio: 600 / 311;
-        }
-
+        
         &__item--image-left &__image,
         &__item--image-right &__image {
             z-index: 1;
