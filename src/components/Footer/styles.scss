@@ -11,7 +11,7 @@
     @media(min-width: ($desktop + 'px')) {
         &__wrapper {
             display: grid;
-            grid-template-columns: 73.3% 26.7%;
+            grid-template-columns: 880px 320px;
             grid-template-rows: auto min-content;
         }
     }

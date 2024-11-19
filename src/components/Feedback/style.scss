@@ -1,13 +1,27 @@
 @import '../../assets/styles/global.scss';
 
 .feedback {
-    margin-left: -25px;
-    margin-right: -25px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 50%;
+        margin-left: -50vw;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+        background-color: $cl-green;
+    }
+    // margin-left: -25px;
+    // margin-right: -25px;
     padding-top: 71px;
-    padding-left: 25px;
-    padding-right: 25px;
-    background-color: $cl-green;
-    overflow-x: hidden;
+    // padding-left: 25px;
+    // padding-right: 25px;
+    // background-color: $cl-green;
 
     &__text {
         font-size: 24px;
@@ -20,11 +34,11 @@
     }
 
     @media(min-width: ($tablet + 'px')) {
-        margin-left: -84px;
-        margin-right: -84px;
+        // margin-left: -84px;
+        // margin-right: -84px;
         padding-top: 90px;
-        padding-left: 84px;
-        padding-right: 84px;
+        // padding-left: 84px;
+        // padding-right: 84px;
         order: 1;
 
         &__wrapper {
@@ -39,15 +53,23 @@
     }
 
     @media(min-width: ($desktop + 'px')) {
-        margin-left: 0;
-        margin-right: -200px;
-        padding-top: 88px;
-        padding-left: 74px;
-        padding-right: 74px;
+        position: relative;
+
+        &::before {
+            left: 0;
+            margin: 0;
+            width: calc(((100vw - 1200px) / 2 ) + 320px);
+        }
+        // margin-left: 0;
+        // margin-right: -200px;
+        // padding-top: 88px;
+        padding: 88px 0 0 40px;
+        // padding-left: 74px;
+        // padding-right: 74px;
         order: 0;
 
         &__wrapper {
-            min-height: 600px;
+            min-height: 400px;
             height: 100%;
             flex-direction: column;
         }
@@ -56,5 +78,9 @@
             margin-right: 0;
             margin-bottom: 65px;
         }
+    }
+
+    @media(min-width: ($desktop-lg + 'px')) {
+        padding: 71px 0 0 74px;
     }
 }
