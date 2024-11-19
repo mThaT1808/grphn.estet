@@ -6,12 +6,9 @@
     }
 
     &--kontora {
+        font-size: 18px;
         color: $cl-black;
         opacity: 0.22;
-
-        @media (min-width: ($tablet + 'px')) {
-            font-size: 18px;
-        }
     }
 
     &--white {
