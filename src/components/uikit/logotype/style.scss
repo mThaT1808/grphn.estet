@@ -11,7 +11,12 @@
     }
 
     @media (min-width: ($desktop + 'px')) {
-
         font-size: 57px;
+
+        &--aside {
+            display: inline-block;
+            width: 100%;
+            padding: 51px;
+        }
     }
 }
