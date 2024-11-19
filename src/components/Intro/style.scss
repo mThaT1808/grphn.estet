@@ -49,7 +49,7 @@ $intro-height: 100vh;
     &__container {
         max-width: 100%;
         position: absolute;
-        bottom: 188px;
+        // bottom: 188px;
         padding: 0 25px;
     }
 
@@ -153,6 +153,7 @@ $intro-height: 100vh;
             padding: 0px 172px;
             // top: 481px;
             bottom: 164px;
+            // top: 50vh;
             z-index: 1;
         }
 
@@ -165,7 +166,7 @@ $intro-height: 100vh;
 
         &__button {
             // top: 507px;
-            bottom: 375px;
+            bottom: 360px;
             z-index: 1;
 
             &--left {
