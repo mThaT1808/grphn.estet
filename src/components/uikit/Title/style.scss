@@ -51,12 +51,19 @@
     }
 
     &--sale-slider {
+        position: relative;
+        display: inline;
+        padding-left: 8px;
         font-size: 21px;
         line-height: normal;
         letter-spacing: 0px;
         font-weight: bold;
 
-        display: inline;
+        &::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+        }
     }
 
     &--about {
@@ -108,25 +115,19 @@
         }
 
         &--sale-slider {
+            display: block;
+            margin-bottom: 7px;
+            padding: 0;
             font-family: 'Lora';
-            color: $cl-white;
             font-size: 100px;
             letter-spacing: -1px;
             line-height: 128px;
             font-weight: 400;
+            color: $cl-white;
 
-            display: block;
-            margin-bottom: 8px;
-
-            &::first-letter {
-                font-size: 0;
-                line-height: 0;
-                letter-spacing: 0;
-            }
             &::before {
                 content: '—';
-                position: absolute;
-                right: 100%;
+                left: -40%;
             }
         }
 
