@@ -14,7 +14,7 @@
         width: 100%;
     }
 
-    .door:nth-child(n+9) {
+    .door:nth-child(n+10) {
         display: none;
     }
 
@@ -158,7 +158,7 @@
     .card {
 
         padding: 50px 63px;
-        
+
         &__inner {
             display: flex;
             flex-wrap: wrap;
@@ -174,15 +174,9 @@
         }
 
         .door:nth-child(4n+4),
-        .door:nth-child(4n+3),
-        .door:nth-child(2)
+        .door:nth-child(4n+3)
         {
             background-color: $cl-gray-f7;
-        }
-
-        .door:nth-child(3) {
-            order: -1;
-            background-color: transparent;
         }
 
         .door__image-bg {
@@ -231,5 +225,86 @@
         .door__choice-box label:nth-of-type(n + 4) {
             display: block;
         }
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .card {
+        padding: 0;
+        width: calc(100% - 320px);
+
+        .door {
+            width: 25%;
+            max-height: 610px;
+            cursor: pointer;
+            transition: background-color $animation-time ease-in-out,
+                        color $animation-time ease-in-out;
+        }
+
+        .door:nth-child(4n+4),
+        .door:nth-child(4n+3)
+        {
+            background-color: transparent;
+        }
+
+        .door:nth-child(8n + 2),
+        .door:nth-child(8n + 4),
+        .door:nth-child(8n + 7),
+        .door:nth-child(8n + 9) {
+            background-color: $cl-gray-f7;
+        }
+
+        .door__image-bg {
+            padding-top: 20px;
+        }
+
+        .door__mark-box {
+            top: 12px;
+            left: 18px;
+        }
+
+        .door__mark {
+            font-size: 10px;
+        }
+
+        .door__title {
+            margin-bottom: 5px;
+        }
+
+        .door__price {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-family: 'opensans', sans-serif;
+            visibility: hidden;
+        }
+
+        .door__price-new {
+            font-weight: 400;
+            font-size: 18px;
+            color: $cl-white;
+        }
+
+        .door__price-old {
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: line-through;
+            color: $cl-white;
+        }
+
+        .door:hover {
+            background-color: $cl-green;
+        }
+
+        .door:hover .door__title,
+        .door:hover .door__choice-btn {
+            color: $cl-white;
+        }
+
+        .door:hover .door__price {
+            visibility: visible;
+        }
+
+
     }
 }
