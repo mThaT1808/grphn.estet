@@ -11,6 +11,7 @@
 
     &__text {
         font-size: 16px;
+        font-weight: 300;
         color: $cl-gray-3c;
         line-height: 35px;
         letter-spacing: 4.4px;
@@ -70,8 +71,6 @@
             padding-left: 81px;
 
             & .filter {
-                overflow-y: hidden;
-
                 &__opener {
                     font-size: 18px;
                     font-weight: 700;
@@ -86,20 +85,19 @@
                     border-left: 0;
                     border-bottom: 1px solid $cl-gray-e0;
                     background-color: transparent;
-                    z-index: 1;
+                    cursor: pointer;
                 }
 
                 &__list {
-                    overflow-y: hidden;
                     padding: 0;
                     display: none;
-                    transform: translateY(-110%);
-                    transition: transform 3s ease;
+                    width: 0;
+                    transition: width 3s ease;
                 }
 
                 &__list.active {
                     display: block;
-                    transform: translateY(0);
+                    width: fit-content;
                 }
 
                 &__item {
