@@ -37,6 +37,7 @@
         padding-bottom: 100px;
 
         &__content {
+            position: relative;
             display: flex;
             column-gap: 45px;
             row-gap: 60px;
@@ -54,6 +55,7 @@
         &__title {
             margin-bottom: unset;
             margin-top: unset;
+            max-width: unset;
             width: 100%;
             font-size: 48px;
             line-height: 119%;
@@ -69,8 +71,7 @@
 
         &__picture {
             display: flex;
-            margin-right: -85px;
-            max-height: 600px;
+            margin-right: -84px;
             height: 100vh;
             width: 100px;
             flex-grow: 1;
@@ -96,7 +97,7 @@
         }
 
         &__picture {
-            margin-right: -85px;
+            margin-right: -84px;
         }
     }
 }
@@ -138,7 +139,7 @@
         }
 
         &__gradient {
-            max-height: 160px;
+            max-height: calc(58vh - 200px);
             overflow: hidden;
             position: relative;
             margin-top: 50px;
@@ -178,20 +179,21 @@
         &__picture {
             grid-area: picture;
             margin: 0;
-            max-height: 800px;
             width: 100%;
         }
 
     }
 }
 
-@media (min-width: #{$desktop + 'px'}) {
+@media (min-width: #{$desktop-lg + 'px'}) {
     .banner {
 
         &__content {
-            &__content {
-                margin-right: -200px
-            }
+            margin-right: -200px
+        }
+
+        &__image {
+            object-position: left;
         }
     }
 }
