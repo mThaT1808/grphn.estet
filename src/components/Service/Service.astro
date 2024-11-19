@@ -20,7 +20,11 @@ const services = [
         textAlign: 'left',
         text: 'Мы предоставляем клиентам выезд на замер, консультации на объекте; доставку и подъем продукции; врезку фурнитуры на профессиональном оборудовании; демонтаж и установку межкомнатных дверей; укладку массивной и паркетной доски.',
         linkText: 'Заказать замер',
-        mod: 'service'
+        mod: 'service',
+        srcset: [
+            '/images/service/service.webp'
+        ],
+        img: '/images/service/service.jpg'
     }
 ];
 ---
@@ -32,6 +36,14 @@ const services = [
                 <li class:list={`service__item service__item--${service.mod}`}>
                     {service.mod === 'guarantee' ? <span class='service__digit'>5</span> : ''}
                     {service.mod === 'guarantee' ? <span class='service__year'>Лет</span> : ''}
+                    {service.mod === 'guarantee' ? '' :
+                    <picture class="service__wrapper">
+                        {service.srcset.map((src) => (
+                            <source srcset={src}/>
+                        ))}
+                        <img src={service.img} alt={service.name} class="service__image"/>
+                    </picture>
+                    <div class="service__gradient"/>}
                     <Title Tag='h2' class={service.titleAlign === 'left' ? 'service title--left' : 'service title--guarantee'}>{service.name}</Title>
                     <Text class={service.textAlign === 'left' ? 'service text--left' : 'service text--guarantee'}>{service.text}</Text>
                     <Button TagButton='a' href="javascript:void(0);" class={service.mod === 'service' ? `button--${service.mod} button--block` : `button--guarantee`}>{service.linkText}</Button>
