@@ -260,4 +260,55 @@
         }
     }
 
+    &--aside {
+        font-size: 14px;
+        padding: 12px 17px;
+        border: none;
+        color: $cl-white;
+        background-color: $cl-green;
+        transition: color 0.8s ease, background-color 0.8s ease;
+
+        @media(min-width: ($tablet + 'px')) {
+            font-size: 14px;
+            line-height: 35px;
+            width: 160px;
+            text-align: start;
+        }
+
+        @media(min-width: ($desktop + 'px')) {
+            font-size: 16px;
+            width: 100%;
+            padding: 22px 16px 23px;
+
+            &:hover {
+                color: $cl-white;
+                background-color: $cl-green;
+            }
+        }
+    }
+
+    &--pink {
+        color: $cl-gray-3c;
+        background-color: $cl-pink-f9;
+
+        &:hover {
+            color: $cl-gray-3c;
+            background-color: $cl-pink-f9;
+        }
+    }
+
+    &--filter {
+        display: none;
+
+        @media(min-width: ($tablet + 'px')) {
+            display: block;
+            border: none;
+            margin-left: auto;
+            padding: 0;
+        }
+
+        @media(min-width: ($desktop + 'px')) {
+            display: none;
+        }
+    }
 }
