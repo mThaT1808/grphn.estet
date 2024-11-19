@@ -46,13 +46,15 @@
     }
 
     &--guarantee {
-        margin: 0 -10px 0 0;
-        padding: 10px;
+        display: flex;
+        position: relative;
+        padding: 0;
+        margin-left: auto;
         font-size: 14px;
         line-height: 25px;
+        font-weight: 700;
+        max-width: fit-content;
         border: none;
-        text-align: right;
-        text-decoration: underline;
         color: $cl-green;
 
         @media (min-width: ($tablet + 'px')) {
@@ -65,6 +67,18 @@
         @media (min-width: ($desktop + 'px')) {
             margin-left: 56px;
         }
+    }
+
+    &--guarantee::before {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $cl-green;
+        opacity: 1;
+        transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
     }
 
     &--service {
@@ -99,12 +113,32 @@
             background-color: $cl-green;
             color: $cl-white;
         }
+
+        &--guarantee:active {
+            background-color: transparent;
+            color: $cl-green;
+            opacity: 0.8;
+        }
+
+        &--guarantee:active::before {
+            opacity: 0;
+        }
     }
 
     @media not all and (pointer: coarse) {
         &:hover {
             background-color: $cl-green;
             color: $cl-white;
+        }
+
+        &--guarantee:hover {
+            background-color: transparent;
+            color: $cl-green;
+            opacity: 0.8;
+        }
+
+        &--guarantee:hover::before {
+            opacity: 0;
         }
     }
 
