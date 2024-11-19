@@ -1,4 +1,5 @@
 @use "/src/assets/styles/global.scss" as *;
+@import "../../../node_modules/slick-slider/slick/slick.scss";
 
 .review {
     padding: 34px 0 31px 0;
@@ -28,6 +29,7 @@
         padding: 26px 0 2px 45px;
         list-style: none;
         opacity: 0.5;
+        cursor: pointer;
 
         &:last-child {
             margin-bottom: 0;
@@ -71,6 +73,18 @@
         flex-direction: column;
     }
 
+    .slick-list {
+        width: 275px;
+    }
+
+    .slick-track {
+         width: 275px;
+    }
+
+    .slick-slide {
+        width: 275px;
+    }
+
     @media (min-width: ($tablet + 'px')) {
         padding: 84px 0 33px 0 ;
 
@@ -89,27 +103,24 @@
         }
 
         &__item {
-            width: calc((100% - 90px) / 3);
+            max-width: 100%;
+            min-height: 94px;
             margin: 0;
-            padding: 44px 0 0;
+            padding: 44px 45px 32px 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
 
             &::after {
-                bottom: -8px;
+                bottom: 17px;
+                width: calc(100% - 45px);
             }
 
             &--hide-mobile {
                 display: block;
             }
         }
-
-        // &__button {
-        //     right: -84px;
-        // }
-
-        // &__button--prev {
-        //     top: 0;
-        //     right: -23px;
-        // }
 
         &__container {
             padding-top: 26px;
@@ -119,6 +130,15 @@
         &__arrow-container {
             right: -84px;
             flex-direction: row;
+        }
+
+        .slick-list {
+            width: 100%;
+        }
+        
+        .slick-track {
+            display: flex;
+            min-width: 100%;
         }
     }
 
@@ -131,7 +151,7 @@
             grid-template-columns: 55% 17% 28%;
             grid-template-rows: 154px 562px min-content;
             align-items: stretch;
-            margin-right: -200px;
+            margin-right: calc((1200px - 100vw) / 2);
             position: relative;
         }
 
@@ -155,7 +175,7 @@
 
         &__list {
             margin: 0;
-            padding: 155px 0 81px 0;
+            padding: 155px 0 0 160px;
             row-gap: 33px;
             flex-direction: column; 
             // height: 100%;
@@ -199,6 +219,19 @@
             right: 0;
             top: 155px;
             flex-direction: column;
+        }
+
+        .slick-track {
+            display: block;
+            max-width: 171px;
+        }
+
+        .slick-list {
+            max-width: 171px;
+        }
+
+        .slick-slide {
+            max-width: 171px;
         }
     }
     

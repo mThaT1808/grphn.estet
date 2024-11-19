@@ -5,39 +5,65 @@ import Container from '@components/container/container.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
+
+const slides = [
+    {
+        text: 'Современный ремонт квартиры-студии!',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'ESTET воплощает мечты',
+        video: '/public/video/review/placeholder.mp4',
+        active: true
+    },
+    {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Современный ремонт квартиры-студии!',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    },
+     {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Современный ремонт квартиры-студии!',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    },
+    {
+        text: 'Двери ESTET. Жизнь фабрики.',
+        video: '/public/video/review/placeholder.mp4'
+    }
+]
 ---
 <section class="review">
     <Container >
         <div class="review__slider">
             <Title Tag='h2' class="review">Видео обзор</Title>
-            <video class="review__video" muted="true" poster="/images/review/placeholder-desktop.jpg"/>
+            <video class="review__video" muted="true" poster="/images/review/placeholder-desktop.jpg" src="/public/video/review/placeholder.mp4"/>
             <div class="review__wrapper">
                 <ul class="review__list">
-                    <li class="review__item">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">Современный ремонт квартиры-студии!</Text>
-                    </li>
-                    <li class="review__item review__item--active">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">ESTET воплощает мечты</Text>
-                    </li>
-                    <li class="review__item">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
-                    </li>
-                    <li class="review__item">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">Современный ремонт квартиры-студии!</Text>
-                    </li>
-                    <li class="review__item review__item--hide-mobile">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
-                    </li>
-                    <li class="review__item review__item--hide-mobile review__item--hide-desktop">
-                        <Icon name='video' mod='video-review'/>
-                        <Text class="review">Двери ESTET. Жизнь фабрики.</Text>
-                    </li>
-                </ul>
+                    {slides.map((slide) => (
+                        <li class={`review__item ${slide.active ? 'review__item--active' : ''}`} data-video={slide.video}>
+                            <Icon name='video' mod='video-review'/>
+                            <Text class="review">{slide.text}</Text>
+                        </li>
+                    ))}
+                </div>
                 <div class="review__arrow-container">
                     <Arrow modifier='adaptive-left'/>
                     <Arrow modifier='adaptive-right'/>
