@@ -117,12 +117,3 @@
         }
     }
 }
-
-@media (min-width: ($desktop-lg + 'px')) {
-    .personal {
-
-        &__popover {
-            right: -200px;
-        }
-    }
-}
