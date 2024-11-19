@@ -3,6 +3,10 @@
 .card {
     padding: 50px 0;
 
+    &__inner {
+        margin-bottom: 54px;
+    }
+
 	&__intro {
         display: none;
     }
@@ -151,6 +155,29 @@
 
     .door__choice-btn:hover {
         transform: scale(1.3);
+    }
+
+    &__pagination {
+        padding: 0 25px;
+    }
+
+    &__quantity {
+        margin-bottom: 12px;
+    }
+
+    &__quantity--current {
+        line-height: 24px;
+        font-weight: 400;
+        font-size: 24px;
+        color: $cl-gray-3c;
+    }
+
+    &__quantity--separator,
+    &__quantity--total {
+        font-weight: 400;
+        font-size: 16px;
+        color: $cl-gray-99;
+        vertical-align: top;
     }
 }
 
