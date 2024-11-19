@@ -30,8 +30,8 @@ const services = [
         <ul class="service__list">
             {services.map((service) => (
                 <li class:list={`service__item service__item--${service.mod}`}>
-                    {service.mod === 'guarantee' ? <Icon mod='five' name='five'/> : ''}
-                    {service.mod === 'guarantee' ? <Icon mod='year' name='year'/> : ''}
+                    {service.mod === 'guarantee' ? <span class='service__digit'>5</span> : ''}
+                    {service.mod === 'guarantee' ? <span class='service__year'>Лет</span> : ''}
                     <Title Tag='h2' class={service.titleAlign === 'left' ? 'service title--left' : 'service title--guarantee'}>{service.name}</Title>
                     <Text class={service.textAlign === 'left' ? 'service text--left' : 'service text--guarantee'}>{service.text}</Text>
                     <Button TagButton='a' href="javascript:void(0);" class={`button--${service.mod} button--block`}>{service.linkText}</Button>
