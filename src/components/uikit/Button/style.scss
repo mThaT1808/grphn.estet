@@ -65,21 +65,21 @@
         }
 
         @media (min-width: ($desktop + 'px')) {
-            margin-left: 56px;
+            margin-left: 62px;
         }
     }
 
-    &--guarantee::before {
-        content: "";
-        position: absolute;
-        bottom: 5px;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $cl-green;
-        opacity: 1;
-        transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
-    }
+    // &--guarantee::before {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 5px;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: $cl-green;
+    //     opacity: 1;
+    //     transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
+    // }
 
     &--service {
         line-height: 24px;
@@ -135,6 +135,7 @@
             background-color: transparent;
             color: $cl-green;
             opacity: 0.8;
+            text-decoration: underline;
         }
 
         &--guarantee:hover::before {
