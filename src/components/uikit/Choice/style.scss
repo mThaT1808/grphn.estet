@@ -11,6 +11,8 @@
         padding-left: 17px;
         padding-right: 20px;
         background-color: transparent;
+        text-wrap: auto;
+        text-align: center;
         cursor: pointer;
     }
 
@@ -47,6 +49,7 @@
 
     &--intro {
         display: none;
+        max-width: 192px;
     }
 }
 
