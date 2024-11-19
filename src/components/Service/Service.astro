@@ -34,7 +34,7 @@ const services = [
                     {service.mod === 'guarantee' ? <Icon mod='year' name='year'/> : ''}
                     <Title Tag='h2' class={service.titleAlign === 'left' ? 'service title--left' : 'service title--guarantee'}>{service.name}</Title>
                     <Text class={service.textAlign === 'left' ? 'service text--left' : 'service text--guarantee'}>{service.text}</Text>
-                    <Button TagButton='a' href="javascript:void(0);" class={`button--${service.mod} button--block`}>{service.linkText}</Button>
+                    <Button TagButton='a' href="javascript:void(0);" class={service.mod === 'service' ? `button--${service.mod} button--block` : `button--guarantee`}>{service.linkText}</Button>
                 </li>
             ))}
         </ul>
