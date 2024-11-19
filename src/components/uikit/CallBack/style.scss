@@ -104,9 +104,10 @@
             display: inline-block;
             margin-left: 0;
             padding: 27px;
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            height: 100%;
             background-color: $cl-lite-green;
+            grid-column: 2 / 3;
         }
 
         &--aside &__text {

@@ -1,9 +1,11 @@
 ---
 import Icon from '../Icon/Icon.astro'
 import './style.scss'
+
+const modifier = Astro.props.modifier;
 ---
 
-<a class="logotype" href="javascript:viod(0)" title="Estet">
+<a class={modifier? `logotype  logotype--${modifier}`:'logotype '} href="javascript:viod(0)" title="Estet">
     <Icon name="logo-white" mod="white"/>
 </a>
 

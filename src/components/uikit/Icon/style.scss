@@ -74,8 +74,14 @@
         }
     }
 
-    &--aside {
+    &--filter {
         font-size: 32px;
         color: $cl-black;
+    }
+
+    &--reset {
+        font-size: 25px;
+        color: $cl-gray-97;
+        margin-left: 11px;
     }
 }

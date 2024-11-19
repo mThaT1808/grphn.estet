@@ -4,15 +4,17 @@ import Link from '@components/uikit/Link/Link.astro'
 import Logotype from '@components/uikit/logotype/logotype.astro'
 import CallBack from '@components/uikit/CallBack/CallBack.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
+import Searchbar from '@components/uikit/searchbar/searchbar.astro'
 import './style.scss'
 ---
 
 <aside class="aside">
     <div class="aside__header">
         <div class="aside__logo-wrapper">
-            <Logotype />
+            <Logotype modifier="aside"/>
         </div>
         <CallBack modifier="aside"/>
+        <Searchbar modifier="aside"/>
         <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
     </div>
     <p class="aside__text">1567 дверей</p>
@@ -20,7 +22,7 @@ import './style.scss'
         <Button class="button--aside button--pink button--block">Коллекции</Button>
         <Button class="button--aside button--green button--block">Все двери</Button>
         <Button class="button--filter">
-            <Icon name="filter" mod="aside"/>
+            <Icon name="filter" mod="filter"/>
         </Button>
     </div>
     <div class="aside__filter">
@@ -57,7 +59,7 @@ import './style.scss'
             <button class="filter__opener">Цена</button>
             <ul class="filter__list filter__list--price">
                 <li class="filter__item">
-                    <input type="range" id="price-range" min="0" max="50000" step="500">
+                    <input class="filter__button-range" type="range" id="price-range" min="0" max="50000" step="500">
                 </li>
             </ul>
         </div>
@@ -65,9 +67,9 @@ import './style.scss'
             Сбросить все
             <Icon name="reset" mod="reset"/>
         </button>
-        <label class="filter__label">
-            <Icon name="square" mod="square"/>
-            <input type="checkbox" class="filter__button filter__button--only-action">Только по акции</input>
+        <label class="filter__button filter__button--only-action">
+            <input type="checkbox" class="filter__btn" />
+            <span class="filter__label">Только по акции</span>
         </label>
     </div>
 </aside>

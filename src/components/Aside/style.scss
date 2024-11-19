@@ -33,26 +33,29 @@
     }
 
     @media(min-width: ($desktop + 'px')) {
-        width: 320px;
+        max-width: 320px;
         margin-bottom: 0;
         padding-right: 0;
         padding-left: 0;
 
         &__header {
-            display: block;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-bottom: 210px;
         }
 
         &__logo-wrapper {
-            display: inline-block;
-            width: 160px;
-            height: 160px;
+            position: relative;
             background-color: $cl-green;
-            padding: 51px;
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
         }
 
         &__text {
+            display: none;
+            margin: 0;
             padding-left: 51px;
-            color: $cl-white;
         }
 
         &__button-wrapper {
@@ -67,6 +70,8 @@
             padding-left: 81px;
 
             & .filter {
+                overflow-y: hidden;
+
                 &__opener {
                     font-size: 18px;
                     font-weight: 700;
@@ -81,10 +86,20 @@
                     border-left: 0;
                     border-bottom: 1px solid $cl-gray-e0;
                     background-color: transparent;
+                    z-index: 1;
                 }
 
                 &__list {
+                    overflow-y: hidden;
                     padding: 0;
+                    display: none;
+                    transform: translateY(-110%);
+                    transition: transform 3s ease;
+                }
+
+                &__list.active {
+                    display: block;
+                    transform: translateY(0);
                 }
 
                 &__item {
@@ -97,6 +112,19 @@
                     margin-bottom: 42px;
                 }
 
+                &:last-of-type {
+                    margin-bottom: 42px;
+                }
+
+                &:last-of-type:has(.filter__list.active) {
+                    margin-bottom: 0;
+                }
+
+                &__button-range {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
                 &__button {
                     font-size: 14px;
                     line-height: 25px;
@@ -106,15 +134,25 @@
                     border: none;
                     background-color: transparent;
                     margin-bottom: 19px;
+                    cursor: pointer;
+
+                    &--reset {
+                        padding: 0 35px 0 0;
+                    }
+
+                    &--only-action {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 20px 0 0;
+                    }
                 }
 
-                &--reset {
-                    padding: 0 35px 0 0;
-
-                }
-
-                &--only-action {
-                    padding: 0 20px 0 0;
+                &__btn {
+                    margin-right: 11px;
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    vertical-align: middle;
                 }
             }
         }
