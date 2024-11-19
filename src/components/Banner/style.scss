@@ -20,6 +20,7 @@
         margin: 0;
         margin-bottom: 45px;
         font-weight: 400;
+        padding-right: 42px;
         font-size: 14px;
         line-height: 185%;
         color: $cl-gray-99;
@@ -65,6 +66,7 @@
         &__descr {
             margin-top: 30px;
             margin-bottom: 0;
+            padding-right: 0;
             font-size: 18px;
             line-height: 150%;
         }
