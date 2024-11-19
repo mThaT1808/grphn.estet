@@ -21,12 +21,12 @@
             // position: relative;
             // padding-top: 216px;
             position: relative;
-            padding-top: 53px;
+            padding-top: 221px;
             background:
                 linear-gradient(transparent 0%, $cl-white) no-repeat,
                 url("/images/service/guarantee.svg") no-repeat;
             background-size:
-                156px 274px,
+                156px 280px,
                 156px 274px;
 
             // &::before {
@@ -62,6 +62,31 @@
         }
     }
 
+    &__digit {
+        font-family: 'Lora';
+        font-size: 150px;
+        font-weight: 700;
+        line-height: 1.28;
+        color: $cl-white;
+
+        position: absolute;
+        top: 70px;
+        left: 30px;
+    }
+
+    &__year {
+        font-family: 'Lora';
+        color: $cl-green;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1.28;
+        letter-spacing: -1.5px;
+
+        position: absolute;
+        top: 158px;
+        right: 52px;
+    }
+
     @media (min-width: ($tablet + 'px')) {
         padding: 70px 0 78px 0;
         &__list {
@@ -76,15 +101,18 @@
 
             &--guarantee {
                 margin-left: 0;
-                padding: 0;
+                padding: 240px 0 0;
                 background:
-                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    linear-gradient(transparent 0%, $cl-white 365px, $cl-white 100%) no-repeat,
                     url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient(#00694F, #00694F) no-repeat,
                     linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
                 background-size:
-                    100% 335px,
+                    100% 100%,
+                    170px 365px,
                     170px 365px,
                     100% 335px;
+                background-position: -1px -10px, -1px -10px, -1px 150px, 0 0;
                 // background-image: url('/images/service/guarantee-tablet.jpg');
 
                 // &::before {
@@ -103,6 +131,15 @@
                 background-image: url("/images/service/service-tablet.jpg");
             }
         }
+
+        &__digit {
+            top: 85px;
+            left: 34px;
+        }
+
+        &__year {
+            display: none;
+        }
     }
 
     @media (min-width: ($desktop-min + 'px')) {
@@ -114,18 +151,23 @@
 
         &__item {
             &--guarantee {
-                padding-top: 176px;
-                // padding-top: 410px;
+                padding-top: 410px;
                 // padding-left: 62px;
                 background:
-                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    linear-gradient(transparent 0%, $cl-white 564px, $cl-white 100%) no-repeat,
                     url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient(#00694F, #00694F) no-repeat,
                     linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
                 background-size:
-                    100% 60%,
-                    270px 535px,
+                    100% 100%,
+                    260px auto,
+                    260px 100%,
                     100% 60%;
-
+                background-position:
+                    0 0,
+                    0 35px,
+                    0 150px,
+                    0 0;
                 // &::before {
                 //     top: 254px;
                 //     left: 54px;
@@ -138,6 +180,12 @@
                 padding-top: 412px;
                 background-image: url("/images/service/service-desktop.jpg");
             }
+        }
+
+        &__digit {
+            font-size: 200px;
+            left: 55px;
+            top: 135px;
         }
     }
 }
