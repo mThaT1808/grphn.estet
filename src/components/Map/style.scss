@@ -1,9 +1,13 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .map {
-
+    display: none;
     position: relative;
     margin-top: 100px;
+
+    &--open {
+        display: block;
+    }
 
     &__wrapper {
         display: block;
@@ -16,14 +20,14 @@
     }
 
     &__pin {
-        width: 48px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
         border-radius: 100%;
         background-color: $cl-white;
         position: absolute;
 
         background-image: url("/src/assets/images/icons/logo-gradient.svg");
-        background-size: 23px;
+        background-size: 12px;
         background-position: center;
         background-repeat: no-repeat;
 
@@ -52,7 +56,8 @@
         position: absolute;
         bottom: 100%;
         left: 50%;
-        transform: translateX(-50%) scale(0.0001);
+        transform-origin: center bottom;
+        transform: translateX(-50%)  translateY(0px) scale(0.0001);
 
         transition: transform $animation-time;
     }
@@ -71,4 +76,27 @@
         }
     }
 
+}
+
+@media (min-width: ($tablet + 'px')) {
+    .map {
+        &__pin {
+            width: 32px;
+            height: 32px;
+            background-size: 16px;
+        }
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+    .map {
+        display: block;
+        margin-left: calc(1200px - 100vw);
+
+        &__pin {
+            width: 48px;
+            height: 48px;
+            background-size: 23px;
+        }
+    }
 }
