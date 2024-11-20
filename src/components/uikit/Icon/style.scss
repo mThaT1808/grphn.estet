@@ -81,4 +81,17 @@
         color: $cl-gray-97;
         margin-left: 11px;
     }
+
+    &--more {
+        position: relative;
+        top: -4px;
+        color: $cl-green;
+        font-size: 6px;
+        transform: rotate(90deg);
+        transition: transform $animation-time ease-in-out;
+    }
+
+    .button--more:hover &--more {
+        transform: rotate(90deg) translateX(6px);
+    }
 }

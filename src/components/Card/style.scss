@@ -22,6 +22,10 @@
         display: none;
     }
 
+    .door.visible {
+        display: flex;
+    }
+
     .door:last-child {
         margin-bottom: 0;
     }
@@ -144,7 +148,7 @@
 
     .door__choice-btn {
         padding: 0;
-        margin-left: auto;
+        padding-left: 16px;
         font-size: 16px;
         line-height: 19px;
         border: none;
@@ -162,7 +166,7 @@
     }
 
     &__quantity {
-        margin-bottom: 12px;
+        margin-bottom: 7px;
     }
 
     &__quantity--current {
@@ -178,6 +182,7 @@
         font-size: 16px;
         color: $cl-gray-99;
         vertical-align: top;
+        letter-spacing: -2px;
     }
 }
 
@@ -217,7 +222,7 @@
 
         .door__image-box {
             padding: 0;
-            max-height: 500px;
+            max-height: 430px;
         }
 
         .door__content {
@@ -251,6 +256,10 @@
 
         .door__choice-box label:nth-of-type(n + 4) {
             display: block;
+        }
+
+        .door__choice-btn {
+            padding-left: 0;
         }
     }
 }
@@ -324,14 +333,13 @@
         }
 
         .door:hover .door__title,
-        .door:hover .door__choice-btn {
+        .door:hover .door__choice-btn,
+        .door:hover .door__mark {
             color: $cl-white;
         }
 
         .door:hover .door__price {
             visibility: visible;
         }
-
-
     }
 }

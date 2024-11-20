@@ -92,17 +92,19 @@
     }
 
     &--more {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 32px;
+        max-width: 153px;
+        width: 100%;
         padding: 0;
+        margin: 0;
         border: none;
         font-weight: 400;
         font-size: 12px;
         letter-spacing: 0.17em;
-        color: #1e8a47;
         text-transform: uppercase;
-
-        &::after {
-            content: "";
-        }
     }
 
     &:disabled {
@@ -125,6 +127,13 @@
         &--guarantee:active::before {
             opacity: 0;
         }
+
+        &--more:active {
+            background-color: transparent;
+            color: $cl-green;
+            opacity: 0.8;
+            transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
+        }
     }
 
     @media not all and (pointer: coarse) {
@@ -142,6 +151,12 @@
 
         &--guarantee:hover::before {
             opacity: 0;
+        }
+
+        &--more:hover {
+            background-color: transparent;
+            color: $cl-green;
+            opacity: 0.8;
         }
     }
 
