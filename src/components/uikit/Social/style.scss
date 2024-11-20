@@ -29,6 +29,14 @@
         @media (min-width: #{$desktop + 'px'}) {
             margin-bottom: 19px;
         }
+
+        & .icon {
+            transition: color $animation-time;
+        }
+
+        & .icon:hover {
+            color: $cl-white;
+        }
     }
 
     &--footer &__item {

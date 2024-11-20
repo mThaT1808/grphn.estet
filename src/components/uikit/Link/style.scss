@@ -9,16 +9,6 @@
     -moz-appearance:    none;
     position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 100%;
-        height: 1px;
-        background-color: $cl-green;
-    }
-
     &--block {
         display: block;
     }
@@ -31,11 +21,7 @@
 
     @media not all and (pointer: coarse) {
         &:hover {
-            color: $cl-gray-97;
-        }
-
-        &:hover::after {
-            background-color: $cl-gray-97;
+            border-bottom: 1px solid $cl-green;
         }
     }
 
@@ -50,22 +36,18 @@
 
     &--white {
         color: $cl-white;
-
-        &::after {
-            background-color: $cl-white;
-        }
     }
 
-    &--no-line {
-        &::after {
-            display: none;
-        }
+    &--no-line:hover {
+        color: $cl-gray-97;
+        border-bottom: none;
     }
 
     &--tel {
         font-size: 36px;
         line-height: normal;
         font-weight: 700;
+        margin-right: -20px;
     }
 
     &--footer {
@@ -81,6 +63,10 @@
             display: block;
             margin-bottom: 17px;
         }
+
+        &:hover {
+            border-bottom: 1px solid $cl-white;
+        }
     }
 
     &--intro {
@@ -89,10 +75,6 @@
 
     &--shop {
         font-size: 12px;
-
-        &::after {
-            bottom: 3px;
-        }
 
         @media (min-width: #{$desktop + 'px'}) {
             margin-right: 67px;
