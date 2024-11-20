@@ -1,6 +1,7 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .footer {
+    z-index: 0;
     @media(min-width: ($tablet + 'px')) {
         &__wrapper {
             display: flex;
