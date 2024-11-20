@@ -1,12 +1,27 @@
 @use "/src/assets/styles/global.scss" as *;
 
 .copyright {
-    margin: 0 -25px;
-    padding: 61px 42px 71px 25px;
+    position: relative;
+    padding-top: 62px;
+    padding-bottom: 71px;
     color: $cl-gray-99;
     background-color: $cl-cl-gray-31;
     font-size: 12px;
     line-height: 16px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 50%;
+        margin-left: -50vw;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+        background-color: $cl-cl-gray-31;
+    }
 
     &__wrapper {
         display: flex;
@@ -42,8 +57,8 @@
     }
 
     @media (min-width: ($tablet + 'px')) {
-        margin: 0 -84px;
-        padding: 73px 100px 74px 84px;
+        padding-top: 73px;
+        padding-bottom: 74px;
         order: 2;
 
         &__link {
@@ -66,8 +81,15 @@
     @media (min-width: ($desktop + 'px')) {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        margin: 0 0 0 -200px;
-        padding: 125px 17px 69px 200px;
+        padding-top: 125px;
+        padding-bottom: 69px;
+
+        &::before {
+            left: auto;
+            margin: 0;
+            right: 0;
+            width: calc(((100vw - 1200px) / 2 ) + 880px);
+        }
 
         &__info {
             display: flex;
