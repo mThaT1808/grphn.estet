@@ -1,4 +1,5 @@
 @use "/src/assets/styles/global.scss" as *;
+@import "../../../node_modules/slick-slider/slick/slick.scss";
 
 .review {
     padding: 34px 0 31px 0;
@@ -28,6 +29,7 @@
         padding: 26px 0 2px 45px;
         list-style: none;
         opacity: 0.5;
+        cursor: pointer;
 
         &:last-child {
             margin-bottom: 0;
@@ -44,7 +46,7 @@
         &::after {
             position: absolute;
             content: '';
-            bottom: 0;
+            bottom: -4px;
             left: 0;
             width: 100%;
             height: 1px;
@@ -71,6 +73,10 @@
         flex-direction: column;
     }
 
+    .slick-list {
+        width: 275px;
+    }
+
     @media (min-width: ($tablet + 'px')) {
         padding: 84px 0 33px 0 ;
 
@@ -85,31 +91,28 @@
             column-gap: 45px;
             row-gap: 36px;
             margin: 0 -84px;
-            padding: 78px 84px 83px;
+            padding: 78px 84px 75px;
         }
 
         &__item {
-            width: calc((100% - 90px) / 3);
+            max-width: 100%;
+            min-height: 94px;
             margin: 0;
-            padding: 44px 0 0;
+            padding: 41px 0 0 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
 
             &::after {
-                bottom: -8px;
+                bottom: 2px;
+                width: calc(100% - 32px);
             }
 
             &--hide-mobile {
                 display: block;
             }
         }
-
-        // &__button {
-        //     right: -84px;
-        // }
-
-        // &__button--prev {
-        //     top: 0;
-        //     right: -23px;
-        // }
 
         &__container {
             padding-top: 26px;
@@ -120,6 +123,24 @@
             right: -84px;
             flex-direction: row;
         }
+
+        .slick-list {
+            width: 100%;
+        }
+        
+        .slick-track {
+            min-width: 100%;
+        }
+
+        .slick-slide {
+            padding-right: 14px;
+
+            div:first-child {
+                .review__item {
+                    margin-bottom: 32px;
+                }
+            }
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -129,9 +150,9 @@
         &__slider {
             display: grid;
             grid-template-columns: 55% 17% 28%;
-            grid-template-rows: 154px 562px min-content;
+            grid-template-rows: 154px auto min-content;
             align-items: stretch;
-            margin-right: -200px;
+            margin-right: calc((1200px - 100vw) / 2);
             position: relative;
         }
 
@@ -140,11 +161,11 @@
             grid-row: 2 / 3;
             margin: 0;
             width: 100%;
-            height: 562px;
+            aspect-ratio: 999 / 562;
             z-index: 2;
 
             &[poster] {
-                object-fit: fill;
+                object-fit: cover;
             }
         }
 
@@ -155,16 +176,13 @@
 
         &__list {
             margin: 0;
-            padding: 155px 0 81px 0;
+            padding: 155px 0 0 38%;
             row-gap: 33px;
             flex-direction: column; 
-            // height: 100%;
         }
 
         &__item {
-            width: 170px;
-            margin-left: 41%;
-            padding-top: 39px;
+            padding: 39px 0 0 0;
             min-height: 94px;
 
             &--hide-desktop {
@@ -172,7 +190,8 @@
             }
 
             &::after {
-                bottom: 0;
+                bottom: -1px;
+                width: 100%;
             }
         }
 
@@ -200,75 +219,21 @@
             top: 155px;
             flex-direction: column;
         }
-    }
-    
 
-    @media(min-width: ($desktop + 'px')) {
-    //     position: relative;
+        .slick-track {
+            display: block;
+            max-width: 200px;
+            margin: 0;
+        }
 
-    //     &__video {
-    //         margin: 0;
-    //         width: 100%;
-    //     }
+        .slick-list {
+            max-width: 200px;
+        }
 
-    //     &__list {
-    //         position: absolute;
-    //         bottom: -124px;
-    //         margin: 0;
-    //         flex-direction: column;
-    //         padding: 190px 200px 90px 266px;
-    //         // padding: 23% 31% 10% 41%;
-    //         // padding-left: 20px;
-    //     }
-
-    //     &__slider {
-    //         position: relative;
-    //         padding-right: 200px;
-    //         z-index: 0;
-    //     }
-
-    //     &__item {
-    //         width: 100%;
-    //         margin-bottom: 32px;
-
-    //         &--hidden {
-    //             display: none;
-    //         }
-
-    //         &::after {
-    //             bottom: -2px;
-    //         }
-    //     }
-
-    //     &__wrapper {
-    //         position: absolute;
-    //         // display: flex;
-    //         // justify-content: center;
-    //         // align-items: center;
-    //         right: -200px;
-    //         // top: -154px;
-    //         bottom: 0;
-    //         z-index: -1;
-    //         width: 53%;
-    //         min-height: 840px;
-    //     }
-
-    //     &__container {
-    //         position: relative;
-    //         z-index: 1;
-    //         background-color: $cl-white;
-    //         margin-right: 200px;
-    //         text-align: left;
-    //         padding: 34px 27px;
-    //     }
-
-    //     &__button {
-    //         top: 155px;
-    //         right: 0;
-
-    //         &--prev {
-    //             top: 215px;
-    //         }
-    //     }
+        .slick-slide {
+            max-width: 171px;
+            box-sizing: content-box;
+            padding: 0 0 26px 29px;
+        }
     }
 }
