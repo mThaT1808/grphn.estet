@@ -1,0 +1,15 @@
+---
+import Intro from '@components/Intro/Intro.astro'
+import './style.scss'
+import Aside from '@components/Aside/Aside.astro'
+---
+
+<div class="catalog">
+	<Aside />
+    <div class="catalog__wrapper">
+        <Intro />
+        <slot />
+    </div>
+</div>
+
+<script src="./script.js"></script>
