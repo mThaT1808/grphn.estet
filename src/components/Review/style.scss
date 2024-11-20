@@ -133,10 +133,13 @@
         }
 
         .slick-slide {
-            display: flex !important;
-            flex-direction: column;
-            row-gap: 32px;
             padding-right: 14px;
+
+            div:first-child {
+                .review__item {
+                    margin-bottom: 32px;
+                }
+            }
         }
     }
 
