@@ -105,6 +105,7 @@ $desktop-vh: 660px;
     --cl-orange: #ff5200;
     --cl-lite-green: #00c34a;
     --cl-gray-f2: #f3f1f2;
+    --cl-gray-e6: #e6e6e6;
 }
 
 // Основные цвета
@@ -147,6 +148,7 @@ $cl-theme-global: var(--cl-font-main);
 $cl-theme-link: var(--cl-font-main);
 $cl-theme-link-hover: var(--cl-font-light);
 $cl-theme-grey: var(--cl-gray);
+$cl-gray-e6: var(--cl-gray-e6);
 
 /* Добавлять по категориям cl-элемент
 /* $cl-button-bg: $Var */

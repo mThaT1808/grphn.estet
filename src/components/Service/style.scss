@@ -10,7 +10,7 @@
     }
 
     &__item {
-        margin: 0 0 46px -25px;
+        margin: 0 0 55px -25px;
         list-style: none;
 
         &:last-child {
@@ -21,12 +21,12 @@
             // position: relative;
             // padding-top: 216px;
             position: relative;
-            padding-top: 53px;
+            padding-top: 221px;
             background:
                 linear-gradient(transparent 0%, $cl-white) no-repeat,
                 url("/images/service/guarantee.svg") no-repeat;
             background-size:
-                156px 274px,
+                156px 280px,
                 156px 274px;
 
             // &::before {
@@ -55,11 +55,62 @@
         &--service {
             position: relative;
             padding-top: 224px;
-            background-image: url("/images/service/service.jpg");
-            background-repeat: no-repeat;
-            background-size: contain;
             margin: 0 -25px;
         }
+    }
+
+    &__wrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__image {
+        display: block;
+        object-fit: cover;
+        object-position: -21px 0;
+        transform: scale(1.15);
+        transform-origin: center bottom;
+    }
+
+    &__gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: linear-gradient(transparent, $cl-white 365px, $cl-white 100%);
+    }
+
+    &__digit {
+        font-family: 'Lora';
+        font-size: 150px;
+        font-weight: 700;
+        line-height: 1.28;
+        color: $cl-white;
+
+        position: absolute;
+        top: 70px;
+        left: 30px;
+    }
+
+    &__year {
+        font-family: 'Lora';
+        color: $cl-green;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 1.28;
+        letter-spacing: -1.5px;
+
+        position: absolute;
+        top: 158px;
+        right: 52px;
     }
 
     @media (min-width: ($tablet + 'px')) {
@@ -76,15 +127,18 @@
 
             &--guarantee {
                 margin-left: 0;
-                padding: 0;
+                padding: 240px 0 0;
                 background:
-                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    linear-gradient(transparent 0%, $cl-white 365px, $cl-white 100%) no-repeat,
                     url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient(#00694F, #00694F) no-repeat,
                     linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
                 background-size:
-                    100% 335px,
+                    100% 100%,
+                    170px 365px,
                     170px 365px,
                     100% 335px;
+                background-position: -1px -10px, -1px -10px, -1px 150px, 0 0;
                 // background-image: url('/images/service/guarantee-tablet.jpg');
 
                 // &::before {
@@ -100,8 +154,16 @@
             &--service {
                 padding-top: 258px;
                 margin: 70px 0 0 0;
-                background-image: url("/images/service/service-tablet.jpg");
             }
+        }
+
+        &__digit {
+            top: 85px;
+            left: 34px;
+        }
+
+        &__year {
+            display: none;
         }
     }
 
@@ -114,18 +176,23 @@
 
         &__item {
             &--guarantee {
-                padding-top: 176px;
-                // padding-top: 410px;
+                padding-top: 410px;
                 // padding-left: 62px;
                 background:
-                    linear-gradient(transparent 0%, $cl-white) no-repeat,
+                    linear-gradient(transparent 0%, $cl-white 564px, $cl-white 100%) no-repeat,
                     url("/images/service/guarantee.svg") no-repeat,
+                    linear-gradient(#00694F, #00694F) no-repeat,
                     linear-gradient($cl-gray-f2 0%,  $cl-gray-f2 100%) no-repeat;
                 background-size:
-                    100% 60%,
-                    270px 535px,
+                    100% 100%,
+                    260px auto,
+                    260px 100%,
                     100% 60%;
-
+                background-position:
+                    0 0,
+                    0 35px,
+                    0 150px,
+                    0 0;
                 // &::before {
                 //     top: 254px;
                 //     left: 54px;
@@ -136,8 +203,17 @@
             &--service {
                 margin-top: 109px;
                 padding-top: 412px;
-                background-image: url("/images/service/service-desktop.jpg");
             }
+        }
+
+        &__gradient {
+            background-image: linear-gradient(transparent, $cl-white 565px, $cl-white 100%);
+        }
+
+        &__digit {
+            font-size: 200px;
+            left: 55px;
+            top: 135px;
         }
     }
 }

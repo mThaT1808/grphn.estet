@@ -65,21 +65,21 @@
         }
 
         @media (min-width: ($desktop + 'px')) {
-            margin-left: 56px;
+            margin-left: 62px;
         }
     }
 
-    &--guarantee::before {
-        content: "";
-        position: absolute;
-        bottom: 5px;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: $cl-green;
-        opacity: 1;
-        transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
-    }
+    // &--guarantee::before {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 5px;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: $cl-green;
+    //     opacity: 1;
+    //     transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
+    // }
 
     &--service {
         line-height: 24px;
@@ -100,6 +100,20 @@
 
         @media (min-width: #{$desktop-min + 'px'}) {
             max-width: 280px;
+        }
+    }
+
+    &--more {
+        padding: 0;
+        border: none;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.17em;
+        color: #1e8a47;
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
         }
     }
 
@@ -135,6 +149,7 @@
             background-color: transparent;
             color: $cl-green;
             opacity: 0.8;
+            text-decoration: underline;
         }
 
         &--guarantee:hover::before {
@@ -259,4 +274,55 @@
         }
     }
 
+    &--aside {
+        font-size: 14px;
+        padding: 12px 17px;
+        border: none;
+        color: $cl-white;
+        background-color: $cl-green;
+        transition: color 0.8s ease, background-color 0.8s ease;
+
+        @media(min-width: ($tablet + 'px')) {
+            font-size: 14px;
+            line-height: 35px;
+            width: 160px;
+            text-align: start;
+        }
+
+        @media(min-width: ($desktop + 'px')) {
+            font-size: 16px;
+            width: 100%;
+            padding: 22px 16px 23px;
+
+            &:hover {
+                color: $cl-white;
+                background-color: $cl-green;
+            }
+        }
+    }
+
+    &--pink {
+        color: $cl-gray-3c;
+        background-color: $cl-pink-f9;
+
+        &:hover {
+            color: $cl-gray-3c;
+            background-color: $cl-pink-f9;
+        }
+    }
+
+    &--filter {
+        display: none;
+
+        @media(min-width: ($tablet + 'px')) {
+            display: block;
+            border: none;
+            margin-left: auto;
+            padding: 0;
+        }
+
+        @media(min-width: ($desktop + 'px')) {
+            display: none;
+        }
+    }
 }

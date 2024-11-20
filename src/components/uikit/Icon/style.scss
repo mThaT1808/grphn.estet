@@ -6,12 +6,9 @@
     }
 
     &--kontora {
+        font-size: 18px;
         color: $cl-black;
         opacity: 0.22;
-
-        @media (min-width: ($tablet + 'px')) {
-            font-size: 18px;
-        }
     }
 
     &--white {
@@ -72,5 +69,16 @@
         @media (min-width: ($desktop + 'px')) {
             font-size: 16px;
         }
+    }
+
+    &--filter {
+        font-size: 32px;
+        color: $cl-black;
+    }
+
+    &--reset {
+        font-size: 25px;
+        color: $cl-gray-97;
+        margin-left: 11px;
     }
 }
