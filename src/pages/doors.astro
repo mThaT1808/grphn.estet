@@ -3,6 +3,7 @@ import Shop from '@components/Shop/Shop.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '@components/Card/Card.astro';
 import Map from '@components/Map/Map.astro';
+import IntroInner from '@components/IntroInner/IntroInner.astro';
 const pageConfig = {
     title: 'doors',
     description: 'doors',
@@ -17,6 +18,7 @@ const pageConfig = {
     pageImage={pageConfig.image}
     inner={true}
     >
+    <IntroInner />
     <Card />
     <Map />
     <Shop title="Купить в вашем городе" modifier='doors'/>
