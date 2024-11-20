@@ -19,7 +19,7 @@
         line-height: 41px;
         font-weight: 600;
         padding-right: 25px;
-        color: var(--cl-gray-3c);
+        color: $cl-gray-3c;
 
         @media (min-width: ($tablet + 'px')){
             display: inline-block;
@@ -31,8 +31,25 @@
     &__button-wrapper {
         display: inline-flex;
         justify-content: space-between;
-        border-bottom: 1px solid var(--cl-gray-cd);
+        border-bottom: 1px solid $cl-gray-cd;
         width: 170px;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: -1px;
+            left: 0;
+            height: 1px;
+            width: 50%;
+            background-color: $cl-green;
+        }
+        
+        &--active-right {
+            &::after {
+                left: 50%;
+            }
+        }
     }
 
     &__wrapper {
@@ -157,7 +174,7 @@
         font-weight: 700;
         line-height: 28px;
         font-size: 24px;
-        color: var(--cl-gray-3c);
+        color: $cl-gray-3c;
     }
 
     &__time {
@@ -166,7 +183,7 @@
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.3px;
-        color: var(--cl-gray-99);
+        color: $cl-gray-99;
     }
 
     &__time--big {
@@ -283,7 +300,7 @@
 
 .arrow-info {
     padding: 0;
-    background-color: var(--cl-transparent);
+    background-color: $cl-transparent;
     border: none;
 
     &:hover {
@@ -308,5 +325,5 @@
 }
 
 .news__media-wrapper:hover~.news__content-wrapper .link--info{
-    color: var(--cl-green);
+    color: $cl-green;
 }

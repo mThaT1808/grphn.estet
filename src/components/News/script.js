@@ -1,6 +1,9 @@
 import $ from 'jquery';
 import 'slick-slider';
 
+const buttonContainer = document.querySelector('.info__button-wrapper');
+const buttons = buttonContainer.querySelectorAll('button');
+
 $(function(){
     const slider = $('.news__slider');
 
@@ -28,4 +31,14 @@ $(function(){
             e.preventDefault();
             slider.slick('slickNext');
         });
+});
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach((button) => {
+            button.classList.remove('button--active');
+        });
+        button.classList.add('button--active');
+        buttonContainer.classList.toggle('info__button-wrapper--active-right');
+    });
 });
