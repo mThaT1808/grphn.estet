@@ -100,3 +100,9 @@
         }
     }
 }
+
+@media (min-width: ($desktop-lg + 'px')) {
+    .map {
+        margin-left: -200px;
+    }
+}
