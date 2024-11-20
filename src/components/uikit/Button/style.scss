@@ -170,7 +170,7 @@
         font-weight: 600;
         display: flex;
         align-items: center;
-        padding: 40px 0 44px;
+        padding: 39px 0 43px;
         border: none;
         background-color: $cl-green;
         color: $cl-white;
@@ -181,7 +181,7 @@
         }
 
         @media(min-width: ($tablet + 'px')) {
-            padding: 48px 0 54px;
+            padding: 45px 0 54px;
         }
 
         @media(min-width: ($desktop + 'px')) {
@@ -225,10 +225,6 @@
         line-height: 25px;
 
         @media(min-width: ($tablet + 'px')) {
-            margin-right: 30px;
-        }
-
-        @media(min-width: ($desktop + 'px')) {
             margin-right: 25px;
         }
 
