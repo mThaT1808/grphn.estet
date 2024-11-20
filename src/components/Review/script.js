@@ -14,6 +14,7 @@ const breakpoint = {
 slides.forEach((slide) => {
     slide.addEventListener('click', () => {
         video.src = slide.dataset.video;
+        video.scrollIntoView({behavior: "smooth", block: "center"})
         video.play();
 
         for (let i = 0; i < slides.length; i++) {
@@ -45,6 +46,8 @@ $('.review__list').slick({
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
+    row: 1,
+    arrows: false,
     responsive: [
         {
             breakpoint: breakpoint.desktop - 1,
@@ -54,6 +57,7 @@ $('.review__list').slick({
                 vertical: false,
                 verticalSwiping: false,
                 rows: 2,
+                adaptiveHeight: true
             }
         },
         {

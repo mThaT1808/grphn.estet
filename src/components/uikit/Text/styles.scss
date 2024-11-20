@@ -252,6 +252,10 @@
             padding-left: 70px;
             padding-right: 38px;
         }
+
+        &--review {
+            width: 171px;
+        }
     }
 
     @media (min-width: ($desktop-lg + 'px')){
