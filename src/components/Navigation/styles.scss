@@ -18,7 +18,7 @@
 
     &--header &__item {
         list-style: none;
-        padding: 19px 0;
+        padding: 0;
         position: relative;
 
         &::before {
@@ -31,24 +31,13 @@
             border-bottom: 1px solid rgba(224, 224, 224, 0.2)
         }
 
-        &::after {
-            content: '';
-            width: 5px;
-            height: 7px;
-            background-image: url("/src/assets/images/icons/tiny-arrow.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            right: 0;
-            top: calc(50% - 3px);
-        }
-
         &:first-child {
 
             &::before {
                 opacity: 0;
             }
         }
+
         &--special {
             line-height: 48px;
             text-transform: uppercase;
@@ -91,6 +80,24 @@
                 background-size: cover;
                 background-image: url("/src/assets/images/icons/arrow-108.svg");
             }
+        }
+    }
+
+    &--header &__link{
+        display: block;
+        padding: 19px 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 5px;
+            height: 7px;
+            background-image: url("/src/assets/images/icons/tiny-arrow.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 3px);
         }
     }
 
@@ -149,6 +156,10 @@
             margin: 0;
             columns: 1;
         }
+
+        &--header &__link {
+            margin-bottom: 0;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -191,13 +202,7 @@
             &::before {
                 opacity: 0;
             }
-
-            &::after {
-                background-image: url("/src/assets/images/icons/small-arrow.svg");
-                height: 9px;
-                transform: rotate(90deg);
-            }
-
+            
             &--special {
                 color: $cl-white;
                 text-transform: none;
@@ -232,7 +237,12 @@
             font-weight: 600;
             letter-spacing: -1px;
 
-            margin-bottom: 0;
+            &::after {
+                background-image: url("/src/assets/images/icons/small-arrow.svg");
+                height: 9px;
+                transform: rotate(90deg);
+                right: -20px;
+            }
         }
 
     }
