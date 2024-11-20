@@ -1,0 +1,32 @@
+---
+import Title from '@components/uikit/Title/Title.astro'
+import './style.scss'
+import Breadcrumbs from '@components/uikit/Breadcrumbs/Breadcrumbs.astro'
+import Button from '@components/uikit/Button/Button.astro'
+
+const links = [
+        {
+            href:'javascript:void(0);',
+            title:'Главная'
+        },
+        {   href:'javascript:void(0);',
+            title:"Межкомнатные двери"
+        },
+        {
+            href:'javascript:void(0);',
+            title:"Все двери"
+        }];
+---
+
+<section class="intro-inner">
+    <picture class="intro-inner__background">
+        <source srcset="/images/intro-inner/background.jpg">
+        <img src="/images/intro-inner/background.jpg" alt="">
+    </picture>
+    <Breadcrumbs links={links}/>
+    <Title>Межкомнатные двери</Title>
+
+    <Button class="button--intro-inner">Заказать замер</Button>
+</section>
+
+<script src="./script.js"></script>
