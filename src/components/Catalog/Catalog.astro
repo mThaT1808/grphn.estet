@@ -1,5 +1,5 @@
 ---
-import Intro from '@components/Intro/Intro.astro'
+import IntroInner from '@components/IntroInner/IntroInner.astro'
 import './style.scss'
 import Aside from '@components/Aside/Aside.astro'
 ---
@@ -7,7 +7,7 @@ import Aside from '@components/Aside/Aside.astro'
 <div class="catalog">
 	<Aside />
     <div class="catalog__wrapper">
-        <Intro />
+        <IntroInner />
         <slot />
     </div>
 </div>
