@@ -1,0 +1,45 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.map {
+
+    position: relative;
+    margin-top: 100px;
+
+    &__wrapper {
+        display: block;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__pin {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background-color: $cl-white;
+        position: absolute;
+
+        background-image: url("/src/assets/images/icons/logo-gradient.svg");
+        background-size: 23px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &--1 {
+            left: 51%;
+            top: 21%;
+        }
+
+        &--2 {
+            left: 57%;
+            top: 40%;
+        }
+
+        &--3 {
+            left: 72%;
+            top: 25%;
+        }
+    }
+}
