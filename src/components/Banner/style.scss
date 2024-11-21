@@ -113,7 +113,7 @@
         &__content {
             display: grid;
             grid-template-columns: 420px 1fr;
-            grid-template-rows: unset;
+            grid-template-rows: auto min-content min-content;
             column-gap: 60px;
             row-gap: 0px;
             grid-template-areas:
@@ -127,7 +127,7 @@
             position: relative;
             padding-top: 0;
             padding-bottom: 0;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-bottom: 115px;
         }
 
