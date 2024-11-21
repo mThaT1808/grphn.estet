@@ -33,7 +33,7 @@ $intro-height: 100vh;
         height: $intro-height;
         width: 100%;
         object-fit: cover;
-        object-position: -170px;
+        object-position: center;
     }
 
     &__filter {
