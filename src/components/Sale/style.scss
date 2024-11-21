@@ -21,9 +21,14 @@
     }
 }
 
-@media (min-width: ($desktop + 'px')) {
+@media (min-width: ($tablet + 'px')) {
     .sale {
         background-image: none;
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+    .sale {
         padding-top: 53px;
 
         &--inner {
