@@ -220,7 +220,7 @@
             &::before {
                 opacity: 0;
             }
-            
+
             &--special {
                 color: $cl-white;
                 text-transform: none;
@@ -263,5 +263,28 @@
             }
         }
 
+    }
+}
+
+.header-wrapper {
+    .nav {
+        @media (min-width: ($desktop + 'px')) {
+            &__item {
+                margin-right: 0;
+
+                &:first-child {
+                    margin-left: 10vw;
+                }
+            }
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            &__item {
+
+                &:first-child {
+                    margin-left: 160px;
+                }
+            }
+        }
     }
 }
