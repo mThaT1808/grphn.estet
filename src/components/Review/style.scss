@@ -133,13 +133,16 @@
         }
 
         .slick-slide {
-            padding-right: 14px;
-
             div:first-child {
                 .review__item {
                     margin-bottom: 32px;
                 }
             }
+        }
+
+        .slick-current + .slick-slide,
+        .slick-current + .slick-slide + .slick-slide {
+            margin-left: 14px;
         }
     }
 
@@ -154,6 +157,7 @@
             align-items: stretch;
             margin-right: calc((1200px - 100vw) / 2);
             position: relative;
+            max-height: 130vh;
         }
 
         &__video {
@@ -176,7 +180,7 @@
 
         &__list {
             margin: 0;
-            padding: 155px 0 0 38%;
+            padding: 155px 0 55px 38%;
             row-gap: 33px;
             flex-direction: column;
         }
@@ -247,6 +251,11 @@
             max-width: 171px;
             box-sizing: content-box;
             padding: 0 0 30px 29px;
+        }
+
+        .slick-current + .slick-slide, 
+        .slick-current + .slick-slide + .slick-slide {
+            margin-left: 0;
         }
     }
 }
