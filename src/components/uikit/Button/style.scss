@@ -167,6 +167,13 @@
         &--active:hover {
             color: $cl-green;
         }
+
+        &--sale:hover {
+            background-color: transparent;
+            color: $cl-green;
+            opacity: 0.8;
+            text-decoration: underline;
+        }
     }
 
     &--green {
@@ -355,6 +362,18 @@
 
         @media(min-width: ($desktop + 'px')) {
             display: none;
+        }
+    }
+
+    &--sale {
+        @media (min-width: ($desktop + 'px')) {
+            border: none;
+            display: block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-left: -17px;
+            font-size: 12px;
+            line-height: 14px;
         }
     }
 }

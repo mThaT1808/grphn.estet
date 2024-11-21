@@ -258,6 +258,24 @@
         &--review {
             width: 171px;
         }
+
+        &--sale-inner {
+            margin-bottom: 43px;
+            width: 70%;
+        }
+
+        &--sale-end-inner {
+            top: initial;
+            bottom : 10px;
+        }
+
+        &--sale-descr-text {
+            margin-bottom: 30px;
+            font-size: 36px;
+            line-height: 42px;
+            font-weight: 600;
+            word-spacing: 1.5px;
+        }
     }
 
     @media (min-width: ($desktop-lg + 'px')){

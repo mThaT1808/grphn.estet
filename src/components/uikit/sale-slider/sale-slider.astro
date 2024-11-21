@@ -1,41 +1,53 @@
 ---
 import Arrow from '../Arrow/Arrow.astro'
+import Button from '../Button/Button.astro'
 import Text from '../Text/Text.astro'
 import Title from '../Title/Title.astro'
 import './style.scss'
+const mod = Astro.props.mod
 ---
 
-<div class="sale-slider">
+<div class={`sale-slider ${mod ? `sale-slider--${mod}` : ''}`}>
     <a class="sale-slider__container" href="javascript:void(0);" title="Распродажа классических коллекций">
-        <picture class="sale-slider__wrapper">
-            <source srcset="/images/sale/sale-banner.webp">
-            <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
-        </picture>
-        <div class="sale-slider__text">
-            <Title class='sale-slider' Tag='h3'>20%</Title>
-            <Text class="sale-descr"> на&nbsp;коллекции </Text>
-            <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
-        </div>
-        <div class="sale-slider__description">
-            <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title>
-            <Text class="sale">Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
-            <Text  class="sale__end">Акция действует до 15 февраля 2021г.</p>
+        <div class="sale-slider__box">
+            <picture class="sale-slider__wrapper">
+                <source srcset="/images/sale/sale-banner.webp">
+                <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
+            </picture>
+            {mod === "inner" ? <span class="sale-slider__discount">20%</span> : ""}
+            <div class="sale-slider__text">
+                <Title class={`sale-slider${mod ? ` title--sale-slider-${mod}` : ''}`} Tag='h3'>20%</Title>
+                <Text class="sale-descr"> на&nbsp;коллекции </Text>
+                <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
+            </div>
+            <div class="sale-slider__description">
+                {mod !== "inner" ? <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title> : ''}
+                {mod === "inner" ? <Text class="sale-descr-text">-20% на&nbsp;коллекции MIO, ENGLAND, FIGURE</Text> : ''}
+                <Text class={`sale${mod ? ` text--sale-${mod}` : ''}`}>Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
+                {mod === "inner" ? <Button class='button--sale'>Подробнее</Button> : ''}
+                <Text  class={`sale__end${mod ? ` text--sale-end-${mod}` : ''}`}>Акция действует до 15 февраля 2021г.</p>
+            </div>
         </div>
     </a>
     <a class="sale-slider__container" href="javascript:void(0);" title="Распродажа классических коллекций">
-        <picture class="sale-slider__wrapper">
-            <source srcset="/images/sale/sale-banner.webp">
-            <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
-        </picture>
-        <div class="sale-slider__text">
-            <Title class='sale-slider' Tag='h3'>20%</Title>
-            <Text class="sale-descr"> на&nbsp;коллекции </Text>
-            <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
-        </div>
-        <div class="sale-slider__description">
-            <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title>
-            <Text class="sale">Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
-            <Text  class="sale__end">Акция действует до 15 февраля 2021 г.</p>
+        <div class="sale-slider__box">
+            <picture class="sale-slider__wrapper">
+                <source srcset="/images/sale/sale-banner.webp">
+                <img class="sale-slider__image" src="/images/sale/sale-banner.jpg" alt="slider image">
+            </picture>
+            {mod === "inner" ? <span class="sale-slider__discount">20%</span> : ""}
+            <div class="sale-slider__text">
+                <Title class={`sale-slider${mod ? ` title--sale-slider-${mod}` : ''}`} Tag='h3'>20%</Title>
+                <Text class="sale-descr"> на&nbsp;коллекции </Text>
+                <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
+            </div>
+            <div class="sale-slider__description">
+                {mod !== "inner" ? <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title> : ''}
+                {mod === "inner" ? <Text class="sale-descr-text">-20% на&nbsp;коллекции MIO, ENGLAND, FIGURE</Text> : ''}
+                <Text class={`sale${mod ? ` text--sale-${mod}` : ''}`}>Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
+                {mod === "inner" ? <Button class='button--sale'>Подробнее</Button> : ''}
+                <Text  class={`sale__end${mod ? ` text--sale-end-${mod}` : ''}`}>Акция действует до 15 февраля 2021г.</p>
+            </div>
         </div>
     </a>
  </div>
