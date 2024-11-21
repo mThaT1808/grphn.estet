@@ -13,16 +13,16 @@
             justify-content: center;
             max-width: 1280px;
             opacity: 1;
-            transition: $double-animation;
+            transition: opacity $double-animation ease-in-out;
 
             @media (min-width: ($tablet + 'px')) {
                 gap: 37.89vw;
             }
 
             @media (min-width: ($desktop + 'px')) {
-                position: absolute;
+                position: relative;
                 top: unset;
-                left: unset;
+                left: calc(320px - ((100vw - 1200px) / 2));
                 right: 0;
                 justify-content: right;
                 width: calc(100vw - 320px);
@@ -331,7 +331,7 @@
 
         &:has(.header__functional--open) * .header__base {
             opacity: 0;
-            transition: $animation-time;
+            transition: opacity $animation-time ease-in-out;
         }
     }
 
