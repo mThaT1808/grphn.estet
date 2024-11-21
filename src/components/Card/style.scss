@@ -189,7 +189,7 @@
 @media (min-width: #{$tablet + 'px'}) {
     .card {
 
-        padding: 50px 63px;
+        padding: 0 63px 50px;
 
         &__inner {
             display: flex;
