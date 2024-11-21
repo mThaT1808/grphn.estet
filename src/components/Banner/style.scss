@@ -92,6 +92,7 @@
 
 @media (min-width: #{$desktop-min + 'px'}) {
     .banner {
+        padding-bottom: 50px;
 
         &__wrapper {
             max-width: 420px;
