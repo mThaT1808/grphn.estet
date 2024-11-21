@@ -52,6 +52,7 @@ $('.review__list').slick({
         {
             breakpoint: breakpoint.desktop - 1,
             settings: {
+                infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 vertical: false,
@@ -63,11 +64,12 @@ $('.review__list').slick({
         {
             breakpoint: breakpoint.tablet - 1,
             settings: {
-                infinite: true,
+                infinite: false,
                 slidesToShow: 4,
+                adaptiveHeight: false,
                 slidesToScroll: 1,
                 vertical: true,
-                verticalSwiping: true   
+                verticalSwiping: true
             }
         }
     ]
