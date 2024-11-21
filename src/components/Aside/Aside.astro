@@ -11,7 +11,7 @@ import './style.scss'
 <aside class="aside">
     <div class="aside__header">
         <div class="aside__logo-wrapper">
-            <Logotype modifier="aside"/>
+            <Logotype modifier="aside" href="/index.html"/>
         </div>
         <CallBack modifier="aside"/>
         <Searchbar modifier="aside"/>
@@ -27,7 +27,10 @@ import './style.scss'
     </div>
     <div class="aside__filter">
         <div class="filter">
-            <button class="filter__opener">Коллекции</button>
+            <button class="filter__opener">
+                Коллекции
+                <Icon name="small-arrow" mod="opener"/>
+            </button>
             <ul class="filter__list filter__list--collection">
                 <li class="filter__item">bliss</li>
                 <li class="filter__item">urban</li>
@@ -40,7 +43,10 @@ import './style.scss'
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__opener">Стиль</button>
+            <button class="filter__opener">
+                Стиль
+                <Icon name="small-arrow" mod="opener"/>
+            </button>
             <ul class="filter__list filter__list--style">
                 <li class="filter__item">Современный</li>
                 <li class="filter__item">Классический</li>
@@ -49,14 +55,20 @@ import './style.scss'
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__opener">Отделка</button>
+            <button class="filter__opener">
+                Отделка
+                <Icon name="small-arrow" mod="opener"/>
+            </button>
             <ul class="filter__list filter__list--trim">
                 <li class="filter__item">Эмаль</li>
                 <li class="filter__item">Покрытие</li>
             </ul>
         </div>
         <div class="filter">
-            <button class="filter__opener">Цена</button>
+            <button class="filter__opener">
+                Цена
+                <Icon name="small-arrow" mod="opener"/>
+            </button>
             <ul class="filter__list filter__list--price">
                 <li class="filter__item">
                     <input class="filter__button-range" type="range" id="price-range" min="0" max="50000" step="500">
