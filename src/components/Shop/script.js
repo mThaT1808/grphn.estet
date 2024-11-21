@@ -33,9 +33,18 @@ function checkWidth() {
             arrows: false,
         });
 
-    }else if ($(window).width() < 1280) {
+    }else if ($(window).width() < 1024) {
         slider.slick({
             slidesToShow: 2.1,
+            rows: 4,
+            easing: "ease",
+            infinite: false,
+            arrows: false,
+        });
+
+    }else if ($(window).width() < 1280) {
+        slider.slick({
+            slidesToShow: 3.1,
             rows: 4,
             easing: "ease",
             infinite: false,
