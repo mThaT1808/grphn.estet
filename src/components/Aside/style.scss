@@ -2,6 +2,7 @@
 
 .aside {
     margin-bottom: 10px;
+    padding-top: 22px;
     padding-right: 25px;
     padding-left: 25px;
 
@@ -29,13 +30,15 @@
 
     @media(min-width: ($tablet + 'px')) {
         margin-bottom: 75px;
+        padding-top: 52px;
         padding-right: 66px;
         padding-left: 66px;
     }
 
     @media(min-width: ($desktop + 'px')) {
-        max-width: 320px;
+        width: 320px;
         margin-bottom: 0;
+        padding-top: 0;
         padding-right: 0;
         padding-left: 0;
 
