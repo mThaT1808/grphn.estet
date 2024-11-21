@@ -1,0 +1,26 @@
+@import '../../assets/styles/global.scss';
+
+.catalog {
+    max-width: 1200px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .catalog {
+        display: flex;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-bottom: 100px;
+
+        &__wrapper {
+            display: block;
+            width: calc(100% - 320px);
+        }
+    }
+}

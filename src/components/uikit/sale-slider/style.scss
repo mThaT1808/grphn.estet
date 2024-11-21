@@ -17,11 +17,15 @@
 
     &__text {
         margin-left: 25px;
-        margin-bottom: 20px;
+        margin-bottom: 21px;
     }
 
     &__description {
         padding-left: 25px;
+    }
+
+    &__discount {
+        display: none;
     }
 }
 
@@ -43,11 +47,15 @@
             position: relative;
         }
 
+        &__container:hover .text--sale-collection::after {
+            opacity: 0;
+        }
+
         &__text {
             position: absolute;
             top: 68px;
-            right: 31px;
-            width: 200px;
+            right: 33px;
+            margin: 0;
         }
 
         &__image {
@@ -73,18 +81,59 @@
 
         &__text {
             display: flex;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            column-gap: 24px;
-            width: auto;
-            max-width: 50%;
-            top: 40px;
-            right: 100px;
+            top: 45px;
+            left: 48%;
         }
 
         &__description {
             padding: 0;
             position: relative;
+        }
+
+        &--inner &__box {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            padding-bottom: 35px;
+        }
+
+        &--inner &__wrapper {
+            grid-column: 2 / -1;
+            grid-row: 1 / -1;
+        }
+
+        &--inner &__image {
+            margin-bottom: 0;
+        }
+
+        &--inner &__description {
+            position: static;
+            grid-column: 1 / 2;
+            grid-row: 1 / -1;
+            padding-top: 232px;
+        }
+
+        &--inner &__discount {
+            display: inline;
+            font-family: 'Lora', serif;
+            position: absolute;
+            right: calc(50% + 21px);
+            top: -16px;
+            color: $cl-gray-f7;
+            font-size: 150px;
+            line-height: 192px;
+            font-weight: 400;
+
+            &::before {
+                position: absolute;
+                content: '-';
+                left: -98px;
+                top: 50%;
+                width: 100px;
+                height: 12px;
+                background-color: $cl-gray-f7;
+            }
         }
     }
 }

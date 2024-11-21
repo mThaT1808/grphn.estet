@@ -51,12 +51,19 @@
     }
 
     &--sale-slider {
+        position: relative;
+        display: inline;
+        padding-left: 8px;
         font-size: 21px;
         line-height: normal;
         letter-spacing: 0px;
         font-weight: bold;
 
-        display: inline;
+        &::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+        }
     }
 
     &--about {
@@ -70,6 +77,17 @@
         margin-bottom: 46px;
         line-height: 44px;
     }
+
+    &--intro-inner {
+        color: $cl-white;
+        line-height: 23px;
+        font-size: 21px;
+        font-weight: 700;
+
+        margin-left: 63px;
+        margin-bottom: 43px;
+        padding-right: 29%;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -77,9 +95,10 @@
         font-size: 36px;
 
         &--intro {
+            text-align: center;
             line-height: 1.28;
             font-size: 100px;
-            margin-bottom: 72px;
+            margin-bottom: 7.03vh;
         }
 
         &--service {
@@ -102,31 +121,26 @@
             font-size: 18px;
             margin-bottom: 23px;
         }
+
         &--left {
             padding-left: 31px;
             margin-bottom: 94px;
         }
 
         &--sale-slider {
+            display: block;
+            margin-bottom: 7px;
+            padding: 0;
             font-family: 'Lora';
-            color: $cl-white;
             font-size: 100px;
             letter-spacing: -1px;
             line-height: 128px;
             font-weight: 400;
+            color: $cl-white;
 
-            display: block;
-            margin-bottom: 8px;
-
-            &::first-letter {
-                font-size: 0;
-                line-height: 0;
-                letter-spacing: 0;
-            }
             &::before {
                 content: '—';
-                position: absolute;
-                right: 100%;
+                left: -40%;
             }
         }
 
@@ -135,10 +149,8 @@
             line-height: 49px;
             letter-spacing: 0px;
             font-weight: 600;
-
             display: block;
             margin-bottom: 34px;
-
         }
 
         &--guarantee {
@@ -148,6 +160,17 @@
         &--about {
             font-size: 36px;
         }
+
+        &--intro-inner {
+            line-height: 0.96;
+            font-size: 48px;
+            font-weight: 300;
+
+            margin-left: 0px;
+            margin-bottom: 0px;
+            padding-right: 29%;
+            padding-top: 85px;
+        }
     }
 }
 
@@ -156,9 +179,11 @@
         font-size: 49px;
 
         &--intro {
-            font-size: 150px;
+            font-size: clamp(100px, 9.37vw, 150px);
+            width: calc(100vw - 600px);
+            line-height: clamp(150px, 12vw, 192px);
+            text-align: left;
             margin-bottom: 8px;
-
             position: relative;
             z-index: 1;
         }
@@ -177,14 +202,15 @@
             font-size: 18px;
             margin-bottom: 23px;
         }
-        &--left{
+
+        &--left {
             padding-left: 51px;
             margin-bottom: 30px;
         }
 
         &--review {
             position: absolute;
-            top: 16px;
+            top: 0;
             left: 0;
             margin: 0;
             // margin-bottom: 102px;
@@ -205,11 +231,23 @@
         }
 
         &--guarantee {
-            padding:  66px 0 0 64px;
+            padding:  0px 0 0 60px;
         }
 
         &--about {
             font-size: 36px;
+        }
+
+        &--sale-slider-inner {
+            display: none;
+        }
+
+        &--intro-inner {
+            padding-right: calc(50% + 170px);
+        }
+
+        &--sale-inner {
+            display: none;
         }
     }
 }

@@ -1,18 +1,14 @@
 @import '../../assets/styles/global.scss';
 .banner {
     padding-top: 50px;
-    padding-bottom: 33px;
-
-    &__content {
-        display: flex;
-        justify-content: center;
-    }
+    padding-bottom: 63px;
 
     &__wrapper {
         max-width: 325px;
     }
 
     &__title {
+        max-width: 325px;
         margin-bottom: 27px;
         font-weight: 700;
         font-size: 30px;
@@ -24,6 +20,7 @@
         margin: 0;
         margin-bottom: 45px;
         font-weight: 400;
+        padding-right: 42px;
         font-size: 14px;
         line-height: 185%;
         color: $cl-gray-99;
@@ -37,41 +34,55 @@
 
 @media (min-width: #{$tablet + 'px'}) {
     .banner {
-        padding-top: 100px;
+        padding-top: 70px;
         padding-bottom: 100px;
 
         &__content {
-            gap: 45px;
+            position: relative;
+            display: flex;
+            column-gap: 45px;
+            row-gap: 60px;
+            flex-wrap: wrap;
             justify-content: space-between;
         }
 
         &__wrapper {
             max-width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         &__title {
-            margin-bottom: 90px;
-            max-width: 600px;
+            margin-bottom: unset;
+            margin-top: unset;
+            max-width: unset;
+            width: 100%;
             font-size: 48px;
             line-height: 119%;
+            padding-right: 50%;
         }
 
         &__descr {
-            margin-bottom: 315px;
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding-right: 0;
             font-size: 18px;
             line-height: 150%;
         }
 
         &__picture {
             display: flex;
-            margin-right: -85px;
-            max-height: 600px;
-            height: 100%;
+            margin-right: -84px;
+            height: 100vh;
+            width: 100px;
+            flex-grow: 1;
             align-self: flex-end;
         }
 
         &__image {
             object-fit: cover;
+            width: 100%;
         }
     }
 }
@@ -83,8 +94,12 @@
             max-width: 420px;
         }
 
+        &__content {
+            flex-wrap: wrap;
+        }
+
         &__picture {
-            margin-right: -85px;
+            margin-right: -84px;
         }
     }
 }
@@ -93,32 +108,94 @@
     .banner {
 
         &__content {
-            gap: 60px;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            column-gap: 60px;
+            row-gap: 0px;
+            grid-template-areas:
+                "title picture"
+                "wrapper picture"
+                "wrapper picture";
+            margin-right: calc(0px - (100vw - 1200px) / 2);
         }
 
         &__wrapper {
-            padding-top: 220px;
-            padding-bottom: 115px;
+            grid-area: wrapper;
+            position: relative;
+            padding-top: 0;
+            padding-bottom: 0;
+            justify-content: space-between;
+            margin-bottom: 115px;
         }
 
         &__title {
-            margin-bottom: 100px;
+            grid-area: title;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 42vh;
             font-size: 60px;
             line-height: 96%;
+            padding: 0;
+        }
+
+        &__gradient {
+            max-height: calc(58vh - 200px);
+            overflow: hidden;
+            position: relative;
+            margin-top: 50px;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 100%;
+                height: 30px;
+                background-image: linear-gradient($cl-white, transparent);
+                position: absolute;
+                left: 0;
+                z-index: 1;
+            }
+
+            &::before {
+                top: -2px;
+            }
+
+            &::after {
+                bottom: -2px;
+                transform: rotate(180deg);
+            }
         }
 
         &__descr {
-            max-width: 335px;
-            margin-bottom: 80px
+            position: relative;
+            padding-right: 80px;
+            max-height: 100%;
+            overflow: auto;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
         &__picture {
-            margin-right: -200px;
-            min-height: 800px;
+            grid-area: picture;
+            margin: 0;
+            width: 100%;
+        }
+
+    }
+}
+
+@media (min-width: #{$desktop-lg + 'px'}) {
+    .banner {
+
+        &__content {
+            margin-right: -200px
         }
 
         &__image {
-            min-height: 800px;
+            object-position: left;
         }
     }
 }

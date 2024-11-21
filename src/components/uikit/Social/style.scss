@@ -6,6 +6,7 @@
         padding: 0;
         display: flex;
         gap: 20px;
+        opacity: 59.85%;
     }
 
     &__item {
@@ -27,6 +28,14 @@
 
         @media (min-width: #{$desktop + 'px'}) {
             margin-bottom: 19px;
+        }
+
+        & .icon {
+            transition: color $animation-time;
+        }
+
+        & .icon:hover {
+            color: $cl-white;
         }
     }
 

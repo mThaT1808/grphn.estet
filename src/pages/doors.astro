@@ -1,10 +1,14 @@
 ---
 import Shop from '@components/Shop/Shop.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '@components/Card/Card.astro';
+import Map from '@components/Map/Map.astro';
+import Catalog from '@components/Catalog/Catalog.astro';
+import Sale from '@components/Sale/Sale.astro';
 const pageConfig = {
-    title: 'doors',
-    description: 'doors',
-    keywords: '',
+    title: 'Двери Estet | Каталог',
+    description: '',
+    keywords: 'цены, каталог, список товаров, межкомнатные двери',
     image: ''
 };
 ---
@@ -15,5 +19,10 @@ const pageConfig = {
     pageImage={pageConfig.image}
     inner={true}
     >
+    <Catalog>
+        <Card />
+    </Catalog>
+    <Sale mod="inner"/>
+    <Map />
     <Shop title="Купить в вашем городе" modifier='doors'/>
 </BaseLayout>

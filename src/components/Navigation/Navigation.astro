@@ -22,7 +22,7 @@ if (modifier) {
                 'nav__item--arrow': item.isArrow,
                 'nav__item--mobile': item.isMobile
             }}>
-                <a class="nav__link" href="javascript:void(0);">{item.title}</a>
+                <a class="nav__link" href={item.link ? item.link : "javascript:void(0);"}>{item.title}</a>
                 {item.links ?
                     <ul class="nav__inner-list">
                         {item.links.map((link) => (

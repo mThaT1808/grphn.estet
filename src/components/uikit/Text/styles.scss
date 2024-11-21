@@ -15,8 +15,13 @@
     }
 
     &--service {
-        margin: 0 0 18px 25px;
+        margin: 0 0 18px;
         text-align: right;
+    }
+
+    &--guarantee {
+        margin-left: 25px;
+        margin-bottom: 27px;
     }
 
     &--review {
@@ -32,6 +37,37 @@
         }
     }
 
+    &--info {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 24px;
+        padding-right: 1px;
+        color: var(--cl-green);
+
+            &:hover {
+                border-bottom: 1px solid var(--cl-green);
+            }
+    }
+
+    &--news,
+    &--suggestions {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        width: 68.8vw;
+        margin-top: 0;
+        margin-bottom: unset;
+        color: unset;
+    }
+
+    &--news-big,
+    &--suggestions-big {
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: unset;
+        width: auto;
+    }
+
     &--left {
         text-align: left;
         padding-left: 25px;
@@ -40,36 +76,35 @@
     }
 
     &--sale {
-        color: $cl-gray-99;
+        margin-bottom: 18px;
         line-height: 25px;
-        letter-spacing: 0.4px;
+        letter-spacing: normal;
         font-weight: 600;
-
-        margin-bottom: 20px;
+        color: $cl-gray-99;
     }
 
+    &--sale-descr,
     &--sale-collection {
+        display: inline;
         font-size: 21px;
         line-height: normal;
         letter-spacing: 0px;
         font-weight: bold;
-
-        display: inline;
-
-        br {
-            display: none;
-        }
     }
 
     &--about {
         font-size: 14px;
     }
 
+    &--sale-descr-text {
+        display: none;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 
         &--service {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             font-size: 16px;
             line-height: 38px;
             text-align: left;
@@ -78,6 +113,22 @@
         &--review {
             width: 100%;
             line-height: 22px;
+        }
+
+        &--info{
+            line-height: 24px;
+        }
+
+        &--news,
+        &--suggestions {
+            line-height: 22px;
+            width: 33.6vw;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
         }
 
         &--left {
@@ -89,39 +140,40 @@
         &--intro {
             line-height: 27px;
             font-size: 21px;
+            text-align: left;
             letter-spacing: 0px;
             padding-left: 96px;
         }
 
+        &--sale-descr,
         &--sale-collection {
+            position: relative;
+            display: block;
             color: $cl-white;
             font-size: 18px;
             line-height: 26px;
             letter-spacing: 0px;
             font-weight: 400;
+            width: fit-content;
+        }
 
-            display: inline;
-
-            br {
-                display: inline;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -7px;
-                left: 0;
-                width: 100%;
-                border-bottom: 1px solid $cl-white;
-            }
+        &--sale-collection::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $cl-white;
+            opacity: 1;
+            transition: opacity $animation-time ease;
         }
 
         &--sale {
-            font-size: 16px;
-            line-height: 1.35;
-
             padding-right: 100px;
             margin-bottom: 28px;
+            font-size: 16px;
+            line-height: 23px;
         }
 
         &--sale__end {
@@ -130,6 +182,7 @@
 
         &--guarantee {
             padding-left: 82px;
+            margin-left: 0;
         }
 
         &--about {
@@ -148,9 +201,7 @@
             padding-left: 5px;
             max-width: 500px;
         }
-    }
 
-    @media (min-width: ($desktop + 'px')) {
         &--review-small {
             max-width: 191px;
             margin-left: 22px;
@@ -162,11 +213,29 @@
             padding-right: 60px;
         }
 
+        &--news,
+        &--suggestions {
+            line-height: 22px;
+            width: 16.1vw;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
+            margin-bottom: 11px;
+        }
+
+        &--sale-descr {
+            position: absolute;
+            top: 36px;
+            left: 55%;
+        }
+
         &--sale-collection {
-            padding-top: 40px;
-            width: 200px;
-            position: relative;
-            height: fit-content;
+            position: absolute;
+            top: 63px;
+            left: 55%;
         }
 
         &--sale {
@@ -185,8 +254,45 @@
         }
 
         &--guarantee {
-            padding-left: 70px;
+            padding-left: 62px;
             padding-right: 38px;
+            max-width: 557px;
+        }
+
+        &--review {
+            width: 171px;
+        }
+
+        &--sale-inner {
+            margin-bottom: 43px;
+            width: 70%;
+        }
+
+        &--sale-end-inner {
+            top: initial;
+            bottom : 10px;
+        }
+
+        &--sale-descr-text {
+            display: block;
+            margin-bottom: 30px;
+            font-size: 36px;
+            line-height: 42px;
+            font-weight: 600;
+            word-spacing: 1.5px;
+        }
+    }
+
+    @media (min-width: ($desktop-lg + 'px')){
+        &--news,
+        &--suggestions {
+            width: 258px;
+        }
+
+        &--news-big,
+        &--suggestions-big {
+            line-height: 33px;
+            width: auto;
         }
     }
 }

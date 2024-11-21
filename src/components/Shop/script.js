@@ -6,6 +6,7 @@ function checkWidth() {
     if ($(window).width() < 768) {
         slider.slick({
             slidesToShow: 1.5,
+            slidesToScroll: 1,
             rows: 1,
             easing: "ease",
             infinite: false,
@@ -23,7 +24,7 @@ function checkWidth() {
 
     }else if ($(window).width() < 1366) {
             slider.slick({
-                slidesToShow: 2,
+                slidesToShow: 2.1,
                 rows: 4,
                 easing: "ease",
                 infinite: false,

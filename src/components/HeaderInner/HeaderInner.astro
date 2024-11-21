@@ -6,17 +6,93 @@ import Container from '@components/container/container.astro'
 import Searchbar from '@components/uikit/searchbar/searchbar.astro'
 import Logotype from '@components/uikit/logotype/logotype.astro'
 import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
+import Language from '@components/uikit/language/language.astro'
+import Choice from '@components/uikit/Choice/Choice.astro'
+import Location from '@components/uikit/Location/Location.astro'
+import Navigation from '@components/Navigation/Navigation.astro'
+import Social from '@components/uikit/Social/Social.astro'
+
+
+const socials = [
+    {id: 1, href: "javascript:void(0);", title: "like", icon: "like-white"},
+    {id: 2, href: "javascript:void(0);", title: "telegram", icon: "telegram"},
+    {id: 3, href: "javascript:void(0);", title: "vk", icon: "vk"},
+    {id: 4, href: "javascript:void(0);", title: "facebook", icon: "facebook"},
+    {id: 5, href: "javascript:void(0);", title: "instagram", icon: "instagram"}
+];
+const locations = [
+    {id: 1, city: "Новокузнецк"},
+    {id: 1, city: "Ульяновск"},
+    {id: 1, city: "Самара"},
+    {id: 1, city: "Хабаровск"},
+];
+const navList = [
+    {
+        title: 'Каталог'
+    },
+    {
+        title: 'Коллекции',
+        isMobile: true
+    },
+    {
+        title: 'Покупателям'
+    },
+    {
+        title: 'Дизайнерам',
+        isSpecial: true,
+        isBackground: true
+    },
+    {
+        title: 'Компания'
+    },
+    {
+        title: 'Где\u00a0купить',
+        isSpecial: true,
+        isArrow: true
+    },
+];
 ---
 
 <div class="header-wrapper">
     <header class="header">
         <Container>
             <div class="header__base">
-                <Searchbar />
-                <CallBack />
-                <Logotype />
-                <Personal />
-                <Hamburger />
+                <div class="header__left-wrapper">
+                    <Searchbar />
+                    <CallBack />
+                </div>
+                    <Logotype href="/index.html"/>
+                <div class="header__right-wrapper">
+                    <Personal />
+                    <Language />
+                    <Choice />
+                    <Hamburger />
+                </div>
+            </div>
+            <div class="header__functional">
+                <div class="header__inner">
+                    <ul class="header__list">
+                        <li class="header__item header__item--searchbar">
+                            <Searchbar modifier='burger'/>
+                        </li>
+                        <li class="header__item header__item--language">
+                            <Language />
+                        </li>
+                        <li class="header__item header__item--location">
+                            <Location location={locations} modifier="--header"/>
+                        </li>
+                    </ul>
+                    <Hamburger type="close"/>
+                </div>
+                <Navigation list={navList} modifier="--header"/>
+                <div class="header__contacts">
+                    <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
+                        8 800 551 32 40
+                    </a>
+                    <Social
+                        socials = {socials}
+                    />
+                </div>
             </div>
         </Container>
     </header>
