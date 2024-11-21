@@ -9,4 +9,10 @@
         padding-left: 10px;
         // list-style-type: none;
     }
+
+    // Модификаторы
+
+    &--inner {
+        display: none;
+    }
 }

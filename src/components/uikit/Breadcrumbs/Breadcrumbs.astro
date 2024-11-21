@@ -9,12 +9,13 @@ import './style.scss';
 
 export interface Props {
 	links: any;
+    modifier?: string;
 }
 
-const { links } = Astro.props;
+const { links, modifier } = Astro.props;
 ---
 <!-- START хлебные крошки -->
-<nav class="breadcrumbs" aria-label="Breadcrumb">
+<nav class:list={["breadcrumbs", modifier ? `breadcrumbs--${modifier}` : '']} aria-label="Breadcrumb">
     <ul class="breadcrumbs__list">
         {
             links.map((link, i, row) => {

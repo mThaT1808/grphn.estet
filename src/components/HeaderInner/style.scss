@@ -3,7 +3,7 @@
 .header-wrapper {
 
     .header{
-        background-color: #000;
+        background-color: transparent;
         border-bottom: 1px solid var(--cl-gray-cd);
 
         @media (min-width: ($mobile + 'px')){
