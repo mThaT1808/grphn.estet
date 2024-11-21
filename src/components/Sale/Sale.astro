@@ -3,13 +3,14 @@ import './style.scss'
 import Container from '@components/container/container.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import SaleSlider from '@components/uikit/sale-slider/sale-slider.astro'
+const mod = Astro.props.mod;
 ---
 
 
-<section class="sale">
+<section class={`sale${mod ? ` sale--${mod}` : ""}`}>
     <Container>
         <div class="sale__wrapper">
-            <SaleSlider />
+            <SaleSlider mod ? mod= {mod} : ''/>
             <div class="sale__arrow-box">
                 <Arrow modifier='sale-slider' direction='left'/>
                 <Arrow modifier='sale-slider' direction='right'/>

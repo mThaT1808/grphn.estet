@@ -5,6 +5,15 @@
     background-image: linear-gradient(to top, $cl-gray-f7 77%, transparent 77%);
     padding-bottom: 35px;
 
+    &--inner {
+        padding-bottom: 108px;
+
+        @media (min-width: ($tablet + 'px')) {
+            background: $cl-white;
+            padding-bottom: 98px;
+        }
+    }
+
     &__arrow-box{
         position: absolute;
         top: 0;
@@ -16,6 +25,11 @@
     .sale {
         background-image: none;
         padding-top: 53px;
+
+        &--inner {
+            padding-top: 0;
+            background-image: linear-gradient(to top, $cl-gray-f7 80%, transparent 80%);
+        }
 
         &__wrapper {
             position: relative;
