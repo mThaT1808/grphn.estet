@@ -2,6 +2,7 @@
 
 .aside {
     margin-bottom: 10px;
+    padding-top: 22px;
     padding-right: 25px;
     padding-left: 25px;
 
@@ -29,13 +30,15 @@
 
     @media(min-width: ($tablet + 'px')) {
         margin-bottom: 75px;
+        padding-top: 52px;
         padding-right: 66px;
         padding-left: 66px;
     }
 
     @media(min-width: ($desktop + 'px')) {
-        max-width: 320px;
+        width: 320px;
         margin-bottom: 0;
+        padding-top: 0;
         padding-right: 0;
         padding-left: 0;
 
@@ -86,6 +89,7 @@
                     border-bottom: 1px solid $cl-gray-e0;
                     background-color: transparent;
                     cursor: pointer;
+                    position: relative;
                 }
 
                 &__list {
@@ -104,6 +108,7 @@
                     line-height: 48px;
                     text-transform: uppercase;
                     list-style: none;
+                    cursor: pointer;
                 }
 
                 &__item:last-child {
