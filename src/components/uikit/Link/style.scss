@@ -136,6 +136,11 @@
             &::after {
                 display: none;
             }
+
+            &:hover {
+                border: none;
+                opacity: 0.8;
+            }
         }
     }
 }

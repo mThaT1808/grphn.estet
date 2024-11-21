@@ -30,7 +30,6 @@
     "inquirer": "^9.1.4",
     "install": "^0.13.0",
     "jquery": "^3.7.1",
-    "jQuery": "^1.7.4",
     "just-validate": "^4.2.0",
     "lodash": "^4.17.21",
     "minimist": "^1.2.8",
