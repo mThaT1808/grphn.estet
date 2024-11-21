@@ -122,6 +122,28 @@
     background-color: $cl-white;
     width: 100%;
 
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 37px;
+        z-index: 1;
+    }
+
+    &::before {
+        background-image: linear-gradient(to right, $cl-white, transparent);
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        width: 100px;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 60%, transparent);
+        top: 0;
+        right: 0;
+    }
+
     & .slider__item {
         list-style: none;
         padding-right: 37px;
@@ -184,26 +206,8 @@
 
         &::before,
         &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 51px;
-            z-index: 1;
+            content: none;
         }
-
-        &::before {
-            background-image: linear-gradient(to right, $cl-white, transparent);
-            top: 0;
-            left: 0;
-        }
-
-        &::after {
-            width: 251px;
-            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 50%, transparent);
-            top: 0;
-            right: 0;
-        }
-
 
         & .slider__item {
             padding-right: 56px;
@@ -256,6 +260,16 @@
 
     .slider--shop {
         margin-bottom: 22px;
+
+        &::before,
+        &::after {
+            content: '';
+            width: 39px;
+        }
+
+        &::after {
+            width: 200px;
+        }
 
         & .slider__item {
             padding-right: 70px;
