@@ -406,6 +406,8 @@
         }
 
         @media (min-width: ($desktop + 'px')) {
+
+            margin-right: 50%;
             &:hover {
                 background-color: $cl-lite-green;
             }
