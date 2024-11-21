@@ -1,6 +1,7 @@
 @import '../../assets/styles/global.scss';
 
 .card {
+    padding-top: 47px;
 
     &__inner {
         margin-bottom: 54px;
@@ -188,7 +189,7 @@
 @media (min-width: #{$tablet + 'px'}) {
     .card {
 
-        padding: 50px 63px;
+        padding: 0 63px 50px;
 
         &__inner {
             display: flex;

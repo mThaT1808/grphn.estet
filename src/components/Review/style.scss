@@ -258,4 +258,10 @@
             margin-left: 0;
         }
     }
+
+    @media (min-width: ($desktop-lg + px)) {
+        &__slider {
+            margin-right: -200px;
+        }
+    }
 }

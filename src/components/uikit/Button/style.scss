@@ -245,6 +245,7 @@
 
         @media(min-width: ($desktop-lg + 'px')) {
             left: -74px;
+            width: calc(100% + 200px + 74px);
         }
     }
 

@@ -23,7 +23,12 @@
                 right: 0;
                 justify-content: right;
                 width: calc(100vw - 320px);
-                // margin-left: calc((100vw - 1200px) / 2);
+            }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                max-width: 1280px;
+                position: relative;
+                left: 120px;
             }
         }
 
@@ -45,6 +50,10 @@
         &__right-wrapper {
             @media (min-width: ($desktop + 'px')) {
                 gap: 3.7vw;
+            }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                gap: 59px;
             }
         }
 
@@ -103,6 +112,10 @@
                     right: 89px;
                     top: 28px;
                 }
+
+                @media (min-width: ($desktop + 'px')) {
+                    right: unset;
+                }
             }
         }
 
@@ -155,6 +168,10 @@
                     transform: translateX(-65%);
                 }
             }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                gap: 67px;
+            }
         }
 
         .searchbar {
@@ -177,6 +194,10 @@
                 left: auto;
                 right: auto;
                 width: auto;
+
+                .language__item:first-child {
+                    display: none;
+                }
             }
 
             @media (min-width: ($tablet + 'px')) {
@@ -226,6 +247,10 @@
                     align-content: center;
                 }
             }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                margin-right: 39px;
+            }
         }
 
         &__item--searchbar{
@@ -235,14 +260,31 @@
         }
 
         &__functional {
-            padding: 14px 24px 24px;
-
-            @media (min-width: ($desktop + 'px')) {
-                display: none;
-            }
+            padding: 14px 22px 24px;
 
             &--open {
                 transform: translateX(-100%);
+            }
+
+            @media (min-width: ($tablet + 'px')) {
+                max-width: 41.66vw;
+            }
+
+            @media (min-width: ($desktop + 'px')) {
+                max-width: 1280px;
+                position: absolute;
+                width: calc(100vw - 320px);
+                padding: 0;
+                left: 100%;
+                right: 0;
+
+                &:has(.language) * .header__item--language {
+                    display: none;
+                }
+            }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                left: calc(100% - (100vw - 1600px) / 2);
             }
 
             .language {
@@ -277,10 +319,11 @@
                     padding-left: 0;
                 }
             }
+        }
 
-            @media (min-width: ($tablet + 'px')) {
-                max-width: 41.66vw;
-            }
+        &:has(.header__functional--open) * .header__base {
+            display: none;
         }
     }
+
 }
