@@ -1,7 +1,6 @@
 @import '../../assets/styles/global.scss';
 
 .card {
-    padding: 50px 0;
 
     &__inner {
         margin-bottom: 54px;
@@ -266,15 +265,29 @@
 
 @media (min-width: #{$desktop + 'px'}) {
     .card {
+        position: relative;
         padding: 0;
-        width: calc(100% - 320px);
+        width: 100%;
+
+        &__intro {
+            display: flex;
+            position: absolute;
+            width: 50%;
+            bottom: 100%;
+            right: 0;
+            background-color: $cl-white;
+        }
+
+        &__intro .door.door--intro {
+            width: 50%;
+        }
 
         .door {
             width: 25%;
             max-height: 610px;
             cursor: pointer;
             transition: background-color $animation-time ease-in-out,
-                        color $animation-time ease-in-out;
+            color $animation-time ease-in-out;
         }
 
         .door:nth-child(4n+4),
