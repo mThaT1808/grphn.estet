@@ -55,5 +55,9 @@
 
     @media(min-width: ($desktop-lg + 'px')) {
         padding: 58px 0 64px 74px;
+
+        &::before {
+            width: calc(100% + 200px);
+        }
     }
 }
