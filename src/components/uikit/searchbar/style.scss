@@ -87,15 +87,11 @@
 
         &__button {
             font-size: 21px;
-
-            &:hover {
-                transform: scale(1.1);
-            }
         }
 
         &--burger.searchbar--open {
             width: 180px;
-            padding-right: 46px;
+            padding-right: 0;
         }
 
         &--burger {

@@ -21,10 +21,11 @@ const links = [
 <section class="intro-inner">
     <picture class="intro-inner__background">
         <source srcset="/images/intro-inner/background.jpg">
-        <img src="/images/intro-inner/background.jpg" alt="">
+        <img src="/images/intro-inner/background.jpg" alt="" class="intro-inner__image">
     </picture>
-    <Breadcrumbs links={links}/>
-    <Title>Межкомнатные двери</Title>
+    <div class="intro-inner__filter" />
+    <Breadcrumbs links={links} modifier='inner'/>
+    <Title class="intro-inner">Межкомнатные двери</Title>
 
     <Button class="button--intro-inner">Заказать замер</Button>
 </section>
