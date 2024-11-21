@@ -397,11 +397,19 @@
             top: 50%;
             transform: translateY(-50%);
         }
-    }
 
-    @media (min-width: ($desktop + 'px')) {
-        &:hover {
-            background-color: $cl-lite-green;
+        @media (min-width: ($tablet + 'px')) {
+            margin-left: auto;
+            margin-right: -84px;
+            width: 320px;
+            height: 80px;
+        }
+
+        @media (min-width: ($desktop + 'px')) {
+            &:hover {
+                background-color: $cl-lite-green;
+            }
         }
     }
+
 }

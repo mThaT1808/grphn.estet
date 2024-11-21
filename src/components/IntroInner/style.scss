@@ -38,9 +38,13 @@
     }
 }
 
-@media (min-width: ($desktop + 'px')) {
+@media (min-width: ($tablet + 'px')) {
     .intro-inner {
         height: 100vh;
+        min-height: 530px;
+        justify-content: space-between;
+
+        padding: 110px 84px 0;
     }
 }
 
