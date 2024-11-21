@@ -35,7 +35,7 @@ function checkWidth() {
 
     }else if ($(window).width() < 1024) {
         slider.slick({
-            slidesToShow: 2.1,
+            slidesToShow: 2,
             rows: 4,
             easing: "ease",
             infinite: false,
@@ -44,7 +44,7 @@ function checkWidth() {
 
     }else if ($(window).width() < 1280) {
         slider.slick({
-            slidesToShow: 3.1,
+            slidesToShow: 3,
             rows: 4,
             easing: "ease",
             infinite: false,
