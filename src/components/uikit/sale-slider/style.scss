@@ -23,6 +23,10 @@
     &__description {
         padding-left: 25px;
     }
+
+    &__discount {
+        display: none;
+    }
 }
 
 @media (min-width: 600px) {
@@ -111,6 +115,7 @@
         }
 
         &--inner &__discount {
+            display: inline;
             font-family: 'Lora', serif;
             position: absolute;
             right: calc(50% + 21px);

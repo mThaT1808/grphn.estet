@@ -96,6 +96,10 @@
         font-size: 14px;
     }
 
+    &--sale-descr-text {
+        display: none;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 
@@ -270,6 +274,7 @@
         }
 
         &--sale-descr-text {
+            display: block;
             margin-bottom: 30px;
             font-size: 36px;
             line-height: 42px;

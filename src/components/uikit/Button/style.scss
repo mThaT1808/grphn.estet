@@ -372,6 +372,8 @@
     }
 
     &--sale {
+        display: none;
+        
         @media (min-width: ($desktop + 'px')) {
             border: none;
             display: block;

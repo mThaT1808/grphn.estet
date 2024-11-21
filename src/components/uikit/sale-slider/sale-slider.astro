@@ -21,7 +21,7 @@ const mod = Astro.props.mod
                 <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
             </div>
             <div class="sale-slider__description">
-                {mod !== "inner" ? <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title> : ''}
+                <Title class={`sale${mod ? ` title--sale-${mod}` : ''}`} Tag='h2'>Распродажа классических коллекций</Title>
                 {mod === "inner" ? <Text class="sale-descr-text">-20% на&nbsp;коллекции MIO, ENGLAND, FIGURE</Text> : ''}
                 <Text class={`sale${mod ? ` text--sale-${mod}` : ''}`}>Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
                 {mod === "inner" ? <Button class='button--sale'>Подробнее</Button> : ''}
@@ -42,7 +42,7 @@ const mod = Astro.props.mod
                 <Text class="sale-collection"> MIO, ENGLAND, FIGURE </Text>
             </div>
             <div class="sale-slider__description">
-                {mod !== "inner" ? <Title class="sale" Tag='h2'>Распродажа классических коллекций</Title> : ''}
+                <Title class={`sale${mod ? ` title--sale-${mod}` : ''}`} Tag='h2'>Распродажа классических коллекций</Title>
                 {mod === "inner" ? <Text class="sale-descr-text">-20% на&nbsp;коллекции MIO, ENGLAND, FIGURE</Text> : ''}
                 <Text class={`sale${mod ? ` text--sale-${mod}` : ''}`}>Успейте купить межкомнатные двери классической коллекции со скидкой 20% до середины февраля.</Text>
                 {mod === "inner" ? <Button class='button--sale'>Подробнее</Button> : ''}
