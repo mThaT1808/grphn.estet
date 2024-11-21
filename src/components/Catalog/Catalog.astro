@@ -1,0 +1,15 @@
+---
+import IntroInner from '@components/IntroInner/IntroInner.astro'
+import './style.scss'
+import Aside from '@components/Aside/Aside.astro'
+---
+
+<div class="catalog">
+	<Aside />
+    <div class="catalog__wrapper">
+        <IntroInner />
+        <slot />
+    </div>
+</div>
+
+<script src="./script.js"></script>
