@@ -5,12 +5,15 @@
     .header{
         background-color: transparent;
         border-bottom: 1px solid var(--cl-gray-cd);
+        overflow: hidden;
 
         &__base {
             position: relative;
             gap: calc(100vw / 3);
             justify-content: center;
             max-width: 1280px;
+            opacity: 1;
+            transition: $double-animation;
 
             @media (min-width: ($tablet + 'px')) {
                 gap: 37.89vw;
@@ -62,6 +65,7 @@
         }
 
         @media (min-width: ($desktop + 'px')) {
+            border-bottom: 0;
             padding: 0;
         }
 
@@ -102,6 +106,10 @@
                 right: calc(-1 * ((100vw - 1200px) / 2));
                 transform: none;
                 margin-left: -3.7vw;
+            }
+
+            @media (min-width: ($desktop-lg + 'px')) {
+                margin-left: -59px;
             }
 
             .icon-burger-close {
@@ -322,7 +330,8 @@
         }
 
         &:has(.header__functional--open) * .header__base {
-            display: none;
+            opacity: 0;
+            transition: $animation-time;
         }
     }
 
