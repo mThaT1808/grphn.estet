@@ -92,6 +92,7 @@
 
 @media (min-width: #{$desktop-min + 'px'}) {
     .banner {
+        padding-bottom: 50px;
 
         &__wrapper {
             max-width: 420px;
@@ -113,7 +114,7 @@
         &__content {
             display: grid;
             grid-template-columns: 420px 1fr;
-            grid-template-rows: unset;
+            grid-template-rows: auto min-content min-content;
             column-gap: 60px;
             row-gap: 0px;
             grid-template-areas:
@@ -127,7 +128,7 @@
             position: relative;
             padding-top: 0;
             padding-bottom: 0;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-bottom: 115px;
         }
 
@@ -183,6 +184,10 @@
         &__picture {
             margin: 0;
             width: 100%;
+        }
+
+        &__image {
+            height: 100%;
         }
 
     }

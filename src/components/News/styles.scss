@@ -44,7 +44,7 @@
             width: 50%;
             background-color: $cl-green;
         }
-        
+
         &--active-right {
             &::after {
                 left: 50%;
@@ -69,6 +69,7 @@
         }
 
         @media (min-width: ($desktop + 'px')){
+            padding-top: 89px;
             margin-bottom: 58px;
         }
     }
@@ -159,12 +160,13 @@
 
     &__content-wrapper--big {
         width: auto;
-        height: 212px;
+        height: unset;
         padding: 40px 154px 0 51px;
         margin-bottom: 97px;
         @media (min-width: ($desktop + 'px')){
-            height: 198px;
-            padding: 37px 140px 26px 48px;
+            height: unset;
+            max-width: 500px;
+            padding: 37px 0 26px 48px;
             margin-bottom: 0;
         }
     }

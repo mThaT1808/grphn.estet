@@ -52,8 +52,9 @@
 
     &--footer {
         font-size: 16px;
-        margin-bottom: 23px;
+        margin-bottom: 22px;
         width: max-content;
+        border-bottom: 1px solid transparent;
 
         @media (min-width: #{$tablet + 'px'}) {
             display: none;
@@ -61,7 +62,7 @@
 
         @media (min-width: #{$desktop + 'px'}) {
             display: block;
-            margin-bottom: 17px;
+            margin-bottom: 16px;
         }
 
         &:hover {
