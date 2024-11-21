@@ -370,11 +370,13 @@
         }
 
         &::after {
-            content: '\f101';
+            content: '\f102';
             font-family: 'icons';
             font-weight: normal;
             font-style: normal;
+            letter-spacing: 0;
             font-size: 9px;
+            line-height: 1;
 
             position: absolute;
             right: 24px;
@@ -383,6 +385,8 @@
             direction: rtl;
             width: 44px;
             overflow: hidden;
+            display: inline-block;
+
         }
 
         &::before {
@@ -408,6 +412,7 @@
         @media (min-width: ($desktop + 'px')) {
 
             margin-right: 50%;
+            width: calc(25% + 42px);
             &:hover {
                 background-color: $cl-lite-green;
             }
