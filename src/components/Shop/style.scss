@@ -115,12 +115,16 @@
 .slider--shop {
     display: flex;
     margin-bottom: 28px;
-    padding-left: 43px;
+    margin-right: -25px;
+    padding-left: 0;
+    padding-top: 50px;
+    padding-bottom: 16px;
     background-color: $cl-white;
     width: 100%;
 
     & .slider__item {
         list-style: none;
+        padding-right: 37px;
     }
 
     & .slider__text {
@@ -131,15 +135,7 @@
     }
 
     & .slick-track {
-        display: flex;
-        padding-top: 50px;
-        padding-bottom: 16px;
-    }
-
-    & .slick-slide {
-        min-width: 173px;
-        max-width: 226px;
-        margin-right: 37px;
+        padding-left: 37px;
     }
 }
 
@@ -182,27 +178,47 @@
 
     .slider--shop {
         margin-bottom: 43px;
-        padding-left: 40px;
+        margin-right: 84px;
+        padding-top: 51px;
+        padding-bottom: 56px;
 
-        & .slick-list {
-            margin-right: 84px;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 51px;
+            z-index: 1;
+        }
+
+        &::before {
+            background-image: linear-gradient(to right, $cl-white, transparent);
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            width: 251px;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0.5) 50%, transparent);
+            top: 0;
+            right: 0;
+        }
+
+
+        & .slider__item {
+            padding-right: 56px;
+            margin-bottom: 51px;
         }
 
         & .slick-track {
-            padding-top: 51px;
-            padding-bottom: 56px;
+            padding-left: 51px;
         }
 
         & .slick-slide {
-            min-width: 226px;
-            margin-right: 56px;
-
-            & > div {
-                margin-bottom: 51px;
-            }
-
-            & > div:last-child {
-                margin-bottom: 0;
+            div:last-child {
+                & .slider__item {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -241,15 +257,8 @@
     .slider--shop {
         margin-bottom: 22px;
 
-        & .slick-list {
-            margin-right: 0;
-        }
-
-        & .slick-slide {
-            margin-right: 70px;
-        }
-
-        & .slick-slide > div {
+        & .slider__item {
+            padding-right: 70px;
             margin-bottom: 0;
         }
     }

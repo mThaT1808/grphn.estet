@@ -1,0 +1,20 @@
+@import '../../assets/styles/global.scss';
+
+.catalog {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .catalog {
+        display: flex;
+
+        &__wrapper {
+            display: block;
+            width: calc(100% - 320px);
+        }
+    }
+}
