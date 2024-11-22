@@ -38,8 +38,10 @@ async function checkWidth () {
     else if (body.clientWidth < 1366) {
         slidesToShow = ((body.clientWidth) / 300);
     }
-    else {
-        slidesToShow = ((1200 + (1200 - body.clientWidth) / 2) / 300)
+    else if ((body.clientWidth < 1366)) {
+        slidesToShow = ((1200 + (body.clientWidth - 1200) / 2) / 300)
+    } else {
+        slidesToShow = (1400 / 300);
     }
 
     slider.slick('unslick');
