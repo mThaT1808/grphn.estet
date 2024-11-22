@@ -10,7 +10,7 @@ slider.slick({
     arrows: false,
 });
 
-$('.arrow--right').on('click', function(e) {
+$('.arrow--sale-slider.arrow--right').on('click', function(e) {
     e.preventDefault();
     slider.slick('slickNext');
 });

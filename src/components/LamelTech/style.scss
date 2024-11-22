@@ -1,0 +1,50 @@
+@use "/src/assets/styles/global.scss" as *;
+
+.lamel-tech {
+    padding-top: 96px;
+
+    &__row-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 46px;
+    }
+
+    &__arrow-box {
+        display: flex;
+        gap: 23px;
+    }
+
+    &__slider {
+        margin: 0 -25px;
+    }
+
+    .slick-track {
+        padding-left: 25px;
+    }
+
+    &__slide {
+        padding-right: 21px;
+
+    }
+
+    &__image-box {
+        display: block;
+        margin-bottom: 42px;
+    }
+
+    &__image {
+        display: block;
+        height: 480px;
+        object-fit: cover;
+    }
+
+    &__slide--quarter &__image {
+        height: 240px;
+    }
+
+    &__slide--half &__image {
+        height: 360;
+    }
+}
