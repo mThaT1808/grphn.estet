@@ -15,14 +15,75 @@ function restart () {
     });
 }
 
+function setActive (direction) {
+    for (let i = 0; i < dots.length; i++) {
+        if (dots[i].classList.contains('slick-active')) {
+            dots.forEach((dot) => {
+                if (!dot.classList.contains('click-active')) {
+                    dot.style.display = 'none';
+                }
+            });
+            dots[i].style.display = 'block';
+            if (i > 0) {
+                dots[i - 1].style.display = 'block';
+            }
+
+            if (i > 1) {
+                dots[i - 2].style.display = 'block';
+            }
+
+            if (i === dots.length - 1) {
+                dots[i - 3].style.display = 'block';
+            }
+    
+            if (i < dots.length - 1) {
+                dots[i + 1].style.display = 'block';
+            } 
+
+            if (i === 0) {
+                dots[i + 3].style.display = 'block';
+            }
+
+            if (i <= 1) {
+                dots[i + 2].style.display = 'block';
+            }
+
+            if (direction === 'right') {
+                    if (i >= 3 && i < 7) {
+                        setTimeout(() => {
+                            dots[i + 1].style.display = 'block';
+                            dots[i - 3].style.display = 'none';    
+                        }, 250);
+                        dots[i + 1].style.display = 'none';
+                        dots[i - 3].style.display = 'block';
+                }
+
+            }
+            
+            if (direction === 'left') {
+                if (i > 3 && i <= 7) {
+                    setTimeout(() => {
+                        dots[i + 2].style.display = 'none';
+                        dots[i - 2].style.display = 'block';    
+                    }, 250);
+                    dots[i + 2].style.display = 'block';
+                    dots[i - 2].style.display = 'none';
+                }
+            }
+        }
+    }
+}
+
 prevButton.addEventListener('click', () => {
     $('.preview__slider').slick('slickPrev');
     restart();
+    setActive('left');
 });
 
 nextButton.addEventListener('click', () => {
     $('.preview__slider').slick('slickNext');
     restart();
+    setActive('right');
 });
 
 videos.forEach((video) => {
@@ -39,16 +100,16 @@ $('.preview__slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    arrows: false
+    arrows: false,
+    infinite: false
 });
 
-// const dots = document.querySelector('.slick-dots').querySelectorAll('li');
-// console.log(dots);
+const dots = document.querySelector('.slick-dots').querySelectorAll('li');
 
-// for (let i = 0; i < dots.length; i++) {
-//     dots[i].addEventListener('click', () => {
-//         console.log(dots[i - 1]);
-//         console.log(dots[i]);
-//         console.log(dots[i + 1]);
-//     });
-// }
+setActive();
+
+for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => {
+        setActive();
+    });
+}
