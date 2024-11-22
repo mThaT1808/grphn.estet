@@ -5,7 +5,9 @@ import Card from '@components/Card/Card.astro';
 import Map from '@components/Map/Map.astro';
 import Catalog from '@components/Catalog/Catalog.astro';
 import Sale from '@components/Sale/Sale.astro';
+import Preview from '@components/Preview/Preview.astro';
 import LamelTech from '@components/LamelTech/LamelTech.astro';
+
 const pageConfig = {
     title: 'Двери Estet | Каталог',
     description: '',
@@ -24,6 +26,7 @@ const pageConfig = {
         <Card />
     </Catalog>
     <Sale mod="inner"/>
+    <Preview />
     <LamelTech />
     <Map />
     <Shop title="Купить в вашем городе" modifier='doors'/>
