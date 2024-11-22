@@ -41,7 +41,7 @@ next.addEventListener('click', () => {
 })
 
 $('.review__list').slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 5,
     slidesToScroll: 1,
     vertical: true,
@@ -58,7 +58,7 @@ $('.review__list').slick({
                 vertical: false,
                 verticalSwiping: false,
                 rows: 2,
-                adaptiveHeight: true
+                // adaptiveHeight: true
             }
         },
         {

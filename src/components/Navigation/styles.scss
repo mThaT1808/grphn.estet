@@ -220,7 +220,7 @@
             &::before {
                 opacity: 0;
             }
-            
+
             &--special {
                 color: $cl-white;
                 text-transform: none;
@@ -263,5 +263,36 @@
             }
         }
 
+    }
+
+    @media(min-width: ($desktop-lg + 'px')) {
+        &--footer::before {
+            width: calc(100% + 200px);
+        }
+    }
+}
+
+.header-wrapper .nav{
+    &__list{
+        padding: 5px 0;
+    }
+
+    @media (min-width: ($desktop + 'px')) {
+        &__item {
+            margin-right: 0;
+
+            &:first-child {
+                margin-left: 10vw;
+            }
+        }
+    }
+
+    @media (min-width: ($desktop-lg + 'px')) {
+        &__item {
+
+            &:first-child {
+                margin-left: 160px;
+            }
+        }
     }
 }

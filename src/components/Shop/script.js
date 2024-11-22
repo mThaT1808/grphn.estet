@@ -3,7 +3,17 @@ import 'slick-slider'
 
 function checkWidth() {
     const slider = $('.slider--shop');
-    if ($(window).width() < 768) {
+
+    $('.arrow--shop-prev').on('click', function(e) {
+        e.preventDefault();
+        slider.slick('slickPrev');
+    });
+    $('.arrow--shop-next').on('click', function(e) {
+        e.preventDefault();
+        slider.slick('slickNext');
+    });
+
+    if ($(window).width() < 425) {
         slider.slick({
             slidesToShow: 1.5,
             slidesToScroll: 1,
@@ -13,32 +23,33 @@ function checkWidth() {
             arrows: false,
         });
 
-        $('.arrow--shop-prev').on('click', function(e) {
-            e.preventDefault();
-            slider.slick('slickPrev');
-        });
-        $('.arrow--shop-next').on('click', function(e) {
-            e.preventDefault();
-            slider.slick('slickNext');
+    }else if ($(window).width() < 768) {
+        slider.slick({
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+            rows: 1,
+            easing: "ease",
+            infinite: false,
+            arrows: false,
         });
 
-    }else if ($(window).width() < 1366) {
-            slider.slick({
-                slidesToShow: 2.1,
-                rows: 4,
-                easing: "ease",
-                infinite: false,
-                arrows: false,
-            });
+    }else if ($(window).width() < 1024) {
+        slider.slick({
+            slidesToShow: 2,
+            rows: 4,
+            easing: "ease",
+            infinite: false,
+            arrows: false,
+        });
 
-            $('.arrow--shop-prev').on('click', function(e) {
-                e.preventDefault();
-                slider.slick('slickPrev');
-            });
-            $('.arrow--shop-next').on('click', function(e) {
-                e.preventDefault();
-                slider.slick('slickNext');
-            });
+    }else if ($(window).width() < 1280) {
+        slider.slick({
+            slidesToShow: 3,
+            rows: 4,
+            easing: "ease",
+            infinite: false,
+            arrows: false,
+        });
 
     } else {
         slider.slick({
@@ -48,15 +59,6 @@ function checkWidth() {
             slidesToScroll: 1,
             rows:1,
             arrows: false,
-        });
-
-        $('.arrow--shop-prev').on('click', function(e) {
-            e.preventDefault();
-            slider.slick('slickPrev');
-        });
-        $('.arrow--shop-next').on('click', function(e) {
-            e.preventDefault();
-            slider.slick('slickNext');
         });
     }
 }

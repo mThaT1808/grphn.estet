@@ -38,22 +38,28 @@
         padding-bottom: 100px;
 
         &__content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: 174px 1fr;
+            grid-template-areas:
+            "title title"
+            "wrapper picture";
+            height: 100vh;
+            margin-right: -84px;
             position: relative;
-            display: flex;
             column-gap: 45px;
             row-gap: 60px;
-            flex-wrap: wrap;
-            justify-content: space-between;
         }
 
         &__wrapper {
-            max-width: 280px;
+            grid-area: wrapper;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         &__title {
+            grid-area: title;
             margin-bottom: unset;
             margin-top: unset;
             max-width: unset;
@@ -72,23 +78,21 @@
         }
 
         &__picture {
-            display: flex;
-            margin-right: -84px;
-            height: 100vh;
-            width: 100px;
-            flex-grow: 1;
-            align-self: flex-end;
+            grid-area: picture;
+            display: block;
+            overflow: hidden;
         }
 
         &__image {
+            display: block;
             object-fit: cover;
-            width: 100%;
         }
     }
 }
 
 @media (min-width: #{$desktop-min + 'px'}) {
     .banner {
+        padding-bottom: 50px;
 
         &__wrapper {
             max-width: 420px;
@@ -110,6 +114,7 @@
         &__content {
             display: grid;
             grid-template-columns: 420px 1fr;
+            grid-template-rows: auto min-content min-content;
             column-gap: 60px;
             row-gap: 0px;
             grid-template-areas:
@@ -120,16 +125,14 @@
         }
 
         &__wrapper {
-            grid-area: wrapper;
             position: relative;
             padding-top: 0;
             padding-bottom: 0;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-bottom: 115px;
         }
 
         &__title {
-            grid-area: title;
             display: flex;
             align-items: flex-end;
             margin-top: 0;
@@ -179,9 +182,12 @@
         }
 
         &__picture {
-            grid-area: picture;
             margin: 0;
             width: 100%;
+        }
+
+        &__image {
+            height: 100%;
         }
 
     }
