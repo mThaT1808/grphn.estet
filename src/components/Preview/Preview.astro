@@ -1,0 +1,28 @@
+---
+import Arrow from '@components/uikit/Arrow/Arrow.astro'
+import './style.scss'
+import Container from '@components/container/container.astro'
+import Icon from '@components/uikit/Icon/Icon.astro'
+---
+
+<section class="preview">
+    <Container>
+        <div class="preview__slider">
+            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
+            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+        </div>
+        <Icon name='video' mod='video-review'/>
+        <div class="preview__button-container">
+            <Arrow modifier='left'/>
+            <Arrow modifier='right'/>
+        </div>
+    </Container>
+</section>
+
+<script src="./script.js"></script>
