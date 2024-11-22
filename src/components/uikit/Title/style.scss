@@ -80,8 +80,8 @@
 
     &--intro-inner {
         color: $cl-white;
-        line-height: 23px;
-        font-size: 21px;
+        line-height: 1.09;
+        font-size: clamp(21px, 21px + 27 * ((100vw - 375px) / (768 - 375)), 48px);
         font-weight: 700;
 
         margin-left: 63px;
