@@ -36,7 +36,7 @@
 
     &__image {
         display: block;
-        height: 480px;
+        height: 240px;
         object-fit: cover;
     }
 
@@ -46,5 +46,47 @@
 
     &__slide--half &__image {
         height: 360;
+    }
+}
+
+@media (min-width: ($tablet + 'px')) {
+    .lamel-tech {
+
+        &__slider {
+            margin: 0 -84px;
+        }
+
+        .slick-track {
+            padding-left: 84px;
+        }
+
+        &__image {
+            display: block;
+            height: 480px;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: ($desktop + 'px')) {
+    .lamel-tech {
+
+        &__slider {
+            margin: 0 calc((1200px - 100vw) / 2) 0 0;
+        }
+
+        .slick-track {
+            padding-left: 0;
+        }
+    }
+}
+
+@media (min-width: ($desktop-lg + 'px')) {
+    .lamel-tech {
+
+        &__slider {
+            margin: 0 -200px 0 0;
+        }
+
     }
 }

@@ -135,5 +135,10 @@
                 background-color: $cl-gray-f7;
             }
         }
+
+        &--inner &__text {
+            top: 136px;
+            left: 53%;
+        }
     }
 }
