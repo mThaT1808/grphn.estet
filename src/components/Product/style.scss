@@ -2,6 +2,7 @@
 
 .product {
     padding: 25px 0 50px 0;
+    overflow: hidden;
 
     &__list {
         margin: 0;
@@ -14,7 +15,6 @@
         position: relative;
         display: flex;
         margin-bottom: 25px;
-        overflow: hidden;
 
         &:last-child {
             margin-bottom: 0;

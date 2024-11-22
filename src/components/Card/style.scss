@@ -193,7 +193,7 @@
 @media (min-width: #{$tablet + 'px'}) {
     .card {
 
-        padding: 0 63px 50px;
+        padding: 0 63px;
 
         &__inner {
             display: flex;
@@ -363,6 +363,14 @@
 
         .door:hover .door__price {
             visibility: visible;
+        }
+
+        &__pagination {
+            padding: 0;
+        }
+
+        &__inner {
+            margin-bottom: 69px;
         }
     }
 }

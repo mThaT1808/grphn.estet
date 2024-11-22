@@ -12,5 +12,10 @@ showMore.addEventListener('click', () => {
 
 	if (visItems.length === doorLength) {
 			cardPagination.style.display = 'none';
+
+			const cardInners = document.querySelectorAll('.card__inner');
+    		cardInners.forEach(cardInner => {
+        			cardInner.style.margin = '0';
+    		});
 	}
 });
