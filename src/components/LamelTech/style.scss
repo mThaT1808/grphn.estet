@@ -80,3 +80,13 @@
         }
     }
 }
+
+@media (min-width: ($desktop-lg + 'px')) {
+    .lamel-tech {
+
+        &__slider {
+            margin: 0 -200px 0 0;
+        }
+
+    }
+}
