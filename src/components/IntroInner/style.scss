@@ -35,7 +35,7 @@
         height: 100%;
         z-index: -1;
         background-color: $cl-black;
-        opacity: 35%;
+        opacity: 65%;
     }
 }
 
@@ -46,11 +46,16 @@
         justify-content: space-between;
 
         padding: 110px 84px 0;
+
+        &__filter {
+            opacity: 35%;
+        }
     }
 }
 
 @media (min-width: ($desktop + 'px')) {
     .intro-inner {
+        justify-content: flex-start;
         order: 0;
 
         height: 688px;
