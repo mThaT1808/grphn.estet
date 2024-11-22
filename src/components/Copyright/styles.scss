@@ -71,12 +71,6 @@
                 margin-bottom: 5px;
             }
         }
-
-        &__confidential {
-            &::after {
-                width: 40%;
-            }
-        }
     }
 
     @media (min-width: ($desktop + 'px')) {
