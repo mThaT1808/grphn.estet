@@ -108,7 +108,7 @@
     }
 
     &--doors .title--shop {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
     }
 }
 
@@ -159,6 +159,7 @@
     & .slick-track {
         padding-left: 37px;
     }
+
 }
 
 @media (min-width: #{$tablet + 'px'}) {
@@ -195,6 +196,10 @@
 
         &__show-map {
             margin-bottom: 44px;
+        }
+
+        &--doors .title--shop {
+            margin-bottom: 25px;
         }
     }
 
