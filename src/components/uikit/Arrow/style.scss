@@ -114,5 +114,9 @@
         &--sale-slider.arrow--left {
             display: block;
         }
+
+        .sale--inner &--sale-slider.arrow--left {
+            display: none;
+        }
     }
 }
