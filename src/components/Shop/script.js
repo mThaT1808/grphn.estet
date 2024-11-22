@@ -1,74 +1,94 @@
 import $ from 'jquery';
-import 'slick-slider'
+import 'slick-slider';
 
-function checkWidth() {
-    const slider = $('.slider--shop');
 
-    $('.arrow--shop-prev').on('click', function(e) {
-        e.preventDefault();
-        slider.slick('slickPrev');
-    });
-    $('.arrow--shop-next').on('click', function(e) {
-        e.preventDefault();
-        slider.slick('slickNext');
-    });
+const slider = $('.slider--shop');
+var slidesToShow = 1.5;
+var slidesToScroll = 1;
+var rows = 1;
+var easing = "ease";
+var infinite = false;
+var arrows = false;
 
-    if ($(window).width() < 425) {
-        slider.slick({
-            slidesToShow: 1.5,
-            slidesToScroll: 1,
-            rows: 1,
-            easing: "ease",
-            infinite: false,
-            arrows: false,
-        });
-
-    }else if ($(window).width() < 768) {
-        slider.slick({
-            slidesToShow: 2.5,
-            slidesToScroll: 1,
-            rows: 1,
-            easing: "ease",
-            infinite: false,
-            arrows: false,
-        });
-
-    }else if ($(window).width() < 1024) {
-        slider.slick({
-            slidesToShow: 2,
-            rows: 4,
-            easing: "ease",
-            infinite: false,
-            arrows: false,
-        });
-
-    }else if ($(window).width() < 1280) {
-        slider.slick({
-            slidesToShow: 3,
-            rows: 4,
-            easing: "ease",
-            infinite: false,
-            arrows: false,
-        });
-
-    } else {
-        slider.slick({
-            easing: "ease",
-            infinite: false,
-            slidesToShow: 4.5,
-            slidesToScroll: 1,
-            rows:1,
-            arrows: false,
-        });
-    }
-}
-
-$(document).ready(function() {
-    checkWidth();
+slider.slick({
+    slidesToShow: 1.5,
+    slidesToScroll: 1,
+    rows: 1,
+    easing: "ease",
+    infinite: false,
+    arrows: false,
 });
 
-$(window).on('resize', function() {
-    checkWidth();
+function checkWidth() {
+
+    slidesToShow = 1.5;
+    slidesToScroll = 1;
+    rows = 1;
+    easing = "ease";
+    infinite = false;
+    arrows = false;
+
+    if ($(window).width() < 425) {
+        slidesToShow= 1.5;
+        slidesToScroll= 1;
+        rows= 1;
+        infinite= false;
+        arrows= false;
+    } else if ($(window).width() < 768) {
+        slidesToShow= 2.5;
+        slidesToScroll= 1;
+        rows= 1;
+        easing= "ease";
+        infinite= false;
+        arrows= false;
+
+    }else if ($(window).width() < 1024) {
+        slidesToShow= 2;
+        rows= 4;
+        easing= "ease";
+        infinite= false;
+        arrows= false;
+
+    }else if ($(window).width() < 1280) {
+        slidesToShow= 3;
+        rows= 4;
+        easing= "ease";
+        infinite= false;
+        arrows= false;
+
+
+    } else {
+        easing= "ease";
+        infinite= false;
+        slidesToShow= 4.5;
+        slidesToScroll= 1;
+        rows=1;
+        arrows= false;
+    }
+
+    slider.slick('unslick');
+    slider.slick({
+        slidesToShow: slidesToShow,
+        slidesToScroll: slidesToScroll,
+        rows: rows,
+        easing: easing,
+        infinite: infinite,
+        arrows: arrows,
+    });
+}
+
+checkWidth();
+
+
+$(window).on('resize', checkWidth);
+
+$('.arrow--shop-prev').on('click', function(e) {
+    e.preventDefault();
+    slider.slick('slickPrev');
+});
+$('.arrow--shop-next').on('click', function(e) {
+    e.preventDefault();
+    slider.slick('slickNext');
 });
 
 $(function () {

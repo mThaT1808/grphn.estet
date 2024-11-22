@@ -100,6 +100,14 @@
         display: none;
     }
 
+    &--lamel-tech {
+        margin-bottom: 46px;
+    }
+
+    &--lamel-slider {
+        padding-right: 58px;
+    }
+
     @media(min-width: ($tablet + 'px')) {
         line-height: 31px;
 

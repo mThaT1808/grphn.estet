@@ -81,6 +81,11 @@
             margin-right: 67px;
         }
     }
+
+    &--lamel {
+        font-size: 12px;
+        font-weight: 400;
+    }
 }
 
 @media (min-width: ($tablet + 'px')) {
