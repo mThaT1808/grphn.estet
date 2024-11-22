@@ -44,10 +44,14 @@
         max-height: 300px;
         height: 100%;
         justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
     .door__image {
-        height: 100%;
+        width: 47%;
+        height: 85%;
+        object-fit: contain;
     }
 
     .door__content {
@@ -212,7 +216,7 @@
         }
 
         .door__image-bg {
-            padding: 15px 13px 15px 37px;
+            // padding: 15px 13px 15px 37px;
             width: 100%;
         }
 
@@ -261,6 +265,11 @@
         .door__choice-btn {
             padding-left: 0;
         }
+
+        .door__image {
+            width: 100%;
+            height: 92%;
+        }
     }
 }
 
@@ -305,7 +314,7 @@
         }
 
         .door__image-bg {
-            padding-top: 20px;
+            // padding-top: 20px;
         }
 
         .door__mark-box {
