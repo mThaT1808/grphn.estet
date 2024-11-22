@@ -86,11 +86,10 @@
 
         &__list {
             display: flex;
-            flex-wrap: wrap;
             column-gap: 45px;
             row-gap: 36px;
             margin: 0 -84px;
-            padding: 78px 84px 75px;
+            padding: 78px 44px 75px 84px;
         }
 
         &__item {
@@ -135,14 +134,9 @@
         .slick-slide {
             div:first-child {
                 .review__item {
-                    margin-bottom: 32px;
+                    margin-bottom: 28px;
                 }
             }
-        }
-
-        .slick-current + .slick-slide,
-        .slick-current + .slick-slide + .slick-slide {
-            margin-left: 14px;
         }
     }
 
@@ -204,7 +198,6 @@
         }
 
         .slick-slide {
-
             div:first-child {
                 .review__item {
                     margin-bottom: 0px;
@@ -251,11 +244,6 @@
             max-width: 171px;
             box-sizing: content-box;
             padding: 0 0 30px 29px;
-        }
-
-        .slick-current + .slick-slide, 
-        .slick-current + .slick-slide + .slick-slide {
-            margin-left: 0;
         }
     }
 

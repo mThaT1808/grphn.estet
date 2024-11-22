@@ -56,12 +56,12 @@ const slides = [
             <Title Tag='h2' class="review">Видео обзор</Title>
             <video class="review__video" muted="true" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
             <div class="review__wrapper">
-                <ul class="review__list">
+                <div class="review__list">
                     {slides.map((slide) => (
-                        <li class={`review__item ${slide.active ? 'review__item--active' : ''}`} data-video={slide.video}>
+                        <div class={`review__item ${slide.active ? 'review__item--active' : ''}`} data-video={slide.video}>
                             <Icon name='video' mod='video-review'/>
                             <Text class="review">{slide.text}</Text>
-                        </li>
+                        </div>
                     ))}
                 </div>
                 <div class="review__arrow-container">
