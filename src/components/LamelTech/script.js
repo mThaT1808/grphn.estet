@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { forEach } from 'lodash';
 import 'slick-slider';
 
 const slider = $('.lamel-tech__slider');
@@ -6,20 +7,36 @@ const nextArrow = $('.arrow--lamel-tech.arrow--right');
 const prevArrow = $('.arrow--lamel-tech.arrow--left');
 const body = document.querySelector('.page-wrapper');
 var slidesToShow = ((body.clientWidth - 25) / 300);
+var notActiveSlides = document.querySelectorAll('.lamel-tech__slider .slick-slide');
+
+const updateNotActive = () => {
+    notActiveSlides = document.querySelectorAll('.lamel-tech__slider .slick-slide');;
+    notActiveSlides.forEach((slide) => {
+        if  (!slide.classList.contains('slick-active')) {
+            slide.style.opacity = '0.5';
+        } else {
+            slide.style.opacity = '1';
+        }
+    })
+}
+
+slider.on('setPosition', updateNotActive)
 
 slider.slick({
     slidesToShow: slidesToShow,
     easing: "ease",
     infinite: false,
     arrows: false,
+    adaptiveHeight: true
 });
+
 
 async function checkWidth () {
     if(body.clientWidth < 768) {
-        slidesToShow = ((body.clientWidth - 25) / 300);
+        slidesToShow = ((body.clientWidth) / 300);
     }
     else if (body.clientWidth < 1366) {
-        slidesToShow = ((body.clientWidth - 84) / 300);
+        slidesToShow = ((body.clientWidth) / 300);
     }
     else {
         slidesToShow = ((1200 + (1200 - body.clientWidth) / 2) / 300)
@@ -31,11 +48,14 @@ async function checkWidth () {
         slidesToScroll: 1,
         arrows: false,
         infinite: false,
+        adaptiveHeight: true
     })
 }
 
 $(window).on('resize', checkWidth)
 
+
+updateNotActive();
 checkWidth();
 
 
@@ -47,6 +67,8 @@ prevArrow.on('click', function(e) {
     e.preventDefault();
     slider.slick('slickPrev');
 });
+
+slider.on('afterChange', updateNotActive);
 
 $(function () {
     function updateArrowOpacity(currentSlide, slideCount) {
