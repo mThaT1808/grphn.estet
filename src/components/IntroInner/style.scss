@@ -3,7 +3,7 @@
 .intro-inner {
     position: relative;
     z-index: 0;
-    height: 270px;
+    height: calc(100vw / 1.39);
     padding-top: 61px;
     order: -1;
     display: flex;
@@ -16,6 +16,7 @@
         left: 0;
         z-index: -1;
         height: 100%;
+        overflow: hidden;
     }
 
     &__image {
@@ -52,6 +53,6 @@
     .intro-inner {
         order: 0;
 
-        height: 691px;
+        height: 688px;
     }
 }
