@@ -142,6 +142,10 @@
             transition: width $animation-time;
         }
 
+        &--aside .icon {
+            color: $cl-black;
+        }
+
         &--open &__input {
             width: 320px;
         }
