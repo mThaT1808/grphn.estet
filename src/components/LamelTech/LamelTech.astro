@@ -1,0 +1,74 @@
+---
+import Title from '@components/uikit/Title/Title.astro'
+import './style.scss'
+import Text from '@components/uikit/Text/Text.astro'
+import Link from '@components/uikit/Link/Link.astro'
+import Container from '@components/container/container.astro'
+import Arrow from '@components/uikit/Arrow/Arrow.astro'
+
+const slides = [
+    {
+        img:"/images/lamel-tech/termofix.jpg",
+        title:"Termofix",
+        text:"Технология обеспечивает высокие изолирующие свойства за счет жесткой фиксации минерального утеплителя в полотне.",
+        mod:"quarter"
+    },
+    {
+        img:"/images/lamel-tech/i-security.jpg",
+        title:"iSecurity",
+        text:"Комплексная система защиты дверного блока от взлома разрушающими и вандальными методами",
+        mod:"half"
+    },
+    {
+        img:"/images/lamel-tech/q-system.jpg",
+        title:"Q-system",
+        text:"технология дополнительной звукоизоляции, способная обеспечить максимально необходимый уровень комфорта"
+    },
+    {
+        img:"/images/lamel-tech/profile-set.jpg",
+        title:"ProfileSet",
+        text:"Технология обеспечивает высокую прочность конструкции.",
+        mod:"quarter"
+    },
+    {
+        img:"/images/lamel-tech/sqdr.jpg",
+        title:"SQDR",
+        text:"Технология обеспечивает высокие изолирующие свойства за счет жесткой фиксации минерального утеплителя в полотне."
+    },
+]
+---
+
+<div class='lamel-tech'>
+    <Container >
+        <Title class='lamel-tech' Tag='h2'>Современные технологии Lamell Tech ®</Title>
+        <Text class='lamel-tech'>
+            Инновационная технология изготовления бруса, применяемого в конструкции дверного полотна фабрикой ESTET. Брус изготавливается из отдельных реек, благодаря применению специальных смол, обеспечивается соединение реек на молекулярном уровне.
+        </Text>
+        <div class="lamel-tech__row-wrapper">
+            <Link href='javascript:void(0);' class="link--lamel">Все технологии</Link>
+            <div class="lamel-tech__arrow-box">
+                <Arrow modifier='lamel-tech' direction='left'/>
+                <Arrow modifier='lamel-tech' direction='right'/>
+            </div>
+        </div>
+        <div class="lamel-tech__slider">
+            {
+                slides.map((slide) => (
+                    <div class:list={["lamel-tech__slide", slide.mod ? `lamel-tech__slide--${slide.mod}` : '']}>
+                        <picture class="lamel-tech__image-box">
+                            <img src={slide.img} alt={slide.title} class="lamel-tech-image" />
+                        </picture>
+                        <Title class="lamel-slider">
+                            {slide.title}
+                        </Title>
+                        <Text class="lamel-slider">
+                            {slide.text}
+                        </Text>
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+</div>
+
+<script src="./script.js"></script>
