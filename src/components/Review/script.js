@@ -10,12 +10,24 @@ const breakpoint = {
     tablet: 768,
     desktop: 1280
 }
+const playIcon = document.querySelector('.icon--video-play');
+
+playIcon.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        playIcon.style.display = 'none';
+    } else {
+        video.pause();
+        playIcon.style.display = 'block';
+    }
+})
 
 slides.forEach((slide) => {
     slide.addEventListener('click', () => {
         video.src = slide.dataset.video;
         video.scrollIntoView({behavior: "smooth", block: "center"})
         video.play();
+        playIcon.style.display = 'none';
 
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains('review__item--active')) {
@@ -29,7 +41,14 @@ slides.forEach((slide) => {
 });
 
 video.addEventListener('click', () => {
-    video.paused ? video.play() : video.pause();
+    if (video.paused) {
+        video.play()
+        playIcon.style.display = 'none';
+    } else {
+       video.pause(); 
+       playIcon.style.display = 'block';
+    }
+     
 })
 
 prev.addEventListener('click', () => {
@@ -58,7 +77,6 @@ $('.review__list').slick({
                 vertical: false,
                 verticalSwiping: false,
                 rows: 2,
-                // adaptiveHeight: true
             }
         },
         {

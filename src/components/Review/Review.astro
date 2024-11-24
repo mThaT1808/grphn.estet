@@ -54,7 +54,10 @@ const slides = [
     <Container >
         <div class="review__slider">
             <Title Tag='h2' class="review">Видео обзор</Title>
-            <video class="review__video" muted="true" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+            <div class="review__video-container">
+                <video class="review__video" muted="true" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+                <Icon name='video' mod='video-play'/>
+            </div>
             <div class="review__wrapper">
                 <div class="review__list">
                     {slides.map((slide) => (
