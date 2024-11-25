@@ -203,6 +203,10 @@
             line-height: 156%;
             margin-right: -36px;
         }
+
+        &--lamel-slider {
+            line-height: 1.6;
+        }
     }
 
     @media(min-width: ($desktop + 'px')) {

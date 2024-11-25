@@ -37,7 +37,7 @@ async function checkWidth () {
         slidesToShow = ((body.clientWidth) / 304);
     }
     else if (body.clientWidth < 1366) {
-        slidesToShow = ((body.clientWidth - 80) / 304);
+        slidesToShow = ((body.clientWidth - 60) / 304);
     }
     else if ((body.clientWidth < 1366)) {
         slidesToShow = ((1200 + (body.clientWidth - 1200) / 2) / 304)

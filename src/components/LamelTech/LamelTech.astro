@@ -58,7 +58,7 @@ const slides = [
                 slides.map((slide) => (
                     <div class:list={["lamel-tech__slide", slide.mod ? `lamel-tech__slide--${slide.mod}` : '']}>
                         <picture class="lamel-tech__image-box">
-                            <img src={slide.img} alt={slide.title} class="lamel-tech-image" />
+                            <img src={slide.img} alt={slide.title} class="lamel-tech__image" />
                         </picture>
                         <Title class="lamel-slider">
                             {slide.title}
