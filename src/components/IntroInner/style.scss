@@ -41,7 +41,6 @@
 
 @media (min-width: ($tablet + 'px')) {
     .intro-inner {
-        height: 100vh;
         min-height: 530px;
         justify-content: space-between;
 
@@ -57,7 +56,7 @@
     .intro-inner {
         justify-content: flex-start;
         order: 0;
-
-        height: 688px;
+        height: 100vh;
+        min-height: 688px;
     }
 }
