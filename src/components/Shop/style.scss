@@ -37,6 +37,11 @@
         background-color: transparent;
     }
 
+    & .arrow--shop-prev:hover,
+    & .arrow--shop-next:hover {
+        background-color: unset;
+    }
+
     & .arrow--shop-prev::before,
     & .arrow--shop-next::before {
         content: '';
