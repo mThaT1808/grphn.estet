@@ -61,10 +61,6 @@
             &::after {
                 opacity: 0;
             }
-
-            .nav__link {
-                padding: 0;
-            }
         }
 
         &--background {
@@ -76,9 +72,12 @@
 
         &--arrow {
             &::after {
+                position: absolute;
+                content: '';
                 opacity: 1;
                 top: 64px;
                 right: 40px;
+                height: 8px;
                 width: 108px;
                 background-size: cover;
                 background-image: url("/src/assets/images/icons/arrow-108.svg");
@@ -265,7 +264,6 @@
                 right: -20px;
             }
         }
-
     }
 
     @media(min-width: ($desktop-lg + 'px')) {
@@ -278,6 +276,10 @@
 .header-wrapper .nav{
     &__list{
         padding: 5px 0;
+
+        @media (min-width: ($desktop + 'px')) {
+            align-items: center;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -297,5 +299,12 @@
                 margin-left: 160px;
             }
         }
+    }
+}
+
+.header__functional--open .nav {
+
+    .nav__item--special .nav__link {
+        padding: 0;
     }
 }

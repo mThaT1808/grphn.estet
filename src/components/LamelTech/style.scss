@@ -2,6 +2,7 @@
 
 .lamel-tech {
     padding-top: 96px;
+    padding-bottom: 72px;
 
     &__row-wrapper {
         display: flex;
@@ -20,12 +21,9 @@
         margin: 0 -25px;
     }
 
-    .slick-track {
-        padding-left: 25px;
-    }
 
     &__slide {
-        padding-right: 21px;
+        padding-left: 25px;
 
     }
 
@@ -36,6 +34,7 @@
 
     &__image {
         display: block;
+        min-width: 100%;
         height: 240px;
         object-fit: cover;
     }
@@ -45,7 +44,7 @@
     }
 
     &__slide--half &__image {
-        height: 360;
+        height: 360px;
     }
 }
 
@@ -53,12 +52,14 @@
     .lamel-tech {
 
         &__slider {
-            margin: 0 -84px;
+            margin: 0 -84px 0 -25px;
         }
 
-        .slick-track {
-            padding-left: 84px;
+        &__row-wrapper {
+            justify-content: flex-end;
+            column-gap: 95px;
         }
+
 
         &__image {
             display: block;
@@ -72,11 +73,7 @@
     .lamel-tech {
 
         &__slider {
-            margin: 0 calc((1200px - 100vw) / 2) 0 0;
-        }
-
-        .slick-track {
-            padding-left: 0;
+            margin: 0 calc((1200px - 100vw) / 2) 0 -25px;
         }
 
         &__text-box {
@@ -91,7 +88,7 @@
     .lamel-tech {
 
         &__slider {
-            margin: 0 -200px 0 0;
+            margin-right: -200px;
         }
 
     }
