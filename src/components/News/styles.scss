@@ -186,10 +186,6 @@
         line-height: 16px;
         letter-spacing: 0.3px;
         color: $cl-gray-99;
-
-        @media (min-width: ($tablet + 'px')) {
-            position: static;
-        }
     }
 
     &__time--big {
