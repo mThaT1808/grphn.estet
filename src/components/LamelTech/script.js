@@ -33,13 +33,16 @@ slider.slick({
 
 async function checkWidth () {
 
-    if (body.clientWidth < 1366) {
-        slidesToShow = ((body.clientWidth) / 300);
+    if (body.clientWidth < 768) {
+        slidesToShow = ((body.clientWidth) / 304);
+    }
+    else if (body.clientWidth < 1366) {
+        slidesToShow = ((body.clientWidth - 80) / 304);
     }
     else if ((body.clientWidth < 1366)) {
-        slidesToShow = ((1200 + (body.clientWidth - 1200) / 2) / 300)
+        slidesToShow = ((1200 + (body.clientWidth - 1200) / 2) / 304)
     } else {
-        slidesToShow = (1400 / 300);
+        slidesToShow = (1400 / 304);
     }
 
     slider.slick('unslick');
