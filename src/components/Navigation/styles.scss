@@ -276,6 +276,7 @@
 .header-wrapper .nav{
     &__list{
         padding: 5px 0;
+        align-items: center;
     }
 
     @media (min-width: ($desktop + 'px')) {
