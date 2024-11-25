@@ -49,7 +49,7 @@ function setActive (direction) {
             }
 
             if (direction === 'right') {
-                    if (i >= 3 && i < 7) {
+                    if (i >= 3 && i < dots.length - 1) {
                         setTimeout(() => {
                             dots[i + 1].style.display = 'block';
                             dots[i - 3].style.display = 'none';    
@@ -61,13 +61,28 @@ function setActive (direction) {
             }
             
             if (direction === 'left') {
-                if (i > 3 && i <= 7) {
+                if (i >= 2 && i <= dots.length - 1) {
+                    {
+                        setTimeout(() => {
+                            dots[i + 2].style.display = 'none';
+                            dots[i - 2].style.display = 'block';    
+                        }, 250);
+                        dots[i + 2].style.display = 'block';
+                        dots[i - 2].style.display = 'none';
+                    }
+                }
+            }
+
+            if (direction === 'dots-right') {
+                if (i >= 2 && i < dots.length - 1) {
                     setTimeout(() => {
-                        dots[i + 2].style.display = 'none';
-                        dots[i - 2].style.display = 'block';    
+                        dots[i + 1].style.display = 'block';
+                        dots[i - 3].style.display = 'none';
                     }, 250);
-                    dots[i + 2].style.display = 'block';
-                    dots[i - 2].style.display = 'none';
+                    for (let j = i + 1; j < dots.length; j++) {
+                        dots[j].style.display = 'none';
+                        dots[i - 3].style.display = 'block';
+                    }
                 }
             }
         }
@@ -109,7 +124,13 @@ const dots = document.querySelector('.slick-dots').querySelectorAll('li');
 setActive();
 
 for (let i = 0; i < dots.length; i++) {
+    const current = document.querySelector('.slick-dots').querySelector('.slick-active').children[0].ariaLabel[0];
     dots[i].addEventListener('click', () => {
-        setActive();
+        const active = document.querySelector('.slick-dots').querySelector('.slick-active').children[0].ariaLabel[0];
+        if (current < active) {
+            setActive('dots-right');
+        } else {
+            setActive('left');
+        }
     });
 }
