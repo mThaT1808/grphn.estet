@@ -71,9 +71,16 @@
 
 @media (min-width: ($desktop + 'px')) {
     .lamel-tech {
+        padding-top: 85px;
 
         &__slider {
             margin: 0 calc((1200px - 100vw) / 2) 0 -25px;
+        }
+
+        &__row-wrapper {
+            padding-right: 20px;
+            column-gap: 55px;
+            margin-bottom: 52px;
         }
 
         &__text-box {
