@@ -333,6 +333,12 @@
             opacity: 0;
             transition: opacity $animation-time ease-in-out;
         }
+
+        &__number {
+            @media (min-width: ($tablet + 'px')) {
+                font-size: clamp(30px, 30px + 7 * ((100vw - 768px) / (900 - 768)), 37px);
+            }
+        }
     }
 
 }
