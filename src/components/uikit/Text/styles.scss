@@ -105,7 +105,7 @@
     }
 
     &--lamel-slider {
-        padding-right: 58px;
+        padding-right: 59px;
     }
 
     @media(min-width: ($tablet + 'px')) {
@@ -205,7 +205,8 @@
         }
 
         &--lamel-slider {
-            line-height: 1.6;
+            line-height: 1.4;
+            font-size: 16px;
         }
     }
 
