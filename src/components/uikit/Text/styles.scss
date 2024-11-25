@@ -131,6 +131,7 @@
         &--suggestions {
             line-height: 22px;
             width: 33.6vw;
+            margin-bottom: 43px;
         }
 
         &--news-big,
@@ -294,6 +295,14 @@
             line-height: 42px;
             font-weight: 600;
             word-spacing: 1.5px;
+        }
+
+        &--lamel-tech {
+            line-height: normal;
+            font-size: 16px;
+            padding-top: 13px;
+            max-width: 321px;
+            margin-bottom: 0;
         }
     }
 
