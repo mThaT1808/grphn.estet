@@ -101,7 +101,7 @@
     }
 
     &--lamel-tech {
-        margin-bottom: 46px;
+        margin-bottom: 51px;
     }
 
     &--lamel-slider {
@@ -131,6 +131,7 @@
         &--suggestions {
             line-height: 22px;
             width: 33.6vw;
+            margin-bottom: 43px;
         }
 
         &--news-big,
@@ -195,6 +196,12 @@
 
         &--about {
             line-height: 25px;
+        }
+
+        &--lamel-tech {
+            font-size: 16px;
+            line-height: 156%;
+            margin-right: -36px;
         }
     }
 
@@ -288,6 +295,14 @@
             line-height: 42px;
             font-weight: 600;
             word-spacing: 1.5px;
+        }
+
+        &--lamel-tech {
+            line-height: normal;
+            font-size: 16px;
+            padding-top: 13px;
+            max-width: 321px;
+            margin-bottom: 0;
         }
     }
 

@@ -78,6 +78,12 @@
         .slick-track {
             padding-left: 0;
         }
+
+        &__text-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: 60px;
+        }
     }
 }
 
