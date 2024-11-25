@@ -74,10 +74,10 @@ $intro-height: 100vh;
 
         &--left {
             left: 25px;
-            transform: scale(-1);
+            transform: scaleX(-1);
 
             &:hover {
-                transform: scale(-1.1);
+                transform: scaleX(-1.1);
             }
         }
 
@@ -85,7 +85,7 @@ $intro-height: 100vh;
             left: 115px;
 
             &:hover {
-                transform: scale(1.1);
+                transform: scaleX(1.1);
             }
         }
     }
