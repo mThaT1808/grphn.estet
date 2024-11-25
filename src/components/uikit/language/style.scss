@@ -5,6 +5,7 @@
     transition: all $animation-time;
 
     &__button {
+        color: $cl-white;
         font-size: 26px;
         width: 32px;
         height: 32px;
@@ -16,7 +17,7 @@
         cursor: pointer;
 
         &:hover {
-            transform: scale(1.05);
+            opacity: 0.8;
         }
     }
 
@@ -78,6 +79,7 @@
 
         &--open .current {
             opacity: 0.5;
+
         }
 
         &__list {
