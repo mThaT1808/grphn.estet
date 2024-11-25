@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { forEach } from 'lodash';
 import 'slick-slider';
 
 const slider = $('.lamel-tech__slider');
@@ -10,7 +9,8 @@ var slidesToShow = ((body.clientWidth - 25) / 300);
 var notActiveSlides = document.querySelectorAll('.lamel-tech__slider .slick-slide');
 
 const updateNotActive = () => {
-    notActiveSlides = document.querySelectorAll('.lamel-tech__slider .slick-slide');;
+    notActiveSlides = document.querySelectorAll('.lamel-tech__slider .slick-slide');
+
     notActiveSlides.forEach((slide) => {
         if  (!slide.classList.contains('slick-active')) {
             slide.style.opacity = '0.5';
@@ -32,14 +32,14 @@ slider.slick({
 
 
 async function checkWidth () {
-    if(body.clientWidth < 768) {
+
+    if (body.clientWidth < 1366) {
         slidesToShow = ((body.clientWidth) / 300);
     }
-    else if (body.clientWidth < 1366) {
-        slidesToShow = ((body.clientWidth) / 300);
-    }
-    else {
-        slidesToShow = ((1200 + (1200 - body.clientWidth) / 2) / 300)
+    else if ((body.clientWidth < 1366)) {
+        slidesToShow = ((1200 + (body.clientWidth - 1200) / 2) / 300)
+    } else {
+        slidesToShow = (1400 / 300);
     }
 
     slider.slick('unslick');

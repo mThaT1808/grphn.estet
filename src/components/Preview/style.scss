@@ -72,6 +72,7 @@
             height: 9px;
             margin: 0;
             padding: 0;
+            display: none;
 
             button {
                 width: 100%;
@@ -87,6 +88,13 @@
                 }
             }
          }
+
+        //  li.slick-active,
+        //  li.slick-active + li,
+        //  li.slick-active + li + li,
+        //  li.slick-active + li + li + li {
+        //     display: block;
+        //  }
     }
 
     .slick-slide div {

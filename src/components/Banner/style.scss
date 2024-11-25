@@ -86,6 +86,7 @@
         &__image {
             display: block;
             object-fit: cover;
+            height: 100%;
         }
     }
 }
@@ -184,10 +185,6 @@
         &__picture {
             margin: 0;
             width: 100%;
-        }
-
-        &__image {
-            height: 100%;
         }
 
     }
