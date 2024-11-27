@@ -7,7 +7,7 @@ import Icon from '@components/uikit/Icon/Icon.astro'
 <section class="product">
     <Container>
         <ul class="product__list">
-            <li class="product__item product__item--full product__item--right">
+            <li class="product__item product__item--full product__item--right product__item--order-one">
                 <a class="product__link" href="javascript:void(0);">
                     <p class="product__text product__text--top-right product__text--white">
                         Межкомнатные двери
@@ -22,14 +22,22 @@ import Icon from '@components/uikit/Icon/Icon.astro'
                     </div>
                 </a>
             </li>
-            <li class="product__item product__item--text">
-                <p class="product__text product__text--right">
-                    В компании ESTET вы можете купить качественные межкомнатные двери. 
-                    Богатый выбор является гарантией того, что вы обязательно найдете модель, 
-                    оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.
-                </p>        
+            <li class="product__item product__item--full product__item--scale product__item--left product__item--order-two">
+                <a class="product__link" href="javascript:void(0);">
+                    <p class="product__text product__text--top-left">
+                        Входные двери
+                    </p>
+                    <picture class="product__container">
+                        <source src="/images/product/enter.webp">
+                        <img class="product__image" src="/images/product/enter@2x.jpg" 
+                        width="350" height="261" alt="">
+                    </picture>
+                    <div class="product__arrow-container product__arrow-container--bottom-left">
+                        <Icon name='small-arrow'/>                  
+                    </div> 
+                </a>
             </li>
-            <li class="product__item product__item--image-left product__item--image-vertical">
+            <li class="product__item product__item--image-left product__item--image-vertical product__item--order-one">
                 <a class="product__link" href="javascript:void(0);">
                     <picture class="product__container">
                         <source src="/images/product/hidden.webp">
@@ -44,7 +52,7 @@ import Icon from '@components/uikit/Icon/Icon.astro'
                     </div>
                 </a>
             </li>
-            <li class="product__item product__item--image-right product__item--image-vertical">
+            <li class="product__item product__item--image-right product__item--image-vertical product__item--order-one">
                 <a class="product__link" href="javascript:void(0);">
                     <p class="product__text product__text--relative-bottom-right">
                         Декоративные рейки
@@ -58,13 +66,6 @@ import Icon from '@components/uikit/Icon/Icon.astro'
                         <Icon name='small-arrow'/>                  
                     </div> 
                 </a>
-            </li>
-            <li class="product__item product__item--text product__item--text-align">
-                <p class="product__text product__text--left">
-                    Мы украшаем жизнь покупателей своей качественной продукцией, 
-                    даря тепло и уют в их дома, создаем все условия для самореализации сотрудников и 
-                    успеха партнеров.
-                </p>
             </li>
             <li class="product__item product__item--full product__item--overflow">
                 <a class="product__link" href="javascript:void(0);">
@@ -81,17 +82,32 @@ import Icon from '@components/uikit/Icon/Icon.astro'
                     </div> 
                 </a>
             </li>
-            <li class="product__item product__item--full product__item--scale product__item--left">
+            <li class="product__item product__item--text">
+                <p class="product__text product__text--right">
+                    В компании ESTET вы можете купить качественные межкомнатные двери. 
+                    Богатый выбор является гарантией того, что вы обязательно найдете модель, 
+                    оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.
+                </p>        
+            </li>
+            
+            <li class="product__item product__item--text">
+                <p class="product__text product__text--left">
+                    Мы украшаем жизнь покупателей своей качественной продукцией, 
+                    даря тепло и уют в их дома, создаем все условия для самореализации сотрудников и 
+                    успеха партнеров.
+                </p>
+            </li>
+            <li class="product__item product__item--right product__item--full product__item--big">
                 <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--top-left">
-                        Входные двери
+                    <p class="product__text product__text--bottom-left">
+                        Межкомнатные перегородки
                     </p>
                     <picture class="product__container">
-                        <source src="/images/product/enter.webp">
-                        <img class="product__image" src="/images/product/enter@2x.jpg" 
-                        width="350" height="261" alt="">
+                        <source src="/images/product/partition.webp">
+                        <img class="product__image" src="/images/product/partition@2x.jpg" 
+                        width="350" height="311" alt="">
                     </picture>
-                    <div class="product__arrow-container product__arrow-container--bottom-left">
+                    <div class="product__arrow-container product__arrow-container--top-right">
                         <Icon name='small-arrow'/>                  
                     </div> 
                 </a>
@@ -122,21 +138,6 @@ import Icon from '@components/uikit/Icon/Icon.astro'
                         width="188" height="226" alt="">
                     </picture>
                     <div class="product__arrow-container product__arrow-container--bottom-right">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
-            <li class="product__item product__item--right product__item--full product__item--big">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--bottom-left">
-                        Межкомнатные перегородки
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/partition.webp">
-                        <img class="product__image" src="/images/product/partition@2x.jpg" 
-                        width="350" height="311" alt="">
-                    </picture>
-                    <div class="product__arrow-container product__arrow-container--top-right">
                         <Icon name='small-arrow'/>                  
                     </div> 
                 </a>
