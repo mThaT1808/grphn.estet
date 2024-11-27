@@ -31,9 +31,9 @@ $intro-height: 100vh;
 
     &__image {
         height: $intro-height;
-        width: 100%;
+        min-width: calc(100% + 170px);
         object-fit: cover;
-        object-position: center;
+        object-position: -170px center;
     }
 
     &__filter {
@@ -102,6 +102,8 @@ $intro-height: 100vh;
         &__image {
             // height: $intro-height;
             height: calc(100vh + 109px);
+            min-width: 100%;
+            object-position: center;
         }
 
         &__container {
