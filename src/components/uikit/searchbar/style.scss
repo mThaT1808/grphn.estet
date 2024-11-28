@@ -28,8 +28,8 @@
 
     &__button {
         position: absolute;
-        left: 0;
-        text-align: left;
+        left: -3px;
+        text-align: center;
         line-height: 18px;
         font-size: 21px;
 
@@ -40,7 +40,6 @@
         background-color: transparent;
         display: block;
         padding: 0;
-        padding-left: 2px;
         cursor: pointer;
         transition: $animation-time;
 
@@ -77,6 +76,15 @@
 
     &--burger.searchbar--open &__button{
         left: calc(calc(100% - 90px - 32px));
+    }
+}
+
+@media (min-width: ($tablet + 'px')) {
+    .searchbar {
+
+        &__button {
+            left: -8px;
+        }
     }
 }
 
