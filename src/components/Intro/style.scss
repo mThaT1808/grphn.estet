@@ -92,15 +92,12 @@ $intro-height: 100vh;
 }
 
 @media (min-width: ($tablet + 'px')) {
-    // $intro-height: 1024px;
 
     .intro {
-        // height: $intro-height;
         height: calc(100vh + 109px);
         min-height: 750px;
 
         &__image {
-            // height: $intro-height;
             height: calc(100vh + 109px);
             min-width: 100%;
             object-position: center;
@@ -113,7 +110,6 @@ $intro-height: 100vh;
         }
 
         &__button {
-            // top: 446px;
             bottom: calc(7.03vh + 477px);
             width: 56px;
 
