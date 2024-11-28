@@ -127,6 +127,8 @@
         box-sizing: content-box;
         cursor: pointer;
         transition: opacity 0.3s, transform 0.3s;
+        border-radius: 50%;
+        overflow: hidden;
     }
 
     .door__choice-box label:hover {
@@ -292,11 +294,16 @@
             background-color: transparent;
         }
 
-        .door:nth-child(8n + 2),
-        .door:nth-child(8n + 4),
-        .door:nth-child(8n + 7),
-        .door:nth-child(8n + 9) {
+        .door:nth-child(10n + 2),
+        .door:nth-child(10n + 4),
+        .door:nth-child(10n + 6),
+        .door:nth-child(10n + 7),
+        .door:nth-child(10n + 9) {
             background-color: $cl-gray-f7;
+        }
+
+        .door__image {
+            width: 77%;
         }
 
         .door__mark-box {
@@ -312,18 +319,20 @@
             margin-bottom: 5px;
         }
 
+        .door__choice-box {
+            flex-wrap: wrap;
+        }
+
         .door:hover {
             background-color: $cl-green;
         }
 
         .door:hover .door__title,
         .door:hover .door__choice-btn,
-        .door:hover .door__mark {
-            color: $cl-white;
-        }
-
+        .door:hover .door__mark,
+        .door:hover .icon,
         .door:hover .door__price {
-            visibility: visible;
+            color: $cl-white;
         }
 
         &__pagination {
