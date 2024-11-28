@@ -189,6 +189,14 @@
             padding-right: 29%;
             padding-top: 85px;
         }
+
+        &--lamel-tech {
+            margin-bottom: 35px;
+        }
+
+        &--lamel-slider {
+            font-size: 24px;
+        }
     }
 }
 
@@ -268,6 +276,17 @@
 
         &--sale-inner {
             display: none;
+        }
+
+        &--lamel-tech {
+            font-size: 36px;
+
+            max-width: 262px;
+            margin-bottom: 0;
+        }
+
+        &--lamel-slider {
+            font-size: 24px;
         }
     }
 }
