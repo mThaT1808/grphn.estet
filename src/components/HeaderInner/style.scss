@@ -1,64 +1,11 @@
 @use '/src/assets/styles/global.scss' as*;
 
-.header-wrapper {
+.header {
 
-    .header{
+    &--inner{
         background-color: transparent;
         border-bottom: 1px solid var(--cl-gray-cd);
         overflow: hidden;
-
-        &__base {
-            position: relative;
-            gap: calc(100vw / 3);
-            justify-content: center;
-            max-width: 1280px;
-            opacity: 1;
-            transition: opacity $double-animation ease-in-out;
-
-            @media (min-width: ($tablet + 'px')) {
-                gap: 37.89vw;
-            }
-
-            @media (min-width: ($desktop + 'px')) {
-                position: relative;
-                top: unset;
-                left: calc(320px - ((100vw - 1200px) / 2));
-                right: 0;
-                justify-content: right;
-                width: calc(100vw - 320px);
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                max-width: 1280px;
-                position: relative;
-                left: 120px;
-            }
-        }
-
-        &__left-wrapper,
-        &__right-wrapper {
-            display: flex;
-        }
-
-        &__left-wrapper {
-            @media (min-width: ($desktop + 'px')) {
-                display: none;
-            }
-
-            &:has(.searchbar--open) > :not(:first-child) {
-                opacity: 0;
-            }
-        }
-
-        &__right-wrapper {
-            @media (min-width: ($desktop + 'px')) {
-                gap: 3.7vw;
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                gap: 59px;
-            }
-        }
 
         @media (min-width: ($mobile + 'px')) {
             padding: 14px 0;
@@ -68,291 +15,343 @@
             border-bottom: 0;
             padding: 0;
         }
+    }
+    &--inner &__base {
+        position: relative;
+        gap: calc(100vw / 3);
+        justify-content: center;
+        max-width: 1280px;
+        opacity: 1;
+        transition: opacity $double-animation ease-in-out;
 
-        &__logo-wrapper {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            z-index: 5;
-
-            @media (min-width: ($tablet + 'px')) {
-                font-size: 40px;
-            }
-
-            @media (min-width: ($desktop + 'px')) {
-                display: none;
-            }
+        @media (min-width: ($tablet + 'px')) {
+            gap: 37.89vw;
         }
 
-        &__logo-link {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    
-        &__logo {
-            width: 100%;
-            height: 100%;
-        }
-
-        .hamburger {
-            position: absolute;
+        @media (min-width: ($desktop + 'px')) {
+            position: relative;
+            top: unset;
+            left: calc(320px - ((100vw - 1200px) / 2));
             right: 0;
-            pointer-events: all;
+            justify-content: right;
+            width: calc(100vw - 320px);
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            max-width: 1280px;
+            position: relative;
+            left: 120px;
+        }
+    }
+
+    &--inner &__left-wrapper,
+    &--inner &__right-wrapper {
+        display: flex;
+    }
+
+    &--inner &__left-wrapper {
+        @media (min-width: ($desktop + 'px')) {
+            display: none;
+        }
+
+        &:has(.searchbar--open) > :not(:first-child) {
+            opacity: 0;
+        }
+    }
+
+    &--inner &__right-wrapper {
+        @media (min-width: ($desktop + 'px')) {
+            gap: 3.7vw;
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            gap: 59px;
+        }
+    }
+
+    &--inner &__logo-wrapper {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        z-index: 5;
+
+        @media (min-width: ($tablet + 'px')) {
+            font-size: 40px;
+        }
+
+        @media (min-width: ($desktop + 'px')) {
+            display: none;
+        }
+    }
+
+    &--inner &__logo-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &--inner &__logo {
+        width: 100%;
+        height: 100%;
+    }
+
+    &--inner .hamburger {
+        position: absolute;
+        right: 0;
+        pointer-events: all;
+
+        @media (min-width: ($tablet + 'px')) {
+            background-color: var(--cl-green);
+            top: -14px;
+            right: -84px;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+        }
+
+        @media (min-width: ($desktop + 'px')) {
+            position: unset;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            left: unset;
+            top: -24px;
+            right: calc(-1 * ((100vw - 1200px) / 2));
+            transform: none;
+            margin-left: -3.7vw;
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            margin-left: -59px;
+        }
+
+        .icon-burger-close {
+            position: absolute;
+            right: 25px;
 
             @media (min-width: ($tablet + 'px')) {
-                background-color: var(--cl-green);
-                top: -14px;
-                right: -84px;
-                padding: 0;
-                width: 60px;
-                height: 60px;
+                right: 89px;
+                top: 28px;
             }
 
             @media (min-width: ($desktop + 'px')) {
-                position: unset;
+                right: unset;
+            }
+        }
+    }
+
+    &--inner .call-back {
+        border: none;
+        width: auto;
+        padding: 6px 6px 6px 5px;
+        margin-left: unset;
+
+        &__icon {
+            margin: 0;
+        }
+
+        &__text {
+            display: none;
+        }
+    }
+
+    &--inner .personal {
+        border: none;
+        width: auto;
+        flex-grow: unset;
+        margin-right: 0;
+        padding: 0;
+        gap: 4.2vw;
+
+        &__item:first-child {
+            display: none;
+
+            @media (min-width: ($desktop + 'px')) {
+                display: block;
+            }
+        }
+
+        &__button {
+            &--basket {
+                display: block;
                 display: flex;
-                width: 80px;
-                height: 80px;
-                left: unset;
-                top: -24px;
-                right: calc(-1 * ((100vw - 1200px) / 2));
-                transform: none;
-                margin-left: -3.7vw;
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                margin-left: -59px;
-            }
-
-            .icon-burger-close {
-                position: absolute;
-                right: 25px;
-
-                @media (min-width: ($tablet + 'px')) {
-                    right: 89px;
-                    top: 28px;
-                }
-
-                @media (min-width: ($desktop + 'px')) {
-                    right: unset;
-                }
+                align-items: center;
             }
         }
 
-        .call-back {
-            border: none;
-            width: auto;
-            padding: 6px 6px 6px 5px;
-            margin-left: unset;
+        &__quantity {
+            display: none;
 
-            &__icon {
-                margin: 0;
+            @media (min-width: ($desktop + 'px')) {
+                display: block;
+                bottom: 75%;
+                left: 100%;
+                transform: translateX(-65%);
             }
+        }
 
-            &__text {
+        @media (min-width: ($desktop-lg + 'px')) {
+            gap: 67px;
+        }
+    }
+
+    &--inner .searchbar {
+        left: 0;
+        position: absolute;
+
+        &--open {
+            width: 100%;
+        }
+
+        &__button {
+            padding-left: 0;
+        }
+    }
+
+    &--inner .language {
+        display: none;
+
+        &__list {
+            left: auto;
+            right: auto;
+            width: auto;
+
+            .language__item:first-child {
                 display: none;
             }
         }
 
-        .personal {
-            border: none;
-            width: auto;
-            flex-grow: unset;
-            margin-right: 0;
+        @media (min-width: ($tablet + 'px')) {
+            &__button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: ($desktop + 'px')) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 14px;
+        }
+    }
+
+    &--inner .location {
+        &__button {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &--inner .choice {
+        display: none;
+        max-width: 192px;
+
+        @media (min-width: ($desktop + 'px')) {
+            display: flex;
+            margin-right: 2.43vw;
+
+            &::after {
+                top: 33px;
+                border-right: 1px solid var(--cl-white);
+                border-bottom: 1px solid var(--cl-white);
+            }
+
+            &__list {
+                text-wrap: auto;
+                color: var(--cl-white);
+            }
+
+            .icon--green {
+                color: var(--cl-white);
+                align-content: center;
+            }
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            margin-right: 39px;
+        }
+    }
+
+    &--inner &__item--searchbar{
+        @media (min-width: ($tablet + 'px')) {
+            display: none;
+        }
+    }
+
+    &--inner &__functional {
+        padding: 14px 22px 24px;
+
+        &--open {
+            transform: translateX(-100%);
+        }
+
+        @media (min-width: ($tablet + 'px')) {
+            max-width: 41.66vw;
+        }
+
+        @media (min-width: ($desktop + 'px')) {
+            max-width: 1280px;
+            position: absolute;
+            width: calc(100vw - 320px);
             padding: 0;
-            gap: 4.2vw;
+            left: 100%;
+            right: 0;
 
-            &__item:first-child {
+            &:has(.language) * .header__item--language {
                 display: none;
-
-                @media (min-width: ($desktop + 'px')) {
-                    display: block;
-                }
             }
+        }
+
+        @media (min-width: ($desktop-lg + 'px')) {
+            left: calc(100% - (100vw - 1600px) / 2);
+        }
+
+        .language {
+            display: flex;
 
             &__button {
-                &--basket {
-                    display: block;
-                    display: flex;
-                    align-items: center;
-                }
-            }
-
-            &__quantity {
-                display: none;
-
-                @media (min-width: ($desktop + 'px')) {
-                    display: block;
-                    bottom: 75%;
-                    left: 100%;
-                    transform: translateX(-65%);
-                }
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                gap: 67px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 
         .searchbar {
-            left: 0;
+            left: 25px;
             position: absolute;
 
             &--open {
                 width: 100%;
+
+                .searchbar__input {
+                    width: calc(100% - 120px - 6.67vw);
+                    padding-right: 40px;
+                }
+
+                .searchbar__button {
+                    left: calc(100% - 150px - 6.67vw);
+                }
             }
 
             &__button {
+                margin-left: unset;
                 padding-left: 0;
             }
         }
+    }
 
-        .language {
-            display: none;
+    &--inner:has(.header__functional--open) * .header__base {
+        opacity: 0;
+        transition: opacity $animation-time ease-in-out;
+    }
 
-            &__list {
-                left: auto;
-                right: auto;
-                width: auto;
-
-                .language__item:first-child {
-                    display: none;
-                }
-            }
-
-            @media (min-width: ($tablet + 'px')) {
-                &__button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            @media (min-width: ($desktop + 'px')) {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-left: 14px;
-            }
-        }
-
-        .location {
-            &__button {
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        .choice {
-            display: none;
-            max-width: 192px;
-
-            @media (min-width: ($desktop + 'px')) {
-                display: flex;
-                margin-right: 2.43vw;
-
-                &::after {
-                    top: 33px;
-                    border-right: 1px solid var(--cl-white);
-                    border-bottom: 1px solid var(--cl-white);
-                }
-
-                &__list {
-                    text-wrap: auto;
-                    color: var(--cl-white);
-                }
-
-                .icon--green {
-                    color: var(--cl-white);
-                    align-content: center;
-                }
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                margin-right: 39px;
-            }
-        }
-
-        &__item--searchbar{
-            @media (min-width: ($tablet + 'px')) {
-                display: none;
-            }
-        }
-
-        &__functional {
-            padding: 14px 22px 24px;
-
-            &--open {
-                transform: translateX(-100%);
-            }
-
-            @media (min-width: ($tablet + 'px')) {
-                max-width: 41.66vw;
-            }
-
-            @media (min-width: ($desktop + 'px')) {
-                max-width: 1280px;
-                position: absolute;
-                width: calc(100vw - 320px);
-                padding: 0;
-                left: 100%;
-                right: 0;
-
-                &:has(.language) * .header__item--language {
-                    display: none;
-                }
-            }
-
-            @media (min-width: ($desktop-lg + 'px')) {
-                left: calc(100% - (100vw - 1600px) / 2);
-            }
-
-            .language {
-                display: flex;
-
-                &__button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            .searchbar {
-                left: 25px;
-                position: absolute;
-
-                &--open {
-                    width: 100%;
-
-                    .searchbar__input {
-                        width: calc(100% - 120px - 6.67vw);
-                        padding-right: 40px;
-                    }
-
-                    .searchbar__button {
-                        left: calc(100% - 150px - 6.67vw);
-                    }
-                }
-
-                &__button {
-                    margin-left: unset;
-                    padding-left: 0;
-                }
-            }
-        }
-
-        &:has(.header__functional--open) * .header__base {
-            opacity: 0;
-            transition: opacity $animation-time ease-in-out;
-        }
-
-        &__number {
-            @media (min-width: ($tablet + 'px')) {
-                font-size: clamp(30px, 30px + 7 * ((100vw - 768px) / (900 - 768)), 37px);
-            }
+    &--inner &__number {
+        @media (min-width: ($tablet + 'px')) {
+            font-size: clamp(30px, 30px + 7 * ((100vw - 768px) / (900 - 768)), 37px);
         }
     }
 
