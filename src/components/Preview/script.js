@@ -131,6 +131,23 @@ videos.forEach((video) => {
             pauseButton.style.display = 'block';
         }            
     });
+    video.addEventListener('mouseout', (e) => {
+        if (e.relatedTarget && !e.relatedTarget.classList.contains('icon')) {
+            pauseButton.style.display = 'none';
+            playButton.style.display = 'none';
+        }
+    });
+
+    video.addEventListener('mouseover', (e) => {
+            if (!video.paused) {
+                pauseButton.style.display = 'block';
+                playButton.style.display = 'none';
+            } 
+            else {
+                playButton.style.display = 'block';
+                pauseButton.style.display = 'none';
+            }
+    });
 });
 
 playButton.addEventListener('click', () => {
@@ -141,8 +158,9 @@ playButton.addEventListener('click', () => {
 });
 pauseButton.addEventListener('click', () => {
     const video = document.querySelector('.preview__slider').querySelector('.slick-active').querySelector('.preview__video');
-    video.play();
+    video.pause();
     pauseButton.style.display = 'none';
+    playButton.style.display = 'none';
 });
 
 $('.preview__slider').slick({
