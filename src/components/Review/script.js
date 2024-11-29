@@ -17,6 +17,7 @@ let isStarted = false;
 playIcon.addEventListener('click', () => {
     isStarted = true;
     playIcon.style.display = 'none';
+    video.scrollIntoView({behavior: "smooth", block: "center"});
 
     if (video.paused) {
         video.play();
@@ -40,13 +41,17 @@ pauseIcon.addEventListener('click', () => {
 video.addEventListener('mouseover', () => {
     if (isStarted && !video.paused) {
         pauseIcon.style.display = 'block';
+        playIcon.style.display = 'none';
+    } else {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
     }
 });
 
-video.addEventListener('mouseout', () => {
-    pauseIcon.style.display = 'none';
-    if (video.paused) {
-        playIcon.style.display = 'block';
+video.addEventListener('mouseout', (e) => {
+    if (e.relatedTarget && !e.relatedTarget.classList.contains('icon')) {
+        pauseIcon.style.display = 'none';
+        playIcon.style.display = 'none';
     }
 });
 
