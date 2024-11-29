@@ -6,6 +6,11 @@
 
     @media (min-width: ($tablet + 'px')) {
         background: linear-gradient($cl-white 27%, $cl-gray-f7 27%);
+        
+        .icon-pause,
+        .icon-play {
+            cursor: pointer;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
