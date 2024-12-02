@@ -9,7 +9,7 @@ export interface Props {
 const { socials, class: className, mod="white" } = Astro.props;
 ---
 
-<div class:list={["social", `${className}`]}>
+<div class:list={["social", `${className? className : ''}`]}>
     <ul class="social__list">
         {socials?.map((social) => (
             <li class="social__item">
