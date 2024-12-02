@@ -26,5 +26,9 @@
 
     .hamburger {
         display: none;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }
