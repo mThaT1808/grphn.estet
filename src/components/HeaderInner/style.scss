@@ -362,9 +362,10 @@
             display: none;
 
             @media (min-width: ($desktop + 'px')) {
-                max-width: 1600px;
-                margin-left: 380px;
-                left: 0;
+                // max-width: 1600px;
+                // margin-left: 380px;
+                // left: 0;
+                right: 80px;
             }
 
             &:has(.language) * .header__item--language {
