@@ -172,7 +172,6 @@
             align-items: stretch;
             margin-right: calc((1200px - 100vw) / 2);
             position: relative;
-            max-height: 130vh;
         }
 
         &__video-container {
@@ -182,7 +181,7 @@
             width: 100%;
             z-index: 2;
         }
-        
+
         &__video {
             aspect-ratio: 999 / 562;
         }
