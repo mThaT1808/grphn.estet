@@ -10,6 +10,7 @@ import Choice from '@components/uikit/Choice/Choice.astro'
 import Location from '@components/uikit/Location/Location.astro'
 import Navigation from '@components/Navigation/Navigation.astro'
 import Social from '@components/uikit/Social/Social.astro'
+import Link from '@components/uikit/Link/Link.astro'
 
 
 const socials = [
@@ -49,11 +50,11 @@ const navList = [
 
 
 <header class="header header--inner">
-    <Container>
         <div class="header__base">
             <div class="header__left-wrapper">
                 <Searchbar />
                 <CallBack />
+                <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
             </div>
             <div class="header__logo-wrapper">
                 <a class="header__logo-link" href="/index.html" title="Estet">
@@ -92,7 +93,6 @@ const navList = [
                 />
             </div>
         </div>
-    </Container>
 </header>
 
 <script src="./script.js"></script>
