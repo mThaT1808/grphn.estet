@@ -9,146 +9,129 @@ import './style.scss'
 ---
 
 <aside class="aside">
-    <div class="aside__header">
-        <div class="aside__logo-wrapper">
-            <a class="aside__logo-link" href="/index.html" title="Estet">
-                <img class="aside__logo" src="public/images/logo-white.svg" alt="" width="57" height="57"/>
-            </a>
+    <div class="aside__wrapper">
+        <div class="aside__header">
+            <div class="aside__logo-wrapper">
+                <a class="aside__logo-link" href="/index.html" title="Estet">
+                    <img class="aside__logo" src="public/images/logo-white.svg" alt="" width="57" height="57" />
+                </a>
+            </div>
+            <CallBack modifier="aside" />
+            <Searchbar modifier="aside" />
+            <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
         </div>
-        <CallBack modifier="aside"/>
-        <Searchbar modifier="aside"/>
-        <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
-    </div>
-    <p class="aside__text">1567 дверей</p>
-    <div class="aside__button-wrapper">
-        <Button class="button--aside button--pink button--block" id="collectionsButton">Коллекции</Button>
-        <Button class="button--aside button--block" id="allDoorsButton">Все двери</Button>
-        <Button class="button--filter">
-            <Icon name="filter" mod="filter"/>
-        </Button>
-    </div>
-    <div class="aside__filter">
-        <div class="filter">
-            <button class="filter__opener">
-                Коллекции
-                <Icon name="small-arrow" mod="opener"/>
+        <p class="aside__text">1567 дверей</p>
+        <div class="aside__button-wrapper">
+            <Button class="button--aside button--pink button--block" id="collectionsButton">Коллекции</Button>
+            <Button class="button--aside button--block" id="allDoorsButton">Все двери</Button>
+            <Button class="button--filter">
+                <Icon name="filter" mod="filter" />
+            </Button>
+        </div>
+        <div class="aside__filter">
+            <div class="filter">
+                <button class="filter__opener">
+                    Коллекции
+                    <Icon name="small-arrow" mod="opener" />
+                </button>
+                <ul class="filter__list filter__list--collection">
+                    <li class="filter__item">bliss</li>
+                    <li class="filter__item">urban</li>
+                    <li class="filter__item">perfect</li>
+                    <li class="filter__item">sonata</li>
+                    <li class="filter__item">novella</li>
+                    <li class="filter__item">mio</li>
+                    <li class="filter__item">ways</li>
+                    <li class="filter__item">royal</li>
+                    <li class="filter__item">perfect volume</li>
+                </ul>
+            </div>
+            <div class="filter">
+                <button class="filter__opener">
+                    Стиль
+                    <Icon name="small-arrow" mod="opener" />
+                </button>
+                <ul class="filter__list filter__list--style">
+                    <li class="filter__item">Современный</li>
+                    <li class="filter__item">Классический</li>
+                    <li class="filter__item">Неоклассический</li>
+                    <li class="filter__item">Дизайнерский</li>
+                </ul>
+            </div>
+            <div class="filter">
+                <button class="filter__opener">
+                    Цвета
+                    <Icon name="small-arrow" mod="opener" />
+                </button>
+                <ul class="filter__list filter__list--colors">
+                    <li class="filter__item">
+                        <label class="filter__choice-label">
+                            <img class="filter__choice-textures" src="/images/card/texture/dark-brown.png" alt="" />
+                            Темный
+                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                        </label>
+                    </li>
+                    <li class="filter__item">
+                        <label class="filter__choice-label">
+                            <img class="filter__choice-textures" src="/images/card/texture/beige.png" alt="" />
+                            Коричневый
+                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                        </label>
+                    </li>
+                    <li class="filter__item">
+                        <label class="filter__choice-label">
+                            <img class="filter__choice-textures" src="/images/card/texture/light-beige.png" alt="" />
+                            Бежевый
+                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                        </label>
+                    </li>
+                    <li class="filter__item">
+                        <label class="filter__choice-label">
+                            <img class="filter__choice-textures" src="/images/card/texture/grey.png" alt="" />
+                            Серый
+                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                        </label>
+                    </li>
+                    <li class="filter__item">
+                        <label class="filter__choice-label">
+                            <img class="filter__choice-textures" src="/images/card/texture/grey-line.png" alt="" />
+                            Белый
+                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter">
+                <button class="filter__opener">
+                    Отделка
+                    <Icon name="small-arrow" mod="opener" />
+                </button>
+                <ul class="filter__list filter__list--trim">
+                    <li class="filter__item">Эмаль</li>
+                    <li class="filter__item">Покрытие</li>
+                </ul>
+            </div>
+            <div class="filter">
+                <button class="filter__opener">
+                    Цена
+                    <Icon name="small-arrow" mod="opener" />
+                </button>
+                <ul class="filter__list filter__list--price">
+                    <li class="filter__item">
+                        <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000"
+                            step="500">
+                    </li>
+                </ul>
+            </div>
+            <button class="filter__button filter__button--reset">
+                Сбросить все
+                <Icon name="reset" mod="reset" />
             </button>
-            <ul class="filter__list filter__list--collection">
-                <li class="filter__item">bliss</li>
-                <li class="filter__item">urban</li>
-                <li class="filter__item">perfect</li>
-                <li class="filter__item">sonata</li>
-                <li class="filter__item">novella</li>
-                <li class="filter__item">mio</li>
-                <li class="filter__item">ways</li>
-                <li class="filter__item">royal</li>
-                <li class="filter__item">perfect volume</li>
-            </ul>
+            <label class="filter__button filter__button--only-action">
+                <input type="checkbox" class="filter__btn" />
+                <span class="filter__label">Только по акции</span>
+            </label>
         </div>
-        <div class="filter">
-            <button class="filter__opener">
-                Стиль
-                <Icon name="small-arrow" mod="opener"/>
-            </button>
-            <ul class="filter__list filter__list--style">
-                <li class="filter__item">Современный</li>
-                <li class="filter__item">Классический</li>
-                <li class="filter__item">Неоклассический</li>
-                <li class="filter__item">Дизайнерский</li>
-            </ul>
-        </div>
-        <div class="filter">
-            <button class="filter__opener">
-                Цвета
-                <Icon name="small-arrow" mod="opener"/>
-            </button>
-            <ul class="filter__list filter__list--colors">
-                <li class="filter__item">
-                    <label class="filter__choice-label">
-                        <img
-                            class="filter__choice-textures"
-                            src="/images/card/texture/dark-brown.png"
-                            alt=""
-                        />
-                        Темный
-                        <input class="filter__choice" type="checkbox" name="colors" value="color" />
-                    </label>
-                </li>
-                <li class="filter__item">
-                    <label class="filter__choice-label">
-                        <img
-                            class="filter__choice-textures"
-                            src="/images/card/texture/beige.png"
-                            alt=""
-                        />
-                        Коричневый
-                        <input class="filter__choice" type="checkbox" name="colors" value="color" />
-                    </label>
-                </li>
-                <li class="filter__item">
-                    <label class="filter__choice-label">
-                        <img
-                            class="filter__choice-textures"
-                            src="/images/card/texture/light-beige.png"
-                            alt=""
-                        />
-                        Бежевый
-                        <input class="filter__choice" type="checkbox" name="colors" value="color" />
-                    </label>
-                </li>
-                <li class="filter__item">
-                    <label class="filter__choice-label">
-                        <img
-                            class="filter__choice-textures"
-                            src="/images/card/texture/grey.png"
-                            alt=""
-                        />
-                        Серый
-                        <input class="filter__choice" type="checkbox" name="colors" value="color" />
-                    </label>
-                </li>
-                <li class="filter__item">
-                    <label class="filter__choice-label">
-                        <img
-                            class="filter__choice-textures"
-                            src="/images/card/texture/grey-line.png"
-                            alt=""
-                        />
-                        Белый
-                        <input class="filter__choice" type="checkbox" name="colors" value="color" />
-                    </label>
-                </li>
-            </ul>
-        </div>
-        <div class="filter">
-            <button class="filter__opener">
-                Отделка
-                <Icon name="small-arrow" mod="opener"/>
-            </button>
-            <ul class="filter__list filter__list--trim">
-                <li class="filter__item">Эмаль</li>
-                <li class="filter__item">Покрытие</li>
-            </ul>
-        </div>
-        <div class="filter">
-            <button class="filter__opener">
-                Цена
-                <Icon name="small-arrow" mod="opener"/>
-            </button>
-            <ul class="filter__list filter__list--price">
-                <li class="filter__item">
-                    <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000" step="500">
-                </li>
-            </ul>
-        </div>
-        <button class="filter__button filter__button--reset">
-            Сбросить все
-            <Icon name="reset" mod="reset"/>
-        </button>
-        <label class="filter__button filter__button--only-action">
-            <input type="checkbox" class="filter__btn" />
-            <span class="filter__label">Только по акции</span>
-        </label>
     </div>
 </aside>
 

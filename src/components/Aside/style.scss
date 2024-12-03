@@ -38,11 +38,17 @@
 
     @media(min-width: ($desktop + 'px')) {
         width: 320px;
+        margin-top: calc(100vh - 49px - 273px);
         margin-bottom: 0;
         padding-top: 0;
         padding-right: 0;
         padding-left: 0;
         z-index: 10;
+
+        &__wrapper {
+            position: sticky;
+            top: 0;
+        }
 
         &__header {
             display: grid;
@@ -140,11 +146,6 @@
                     margin-bottom: 0;
                 }
 
-                &__button-range {
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-
                 &__button {
                     font-size: 14px;
                     line-height: 25px;
@@ -233,6 +234,8 @@
                 }
 
                 &__button-range {
+                    display: inline-block;
+                    vertical-align: middle;
                     position: relative;
                     -webkit-appearance: none;
                     appearance: none;
