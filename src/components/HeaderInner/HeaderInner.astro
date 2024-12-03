@@ -52,7 +52,7 @@ const navList = [
 <header class="header header--inner">
         <div class="header__base">
             <div class="header__left-wrapper">
-                <Searchbar />
+                <Searchbar modifier="aside"/>
                 <CallBack />
                 <Link href="tel:88005513240" class="link--aside">8 800 551 32 40</Link>
             </div>
@@ -67,30 +67,30 @@ const navList = [
                 <Choice />
                 <Hamburger />
             </div>
-        </div>
-        <div class="header__functional">
-            <div class="header__inner">
-                <ul class="header__list">
-                    <li class="header__item header__item--searchbar">
-                        <Searchbar modifier='burger'/>
-                    </li>
-                    <li class="header__item header__item--language">
-                        <Language />
-                    </li>
-                    <li class="header__item header__item--location">
-                        <Location location={locations} modifier="--header"/>
-                    </li>
-                </ul>
-                <Hamburger type="close"/>
-            </div>
-            <Navigation list={navList} modifier="--header"/>
-            <div class="header__contacts">
-                <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
-                    8 800 551 32 40
-                </a>
-                <Social
-                    socials = {socials}
-                />
+            <div class="header__functional">
+                <div class="header__inner">
+                    <ul class="header__list">
+                        <li class="header__item header__item--searchbar">
+                            <Searchbar modifier='burger'/>
+                        </li>
+                        <li class="header__item header__item--language">
+                            <Language />
+                        </li>
+                        <li class="header__item header__item--location">
+                            <Location location={locations} modifier="--header"/>
+                        </li>
+                    </ul>
+                    <Hamburger type="close"/>
+                </div>
+                <Navigation list={navList} modifier="--header"/>
+                <div class="header__contacts">
+                    <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
+                        8 800 551 32 40
+                    </a>
+                    <Social
+                        socials = {socials}
+                    />
+                </div>
             </div>
         </div>
 </header>

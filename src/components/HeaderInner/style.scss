@@ -61,6 +61,12 @@
         @media (min-width: ($desktop + 'px')) {
             display: block;
             position: relative;
+            grid-column: -1 / -2;
+            grid-row: 1 / 2;
+
+            .icon-loupe {
+                color: $cl-black;
+            }
 
             &__button {
                 top: 50%;
@@ -92,6 +98,10 @@
 
         &:has(.searchbar--open) > :not(:first-child) {
             opacity: 0;
+
+            @media (min-width: ($desktop + 'px')) {
+                opacity: 1;
+            }
         }
     }
 
@@ -180,7 +190,7 @@
             right: 25px;
 
             @media (min-width: ($tablet + 'px')) {
-                right: 89px;
+                // right: 89px;
                 top: 28px;
             }
 
@@ -263,6 +273,10 @@
 
         &--open {
             width: 100%;
+
+            @media (min-width: ($desktop + 'px')) {
+                width: 80px;
+            }
         }
 
         &__button {
@@ -350,7 +364,7 @@
         }
 
         @media (min-width: ($tablet + 'px')) {
-            max-width: 41.66vw;
+            // max-width: 41.66vw;
         }
 
         @media (min-width: ($desktop + 'px')) {
@@ -362,9 +376,10 @@
             display: none;
 
             @media (min-width: ($desktop + 'px')) {
-                max-width: 1600px;
-                margin-left: 380px;
-                left: 0;
+                // max-width: 1600px;
+                // margin-left: 380px;
+                // left: 0;
+                right: 80px;
             }
 
             &:has(.language) * .header__item--language {

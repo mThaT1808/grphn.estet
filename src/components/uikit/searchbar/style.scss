@@ -64,6 +64,7 @@
     &--open &__input {
         opacity: 1;
         width: 40%;
+        padding-right: 30px;
     }
 
     &--burger &__button{
@@ -160,7 +161,7 @@
         }
 
         &--aside.searchbar--open &__button {
-            left: unset;
+            // left: unset;
         }
 
         &--aside .icon {
