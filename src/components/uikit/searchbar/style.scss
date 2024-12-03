@@ -28,8 +28,8 @@
 
     &__button {
         position: absolute;
-        left: 0;
-        text-align: left;
+        left: -3px;
+        text-align: center;
         line-height: 18px;
         font-size: 21px;
 
@@ -40,7 +40,6 @@
         background-color: transparent;
         display: block;
         padding: 0;
-        padding-left: 2px;
         cursor: pointer;
         transition: $animation-time;
 
@@ -80,13 +79,27 @@
     }
 }
 
+@media (min-width: ($tablet + 'px')) {
+    .searchbar {
+
+        &__button {
+            left: -8px;
+        }
+    }
+}
+
 @media (min-width: ($desktop + 'px')) {
 
     .searchbar {
 
 
         &__button {
+            left: 0;
             font-size: 21px;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &--burger.searchbar--open {
@@ -127,6 +140,10 @@
             height: 100%;
             color: $cl-gray-3c;
             border: 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &--aside &__input {
@@ -140,6 +157,10 @@
             background-color: $cl-gray-e6;
             border: 0;
             transition: width $animation-time;
+        }
+
+        &--aside.searchbar--open &__button {
+            left: unset;
         }
 
         &--aside .icon {

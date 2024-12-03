@@ -53,7 +53,6 @@
             padding: 47px 0px 17px 32px;
             order: 1;
 
-
             &:last-child{
                 margin-bottom: 0;
             }
@@ -73,9 +72,12 @@
 
         &--arrow {
             &::after {
+                position: absolute;
+                content: '';
                 opacity: 1;
                 top: 64px;
                 right: 40px;
+                height: 8px;
                 width: 108px;
                 background-size: cover;
                 background-image: url("/src/assets/images/icons/arrow-108.svg");
@@ -152,6 +154,10 @@
         &__link {
             display: block;
             margin-bottom: 12px;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &__inner-item &__link {
@@ -262,7 +268,6 @@
                 right: -20px;
             }
         }
-
     }
 
     @media(min-width: ($desktop-lg + 'px')) {
@@ -272,9 +277,14 @@
     }
 }
 
-.header-wrapper .nav{
+.header--inner .nav{
     &__list{
         padding: 5px 0;
+
+        @media (min-width: ($desktop + 'px')) {
+            justify-content: space-evenly;
+            align-items: center;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -282,7 +292,7 @@
             margin-right: 0;
 
             &:first-child {
-                margin-left: 10vw;
+                margin-left: unset;
             }
         }
     }
@@ -291,8 +301,15 @@
         &__item {
 
             &:first-child {
-                margin-left: 160px;
+                margin-left: unset;
             }
         }
+    }
+}
+
+.header__functional--open .nav {
+
+    .nav__item--special .nav__link {
+        padding: 0;
     }
 }

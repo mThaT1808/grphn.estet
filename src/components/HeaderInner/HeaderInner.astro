@@ -4,7 +4,6 @@ import CallBack from '@components/uikit/CallBack/CallBack.astro'
 import Personal from '@components/uikit/Personal/Personal.astro'
 import Container from '@components/container/container.astro'
 import Searchbar from '@components/uikit/searchbar/searchbar.astro'
-import Logotype from '@components/uikit/logotype/logotype.astro'
 import Hamburger from '@components/uikit/Hamburger/Hamburger.astro'
 import Language from '@components/uikit/language/language.astro'
 import Choice from '@components/uikit/Choice/Choice.astro'
@@ -32,70 +31,68 @@ const navList = [
     },
     {
         title: 'Коллекции',
-        isMobile: true
     },
     {
         title: 'Покупателям'
     },
     {
         title: 'Дизайнерам',
-        isSpecial: true,
-        isBackground: true
     },
     {
         title: 'Компания'
     },
     {
         title: 'Где\u00a0купить',
-        isSpecial: true,
-        isArrow: true
     },
 ];
 ---
 
-<div class="header-wrapper">
-    <header class="header">
-        <Container>
-            <div class="header__base">
-                <div class="header__left-wrapper">
-                    <Searchbar />
-                    <CallBack />
-                </div>
-                    <Logotype href="/index.html"/>
-                <div class="header__right-wrapper">
-                    <Personal />
-                    <Language />
-                    <Choice />
-                    <Hamburger />
-                </div>
+
+<header class="header header--inner">
+    <Container>
+        <div class="header__base">
+            <div class="header__left-wrapper">
+                <Searchbar />
+                <CallBack />
             </div>
-            <div class="header__functional">
-                <div class="header__inner">
-                    <ul class="header__list">
-                        <li class="header__item header__item--searchbar">
-                            <Searchbar modifier='burger'/>
-                        </li>
-                        <li class="header__item header__item--language">
-                            <Language />
-                        </li>
-                        <li class="header__item header__item--location">
-                            <Location location={locations} modifier="--header"/>
-                        </li>
-                    </ul>
-                    <Hamburger type="close"/>
-                </div>
-                <Navigation list={navList} modifier="--header"/>
-                <div class="header__contacts">
-                    <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
-                        8 800 551 32 40
-                    </a>
-                    <Social
-                        socials = {socials}
-                    />
-                </div>
+            <div class="header__logo-wrapper">
+                <a class="header__logo-link" href="/index.html" title="Estet">
+                    <img class="header__logo" src="public/images/logo-white.svg" alt="" width="57" height="57"/>
+                </a>
             </div>
-        </Container>
-    </header>
-</div>
+            <div class="header__right-wrapper">
+                <Personal />
+                <Language />
+                <Choice />
+                <Hamburger />
+            </div>
+        </div>
+        <div class="header__functional">
+            <div class="header__inner">
+                <ul class="header__list">
+                    <li class="header__item header__item--searchbar">
+                        <Searchbar modifier='burger'/>
+                    </li>
+                    <li class="header__item header__item--language">
+                        <Language />
+                    </li>
+                    <li class="header__item header__item--location">
+                        <Location location={locations} modifier="--header"/>
+                    </li>
+                </ul>
+                <Hamburger type="close"/>
+            </div>
+            <Navigation list={navList} modifier="--header"/>
+            <div class="header__contacts">
+                <a href="tel:88005513240" title="8 800 551 32 40" class="header__number">
+                    8 800 551 32 40
+                </a>
+                <Social
+                    socials = {socials}
+                />
+            </div>
+        </div>
+    </Container>
+</header>
 
 <script src="./script.js"></script>

@@ -45,6 +45,7 @@
 
     &--shop {
         margin-bottom: 39px;
+        max-width: 192px;
     }
 
     &--intro {
@@ -78,11 +79,15 @@
     }
 }
 
-@media (min-width: #{$desktop-min + 'px'}) {
+@media (min-width: #{$desktop + 'px'}) {
     .choice {
         &--intro {
             margin-bottom: 42px;
             margin-left: 77px;
+        }
+
+        &:hover {
+            opacity: 0.8;
         }
     }
 }

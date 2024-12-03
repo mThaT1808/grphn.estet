@@ -10,24 +10,59 @@ const breakpoint = {
     tablet: 768,
     desktop: 1280
 }
-const playIcon = document.querySelector('.icon--video-play');
+const playIcon = document.querySelector('.icon-play');
+const pauseIcon = document.querySelector('.icon-pause');
+let isStarted = false;
 
 playIcon.addEventListener('click', () => {
+    isStarted = true;
+    playIcon.style.display = 'none';
+    video.scrollIntoView({behavior: "smooth", block: "center"});
+
     if (video.paused) {
         video.play();
-        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'none';
     } else {
         video.pause();
-        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'block';
     }
-})
+});
+
+pauseIcon.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        pauseIcon.style.display = 'none';
+    } else {
+        video.pause();
+        pauseIcon.style.display = 'block';
+    }
+});
+
+video.addEventListener('mouseover', () => {
+    if (isStarted && !video.paused) {
+        pauseIcon.style.display = 'block';
+        playIcon.style.display = 'none';
+    } else {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+    }
+});
+
+video.addEventListener('mouseout', (e) => {
+    if (e.relatedTarget && !e.relatedTarget.classList.contains('icon')) {
+        pauseIcon.style.display = 'none';
+        playIcon.style.display = 'none';
+    }
+});
 
 slides.forEach((slide) => {
     slide.addEventListener('click', () => {
-        video.src = slide.dataset.video;
-        video.scrollIntoView({behavior: "smooth", block: "center"})
-        video.play();
+        isStarted = true;
         playIcon.style.display = 'none';
+        pauseIcon.style.display = 'none';
+        video.src = slide.dataset.video;
+        video.scrollIntoView({behavior: "smooth", block: "center"});
+        video.play();
 
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains('review__item--active')) {
@@ -41,22 +76,31 @@ slides.forEach((slide) => {
 });
 
 video.addEventListener('click', () => {
+    isStarted = true;
+    playIcon.style.display = 'none';
+    video.scrollIntoView({behavior: "smooth", block: "center"});
     if (video.paused) {
-        video.play()
-        playIcon.style.display = 'none';
+        video.play();
+        pauseIcon.style.display = 'none';
     } else {
-       video.pause(); 
-       playIcon.style.display = 'block';
+       video.pause();
+       pauseIcon.style.display = 'block'; 
     }
      
 })
 
 prev.addEventListener('click', () => {
+    isStarted = false;
     $('.review__list').slick('slickPrev');
+    pauseIcon.style.display = 'none';
+    playIcon.style.display = 'block';
 });
 
 next.addEventListener('click', () => {
+    isStarted = false;
     $('.review__list').slick('slickNext');
+    pauseIcon.style.display = 'none';
+    playIcon.style.display = 'block';
 })
 
 $('.review__list').slick({

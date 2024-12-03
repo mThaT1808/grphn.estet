@@ -28,7 +28,7 @@ const slides = [
         img:"/images/lamel-tech/profile-set.jpg",
         title:"ProfileSet",
         text:"Технология обеспечивает высокую прочность конструкции.",
-        mod:"quarter"
+        mod:"half"
     },
     {
         img:"/images/lamel-tech/sqdr.jpg",
@@ -40,10 +40,12 @@ const slides = [
 
 <div class='lamel-tech'>
     <Container >
-        <Title class='lamel-tech' Tag='h2'>Современные технологии Lamell Tech ®</Title>
-        <Text class='lamel-tech'>
-            Инновационная технология изготовления бруса, применяемого в конструкции дверного полотна фабрикой ESTET. Брус изготавливается из отдельных реек, благодаря применению специальных смол, обеспечивается соединение реек на молекулярном уровне.
-        </Text>
+        <div class='lamel-tech__text-box'>
+            <Title class='lamel-tech' Tag='h2'>Современные технологии Lamell Tech ®</Title>
+            <Text class='lamel-tech'>
+                Инновационная технология изготовления бруса, применяемого в конструкции дверного полотна фабрикой ESTET. Брус изготавливается из отдельных реек, благодаря применению специальных смол, обеспечивается соединение реек на молекулярном уровне.
+            </Text>
+        </div>
         <div class="lamel-tech__row-wrapper">
             <Link href='javascript:void(0);' class="link--lamel">Все технологии</Link>
             <div class="lamel-tech__arrow-box">
@@ -56,7 +58,7 @@ const slides = [
                 slides.map((slide) => (
                     <div class:list={["lamel-tech__slide", slide.mod ? `lamel-tech__slide--${slide.mod}` : '']}>
                         <picture class="lamel-tech__image-box">
-                            <img src={slide.img} alt={slide.title} class="lamel-tech-image" />
+                            <img src={slide.img} alt={slide.title} class="lamel-tech__image" />
                         </picture>
                         <Title class="lamel-slider">
                             {slide.title}
@@ -67,7 +69,6 @@ const slides = [
                     </div>
                 ))
             }
-            <div></div>
         </div>
     </Container>
 </div>
