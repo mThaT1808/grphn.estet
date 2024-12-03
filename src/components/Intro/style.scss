@@ -94,11 +94,12 @@ $intro-height: 100vh;
 @media (min-width: ($tablet + 'px')) {
 
     .intro {
-        height: calc(100vh + 109px);
+        height: calc(100vh);
         min-height: 750px;
 
         &__image {
-            height: calc(100vh + 109px);
+            height: calc(100vh);
+            min-height: 750px;
             min-width: 100%;
             object-position: center;
         }
