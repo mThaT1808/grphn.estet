@@ -1,0 +1,40 @@
+---
+import './style.scss'
+import Icon from '@components/uikit/Icon/Icon.astro';
+const { slide } = Astro.props;
+---
+
+<div class={`door ${slide.active ? 'door--intro' : ''}`}>
+    <picture class="door__image-box">
+        <source srcset={slide.imageWebp} type="image/webp" />
+        <img class="door__image" src={slide.imageJpg} alt="" />
+    </picture>
+    <div class="door__content">
+        <div class="door__mark-box">
+            <div class="door__mark-like">
+                <Icon name="heart" mod="green" />
+            </div>
+            <div class={`door__mark ${slide.markClass}`}>{slide.mark}</div>
+        </div>
+        <h3 class="door__title">{slide.title}</h3>
+        <div class="door__price">
+            <div class="door__price-new">{slide.priceNew}</div>
+            <div class="door__price-old">{slide.priceOld}</div>
+        </div>
+        <div class="door__choice-box">
+            {["dark-brown", "beige", "light-beige", "grey", "marble", "grey-line"].map((texture) => (
+                <label key={texture}>
+                    <img
+                        class="door__choice-textures"
+                        src={`/images/card/texture/${texture}.png`}
+                        alt=""
+                    />
+                    <input class="door__choice" type="radio" name={`card${slide.id}`} value="color" />
+                </label>
+            ))}
+            <button class="door__choice-btn">+5</button>
+        </div>
+    </div>
+</div>
+
+<script src="./script.js"></script>
