@@ -12,18 +12,18 @@ import './style.scss'
     <div class="aside__wrapper">
         <p class="aside__text">1567 дверей</p>
         <div class="aside__button-wrapper">
-            <Button class="button--aside button--pink button--block" id="collectionsButton">Коллекции</Button>
-            <Button class="button--aside button--block" id="allDoorsButton">Все двери</Button>
-            <Button class="button--filter">
+            <a class="button--aside button--pink button--block" id="collectionsButton">Коллекции</a>
+            <a class="button--aside button--block" id="allDoorsButton">Все двери</a>
+            <Button class="button--filter" type="button">
                 <Icon name="filter" mod="filter" />
             </Button>
         </div>
-        <div class="aside__filter">
+        <form class="aside__filter">
             <div class="filter">
-                <button class="filter__opener">
+                <div class="filter__opener">
                     Коллекции
                     <Icon name="small-arrow" mod="opener" />
-                </button>
+                </div>
                 <ul class="filter__list filter__list--collection">
                     <li class="filter__item">bliss</li>
                     <li class="filter__item">urban</li>
@@ -37,10 +37,10 @@ import './style.scss'
                 </ul>
             </div>
             <div class="filter">
-                <button class="filter__opener">
+                <div class="filter__opener">
                     Стиль
                     <Icon name="small-arrow" mod="opener" />
-                </button>
+                </div>
                 <ul class="filter__list filter__list--style">
                     <li class="filter__item">Современный</li>
                     <li class="filter__item">Классический</li>
@@ -49,10 +49,10 @@ import './style.scss'
                 </ul>
             </div>
             <div class="filter">
-                <button class="filter__opener">
+                <div class="filter__opener">
                     Цвета
                     <Icon name="small-arrow" mod="opener" />
-                </button>
+                </div>
                 <ul class="filter__list filter__list--colors">
                     <li class="filter__item">
                         <label class="filter__choice-label">
@@ -92,20 +92,20 @@ import './style.scss'
                 </ul>
             </div>
             <div class="filter">
-                <button class="filter__opener">
+                <div class="filter__opener">
                     Отделка
                     <Icon name="small-arrow" mod="opener" />
-                </button>
+                </div>
                 <ul class="filter__list filter__list--trim">
                     <li class="filter__item">Эмаль</li>
                     <li class="filter__item">Покрытие</li>
                 </ul>
             </div>
             <div class="filter">
-                <button class="filter__opener">
+                <div class="filter__opener">
                     Цена
                     <Icon name="small-arrow" mod="opener" />
-                </button>
+                </div>
                 <ul class="filter__list filter__list--price">
                     <li class="filter__item">
                         <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000"
@@ -113,7 +113,7 @@ import './style.scss'
                     </li>
                 </ul>
             </div>
-            <button class="filter__button filter__button--reset">
+            <button class="filter__button filter__button--reset" type="button">
                 Сбросить все
                 <Icon name="reset" mod="reset" />
             </button>
@@ -121,7 +121,7 @@ import './style.scss'
                 <input type="checkbox" class="filter__btn" />
                 <span class="filter__label">Только по акции</span>
             </label>
-        </div>
+        </form>
     </div>
 </aside>
 
