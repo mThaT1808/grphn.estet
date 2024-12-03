@@ -119,15 +119,14 @@
             font-family: 'Lora', serif;
             position: absolute;
             right: calc(50% + 21px);
-            top: -16px;
+            top: 48px;
             color: $cl-gray-f7;
             font-size: 150px;
-            line-height: 192px;
             font-weight: 400;
 
             &::before {
                 position: absolute;
-                content: '-';
+                content: '';
                 left: -98px;
                 top: 50%;
                 width: 100px;

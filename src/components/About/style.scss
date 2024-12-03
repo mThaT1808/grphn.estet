@@ -3,7 +3,7 @@
 
 .about {
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 50px 0 32px;
 
 	&__container {
         display: flex;
@@ -78,6 +78,7 @@
 
 @media (min-width: #{$tablet + 'px'}) {
     .about {
+        padding: 50px 0;
 
         &__arrow-box {
             display: none;

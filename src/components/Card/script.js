@@ -1,7 +1,7 @@
 const showMore = document.querySelector('.button--more');
-const doorLength = document.querySelectorAll('.door').length - 1;
+const doorLength = document.querySelectorAll('.door').length;
 const cardPagination = document.querySelector('.card__pagination');
-let items = 9;
+let items = 11;
 
 showMore.addEventListener('click', () => {
 	items += 4;

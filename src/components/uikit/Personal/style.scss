@@ -97,6 +97,10 @@
             &--basket {
                 font-size: 21px;
             }
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &__quantity {

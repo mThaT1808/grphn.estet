@@ -30,6 +30,23 @@
         transform: translate(-50%, -50%);
     }
 
+    .icon-pause,
+    .icon-play {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        font-size: 12px;
+        border: 1px solid $cl-white;
+        border-radius: 50%;
+    }
+
+
+
+    .icon-pause {
+        display: none;
+    }
+
     &__wrapper {
         position: relative;
     }
@@ -159,6 +176,13 @@
         .icon--video-play {
             font-size: 106px;
         }
+
+        .icon-pause,
+        .icon-play {
+            font-size: 25px;
+            padding: 42px;
+            cursor: pointer;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -172,7 +196,6 @@
             align-items: stretch;
             margin-right: calc((1200px - 100vw) / 2);
             position: relative;
-            max-height: 130vh;
         }
 
         &__video-container {
@@ -269,6 +292,12 @@
         .icon--video-play {
             font-size: 138px;
             z-index: 2;
+        }
+
+        .icon-pause,
+        .icon-play {
+            font-size: 30px;
+            padding: 54px;
         }
     }
 

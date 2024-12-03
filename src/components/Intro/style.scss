@@ -31,9 +31,9 @@ $intro-height: 100vh;
 
     &__image {
         height: $intro-height;
-        width: 100%;
+        min-width: calc(100% + 170px);
         object-fit: cover;
-        object-position: center;
+        object-position: -170px center;
     }
 
     &__filter {
@@ -74,10 +74,10 @@ $intro-height: 100vh;
 
         &--left {
             left: 25px;
-            transform: scale(-1);
+            transform: scaleX(-1);
 
             &:hover {
-                transform: scale(-1.1);
+                transform: scaleX(-1.1);
             }
         }
 
@@ -85,23 +85,22 @@ $intro-height: 100vh;
             left: 115px;
 
             &:hover {
-                transform: scale(1.1);
+                transform: scaleX(1.1);
             }
         }
     }
 }
 
 @media (min-width: ($tablet + 'px')) {
-    // $intro-height: 1024px;
 
     .intro {
-        // height: $intro-height;
         height: calc(100vh + 109px);
         min-height: 750px;
 
         &__image {
-            // height: $intro-height;
             height: calc(100vh + 109px);
+            min-width: 100%;
+            object-position: center;
         }
 
         &__container {
@@ -111,7 +110,6 @@ $intro-height: 100vh;
         }
 
         &__button {
-            // top: 446px;
             bottom: calc(7.03vh + 477px);
             width: 56px;
 

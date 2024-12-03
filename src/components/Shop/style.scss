@@ -37,6 +37,11 @@
         background-color: transparent;
     }
 
+    & .arrow--shop-prev:hover,
+    & .arrow--shop-next:hover {
+        background-color: unset;
+    }
+
     & .arrow--shop-prev::before,
     & .arrow--shop-next::before {
         content: '';
@@ -105,6 +110,10 @@
 
     &__map-text  {
         margin: 0;
+    }
+
+    &--doors {
+        padding-top: 0;
     }
 
     &--doors .title--shop {

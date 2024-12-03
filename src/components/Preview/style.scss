@@ -6,6 +6,11 @@
 
     @media (min-width: ($tablet + 'px')) {
         background: linear-gradient($cl-white 27%, $cl-gray-f7 27%);
+        
+        .icon-pause,
+        .icon-play {
+            cursor: pointer;
+        }
     }
 
     @media (min-width: ($desktop + 'px')) {
@@ -36,17 +41,27 @@
         top: calc((100% - 60px) / 2);
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 54px;
+        font-size: 12px;
         color: $cl-white;
+        padding: 20px;
+        cursor: pointer;
+        border: 1px solid $cl-white;
+        border-radius: 50%;
 
         @media (min-width: ($tablet + 'px')) {
-            font-size: 80px;
+            padding: 25px;
         }
 
         @media (min-width: ($desktop + 'px')) {
             top: calc((100% - 186px) / 2);
-            font-size: 142px;
+            font-size: 24px;
+            font-size: 24px;
+            padding: 55px;
         }
+    }
+
+    .icon-pause {
+        display: none;
     }
 
     .slick-dotted.slick-slider {
@@ -72,7 +87,7 @@
             height: 9px;
             margin: 0;
             padding: 0;
-            display: none;
+            display: block;
 
             button {
                 width: 100%;
@@ -88,13 +103,6 @@
                 }
             }
          }
-
-        //  li.slick-active,
-        //  li.slick-active + li,
-        //  li.slick-active + li + li,
-        //  li.slick-active + li + li + li {
-        //     display: block;
-        //  }
     }
 
     .slick-slide div {

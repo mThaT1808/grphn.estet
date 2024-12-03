@@ -14,7 +14,7 @@ const {
     {...rest}
     class:list={[
     "choice",
-    `choice--${className}`,
+    `${className? `choice--${className}` : ''}`,
     ]}
 >
     <Icon name="shape" mod='green'></Icon>
