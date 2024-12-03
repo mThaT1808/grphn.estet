@@ -80,7 +80,9 @@ const navList = [
                         <Location location={locations} modifier="--header"/>
                     </li>
                 </ul>
-                <Hamburger type="close"/>
+                <Hamburger type="close" modifier='inner'/>
+                <CallBack modifier="header-inner"/>
+                <Personal modifier="header-inner"/>
             </div>
             <Navigation list={navList} modifier="--header"/>
             <div class="header__contacts">
