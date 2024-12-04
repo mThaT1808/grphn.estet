@@ -2,7 +2,12 @@
 import Icon from '../Icon/Icon.astro';
 import './styles.scss'
 
-const { type } = Astro.props;
+export interface Props {
+    type?: string;
+    modifier?: string;
+}
+
+const { type, modifier} = Astro.props;
 
 var iconName = "burger";
 
@@ -11,6 +16,6 @@ if (type == "close") {
 }
 ---
 
-<button class="hamburger">
+<button class=`hamburger ${modifier ? 'hamburger--' + modifier : ''}`>
         <Icon name={iconName} mod="white"/>
 </button>

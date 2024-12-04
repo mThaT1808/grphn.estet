@@ -64,6 +64,7 @@
     &--open &__input {
         opacity: 1;
         width: 40%;
+        padding-right: 30px;
     }
 
     &--burger &__button{
@@ -96,6 +97,10 @@
         &__button {
             left: 0;
             font-size: 21px;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &--burger.searchbar--open {
@@ -136,6 +141,10 @@
             height: 100%;
             color: $cl-gray-3c;
             border: 0;
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         &--aside &__input {
@@ -149,6 +158,10 @@
             background-color: $cl-gray-e6;
             border: 0;
             transition: width $animation-time;
+        }
+
+        &--aside.searchbar--open &__button {
+            // left: unset;
         }
 
         &--aside .icon {
