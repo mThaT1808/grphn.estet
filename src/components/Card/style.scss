@@ -14,9 +14,9 @@
         width: 100%;
     }
 
-    .door:nth-child(n+9) {
-        display: none;
-    }
+    // .door:nth-child(n+9) {
+    //     display: none;
+    // }
 
     .door.visible {
         display: flex;
@@ -90,7 +90,7 @@
 
     .door__price {
         display: flex;
-        gap: 10px;
+        gap: 9px;
         margin-bottom: 40px;
         font-family: 'opensans', sans-serif;
         color: $cl-black;
@@ -281,11 +281,15 @@
             position: absolute;
             bottom: 100%;
             right: 25%;
+        }
+
+        .door.door--intro:first-of-type {
             background-color: $cl-white;
         }
 
-        .door.door--intro:first-child {
+        .door.door--intro:nth-of-type(2) {
             right: 0;
+            background-color: $cl-gray-f7;
         }
 
         .door {
