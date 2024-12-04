@@ -205,6 +205,10 @@
             .icon-burger-close {
                 position: static;
             }
+
+            @media (min-width: ($tablet + 'px')) {
+                align-items: flex-start;
+            }
         }
     }
 
@@ -402,7 +406,7 @@
 
     &--inner &__item--searchbar{
         @media (min-width: ($tablet + 'px')) {
-            display: none;
+            // display: none;
         }
     }
 
