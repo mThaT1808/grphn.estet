@@ -17,14 +17,23 @@ const {
     `${className? `choice--${className}` : ''}`,
     ]}
 >
-    <Icon name="shape" mod='green'></Icon>
+    <!-- <Icon name="shape" mod='green'></Icon>
     <select name="location" class="choice__list">
             <option value="Нижний новгород" selected class="choice__item">Нижний Новгород</option>
             <option value="Новокузнецк" class="choice__item">Новокузнецк</option>
             <option value="Ульяновск" class="choice__item">Ульяновск</option>
             <option value="Самара" class="choice__item">Самара</option>
             <option value="Хабаровск" class="choice__item">Хабаровск</option>
-    </select>
+    </select> -->
+    <div class="choice__box">
+        <input class="choice__hidden-input" type="hidden" id="locationInput" name="location" value="Нижний Новгород">
+        <div class="choice__selected">
+            <Icon name="shape" mod='green'></Icon>
+            <span class="choice__value"></span>
+        </div>
+        <ul class="choice__options">
+        </ul>
+    </div>
 </div>
 
 <script src="./script.js"></script>
