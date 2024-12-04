@@ -3,163 +3,28 @@ import Button from '@components/uikit/Button/Button.astro';
 import Icon from '@components/uikit/Icon/Icon.astro';
 import Door from '@components/Door/Door.astro';
 import './style.scss';
-const slides = [
-    {
-        id: 1,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-        active: true,
-    },
-    {
-        id: 2,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-        active: true,
-    },
-    {
-        id: 3,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 4,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 5,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 6,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 7,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 8,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 9,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 10,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 11,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 12,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 13,
-        imageWebp: "/images/card/door/dark-door.webp",
-        imageJpg: "/images/card/door/dark-door.jpg",
-        mark: "НОВИНКА",
-        markClass: "door__mark--new",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-    {
-        id: 14,
-        imageWebp: "/images/card/door/white-door.webp",
-        imageJpg: "/images/card/door/white-door.jpg",
-        mark: "АКЦИЯ",
-        markClass: "door__mark--promo",
-        title: "Sonata S3",
-        priceNew: "от 7 500 ₽",
-        priceOld: "9 900 ₽",
-    },
-
-];
+const template = {
+    "id": 1,
+    "imageWebp": "/images/card/door/dark-door.webp",
+    "imageJpg": "/images/card/door/dark-door.jpg",
+    "mark": "НОВИНКА",
+    "markClass": "door__mark--new",
+    "title": "Sonata S3",
+    "priceNew": "от 7 500 ₽",
+    "priceOld": "9 900 ₽",
+}
 ---
 
 <section class="card">
     <div class="card__inner">
-        {slides.map((slide) => (
-            <Door slide={slide} />
-        ))}
+        <template id="card__template">
+            <Door slide={template}/>
+        </template>
     </div>
     <div class="card__pagination">
         <div class="card__quantity">
-            <span class="card__quantity-current">8</span>
-            <span class="card__quantity-total">14</span>
+            <span class="card__quantity-current"></span>
+            <span class="card__quantity-total"></span>
         </div>
         <Button class="button button--more">
             Показать еще

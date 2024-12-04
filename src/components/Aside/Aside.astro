@@ -24,16 +24,16 @@ import './style.scss'
                     Коллекции
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list--collection">
-                    <li class="filter__item">bliss</li>
-                    <li class="filter__item">urban</li>
-                    <li class="filter__item">perfect</li>
-                    <li class="filter__item">sonata</li>
-                    <li class="filter__item">novella</li>
-                    <li class="filter__item">mio</li>
-                    <li class="filter__item">ways</li>
-                    <li class="filter__item">royal</li>
-                    <li class="filter__item">perfect volume</li>
+                <ul class="filter__list filter__list--collection" data-name="collection" data-value="">
+                    <li class="filter__item" data-value="bliss">bliss</li>
+                    <li class="filter__item" data-value="urban">urban</li>
+                    <li class="filter__item" data-value="perfect">perfect</li>
+                    <li class="filter__item" data-value="sonata">sonata</li>
+                    <li class="filter__item" data-value="novella">novella</li>
+                    <li class="filter__item" data-value="mio">mio</li>
+                    <li class="filter__item" data-value="ways">ways</li>
+                    <li class="filter__item" data-value="royal">royal</li>
+                    <li class="filter__item" data-value="perfect-volume">perfect volume</li>
                 </ul>
             </div>
             <div class="filter">
@@ -41,11 +41,11 @@ import './style.scss'
                     Стиль
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list--style">
-                    <li class="filter__item">Современный</li>
-                    <li class="filter__item">Классический</li>
-                    <li class="filter__item">Неоклассический</li>
-                    <li class="filter__item">Дизайнерский</li>
+                <ul class="filter__list filter__list--style" data-name="style" data-value="">
+                    <li class="filter__item" data-value="modern">Современный</li>
+                    <li class="filter__item" data-value="classic">Классический</li>
+                    <li class="filter__item" data-value="neo-classic">Неоклассический</li>
+                    <li class="filter__item" data-value="disain">Дизайнерский</li>
                 </ul>
             </div>
             <div class="filter">
@@ -53,40 +53,40 @@ import './style.scss'
                     Цвета
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list--colors">
+                <ul class="filter__list filter__list-input filter__list--colors">
                     <li class="filter__item">
                         <label class="filter__choice-label">
                             <img class="filter__choice-textures" src="/images/card/texture/dark-brown.png" alt="" />
                             Темный
-                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                            <input class="filter__choice" type="checkbox" name="color" value="dark" />
                         </label>
                     </li>
                     <li class="filter__item">
                         <label class="filter__choice-label">
                             <img class="filter__choice-textures" src="/images/card/texture/beige.png" alt="" />
                             Коричневый
-                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                            <input class="filter__choice" type="checkbox" name="color" value="braun" />
                         </label>
                     </li>
                     <li class="filter__item">
                         <label class="filter__choice-label">
                             <img class="filter__choice-textures" src="/images/card/texture/light-beige.png" alt="" />
                             Бежевый
-                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                            <input class="filter__choice" type="checkbox" name="color" value="beige" />
                         </label>
                     </li>
                     <li class="filter__item">
                         <label class="filter__choice-label">
                             <img class="filter__choice-textures" src="/images/card/texture/grey.png" alt="" />
                             Серый
-                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                            <input class="filter__choice" type="checkbox" name="color" value="gray" />
                         </label>
                     </li>
                     <li class="filter__item">
                         <label class="filter__choice-label">
                             <img class="filter__choice-textures" src="/images/card/texture/grey-line.png" alt="" />
                             Белый
-                            <input class="filter__choice" type="checkbox" name="colors" value="color" />
+                            <input class="filter__choice" type="checkbox" name="color" value="white" />
                         </label>
                     </li>
                 </ul>
@@ -96,9 +96,9 @@ import './style.scss'
                     Отделка
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list--trim">
-                    <li class="filter__item">Эмаль</li>
-                    <li class="filter__item">Покрытие</li>
+                <ul class="filter__list filter__list--trim" data-name="finishing" data-value="">
+                    <li class="filter__item" data-value="enamel">Эмаль</li>
+                    <li class="filter__item" data-value="coating">Покрытие</li>
                 </ul>
             </div>
             <div class="filter">
@@ -106,7 +106,7 @@ import './style.scss'
                     Цена
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list--price">
+                <ul class="filter__list filter__list-input filter__list--price">
                     <li class="filter__item">
                         <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000"
                             step="500">
@@ -118,7 +118,7 @@ import './style.scss'
                 <Icon name="reset" mod="reset" />
             </button>
             <label class="filter__button filter__button--only-action">
-                <input type="checkbox" class="filter__btn" />
+                <input type="checkbox" class="filter__btn" name="discount"/>
                 <span class="filter__label">Только по акции</span>
             </label>
         </form>
