@@ -5,8 +5,8 @@ import Container from '@components/container/container.astro';
 ---
 
 <Container >
-    <div class="map">
-        <picture class="map__wrapper">
+    <div class="map" id="map">
+        <!-- <picture class="map__wrapper">
             <img src="https://static-maps.yandex.ru/v1?lang=ru_RU&bbox=43.946182,56.315603~44.064822,56.304777&size=650,282&style=tags.any:road|elements:geometry|stylers.color:ffffff~tags.all:water|elements:geometry|stylers.color:999999~types:polygon|tags.any:admin;urban_area;poi;landscape|stylers.color:f0f0f0&apikey=c99b90ff-345a-4537-9702-25f56a24aba6" alt="карта" class="map__image"/>
         </picture>
         <div class="map__pin map__pin--1">
@@ -38,8 +38,9 @@ import Container from '@components/container/container.astro';
                     Номер: <Link href='tel:89609609695' class='map__link'>8&nbsp;960&nbsp;960&nbsp;96&nbsp;95</Link>
                 </span>
             </div>
-        </div>
+        </div> -->
     </div>
 </Container>
 
 <script src="./script.js"></script>
+<script src="http://localhost:4000/api/yandex-maps"></script>
