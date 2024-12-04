@@ -244,6 +244,7 @@
             border: 1px solid var(--cl-white);
             border-right-width: 0;
             border-left-width: 0;
+            gap: unset;
         }
 
         &--header-inner .call-back {
@@ -303,6 +304,7 @@
             border: 1px solid var(--cl-white);
             border-right-width: 0;
             padding: 0px 31px 0 21px;
+            gap: unset;
         }
 
         &--header-inner .personal__item:first-child {
