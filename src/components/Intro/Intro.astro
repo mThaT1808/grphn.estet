@@ -5,67 +5,66 @@ import Text from '@components/uikit/Text/Text.astro';
 import Link from '@components/uikit/Link/Link.astro';
 import Choice from '@components/uikit/Choice/Choice.astro';
 import CallBack from '@components/uikit/CallBack/CallBack.astro';
+import IntroSlider from '@components/uikit/IntroSlider/IntroSlider.astro';
 
-const slides = [
+export interface Props {
+	slides?: [{
+        title: string;
+        text: string;
+        image: string;
+        srcset?: any;
+        href?: string;
+    }];
+    tel?: {
+        href: string;
+        text?: string;
+    }
+}
+
+let {slides, tel} = Astro.props;
+
+if (!slides) {
+    slides = [
     {
         title: 'Stylish doors',
         text: 'сделанные по новейшим разработкам из проверенных материалов',
         image: '/images/intro/framgula-urban-desktop.jpg',
         srcset: [
-            '/images/intro/framgula-urban-desktop.webp'
+            {
+                src: '/images/intro/framgula-urban-desktop.webp',
+                media: ''
+            }
         ],
+        href: '/doors',
     },
     {
         title: 'Stylish πdoors',
         text: 'сделанные по старейшим дваработкам из непонятных материалов',
         image: '/images/intro/framgula-urban-desktop.jpg',
         srcset: [
-            '/images/intro/framgula-urban-desktop.webp'
+            {
+                src: '/images/intro/framgula-urban-desktop.webp',
+                media: ''
+            }
         ],
+        href: '/doors',
     },
 ]
+}
+if (!tel) {
+    tel = {
+        href: '88005513240',
+        text: '8 800 551 32 40'
+    }
+}
 ---
 
 <section class="intro">
-    <div class="intro__slider">
-        {
-            slides.map((slide) => (
-                <div class="slick-slide intro__slide">
-                    <picture class="intro__wrapper">
-                        {
-                            slide.srcset.map((src) => (
-                                <source srcset={src} />
-                            ))
-                        }
-                        <img class="intro__image" src={slide.image} />
-                    </picture>
-                    <div class="intro__filter"></div>
-                </div>
-            ))
-        }
-    </div>
-    <div class="intro__container">
-        <div class="intro__text-slider">
-            {
-                slides.map((slide) => (
-                    <div class="slick-slide">
-                        <Title Tag="h1" class="intro">
-                            {slide.title}
-                        </Title>
-                        <Text class="intro">
-                            {slide.text}
-                        </Text>
-                    </div>
-                ))
-            }
-        </div>
-    </div>
-    <button class="intro__button intro__button--left"></button>
-    <button class="intro__button intro__button--right"></button>
+    <IntroSlider slides={slides}/>
     <div class="intro__functional">
-        <Link href="tel:88005513240" class="link--intro">8 800 551 32 40</Link>
+        <Link href=`tel:${tel.href}` class="link--intro">{tel.text? tel.text: tel.href}</Link>
         <Choice class="intro"/>
-        <CallBack modifier="intro"/>
+        <CallBack mod="intro"/>
     </div>
 </section>
 

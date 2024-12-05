@@ -8,6 +8,7 @@ $intro-height: 100vh;
     margin: 0 auto;
     height: $intro-height;
     max-width: 1600px;
+    overflow: hidden;
 
 
     &__functional {
@@ -17,78 +18,6 @@ $intro-height: 100vh;
         display: inline-block;
         background-color: $cl-green;
     }
-
-    &__slider {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-    }
-
-    &__slide {
-        position: relative;
-        height: 100%;
-    }
-
-    &__image {
-        height: $intro-height;
-        min-width: calc(100% + 170px);
-        object-fit: cover;
-        object-position: -170px center;
-    }
-
-    &__filter {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $cl-black;
-        opacity: 0.35;
-    }
-
-    &__container {
-        max-width: 100%;
-        position: absolute;
-        bottom: 19.55vh;
-        padding: 0 25px;
-    }
-
-    &__button {
-        display: block;
-        background-color: transparent;
-        background-image: url("/images/intro/arrow-344.svg");
-        background-size: auto 9px;
-        background-repeat: no-repeat;
-        background-position: right center;
-        border: 0px;
-        padding: 0;
-        position: absolute;
-        bottom: 30px;
-        width:  43px;
-        height: 32px;
-        font-size: 9px;
-        overflow: hidden;
-
-        cursor: pointer;
-        transition: transform $animation-time;
-
-        &--left {
-            left: 25px;
-            transform: scaleX(-1);
-
-            &:hover {
-                transform: scaleX(-1.1);
-            }
-        }
-
-        &--right {
-            left: 115px;
-
-            &:hover {
-                transform: scaleX(1.1);
-            }
-        }
-    }
 }
 
 @media (min-width: ($tablet + 'px')) {
@@ -97,43 +26,11 @@ $intro-height: 100vh;
         height: calc(100vh);
         min-height: 750px;
 
-        &__image {
-            height: calc(100vh);
-            min-height: 750px;
-            min-width: 100%;
-            object-position: center;
-        }
-
-        &__container {
-            padding: 0 82px;
-            bottom: 380px;
-            text-align: center;
-        }
-
-        &__button {
-            bottom: calc(7.03vh + 477px);
-            width: 56px;
-
-            &--left {
-                left: 13px;
-            }
-
-            &--right {
-                left: unset;
-                right: 13px;
-            }
-        }
-
         &__functional {
             width: calc(100% - 84px);
             padding-top: 45px;
             padding-left: 60px;
             padding-bottom: 147px;
-        }
-
-        .slick-track {
-            display: flex;
-            align-items: end;
         }
     }
 }
@@ -144,20 +41,6 @@ $intro-height: 100vh;
     .intro {
         height: $intro-height;
 
-
-        &__image {
-            height: $intro-height;
-            object-position: 0px;
-        }
-
-        &__container {
-            padding: 0px 172px;
-            // top: 481px;
-            bottom: 164px;
-            // top: 50vh;
-            z-index: 1;
-        }
-
         &__functional {
             width: auto;
             padding-bottom: 0;
@@ -165,21 +48,5 @@ $intro-height: 100vh;
             padding-top: 121px;
         }
 
-        &__button {
-            // top: 507px;
-            bottom: 360px;
-            z-index: 1;
-
-            &--left {
-                left: 80px;
-            }
-
-            &--right {
-                right: 78px;
-                width: 344px;
-                // top: 616px;
-                bottom: 252px;
-            }
-        }
     }
 }
