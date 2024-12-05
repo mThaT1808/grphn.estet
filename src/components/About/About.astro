@@ -3,6 +3,7 @@ import Text from '@components/uikit/Text/Text.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
+import Picture from '@components/Picture/Picture.astro'
 import './style.scss'
 ---
 
@@ -21,46 +22,74 @@ import './style.scss'
             </div>
             <div class="about__wrapper about__wrapper--solution">
                 <a href="javascript:void(0);" class="about__dot about__dot--solution"></a>
-                <picture class="about__image-box about__image-box--solution">
-                    <source srcset="/images/about/solution-tablet.webp" type="image/webp" media="(min-width:768px)" >
-                    <source srcset="/images/about/solution-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
-                    <source srcset="/images/about/solution-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--solution" src="/images/about/solution-mobile.jpg" alt="">
-                </picture>
+                <Picture
+                    classPicture="about__image-box"
+                    modPicture="solution"
+                    classImage="about__image"
+                    modImage="solution"
+                    image="/images/about/solution-mobile.jpg"
+                    srcset={[
+                    { src: "/images/about/solution-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
+                    { src: "/images/about/solution-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
+                    { src: "/images/about/solution-mobile.webp", type: "image/webp" },
+                    ]}
+                    alt="solution"
+                />
                 <div class="about__descr about__descr--solution">
                     <p class="about__caption">Современные интерьерные решения</p>
                     <p class="about__subcaption">Межкомнатные и&nbsp;офисные двери с&nbsp;богатой цветовой гаммой, стильным дизайном, различными вариантами исполнения и&nbsp;нестандартными размерами</p>
                 </div>
             </div>
             <div class="about__wrapper about__wrapper--empty">
-                <picture class="about__image-box about__image-box--empty">
-                    <source srcset="/images/about/empty-tablet.webp" type="image/webp">
-                    <img class="about__image about__image--empty" src="/images/about/empty-tablet.jpg" alt="">
-                </picture>
+                <Picture
+                    classPicture="about__image-box"
+                    modPicture="empty"
+                    classImage="about__image"
+                    modImage="empty"
+                    image="/images/about/empty-tablet.jpg"
+                    srcset={[
+                    { src: "/images/about/empty-tablet.webp", type: "image/webp" },
+                    ]}
+                    alt="empty"
+                />
             </div>
             <div class="about__wrapper about__wrapper--quality">
-                <picture class="about__image-box about__image-box--quality">
-                    <source srcset="/images/about/quality-desktop.webp" type="image/webp" media="(min-width:1280px)" >
-                    <source srcset="/images/about/quality-desktop.jpg" type="image/jpg" media="(min-width:1280px)" >
-                    <source srcset="/images/about/quality-tablet.webp" type="image/webp" media="(min-width:768px)" >
-                    <source srcset="/images/about/quality-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
-                    <source srcset="/images/about/quality-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--quality" src="/images/about/quality-mobile.jpg" alt="">
-                </picture>
+                <Picture
+                    classPicture="about__image-box"
+                    modPicture="quality"
+                    classImage="about__image"
+                    modImage="quality"
+                    image="/images/about/quality-mobile.jpg"
+                    srcset={[
+                    { src: "/images/about/quality-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
+                    { src: "/images/about/quality-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
+                    { src: "/images/about/quality-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
+                    { src: "/images/about/quality-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
+                    { src: "/images/about/quality-mobile.webp", type: "image/webp" },
+                    ]}
+                    alt="quality"
+                />
                 <div class="about__descr about__descr--quality">
                     <p class="about__caption">Высокое качество</p>
                     <p class="about__subcaption">Все наши двери проходят строжайший контроль качества на&nbsp;всех этапах производства. Следить за&nbsp;качеством, мы&nbsp;считаем, важнейшая задача производителя.</p>
                 </div>
             </div>
             <div class="about__wrapper about__wrapper--tech">
-                <picture class="about__image-box about__image-box--tech">
-                    <source srcset="/images/about/tech-desktop.webp" type="image/webp" media="(min-width:1280px)" >
-                    <source srcset="/images/about/tech-desktop.jpg" type="image/jpg" media="(min-width:1280px)" >
-                    <source srcset="/images/about/tech-tablet.webp" type="image/webp" media="(min-width:768px)" >
-                    <source srcset="/images/about/tech-tablet.jpg" type="image/jpg" media="(min-width:768px)" >
-                    <source srcset="/images/about/tech-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--tech" src="/images/about/tech-mobile.jpg" alt="">
-                </picture>
+                <Picture
+                    classPicture="about__image-box"
+                    modPicture="tech"
+                    classImage="about__image"
+                    modImage="tech"
+                    image="/images/about/tech-mobile.jpg"
+                    srcset={[
+                    { src: "/images/about/tech-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
+                    { src: "/images/about/tech-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
+                    { src: "/images/about/tech-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
+                    { src: "/images/about/tech-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
+                    { src: "/images/about/tech-mobile.webp", type: "image/webp" },
+                    ]}
+                    alt="tech"
+                />
                 <div class="about__descr about__descr--tech">
                     <p class="about__caption">Новые технологии</p>
                     <p class="about__subcaption">Каркас двери и&nbsp;дверная коробка изготавливаются из&nbsp;хвойного бруса высокого качества, срощенного по&nbsp;длине и&nbsp;оптимизированного, то&nbsp;есть из&nbsp;него вырезаны сучки, смоляные карманы и&nbsp;другие пороки, присущие натуральному дереву.</p>
@@ -68,12 +97,19 @@ import './style.scss'
             </div>
             <div class="about__wrapper about__wrapper--company">
                 <a href="javascript:void(0);" class="about__dot about__dot--company"></a>
-                <picture class="about__image-box about__image-box--company">
-                    <source srcset="/images/about/company-desktop.webp" type="image/webp" media="(min-width:1280px)" >
-                    <source srcset="/images/about/company-desktop.jpg" type="image/jpg" media="(min-width:1280px)" >
-                    <source srcset="/images/about/company-mobile.webp" type="image/webp">
-                    <img class="about__image about__image--company" src="/images/about/company-mobile.jpg" alt="">
-                </picture>
+                <Picture
+                    classPicture="about__image-box"
+                    modPicture="company"
+                    classImage="about__image"
+                    modImage="company"
+                    image="/images/about/company-mobile.jpg"
+                    srcset={[
+                    { src: "/images/about/company-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
+                    { src: "/images/about/company-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
+                    { src: "/images/about/company-mobile.webp", type: "image/webp" },
+                    ]}
+                    alt="company"
+                />
                 <div class="about__descr about__descr--company">
                     <p class="about__caption">Компания</p>
                     <p class="about__subcaption">Мы&nbsp;работаем на&nbsp;рынке производства дверей с&nbsp;2002&nbsp;года. За&nbsp;это время мы&nbsp;зарекомендовали себя как надежный партнер и&nbsp;динамично развивающаяся компания.</p>

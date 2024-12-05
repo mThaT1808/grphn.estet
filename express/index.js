@@ -1,18 +1,19 @@
 const express = require('express');
 const request = require('request');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const formidable = require('express-formidable');
 
 // Create express instance
-const app = express()
+const app = express();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   next()
 })
-
+app.use(cors());
 app.use(formidable());
 app.use(express.json());
 
@@ -20,7 +21,15 @@ app.use(express.json());
 const test = require('./router/test')
 app.get('/api/yandex-maps', (req, res) => {
   const url = 'https://api-maps.yandex.ru/v3/?apikey=cee654eb-7acc-4475-a6ba-b1a8e46b1578&lang=ru_RU';
-  request(url).pipe(res);
+  request(url)
+  .on('response', function(response) {
+      res.writeHead(response.statusCode, { 'Content-Type': response.headers['content-type'] });
+  })
+  .pipe(res) // Передаем поток данных в ответ клиенту
+  .on('error', function(err) {
+      console.error('Ошибка при запросе:', err);
+      res.status(500).send('Ошибка сервера');
+  });
 });
 // Обработка GET-запроса на получение данных из JSON-файла
 app.get('/api/offices', (req, res) => {

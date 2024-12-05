@@ -25,11 +25,6 @@
         padding: 0 25px;
     }
 
-    // .slick-slide:has(&__wrapper--empty),
-    // .slick-slide:has(&__wrapper--logo) {
-    //     display: none!important;
-    // }
-
     &__inner {
         position: relative;
         display: flex;
@@ -83,11 +78,6 @@
         &__arrow-box {
             display: none;
         }
-
-        // .slick-slide:has(&__wrapper--empty),
-        // .slick-slide:has(&__wrapper--logo) {
-        //     display: inline-block!important;
-        // }
 
         &__main {
             margin: 0;
@@ -239,6 +229,7 @@
             box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.9);
             background-color: $cl-white;
             animation: pulse 1s infinite;
+            transition: opacity 0.3s ease;
         }
 
         &__dot::before {
@@ -253,9 +244,9 @@
             height: 30%;
         }
 
-        &__container:has(&__dot:hover) &__dot {
-            opacity: 0;
-        }
+        // &__container:has(&__dot:hover) &__dot {
+        //     opacity: 0;
+        // }
 
         &__dot--solution {
             z-index: 2;
@@ -263,25 +254,36 @@
             left: 29%;
         }
 
-        &__dot--solution:hover ~ &__descr--solution {
-            transform: translateX(78%);
-            opacity: 1;
-        }
+        // &__dot--solution:hover ~ &__descr--solution {
+        //     transform: translateX(78%);
+        //     opacity: 1;
+        // }
 
-        &__inner:has(&__dot--solution:hover) &__wrapper--company {
-            z-index: 0;
+        // &__inner:has(&__dot--solution:hover) &__wrapper--company {
+        //     z-index: 0;
+        //     opacity: 0;
+        // }
+
+        &__inner:has(&__descr--solution.active) &__wrapper--company,
+        &__inner:has(&__descr--tech.active) &__wrapper--company {
             opacity: 0;
         }
 
-        &__inner:has(&__dot--solution:hover) &__wrapper--logo,
-        &__inner:has(&__dot--quality:hover) &__wrapper--logo,
-        &__inner:has(&__dot--company:hover) &__wrapper--logo {
+        &__descr--solution.active {
+            transform: translateX(78.5%);
+        }
+
+        &__inner:has(&__descr--solution.active) &__wrapper--logo,
+        &__inner:has(&__image-box--quality.active) &__wrapper--logo,
+        &__inner:has(&__image-box--tech.active) &__wrapper--logo,
+        &__inner:has(&__descr--company.active) &__wrapper--logo {
             background-color: $cl-white;
         }
 
-        &__inner:has(&__dot--solution:hover) &__wrapper--logo .icon,
-        &__inner:has(&__dot--quality:hover) &__wrapper--logo .icon,
-        &__inner:has(&__dot--company:hover) &__wrapper--logo .icon {
+        &__inner:has(&__descr--solution.active) &__wrapper--logo .icon,
+        &__inner:has(&__image-box--quality.active) &__wrapper--logo .icon,
+        &__inner:has(&__image-box--tech.active) &__wrapper--logo .icon,
+        &__inner:has(&__descr--company.active) &__wrapper--logo .icon {
             color: $cl-green;
         }
 
@@ -291,42 +293,62 @@
             z-index: 3;
         }
 
-        &__dot--quality:hover ~ &__inner &__wrapper--quality {
+        // &__dot--quality:hover ~ &__inner &__wrapper--quality {
+        //     height: 100%;
+        //     transform: translateY(-73%);
+        // }
+
+        // &__dot--quality:hover ~ &__inner &__descr--quality {
+        //     transform: translateY(0%);
+        //     opacity: 1;
+        // }
+
+        &__wrapper--quality:has(&__image-box--quality.active) {
             height: 100%;
             transform: translateY(-73%);
         }
 
-        &__dot--quality:hover ~ &__inner &__descr--quality {
+        &__descr--quality.active {
             transform: translateY(0%);
-            opacity: 1;
         }
 
         &__dot--tech {
             bottom: 15%;
             left: 44%;
+            z-index: 3;
         }
 
-        &__dot--tech:hover ~ &__inner &__wrapper--tech {
+        // &__dot--tech:hover ~ &__inner &__wrapper--tech {
+        //     height: 63.5%;
+        //     transform: translateY(-57.5%);
+        // }
+
+        // &__dot--tech:hover ~ &__inner &__descr--tech {
+        //     transform: translateY(135%);
+        //     opacity: 1;
+        // }
+
+        // &__dot--tech:hover ~ &__inner &__wrapper--company {
+        //     z-index: 0;
+        //     opacity: 0;
+        // }
+
+        // &__dot--tech:hover ~ &__inner &__wrapper--logo {
+        //     background-color: $cl-white;
+        // }
+
+        // &__dot--tech:hover ~ &__inner &__wrapper--logo .icon {
+        //     color: $cl-green;
+        // }
+
+        &__wrapper--tech:has(&__image-box--tech.active) {
             height: 63.5%;
             transform: translateY(-57.5%);
         }
 
-        &__dot--tech:hover ~ &__inner &__descr--tech {
+        &__descr--tech.active {
             transform: translateY(135%);
             opacity: 1;
-        }
-
-        &__dot--tech:hover ~ &__inner &__wrapper--company {
-            z-index: 0;
-            opacity: 0;
-        }
-
-        &__dot--tech:hover ~ &__inner &__wrapper--logo {
-            background-color: $cl-white;
-        }
-
-        &__dot--tech:hover ~ &__inner &__wrapper--logo .icon {
-            color: $cl-green;
         }
 
         &__dot--company {
@@ -340,14 +362,23 @@
             background-color: $cl-white;
         }
 
-        &__dot--company:hover ~ &__descr--company {
-            color: $cl-white;
-            background-color: $cl-green;
+        // &__dot--company:hover ~ &__descr--company {
+        //     color: $cl-white;
+        //     background-color: $cl-green;
+        // }
+
+        // &__dot--company:hover ~ &__image-box--company {
+        //     transform: translateX(-100%);
+        //     opacity: 1;
+        // }
+
+        &__image-box--company.active  {
+            transform: translateX(-100%);
         }
 
-        &__dot--company:hover ~ &__image-box--company {
-            transform: translateX(-100%);
-            opacity: 1;
+        &__descr--company.active {
+            color: $cl-white;
+            background-color: $cl-green;
         }
 
         // css for blocks
@@ -380,6 +411,7 @@
 
         &__image-box--solution {
             max-height: fit-content;
+            cursor: pointer;
         }
 
         &__descr--solution {
@@ -392,8 +424,7 @@
             padding: 45px;
             color: $cl-white;
             background-color: $cl-green;
-            transform: translateX(178%);
-            opacity: 0;
+            transform: translateX(178.5%);
             transition: transform 0.9s ease;
             z-index: 1;
         }
@@ -411,15 +442,16 @@
             order: 5;
             transform: translateY(-57.5%);
             z-index: 2;
-            transition: all 0.9s ease;
+            transition: transform 0.9s ease, height 0.9s ease;
         }
 
         &__image-box--quality {
-            max-height: fit-content;
+            max-height: 660px;
             position: absolute;
             top: 0;
             width: 100%;
             left: 0;
+            cursor: pointer;
         }
 
         &__image--quality {
@@ -437,7 +469,6 @@
             color: $cl-white;
             background-color: $cl-green;
             transform: translateY(100%);
-            opacity: 0;
             transition: transform 0.9s ease;
         }
 
@@ -446,7 +477,8 @@
             width: 45%;
             height: 27%;
             transform: translate(0);
-            transition: all 0.6s ease;
+            transition: transform 0.9s ease, height 0.9s ease;
+            z-index: 2;
         }
 
         &__image-box--tech {
@@ -454,7 +486,7 @@
             top: 0;
             width: 100%;
             left: 0;
-            transition: all 0.9s ease;
+            cursor: pointer;
         }
 
         &__descr--tech {
@@ -465,9 +497,8 @@
             height: 42.5%;
             color: $cl-white;
             background-color: $cl-green;
-            transform: translateY(230%);
-            opacity: 0;
-            transition: transform 0.4s ease;
+            transform: translateY(235%);
+            transition: transform 0.9s ease;
         }
 
         &__wrapper--company {
@@ -487,7 +518,6 @@
             width: 655px;
             transform: translateX(0%);
             transition: transform 0.9s ease;
-            opacity: 0;
         }
 
         &__descr--company {
@@ -495,7 +525,8 @@
             top: 0;
             left: 0;
             background-color: $cl-white;
-            transition: background-color 0.6s ease, color 0.6s ease;
+            transition: background-color 0.9s ease, color 0.9s ease;
+            cursor: pointer;
         }
 
         &__descr--company &__caption {

@@ -64,21 +64,42 @@ async function initMap() {
     }));
 
 
-    const content = document.createElement('section');
+    const content = document.createElement('div');
+
+    try {
+        let response = await fetch('http://localhost:4000/api/offices', {
+            method: 'get',
+        });
+        let offices = await response.json()
+        // console.log(offices);
+        for (let office of offices.items) {
+            createMarker(office);
+        }
+      } catch (event){
+        alert(event.message);
+        // console.log(event.message);
+      }
 
     // Инициализируйте маркер
-    const marker = new YMapMarker(
-      {
-        coordinates: [44.006516, 56.322797],
-        draggable: true
-      },
-      content
-    );
-    
-    // Добавьте маркер на карту
-    map.addChild(marker);
-    
-    // Добавьте произвольную HTML-разметку внутрь содержимого маркера
-    content.innerHTML = '<h1>Этот заголовок можно перетаскивать</h1>';
-    // style=tags.any:road|elements:geometry|stylers.color:ffffff~tags.all:water|elements:geometry|stylers.color:999999~types:polygon|tags.any:admin;urban_area;poi;landscape|stylers.color:f0f0f0
+    function createMarker (office) {
+        const template = document.getElementById('pinTemplate');
+        const clone = template.content.cloneNode(true);
+        console.log(template, clone, office)
+        const addresLink = clone.querySelector('.map__addres').querySelector('.link--map');
+        addresLink.textContent = office.addres;
+        addresLink.setAttribute('href', office.site);
+        const numberLink = clone.querySelector('.map__phone').querySelector('.link--map');
+        numberLink.textContent = office.phone;
+        numberLink.setAttribute('href', `tel:${office.phone}`);
+
+        const marker = new YMapMarker(
+            {
+                coordinates: [office.coordinates.latitude, office.coordinates.longitude],
+            },
+            clone
+        );
+        // content.innerHTML = '<div style="width:30px;height:30px;background-color:green;"></div>';
+        map.addChild(marker);
+    }
 }
+
