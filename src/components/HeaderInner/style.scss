@@ -5,7 +5,7 @@
     &--inner{
         background-color: transparent;
         border-bottom: 1px solid var(--cl-gray-cd);
-        overflow: hidden;
+        // overflow: hidden;
 
         @media (min-width: ($mobile + 'px')) {
             padding: 14px 25px;
@@ -382,6 +382,7 @@
 
         @media (min-width: ($desktop + 'px')) {
             display: flex;
+            align-items: center;
             margin-right: 2.43vw;
 
             &::after {
@@ -390,10 +391,47 @@
                 border-bottom: 1px solid var(--cl-white);
             }
 
-            &__list {
-                text-wrap: auto;
+            &__value {
+                color: $cl-white;
+                max-width: calc(192px - 26px);
+            }
+
+            &__value::after {
+                border-color: $cl-white;
+            }
+
+            &__options {
+                background-color: $cl-green;
+            }
+
+            &__options li {
                 color: var(--cl-white);
             }
+
+            &__options::before {
+                background-image: linear-gradient($cl-green 20%, transparent 80%);
+            }
+
+            &__options::after {
+                background-image: linear-gradient(transparent 15%, $cl-green 70%);
+            }
+
+            &__box:has(.choice__options.open) .choice__row {
+                position: relative;
+                background-image: linear-gradient(transparent, $cl-green 40%);
+                margin-bottom: -100px;
+                margin-top: 0;
+                padding-bottom: 100px;
+            }
+
+            &__box:has(.choice__options.open) .choice__row::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% + 100px);
+        }
 
             .icon--green {
                 color: var(--cl-white);

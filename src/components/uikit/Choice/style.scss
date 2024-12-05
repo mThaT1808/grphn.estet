@@ -5,33 +5,88 @@
     display: flex;
     max-width: max-content;
 
-    &__box {
-
+    &__row {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
-    &__selected {}
-    &__value {}
+
+    &__value {
+        position: relative;
+        padding-left: 17px;
+        padding-right: 20px;
+        font-size: 14px;
+        line-height: 27px;
+        color: $cl-green;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     &__options {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        width: 100%;
+        max-height: 200px;
         z-index: 2;
-        display: none;
-        list-style: none;
         border: none;
-        // background-color: ;
+        background-color: $cl-cl-gray-f9;
+        padding-left: 17px;
+        padding-right: 10px;
+        overflow-y: auto;
+        cursor: pointer;
     }
 
     &__options.open {
         display: block;
+        min-width: fit-content;
+        width: 100%;
     }
 
     &__options li {
-        cursor: pointer;
+        font-size: 14px;
+        line-height: 20px;
+        color: $cl-green;
+        list-style: none;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
-    &__options li.selected {}
+    &__options li.selected {
+        opacity: 0.8;
+    }
+
+    &__options li:last-child {
+        padding-bottom: 0;
+    }
+
+    &__options li:first-child {
+        padding-top: 0;
+    }
+
+    &__options li:hover {
+        opacity: 0.8;
+    }
+
+    &__options::before,
+    &__options::after {
+        content: '';
+        position: sticky;
+        display: block;
+        top: 0;
+        right: 0;
+        width:100%;
+        height: 12px;
+        background-image: linear-gradient($cl-white 20%, transparent 80%);
+        z-index: 3;
+    }
+
+    &__options::after{
+        bottom: 0;
+        height: 18px;
+        background-image: linear-gradient(transparent 15%, $cl-white 70%);
+    }
 
     // Иконка местоположения
     & .icon {
@@ -43,7 +98,7 @@
         content: '';
         position: absolute;
         top: 7px;
-        right: 0;
+        right: 2px;
         width: 7px;
         height: 7px;
         border-right: 1px solid $cl-green;
@@ -51,113 +106,85 @@
         transform: rotate(45deg);
     }
 
+    // mod
+    &--shop {
+        margin-bottom: 39px;
+    }
+
+    &--intro {
+        display: none;
+    }
 
     @media (min-width: #{$tablet + 'px'}) {
     // @media (min-width: $tablet) {
-        &__box {}
-        &__selected {}
-        &__value {}
-        &__options {}
+        &--shop {
+            margin-bottom: 35px;
+            align-self: flex-end;
+        }
+
+        .shop--doors &__value {
+            max-width: calc(192px - 26px);
+        }
+
+        &--intro {
+            display: flex;
+            max-width: 192px;
+
+            .icon {
+                color: $cl-white;
+            }
+        }
+
+        &--intro &__value {
+            color: $cl-white;
+            max-width: calc(192px - 26px);
+        }
+
+        &--intro &__value::after {
+            border-color: $cl-white;
+        }
+
+        &--intro &__options {
+            background-color: $cl-green;
+        }
+
+        &--intro &__options li {
+            color: $cl-white;
+        }
+
+        &--intro &__options::before {
+            background-image: linear-gradient($cl-green 20%, transparent 80%);
+        }
+
+        &--intro &__options::after {
+            background-image: linear-gradient(transparent 15%, $cl-green 70%);
+        }
     }
+
+    @media (min-width: #{$desktop-min + 'px'}) {
+    // @media (min-width: $desktop-min) {
+        .shop--doors &__value {
+            max-width: unset;
+        }
+    }
+
     @media (min-width: #{$desktop + 'px'}) {
     // @media (min-width: $desktop) {
-        &__box {}
-        &__selected {}
-        &__value {}
-        &__options {}
-        &__options li:hover {}
+        &__row:hover {
+            opacity: 0.8;
+        }
+
+        &__box:has(.choice__options.open)  &__row:hover{
+            opacity: 1;
+        }
+
+        &__box:has(.choice__options.open) {
+            min-width: 192px;
+        }
+
+        &--intro {
+            margin-bottom: 42px;
+            margin-left: 77px;
+        }
     }
 }
-
-
-// .choice {
-//     position: relative;
-//     display: flex;
-//     max-width: max-content;
-
-//     &__list {
-//         border: none;
-//         color: $cl-green;
-//         padding-left: 17px;
-//         padding-right: 20px;
-//         background-color: transparent;
-//         text-wrap: auto;
-//         text-align: center;
-//         cursor: pointer;
-//     }
-
-//     &__list:focus-visible {
-//         outline: none;
-//     }
-
-//     & .icon {
-//         font-size: 26px;
-//     }
-
-//     &::after {
-//         content: '';
-//         position: absolute;
-//         top: 7px;
-//         right: 0;
-//         width: 7px;
-//         height: 7px;
-//         border-right: 1px solid $cl-green;
-//         border-bottom: 1px solid $cl-green;
-//         transform: rotate(45deg);
-//     }
-
-//     &__item {
-//         font-size: 14px;
-//         color: $cl-green;
-//     }
-
-//     // mod
-
-//     &--shop {
-//         margin-bottom: 39px;
-//         max-width: 192px;
-//     }
-
-//     &--intro {
-//         display: none;
-//         max-width: 192px;
-//     }
-// }
-
-// @media (min-width: #{$tablet + 'px'}) {
-//     .choice {
-//         &--shop {
-//             margin-bottom: 35px;
-//             align-self: flex-end;
-//         }
-
-//         &--intro {
-//             display: flex;
-
-//             .icon {
-//                 color: $cl-white;
-//             }
-
-//             &::after {
-//                 border-color: $cl-white;
-//             }
-//         }
-
-//         &--intro &__list {
-//             color: $cl-white;
-//         }
-//     }
-// }
-
-// @media (min-width: #{$desktop + 'px'}) {
-//     .choice {
-//         &--intro {
-//             margin-bottom: 42px;
-//             margin-left: 77px;
-//         }
-
-//         &:hover {
-//             opacity: 0.8;
-//         }
-//     }
-// }
