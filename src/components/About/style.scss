@@ -315,6 +315,7 @@
         &__dot--tech {
             bottom: 15%;
             left: 44%;
+            z-index: 3;
         }
 
         // &__dot--tech:hover ~ &__inner &__wrapper--tech {
@@ -477,6 +478,7 @@
             height: 27%;
             transform: translate(0);
             transition: transform 0.9s ease, height 0.9s ease;
+            z-index: 2;
         }
 
         &__image-box--tech {
