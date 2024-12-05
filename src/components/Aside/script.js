@@ -47,12 +47,10 @@ filterLists.forEach((list) => {
             e.target.classList.toggle('filter__item--active');
             if (formData.has(list.dataset.name)) {
                 if(list.dataset.value.includes(e.target.dataset.value)) {
-                    console.log(e.target.dataset.value);
                     const text = formData.get(list.dataset.name).replace(e.target.dataset.value, '');
                     list.dataset.value = text;
                     if (list.dataset.value.trim() === '') {
                         list.dataset.value = list.dataset.value.trim();
-                        console.log(`'${list.dataset.value.trim()}'`);
                     }
                     collectData();
                     return;
@@ -61,14 +59,10 @@ filterLists.forEach((list) => {
            
             if (list.dataset.value) {
                 list.dataset.value += ` ${e.target.dataset.value}`;
-                console.log('+');
             } else {
                 list.dataset.value = e.target.dataset.value;
-                console.log('new');
             }
             collectData();
-            console.log(formData);
-            console.log(list.dataset.value);
         }
     });
 });
