@@ -1,0 +1,28 @@
+---
+import './style.scss';
+
+
+interface PictureProps {
+    classPicture: string;
+    classImage: string;
+    image: string;
+    srcset: { src: string; media?: string; type?: string }[];
+    alt: string;
+    modPicture?: string;
+    modImage?: string;
+}
+
+const { classPicture, classImage, image, srcset, alt, modPicture, modImage } = Astro.props as PictureProps;
+---
+
+<picture class:list={[classPicture, modPicture ? `${classPicture}--${modPicture}` : '']}>
+    {srcset.map((source) => (
+      <source
+        srcset={source.src}
+        media={source.media || ''}
+        type={source.type || ''}
+      />
+    ))}
+    <img class:list={[classImage, modImage ? `${classImage}--${modImage}` : '']} src={image} alt={alt} />
+  </picture>
+
