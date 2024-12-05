@@ -35,7 +35,35 @@
         width: 50%;
     }
 
-    .door:nth-child(2n-1) .door__image-box {
+    // .door:nth-child(2n-1) .door__image-box {
+    //     background-color: $cl-gray-f7;
+    // }
+
+    .door:nth-of-type(8n + 1) {
+        background-color: $cl-white;
+    }
+
+    .door:nth-of-type(8n - 1) {
+        background-color: $cl-white;
+    }
+
+    .door:nth-of-type(8n) {
+        background-color: $cl-gray-f7;
+    }
+
+    .door:nth-of-type(8n + 2) {
+        background-color: $cl-gray-f7;
+    }
+
+    .door:nth-of-type(8n + 3) {
+        background-color: $cl-gray-f7;
+    }
+
+    // .door:nth-of-type(8n + 2) {
+    //     background-color: $cl-white;
+    // }
+
+    .door:nth-of-type(8n + 5) {
         background-color: $cl-gray-f7;
     }
 
@@ -211,15 +239,15 @@
             width: 50%;
         }
 
-        .door:nth-child(4n + 2),
-        .door:nth-child(4n + 3)
-        {
-            background-color: $cl-gray-f7;
-        }
+        // .door:nth-child(4n + 2),
+        // .door:nth-child(4n + 3)
+        // {
+        //     background-color: $cl-gray-f7;
+        // }
 
-        .door:nth-child(2n - 1) .door__image-box {
-            background-color: transparent;
-        }
+        // .door:nth-child(2n - 1) .door__image-box {
+        //     background-color: transparent;
+        // }
 
         .door__image-box {
             width: 100%;
@@ -305,19 +333,19 @@
             display: flex;
         }
 
-        .door:nth-child(4n + 2),
-        .door:nth-child(4n + 3)
-        {
-            background-color: transparent;
-        }
+        // .door:nth-child(4n + 2),
+        // .door:nth-child(4n + 3)
+        // {
+        //     background-color: transparent;
+        // }
 
-        .door:nth-child(10n + 2),
-        .door:nth-child(10n + 4),
-        .door:nth-child(10n + 6),
-        .door:nth-child(10n + 7),
-        .door:nth-child(10n + 9) {
-            background-color: $cl-gray-f7;
-        }
+        // .door:nth-child(10n + 2),
+        // .door:nth-child(10n + 4),
+        // .door:nth-child(10n + 6),
+        // .door:nth-child(10n + 7),
+        // .door:nth-child(10n + 9) {
+        //     background-color: $cl-gray-f7;
+        // }
 
         .door__image {
             width: 77%;
@@ -345,7 +373,9 @@
             visibility: hidden;
         }
 
-        .door:hover {
+        .door:hover,
+        .door.door--intro:first-of-type:hover,
+        .door.door--intro:nth-of-type(2):hover {
             background-color: $cl-green;
         }
 
