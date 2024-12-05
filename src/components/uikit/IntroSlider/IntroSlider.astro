@@ -1,0 +1,59 @@
+---
+import Text from '../Text/Text.astro';
+import Title from '../Title/Title.astro';
+import './style.scss'
+
+
+export interface Props {
+	slides?: [{
+        title: string;
+        text: string;
+        image: string;
+        srcset?: any;
+        href?: string;
+    }];
+}
+
+const {slides} = Astro.props;
+---
+
+<div class="intro-slider">
+    <div class="intro-slider__slider">
+        {
+            slides.map((slide) => (
+                <div class="intro-slider__slide">
+                    <picture class="intro__wrapper">
+                        {
+                            slide.srcset && slide.srcset.map((src) => (
+                                <source srcset={src.src} media={src.media}/>
+                            ))
+                        }
+                        <img class="intro-slider__image" src={slide.image} alt={slide.title}/>
+                    </picture>
+                </div>
+            ))
+        }
+    </div>
+    <div class="intro-slider__container">
+        <div class="intro-slider__text-slider">
+            {
+                slides.map((slide) => (
+                    <div class="intro-slider__slide">
+                        <a href={slide.href? slide.href: 'javascript:void(0);'}>
+                            <Title Tag="h1" class="intro">
+                                {slide.title}
+                            </Title>
+                            <Text class="intro">
+                                {slide.text}
+                            </Text>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <button class="intro-slider__button intro-slider__button--left"></button>
+    <button class="intro-slider__button intro-slider__button--right"></button>
+</div>
+
+<script src="./script.js"></script>

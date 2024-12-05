@@ -2,15 +2,28 @@
 import Icon from '../Icon/Icon.astro'
 import './style.scss'
 
-const modifier = Astro.props.modifier;
+export interface Props {
+    mod?: string;
+    href?: string;
+    text?: string;
+}
+
+let {mod, href, text} = Astro.props;
+
+if (!href) {
+    href = "javascript:void(0);";
+}
+if (typeof(text) !== 'string') {
+    text = "Обратный звонок"
+}
 ---
 
-<a href="javascript:void(0);" class={modifier? `call-back  call-back--${modifier}`:'call-back '}>
+<a href={href} class={`call-back ${mod && `call-back--${mod}`}`}>
     <div class="call-back__icon">
         <Icon name="phone" mod="white"/>
     </div>
     <p class="call-back__text">
-        Обратный звонок
+        {text}
     </p>
 </a>
 
