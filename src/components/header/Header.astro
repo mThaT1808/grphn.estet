@@ -9,7 +9,6 @@ import Personal from '@components/uikit/Personal/Personal.astro'
 import Social from '@components/uikit/Social/Social.astro'
 import Container from '@components/container/container.astro'
 import './styles.scss'
-import Icon from '@components/uikit/Icon/Icon.astro'
 import CallBack from '@components/uikit/CallBack/CallBack.astro'
 
 
@@ -80,7 +79,7 @@ const navList = [
                     </li>
                 </ul>
                 <Hamburger type="close"/>
-                <CallBack modifier="header"/>
+                <CallBack mod="header"/>
                 <Personal />
             </div>
             <Navigation list={navList} modifier="--header"/>
