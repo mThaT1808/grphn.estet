@@ -29,16 +29,16 @@ function checkQuantity() {
     }
 }
 
-showMore.addEventListener('click', () => {
-    if (isFiltered) {
-        renderList(filtered, itemsToAdd, false, true);
-    } else {
-        renderList(doors, itemsToAdd);
-    }
+showMore.addEventListener('click', async () => {
+    const data = new URLSearchParams(formData).toString() + `&from=${quantityCurrent.textContent}&to=${parseInt(quantityCurrent.textContent) + itemsToAdd}`;
+    const response = await getData(data);
+    filtered = response.items;
+    renderList(filtered);
+    quantityCurrent.textContent = parseInt(quantityCurrent.textContent) + response.items.length;
     checkQuantity();
 });
 
-function renderList(list, count, filter, add) {
+function renderList(list, filter, add) {
     if (filter) {
         for (let i = 0; i < container.children.length; i++) {
             if (container.children[i].classList.contains('door')) {
@@ -52,10 +52,8 @@ function renderList(list, count, filter, add) {
         isFiltered = false;
     }
 
-    const activeCount = activeItems + 1 +  count <=  list.length ? count : list.length - activeItems;
-    for (let i = 0; i < activeCount; i++) {
+    for (let i = 0; i < list.length; i++) {
         const door = template.cloneNode(true);
-
         if ((i === 0 || i === 1) && activeItems === 0) {
             door.querySelector('.door').classList.add('door--intro');
         }
@@ -101,6 +99,11 @@ function renderList(list, count, filter, add) {
                break;
             }
 
+            if (j >= 6) {
+                button.textContent = `+${list[i].colors.length - j}`;    
+                break;
+            }
+
             if (list[i].colors.length - 5 <= 0) {
                 button.style.display = 'none';
             }
@@ -124,59 +127,24 @@ function renderList(list, count, filter, add) {
         container.appendChild(door);
     }
 
-    activeItems += activeCount;
-    quantityCurrent.textContent = activeItems;
-    quantityMax.textContent = filter || add ? filtered.length : doors.length;
+    activeItems += list.length;
 };
 
-function checkFields (item) {
-    let active = true;
-    for (let [name, value] of formData) {
-        if (name === 'discount' && value === 'on' && item.markClass !== 'promo') {
-            active = false;
-        }
-        
-        if (name === 'colors') {
-            if (value) {
-                value.split(',').forEach((val) => {
-                    if (!item.colors.includes(val)) {
-                        active = false;
-                    }
-                });
-            }
-        }
-
-        if (name === 'style') {
-            if (value) {
-                if (!value.split(' ').includes(item.style.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-
-        if (name === 'collection') {
-            if (value) {
-                if (!value.split(' ').includes(item.collection.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-
-        if (name === 'finishing') {
-            if (value) {
-                if (!value.split(' ').includes(item.finishing.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-    }
-    return active;
-}
-
-form.addEventListener('edit', () => {
-    filtered = doors.filter((door) => checkFields(door));
-    renderList(filtered, itemsToShow, true);
+form.addEventListener('edit', async () => {
+    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`; 
+    const data = new URLSearchParams(formData).toString() + range;
+    const response = await getData(data);
+    filtered = response.items;
+    renderList(filtered, true);
+    quantityCurrent.textContent = 0 + response.items.length;
+    quantityMax.textContent = response.length;
     checkQuantity();
 });
 
-renderList(doors, itemsToShow);
+const data = new URLSearchParams(formData).toString() + `&from=${activeItems}&to=${itemsToShow}`;
+const response = await getData(data);
+filtered = response.items;
+quantityCurrent.textContent = activeItems + response.items.length;
+quantityMax.textContent = response.length;
+renderList(filtered);
+checkQuantity();

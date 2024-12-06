@@ -81,7 +81,52 @@ app.get('/api/offices/all', (req, res) => {
       res.json(JSON.parse(data));
   });
 });
+
 app.get('/api/doors/all', (req, res) => {
+  const collection = req.query.collection;
+  const style = req.query.style;
+  const colors = req.query.colors;
+  const finishing = req.query.finishing;
+  const discount = req.query.discount;
+  const from = req.query.from;
+  const to = req.query.to;
+
+  function checkFields (item) {
+    let active = true;
+    if (discount && item.markClass !== 'promo') {
+        active = false;
+    }
+
+      if (collection) {
+        if (!collection.split(' ').includes(item.collection.toLowerCase())) {
+          active = false;
+          return;
+        }
+      }
+      
+      if (style) {
+        if (!style.split(' ').includes(item.style.toLowerCase())) {
+          active = false;
+          return;
+        }
+      }
+      
+      if (colors) {;
+        if (!item.colors.some((color => colors.split(',').includes(color)))) {
+          active = false;
+          return;
+        }
+      }
+
+      if (finishing) {
+        if (!finishing.split(' ').includes(item.finishing.toLowerCase())) {
+          active = false;
+          return;
+        }
+      }
+  return active;
+}
+
   const filePath = path.join(__dirname, 'data', 'doors.json');
 
   // Чтение JSON-файла
@@ -91,7 +136,14 @@ app.get('/api/doors/all', (req, res) => {
           return res.status(500).json({ error: 'Ошибка сервера' });
       }
       // Возвращаем данные в формате JSON
-      res.json(JSON.parse(data));
+      // const filter = data.filter((item) => item.collection === 'Sonata');
+      const filtered = JSON.parse(data).filter((item) => checkFields(item));
+      const result = filtered.slice(from, to);
+      const final = {
+        items : result,
+        length: filtered.length
+      }
+      res.json(final);
   });
 })
 app.get('/api/doors', (req, res) => {

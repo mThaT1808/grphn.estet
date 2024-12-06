@@ -71,20 +71,17 @@ async function initMap() {
             method: 'get',
         });
         let offices = await response.json()
-        // console.log(offices);
-        for (let office of offices.items) {
+        for (let office of offices.offices) {
             createMarker(office);
         }
       } catch (event){
         alert(event.message);
-        // console.log(event.message);
       }
 
     // Инициализируйте маркер
     function createMarker (office) {
         const template = document.getElementById('pinTemplate');
         const clone = template.content.cloneNode(true);
-        console.log(template, clone, office)
         const addresLink = clone.querySelector('.map__addres').querySelector('.link--map');
         addresLink.textContent = office.addres;
         addresLink.setAttribute('href', office.site);
