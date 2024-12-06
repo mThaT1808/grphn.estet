@@ -67,29 +67,38 @@ function renderList(list, filter, add) {
         door.querySelector('.door__title').textContent = list[i].title;
         door.querySelector('.door__price-new').textContent = `от ${list[i].priceNew}\u20BD`;
         door.querySelector('.door__price-old').textContent = list[i].priceOld;
-        if (document.querySelector('.personal__quantity').textContent > 0) {
-            document.querySelector('.personal__quantity').style.display = 'block';
-        } else {
-            document.querySelector('.personal__quantity').style.display = 'none';
-        }
+        const quantities = document.querySelectorAll('.personal__item:has(.personal__button--like) .personal__quantity');
+        quantities.forEach((quantity) => {
+            if (document.querySelector('.personal__quantity').textContent > 0) {
+                document.querySelector('.personal__quantity').style.display = 'block';
+            } else {
+                document.querySelector('.personal__quantity').style.display = 'none';
+            }
+        })
+
         door.querySelector('.door__mark-like').addEventListener('click', function() {
             const icon = this.querySelector('i');
-            const quantityElement = document.querySelector('.personal__quantity');
             icon.classList.toggle('icon-heart');
             icon.classList.toggle('icon-heart-fill');
 
             if (icon.classList.contains('icon-heart-fill')) {
-                quantityElement.textContent++;
+                quantities.forEach((quantity) => {
+                    quantity.textContent++
+                })
             } else {
-                quantityElement.textContent--;
+                quantities.forEach((quantity) => {
+                    quantity.textContent--
+                })
             }
 
+            quantities.forEach((quantity) => {
+                if (quantity.textContent > 0) {
+                    quantity.style.display = 'block';
+                } else {
+                    quantity.style.display = 'none';
+                }
+            })
 
-            if (quantityElement.textContent > 0) {
-                quantityElement.style.display = 'block';
-            } else {
-                quantityElement.style.display = 'none';
-            }
         });
         const colorContainer = door.querySelector('.door__choice-box');
         for (let j = 0; j < list[i].colors.length; j++) {
