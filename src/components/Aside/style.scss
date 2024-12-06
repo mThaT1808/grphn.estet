@@ -140,34 +140,22 @@
 
                 &__item[data-value] {
                     position: relative;
-
-                    &::before {
-                        content: '';
-                        display: none;
-                        position: absolute;
-                        top: 25px; 
-                        right: 5px;   
-                        width: 10px;
-                        height: 3px;
-                        background: #c00;
-                        transform: rotate(-50deg);   
-                    }
-
                     &::after {
                         content: '';
                         display: none;
                         position: absolute;
-                        top: 25px; 
-                        right: 10px;
+                        top: 15px; 
+                        right: 5px;
                         width: 16px;
-                        height: 3px;
-                        background: #c00;
-                        transform: rotate(50deg); 
+                        height: 12px;
+                        background: transparent;
+                        border-bottom: 3px solid $cl-green;
+                        border-left: 3px solid $cl-green;
+                        transform: rotate(-50deg); 
                     }
                 }
 
                 &__item--active[data-value] {
-                    &::before,
                     &::after {
                         display: block;
                     }
