@@ -91,24 +91,10 @@ function renderList(list, filter, add) {
                 quantityElement.style.display = 'none';
             }
         });
+
         const colorContainer = door.querySelector('.door__choice-box');
-        for (let j = 0; j < list[i].colors.length; j++) {
-            const button = colorContainer.querySelector('.door__choice-btn');
-            if (j >= 5 && document.documentElement.clientWidth <= 1660) {
-               button.textContent = `+${list[i].colors.length - j}`;
-               break;
-            }
 
-            if (j >= 6) {
-                button.textContent = `+${list[i].colors.length - j}`;    
-                break;
-            }
-
-            if (list[i].colors.length - 5 <= 0) {
-                button.style.display = 'none';
-            }
-
-            const item = list[i].colors[j];
+        function createColorButton(item, button) {
             const label = document.createElement('label');
             label.key = item;
             const img = document.createElement('img');
@@ -123,6 +109,52 @@ function renderList(list, filter, add) {
             label.appendChild(img);
             label.appendChild(input);
             colorContainer.insertBefore(label, button);
+        };
+
+        function checkIntroDoors() {
+            const innerDoors = document.querySelectorAll('.door--intro');
+            if (innerDoors[0].clientHeight > innerDoors[1].clientHeight) {
+                innerDoors[1].style.height = innerDoors[0].clientHeight + 'px';  
+            } else {
+                innerDoors[0].style.height = innerDoors[1].clientHeight + 'px';
+            }
+        }
+
+        for (let j = 0; j < list[i].colors.length; j++) {
+            const button = colorContainer.querySelector('.door__choice-btn');
+
+            if (j >= 4 && document.documentElement.clientWidth <= 1600) {
+               button.textContent = `+${list[i].colors.length - j}`;
+               button.addEventListener('click', () => {
+                for (let k = j; k < list[i].colors.length; k++) {
+                    const item = list[i].colors[k];
+                    createColorButton(item, button);
+            };
+            checkIntroDoors();
+            button.style.display = 'none';   
+            });
+               break;
+            }
+
+            if (j >= 6) {
+                button.textContent = `+${list[i].colors.length - j}`;
+                button.addEventListener('click', () => {
+                    for (let k = j; k < list[i].colors.length; k++) {
+                        const item = list[i].colors[k];
+                        createColorButton(item, button);
+                    };
+                    checkIntroDoors();
+                    button.style.display = 'none';    
+                });
+                break;
+            }
+
+            if (list[i].colors.length - 5 <= 0) {
+                button.style.display = 'none';
+            }
+
+            const item = list[i].colors[j];
+            createColorButton(item, button);
         };
         container.appendChild(door);
     }
