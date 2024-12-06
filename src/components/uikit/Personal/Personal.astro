@@ -3,13 +3,13 @@ import Icon from '../Icon/Icon.astro'
 import './style.scss'
 
 export interface Props {
-    modifier?: string;
+    mod?: string;
 }
 
-const {modifier} = Astro.props;
+const {mod} = Astro.props;
 ---
 
-<div class=`personal ${modifier? "personal--" + modifier : ''}`>
+<div class=`personal ${mod? "personal--" + mod : ''}`>
     <div class="personal__item">
         <button class="personal__button personal__button--like">
             <Icon name="like" mod="white"/>

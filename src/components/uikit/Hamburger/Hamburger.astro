@@ -4,10 +4,10 @@ import './styles.scss'
 
 export interface Props {
     type?: string;
-    modifier?: string;
+    mod?: string;
 }
 
-const { type, modifier} = Astro.props;
+const { type, mod} = Astro.props;
 
 var iconName = "burger";
 
@@ -16,6 +16,6 @@ if (type == "close") {
 }
 ---
 
-<button class=`hamburger ${modifier ? 'hamburger--' + modifier : ''}`>
+<button class=`hamburger ${mod ? 'hamburger--' + mod : ''}`>
         <Icon name={iconName} mod="white"/>
 </button>
