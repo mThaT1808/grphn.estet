@@ -71,7 +71,7 @@ async function initMap() {
             method: 'get',
         });
         let offices = await response.json()
-        for (let office of offices.items) {
+        for (let office of offices.offices) {
             createMarker(office);
         }
       } catch (event){
