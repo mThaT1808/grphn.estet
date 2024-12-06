@@ -42,6 +42,11 @@
         transform: scale(-1);
     }
 
+    & .arrow--shop-prev:hover,
+    & .arrow--shop-next:hover {
+        background-color: transparent;
+    }
+
     &--doors {
         padding-bottom: 110px;
     }
@@ -116,6 +121,7 @@
     & .slider__item {
         list-style: none;
         padding-right: 37px;
+        cursor: pointer;
     }
 
     & .slider__text {
@@ -245,6 +251,10 @@
         & .slider__item {
             padding-right: 70px;
             margin-bottom: 0;
+        }
+
+        & .slider__item:hover {
+            opacity: 0.8;
         }
     }
 }

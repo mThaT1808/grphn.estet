@@ -84,9 +84,8 @@ video.addEventListener('click', () => {
         pauseIcon.style.display = 'none';
     } else {
        video.pause();
-       pauseIcon.style.display = 'block'; 
+       pauseIcon.style.display = 'block';
     }
-     
 })
 
 prev.addEventListener('click', () => {

@@ -18,16 +18,6 @@ const {
     class: className,
     ...rest
 } = Astro.props;
-
-// const sizes = {
-//     md: "px-5 py-2.5",
-//     lg: "px-6 py-3",
-// };
-
-// const styles = {
-//     outline: "border-2",
-//     primary:"bg-black",
-// };
 ---
 
 <TagButton
@@ -35,8 +25,6 @@ const {
     class:list={[
         "button",
         block && "w-full",
-        // sizes[size],
-        // styles[style],
         className,
     ]}
     ><slot />
