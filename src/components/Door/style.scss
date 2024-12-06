@@ -1,5 +1,323 @@
+@import '../../assets/styles/global.scss';
+
 .door {
+    display: flex;
+    gap: 21px;
+    margin-bottom: 56px;
+    width: 100%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__image-box {
+        display: flex;
+        max-height: 300px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 50%;
+    }
+
+    &:nth-child(odd) &__image-box {
+        background-color: $cl-gray-f7;
+    }
+
+    &__image {
+        width: 47%;
+        height: 85%;
+        object-fit: contain;
+    }
+
+    &__content {
+        padding: 15px 0 10px;
+        width: calc(50% - 45px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__mark-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 53px;
+    }
+
+    &__mark {
+        font-weight: 400;
+        font-size: 9px;
+        letter-spacing: 0.32em;
+        text-align: center;
+    }
+
     &__mark-like {
         cursor: pointer;
+    }
+
+    &__mark-like .icon {
+        font-size: 19px;
+    }
+
+    &__mark--new {
+        color: $cl-green;
+    }
+
+    &__mark--promo {
+        color: $cl-orange;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 5px;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: $cl-gray-3c;
+    }
+
+    &__price {
+        display: flex;
+        gap: 9px;
+        margin-bottom: 40px;
+        font-family: 'opensans', sans-serif;
+        color: $cl-black;
+    }
+
+    &__price-new {
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    &__price-old {
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
+
+    &__choice-box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+        margin-right: -5px;
+        max-width: 150px;
+    }
+
+    &__choice-box label:nth-of-type(n + 4) {
+        display: none;
+    }
+
+    &__choice-box label {
+        display: block;
+        width: 22px;
+        height: 22px;
+        box-sizing: content-box;
+        cursor: pointer;
+        transition: opacity 0.3s, transform 0.3s;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__choice-box label:hover {
+        opacity: 0.5;
+    }
+
+    &__choice {
+        display: none;
+    }
+
+    &__choice-textures {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__choice-btn {
+        padding: 0;
+        padding-left: 13px;
+        font-size: 16px;
+        line-height: 19px;
+        border: none;
+        transition: opacity $animation-time ease-in-out;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    &__choice-btn:hover {
+        opacity: 0.5;
+    }
+
+}
+
+@media (min-width: #{$tablet + 'px'}) {
+    .door {
+        position: relative;
+        flex-direction: column;
+        gap: 25px;
+        padding: 36px 30px 25px 28px;
+        margin-bottom: 0;
+        width: 50%;
+
+        &:nth-child(odd) &__image-box {
+            background-color: transparent;
+        }
+
+        &:nth-child(12n + 3),
+        &:nth-child(12n + 4),
+        &:nth-child(12n + 7),
+        &:nth-child(12n + 8),
+        &:nth-child(12n + 11),
+        &:nth-child(12n + 12)
+        {
+            background-color: $cl-gray-f7;
+        }
+
+        &__image-box {
+            width: 100%;
+            padding: 0;
+            max-height: 430px;
+            background-color: transparent;
+        }
+
+        &__content {
+            padding: 0;
+            width: 100%;
+        }
+
+        &__mark-box {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            margin-bottom: 0;
+            width: calc(100% - 30px);
+        }
+
+        &__mark {
+            order: -1;
+        }
+
+        &__title {
+            font-size: 21px;
+        }
+
+        &__price {
+            margin-bottom: 23px;
+        }
+
+        &__choice-box {
+            max-width: fit-content;
+        }
+
+        &__choice-box label:nth-of-type(n + 4) {
+            display: block;
+        }
+
+        &__choice-btn {
+            padding-left: 0;
+        }
+
+        &__image {
+            width: 100%;
+            height: 92%;
+        }
+    }
+}
+
+@media (min-width: #{$desktop + 'px'}) {
+    .door {
+
+        width: 25%;
+        max-height: 608px;
+        cursor: pointer;
+        transition: background-color $animation-time ease-in-out,
+        color $animation-time ease-in-out;
+
+        &--intro {
+            position: absolute;
+            bottom: 100%;
+            right: 25%;
+        }
+
+        &--intro:first-of-type {
+            background-color: $cl-white;
+        }
+
+        &--intro:nth-of-type(2) {
+            right: 0;
+            background-color: $cl-gray-f7;
+        }
+
+        &:nth-child(9),
+        &:nth-child(10) {
+            display: flex;
+        }
+
+        &:nth-child(12n + 3),
+        &:nth-child(12n + 4),
+        &:nth-child(12n + 7),
+        &:nth-child(12n + 8),
+        &:nth-child(12n + 11),
+        &:nth-child(12n + 12)
+        {
+            background-color: transparent;
+        }
+
+        
+        &:nth-of-type(8n + 1),
+        &:nth-of-type(8n - 1) {
+            background-color: $cl-white;
+        }
+
+        &:nth-of-type(8n),
+        &:nth-of-type(8n + 2),
+        &:nth-of-type(8n + 3),
+        &:nth-of-type(8n + 5) {
+            background-color: $cl-gray-f7;
+        }
+
+        &__image {
+            width: 77%;
+        }
+
+        &__mark-box {
+            top: 12px;
+            left: 18px;
+        }
+
+        &__mark {
+            font-size: 10px;
+        }
+
+        &__title {
+            margin-bottom: 5px;
+        }
+
+        &__choice-box {
+            flex-wrap: wrap;
+        }
+
+        &__price {
+            color: $cl-white;
+            visibility: hidden;
+        }
+
+        &:hover,
+        &--intro:first-of-type:hover,
+        &--intro:nth-of-type(2):hover {
+            background-color: $cl-green;
+        }
+
+        &:hover &__title,
+        &:hover &__choice-btn,
+        &:hover &__mark,
+        &:hover .icon {
+            color: $cl-white;
+        }
+
+        &:hover &__price {
+            visibility: visible;
+        }
+
+
     }
 }
