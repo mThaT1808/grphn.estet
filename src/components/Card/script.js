@@ -61,17 +61,41 @@ function renderList(list, filter, add) {
         const picture = door.querySelector('.door__image-box');
         picture.querySelector('source').srcset = list[i].imageWebp;
         picture.querySelector('img').src = list[i].imageJpg;
-        const mark = door.querySelector('.door__mark'); 
+        const mark = door.querySelector('.door__mark');
         mark.classList.add(`door__mark--${list[i].markClass}`);
         mark.textContent = list[i].mark;
         door.querySelector('.door__title').textContent = list[i].title;
         door.querySelector('.door__price-new').textContent = `от ${list[i].priceNew}\u20BD`;
         door.querySelector('.door__price-old').textContent = list[i].priceOld;
+        if (document.querySelector('.personal__quantity').textContent > 0) {
+            document.querySelector('.personal__quantity').style.display = 'block';
+        } else {
+            document.querySelector('.personal__quantity').style.display = 'none';
+        }
+        door.querySelector('.door__mark-like').addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            const quantityElement = document.querySelector('.personal__quantity');
+            icon.classList.toggle('icon-heart');
+            icon.classList.toggle('icon-heart-fill');
+
+            if (icon.classList.contains('icon-heart-fill')) {
+                quantityElement.textContent++;
+            } else {
+                quantityElement.textContent--;
+            }
+
+
+            if (quantityElement.textContent > 0) {
+                quantityElement.style.display = 'block';
+            } else {
+                quantityElement.style.display = 'none';
+            }
+        });
         const colorContainer = door.querySelector('.door__choice-box');
         for (let j = 0; j < list[i].colors.length; j++) {
             const button = colorContainer.querySelector('.door__choice-btn');
             if (j >= 5 && document.documentElement.clientWidth <= 1660) {
-               button.textContent = `+${list[i].colors.length - j}`;    
+               button.textContent = `+${list[i].colors.length - j}`;
                break;
             }
 

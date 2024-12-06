@@ -1,13 +1,20 @@
 ---
 import Container from '@components/container/container.astro'
 import './styles.scss'
+
+
+export interface Props {
+    mod?: string;
+    list?: any;
+}
+
 const list = Astro.props.list;
-const modifier = Astro.props.modifier;
+const mod = Astro.props.mod;
 
 var className = "nav";
 
-if (modifier) {
-    className += ` nav${modifier}`
+if (mod) {
+    className += ` nav${mod}`
 }
 ---
 

@@ -4,12 +4,12 @@ import './style.scss'
 
 export interface Props {
 	location: any;
-    modifier: any;
+    mod: any;
 }
 
-const { location, modifier } = Astro.props;
+const { location, mod } = Astro.props;
 
-var className = 'location' + ` location${modifier}`;
+var className = 'location' + ` location${mod}`;
 ---
 
 <div class={className}>

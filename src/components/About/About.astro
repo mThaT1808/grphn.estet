@@ -5,13 +5,97 @@ import Title from '@components/uikit/Title/Title.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import Picture from '@components/Picture/Picture.astro'
 import './style.scss'
+
+export interface Props{
+    sections: {
+        mod: string;
+        href?: string;
+        image: string;
+        srcset?: [{
+            src: string;
+            type?: string;
+            media?: string;
+        }]
+        alt: string;
+        caption?: string;
+        subcaption?: string;
+    }
+}
+
+let {sections} = Astro.props;
+
+sections = [
+    {
+        mod: 'solution',
+        href: 'javascript:void(0);',
+        image: '/images/about/solution-mobile.jpg',
+        srcset: [
+            { src: '/images/about/solution-tablet.webp', media: '(min-width: 768px)', type: 'image/webp' },
+            { src: '/images/about/solution-tablet.jpg', media: '(min-width: 768px)', type: 'image/jpg' },
+            { src: '/images/about/solution-mobile.webp', type: 'image/webp' },
+        ],
+        alt: 'solution',
+        caption: 'Современные интерьерные решения',
+        subcaption: 'Межкомнатные и&nbsp;офисные двери с&nbsp;богатой цветовой гаммой, стильным дизайном, различными вариантами исполнения и&nbsp;нестандартными размерами'
+    },
+    {   mod: 'empty',
+        image: '/images/about/empty-tablet.jpg.jpg',
+        srcset: [
+            { src: '/images/about/empty-tablet.webp', type: 'image/webp' },
+        ],
+        alt: 'empty'
+    },
+    {
+        mod: 'quality',
+        href: 'javascript:void(0);',
+        image: '/images/about/quality-mobile.jpg',
+        srcset: [
+            { src: '/images/about/quality-desktop.webp', media: '(min-width:1280px)', type: 'image/webp' },
+            { src: '/images/about/quality-desktop.jpg', media: '(min-width:1280px)', type: 'image/jpg' },
+            { src: '/images/about/quality-tablet.webp', media: '(min-width: 768px)', type: 'image/webp' },
+            { src: '/images/about/quality-tablet.jpg', media: '(min-width: 768px)', type: 'image/jpg' },
+            { src: '/images/about/quality-mobile.webp', type: 'image/webp' },
+        ],
+        alt: 'quality',
+        caption: 'Высокое качество',
+        subcaption: 'Все наши двери проходят строжайший контроль качества на&nbsp;всех этапах производства. Следить за&nbsp;качеством, мы&nbsp;считаем, важнейшая задача производителя.'
+    },
+    {
+        mod: 'tech',
+        href: 'javascript:void(0);',
+        image: '/images/about/tech-mobile.jpg',
+        srcset: [
+            { src: '/images/about/tech-desktop.webp', media: '(min-width:1280px)', type: 'image/webp' },
+            { src: '/images/about/tech-desktop.jpg', media: '(min-width:1280px)', type: 'image/jpg' },
+            { src: '/images/about/tech-tablet.webp', media: '(min-width: 768px)', type: 'image/webp' },
+            { src: '/images/about/tech-tablet.jpg', media: '(min-width: 768px)', type: 'image/jpg' },
+            { src: '/images/about/tech-mobile.webp', type: 'image/webp' },
+        ],
+        alt: 'tech',
+        caption: 'Новые технологии',
+        subcaption: 'Каркас двери и&nbsp;дверная коробка изготавливаются из&nbsp;хвойного бруса высокого качества, срощенного по&nbsp;длине и&nbsp;оптимизированного, то&nbsp;есть из&nbsp;него вырезаны сучки, смоляные карманы и&nbsp;другие пороки, присущие натуральному дереву.'
+    },
+    {
+        mod: 'company',
+        href: 'javascript:void(0);',
+        image: '/images/about/company-mobile.jpg',
+        srcset: [
+            { src: '/images/about/company-desktop.webp', media: '(min-width:1280px)', type: 'image/webp' },
+            { src: '/images/about/company-desktop.jpg', media: '(min-width:1280px)', type: 'image/jpg' },
+            { src: '/images/about/company-mobile.webp', type: 'image/webp' },
+        ],
+        alt: 'company',
+        caption: 'Компания',
+        subcaption: 'Мы&nbsp;работаем на&nbsp;рынке производства дверей с&nbsp;2002&nbsp;года. За&nbsp;это время мы&nbsp;зарекомендовали себя как надежный партнер и&nbsp;динамично развивающаяся компания.'
+    },
+];
 ---
 
 <section class="about">
     <div class="about__container">
         <div class="about__arrow-box">
-            <Arrow modifier='about' direction='left'/>
-            <Arrow modifier='about' direction='right'/>
+            <Arrow mod='about' direction='left'/>
+            <Arrow mod='about' direction='right'/>
         </div>
         <a href="javascript:void(0);" class="about__dot about__dot--tech"></a>
         <a href="javascript:void(0);" class="about__dot about__dot--quality"></a>
@@ -20,108 +104,33 @@ import './style.scss'
                 <Title class="about" Tag='h2'>ESTET</Title>
                 <Text class="about">Дверные технологии ESTET превращают квадратные метры в&nbsp;уютный Дом, пространство в&nbsp;удобное и&nbsp;прекрасное Жильё. Наши двери создают неповторимые ощущения, когда каждый день&nbsp;Вы открываете дверь и&nbsp;вместе с&nbsp;тем что-то новое, а&nbsp;главное&nbsp;&mdash; открываете с удовольствием!</Text>
             </div>
-            <div class="about__wrapper about__wrapper--solution">
-                <a href="javascript:void(0);" class="about__dot about__dot--solution"></a>
-                <Picture
-                    classPicture="about__image-box"
-                    modPicture="solution"
-                    classImage="about__image"
-                    modImage="solution"
-                    image="/images/about/solution-mobile.jpg"
-                    srcset={[
-                    { src: "/images/about/solution-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
-                    { src: "/images/about/solution-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
-                    { src: "/images/about/solution-mobile.webp", type: "image/webp" },
-                    ]}
-                    alt="solution"
-                />
-                <div class="about__descr about__descr--solution">
-                    <p class="about__caption">Современные интерьерные решения</p>
-                    <p class="about__subcaption">Межкомнатные и&nbsp;офисные двери с&nbsp;богатой цветовой гаммой, стильным дизайном, различными вариантами исполнения и&nbsp;нестандартными размерами</p>
+            {sections.map((item, index) => (
+                <div class:list={["about__wrapper", item.mod ? `about__wrapper--${item.mod}` : '']}>
+                    {index !== 1 && index !== 2 && index !== 3 &&(
+                        <a href = {item.href} class:list={["about__dot", item.mod ? `about__dot--${item.mod}` : '']}></a>
+                    )}
+                    <Picture
+                        classPicture="about__image-box"
+                        modPicture={item.mod}
+                        classImage="about__image"
+                        modImage={item.mod}
+                        image={item.image}
+                        srcset={item.srcset}
+                        alt={item.alt}
+                    />
+                    {index !== 1 && (
+                        <div class:list={["about__descr", item.mod ? `about__descr--${item.mod}` : '']}>
+                            <p class="about__caption">{item.caption}</p>
+                            <p class="about__subcaption">{item.subcaption}</p>
+                        </div>
+                    )}
                 </div>
-            </div>
-            <div class="about__wrapper about__wrapper--empty">
-                <Picture
-                    classPicture="about__image-box"
-                    modPicture="empty"
-                    classImage="about__image"
-                    modImage="empty"
-                    image="/images/about/empty-tablet.jpg"
-                    srcset={[
-                    { src: "/images/about/empty-tablet.webp", type: "image/webp" },
-                    ]}
-                    alt="empty"
-                />
-            </div>
-            <div class="about__wrapper about__wrapper--quality">
-                <Picture
-                    classPicture="about__image-box"
-                    modPicture="quality"
-                    classImage="about__image"
-                    modImage="quality"
-                    image="/images/about/quality-mobile.jpg"
-                    srcset={[
-                    { src: "/images/about/quality-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
-                    { src: "/images/about/quality-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
-                    { src: "/images/about/quality-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
-                    { src: "/images/about/quality-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
-                    { src: "/images/about/quality-mobile.webp", type: "image/webp" },
-                    ]}
-                    alt="quality"
-                />
-                <div class="about__descr about__descr--quality">
-                    <p class="about__caption">Высокое качество</p>
-                    <p class="about__subcaption">Все наши двери проходят строжайший контроль качества на&nbsp;всех этапах производства. Следить за&nbsp;качеством, мы&nbsp;считаем, важнейшая задача производителя.</p>
-                </div>
-            </div>
-            <div class="about__wrapper about__wrapper--tech">
-                <Picture
-                    classPicture="about__image-box"
-                    modPicture="tech"
-                    classImage="about__image"
-                    modImage="tech"
-                    image="/images/about/tech-mobile.jpg"
-                    srcset={[
-                    { src: "/images/about/tech-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
-                    { src: "/images/about/tech-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
-                    { src: "/images/about/tech-tablet.webp", media: "(min-width: 768px)", type: "image/webp" },
-                    { src: "/images/about/tech-tablet.jpg", media: "(min-width: 768px)", type: "image/jpg" },
-                    { src: "/images/about/tech-mobile.webp", type: "image/webp" },
-                    ]}
-                    alt="tech"
-                />
-                <div class="about__descr about__descr--tech">
-                    <p class="about__caption">Новые технологии</p>
-                    <p class="about__subcaption">Каркас двери и&nbsp;дверная коробка изготавливаются из&nbsp;хвойного бруса высокого качества, срощенного по&nbsp;длине и&nbsp;оптимизированного, то&nbsp;есть из&nbsp;него вырезаны сучки, смоляные карманы и&nbsp;другие пороки, присущие натуральному дереву.</p>
-                </div>
-            </div>
-            <div class="about__wrapper about__wrapper--company">
-                <a href="javascript:void(0);" class="about__dot about__dot--company"></a>
-                <Picture
-                    classPicture="about__image-box"
-                    modPicture="company"
-                    classImage="about__image"
-                    modImage="company"
-                    image="/images/about/company-mobile.jpg"
-                    srcset={[
-                    { src: "/images/about/company-desktop.webp", media: "(min-width:1280px)", type: "image/webp" },
-                    { src: "/images/about/company-desktop.jpg", media: "(min-width:1280px)", type: "image/jpg" },
-                    { src: "/images/about/company-mobile.webp", type: "image/webp" },
-                    ]}
-                    alt="company"
-                />
-                <div class="about__descr about__descr--company">
-                    <p class="about__caption">Компания</p>
-                    <p class="about__subcaption">Мы&nbsp;работаем на&nbsp;рынке производства дверей с&nbsp;2002&nbsp;года. За&nbsp;это время мы&nbsp;зарекомендовали себя как надежный партнер и&nbsp;динамично развивающаяся компания.</p>
-                </div>
-            </div>
+            ))}
             <div class="about__wrapper about__wrapper--logo">
                 <Icon name="logo-white" mod="white"></Icon>
             </div>
         </div>
     </div>
 </section>
-
-
 
 <script src="./script.js"></script>

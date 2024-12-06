@@ -9,6 +9,7 @@ slider.slick({
     easing: "ease",
     infinite: true,
     arrows: false,
+    fade: true,
     asNavFor: '.intro-slider__text-slider'
 });
 
