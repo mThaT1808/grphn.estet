@@ -14,6 +14,11 @@
     appearance:         none;
     cursor: pointer;
 
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
     &--block {
         display: block;
     }
@@ -29,17 +34,17 @@
         width: 85px;
     }
 
-    &--news{
+    &--news {
         padding: 0;
         text-align: left;
     }
 
-    &--suggestions{
+    &--suggestions {
         padding: 0;
         text-align: right;
     }
 
-    &--active{
+    &--active {
         color: $cl-green;
     }
 
@@ -54,17 +59,6 @@
         max-width: fit-content;
         border: none;
         color: $cl-green;
-
-        @media (min-width: ($tablet + 'px')) {
-            margin-left: 82px;
-            font-size: 16px;
-            line-height: 38px;
-            text-align: left;
-        }
-
-        @media (min-width: ($desktop + 'px')) {
-            margin-left: 62px;
-        }
     }
 
     &--service {
@@ -72,21 +66,10 @@
         padding: 17px 0 19px 0;
         margin: 0 25px 0 26px;
         height: 60px;
-        @media (min-width: ($tablet + 'px')) {
-            margin: 0 85px 0 32px;
-            max-width: 254px;
-        }
-        @media (min-width: ($desktop-lg + 'px')) {
-            margin: 0 281px 0 51px;
-        }
     }
 
     &--size {
         width: 100%;
-
-        @media (min-width: #{$desktop-min + 'px'}) {
-            max-width: 280px;
-        }
     }
 
     &--more {
@@ -103,11 +86,6 @@
         font-size: 12px;
         letter-spacing: 0.17em;
         text-transform: uppercase;
-    }
-
-    &:disabled {
-        opacity: .5;
-        pointer-events: none;
     }
 
     @media (hover: none), (pointer: coarse) {
@@ -131,6 +109,11 @@
             color: $cl-green;
             opacity: 0.8;
             transition: opacity $animation-time ease-in-out, color $animation-time ease-in-out;
+        }
+
+        &--green:active {
+            background-color: $cl-white;
+            color: $cl-green;
         }
     }
 
@@ -174,26 +157,37 @@
             opacity: 0.8;
             text-decoration: underline;
         }
+
+        &--green:hover {
+            background-color: $cl-white;
+            color: $cl-green;
+        }
+
+        &--link:hover {
+            opacity: 0.8;
+        }
+
+        &--aside:hover {
+            color: $cl-white;
+            background-color: $cl-green;
+            opacity: 0.8;
+        }
+
+        &--pink:hover {
+            color: $cl-gray-3c;
+            background-color: $cl-pink-f9;
+            opacity: 0.8;
+        }
+
+        &--filter:hover {
+            background-color: transparent;
+        }
     }
 
     &--green {
         background-color: $cl-green;
         border-color: $cl-white;
         color: $cl-white;
-
-        @media (hover: none), (pointer: coarse) {
-            &:active {
-                background-color: $cl-white;
-                color: $cl-green;
-            }
-        }
-
-        @media not all and (pointer: coarse) {
-            &:hover {
-                background-color: $cl-white;
-                color: $cl-green;
-            }
-        }
     }
 
     &--link {
@@ -206,24 +200,6 @@
         background-color: $cl-green;
         color: $cl-white;
         width: 100%;
-
-        &:hover {
-            opacity: 0.8;
-        }
-
-        @media(min-width: ($tablet + 'px')) {
-            padding: 45px 0 54px;
-        }
-
-        @media(min-width: ($desktop + 'px')) {
-            padding: 71px 0 66px;
-            margin-top: 86px;
-            margin-bottom: 0;
-        }
-
-        @media(min-width: ($desktop-lg + 'px')) {
-            padding: 71px 0 66px;
-        }
     }
 
     &--link::before {
@@ -236,17 +212,6 @@
         margin-left: -50vw;
         background-color: $cl-gray-d8;
         z-index: 1;
-
-        @media(min-width: ($desktop + 'px')) {
-            left: -40px;
-            margin: 0;
-            width: calc(((100vw - 1200px) / 2 ) + 320px);
-        }
-
-        @media(min-width: ($desktop-lg + 'px')) {
-            left: -74px;
-            width: calc(100% + 200px + 74px);
-        }
     }
 
     &__text {
@@ -255,14 +220,6 @@
         max-width: 180px;
         flex: 1 1 auto;
         line-height: 25px;
-
-        @media(min-width: ($tablet + 'px')) {
-            margin-right: 25px;
-        }
-
-        @media(min-width: ($desktop-lg + 'px')) {
-            margin-right: 27px;
-        }
     }
 
     &__arrow {
@@ -274,44 +231,11 @@
         background-repeat: no-repeat;
         background-position: center right;
         flex: 1 1 auto;
-
-        @media(min-width: ($tablet + 'px')) {
-            max-width: 169px;
-        }
-
-        @media(min-width: ($desktop + 'px')) {
-            max-width: 120px;
-        }
-
-        @media(min-width: ($laptop + 'px')) {
-            max-width: 169px;
-            margin-right: -40%;
-        }
-
-        @media(min-width: ($desktop-lg + 'px')) {
-            max-width: 172px;
-            margin-right: -60%;
-        }
     }
 
     &--feedback {
         margin-bottom: 38px;
         width: 100%;
-
-        @media(min-width: ($tablet + 'px')) {
-            width: auto;
-            margin-bottom: 0;
-            align-self: center;
-            padding-left: 72px;
-            padding-right: 72px;
-            margin-bottom: 57px;
-        }
-        @media(min-width: ($desktop + 'px')) {
-            width: 100%;
-            margin-top: auto;
-            margin-bottom: 0;
-            align-self: flex-start;
-        }
     }
 
     &--aside {
@@ -321,71 +245,19 @@
         color: $cl-white;
         background-color: $cl-green;
         transition: color 0.8s ease, background-color 0.8s ease;
-
-        @media(min-width: ($tablet + 'px')) {
-            font-size: 14px;
-            line-height: 35px;
-            padding: 12px 18px;
-            width: 160px;
-            text-align: start;
-        }
-
-        @media(min-width: ($desktop + 'px')) {
-            font-size: 16px;
-            width: 100%;
-            padding: 22px 29px 23px;
-
-            &:hover {
-                color: $cl-white;
-                background-color: $cl-green;
-            }
-        }
     }
 
     &--pink {
         color: $cl-gray-3c;
         background-color: $cl-pink-f9;
-
-        &:hover {
-            color: $cl-gray-3c;
-            background-color: $cl-pink-f9;
-        }
     }
 
     &--filter {
         display: none;
-
-        @media(min-width: ($tablet + 'px')) {
-            display: block;
-            width: 60px;
-            height: 60px;
-            border: none;
-            padding: 0;
-            margin-left: auto;
-            // margin: auto 0 auto auto;
-
-            &:hover {
-                background-color: transparent;
-            }
-        }
-
-        @media(min-width: ($desktop + 'px')) {
-            display: none;
-        }
     }
 
     &--sale {
         display: none;
-
-        @media (min-width: ($desktop + 'px')) {
-            border: none;
-            display: block;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-left: -17px;
-            font-size: 12px;
-            line-height: 14px;
-        }
     }
 
     &--intro-inner {
@@ -432,22 +304,163 @@
             top: 50%;
             transform: translateY(-50%);
         }
+    }
 
-        @media (min-width: ($tablet + 'px')) {
+    //Media
+
+    @media (min-width: ($tablet + 'px')) {
+        &--guarantee {
+            margin-left: 82px;
+            font-size: 16px;
+            line-height: 38px;
+            text-align: left;
+        }
+
+        &--service{
+            margin: 0 85px 0 32px;
+            max-width: 254px;
+        }
+
+        &--link {
+            padding: 45px 0 54px;
+        }
+
+        &__text {
+            margin-right: 25px;
+        }
+
+        &__arrow {
+            max-width: 169px;
+        }
+
+        &--feedback {
+            width: auto;
+            margin-bottom: 0;
+            align-self: center;
+            padding-left: 72px;
+            padding-right: 72px;
+            margin-bottom: 57px;
+        }
+
+        &--aside {
+            font-size: 14px;
+            line-height: 35px;
+            padding: 12px 18px;
+            width: 160px;
+            text-align: start;
+        }
+
+        &--filter {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border: none;
+            padding: 0;
+            margin-left: auto;
+            // margin: auto 0 auto auto;
+        }
+
+        &--intro-inner {
             margin-left: auto;
             margin-right: -84px;
             width: 320px;
             height: 80px;
         }
+    }
 
-        @media (min-width: ($desktop + 'px')) {
+    @media (min-width: #{$desktop-min + 'px'}) {
+        &--size {
+            max-width: 280px;
+        }
+    }
 
+    @media (min-width: ($desktop + 'px')) {
+        &--guarantee {
+            margin-left: 62px;
+        }
+
+        &--service {
+            margin: 0 281px 0 51px;
+        }
+
+        &--link {
+            padding: 71px 0 66px;
+            margin-top: 86px;
+            margin-bottom: 0;
+        }
+
+        &--link::before {
+            left: -40px;
+            margin: 0;
+            width: calc(((100vw - 1200px) / 2 ) + 320px);
+        }
+
+        &__arrow {
+            max-width: 120px;
+        }
+
+        &--feedback {
+            width: 100%;
+            margin-top: auto;
+            margin-bottom: 0;
+            align-self: flex-start;
+        }
+
+        &--aside {
+            font-size: 16px;
+            width: 100%;
+            padding: 22px 29px 23px;
+        }
+
+        &--filter {
+            display: none;
+        }
+
+        &--sale {
+            border: none;
+            display: block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-left: -17px;
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        &--intro-inner {
             margin-right: 50%;
             width: calc(25% + 42px);
+
             &:hover {
                 background-color: $cl-lite-green;
                 border-color: $cl-lite-green;
             }
+        }
+    }
+
+    @media(min-width: ($laptop + 'px')) {
+        &__arrow {
+            max-width: 169px;
+            margin-right: -40%;
+        }
+    }
+
+    @media(min-width: ($desktop-lg + 'px')) {
+        &--link {
+            padding: 71px 0 66px;
+        }
+
+        &--link::before {
+            left: -74px;
+            width: calc(100% + 200px + 74px);
+        }
+
+        &__text {
+            margin-right: 27px;
+        }
+
+        &__arrow {
+            max-width: 172px;
+            margin-right: -60%;
         }
     }
 }
