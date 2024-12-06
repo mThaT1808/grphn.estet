@@ -35,51 +35,11 @@
         padding: 0;
         border: none;
         background-color: transparent;
+        display: block;
     }
 
-    & .arrow--shop-prev:hover,
-    & .arrow--shop-next:hover {
-        background-color: unset;
-    }
-
-    & .arrow--shop-prev::before,
-    & .arrow--shop-next::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 61px;
-        height: 1px;
-        background-color: $cl-green;
-    }
-
-    & .arrow--shop-prev::before {
-        left: 0;
-    }
-
-    & .arrow--shop-next::before {
-        right: 0;
-    }
-
-    & .arrow--shop-prev::after,
-    & .arrow--shop-next::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid $cl-green;
-        border-top: 1px solid $cl-green;
-    }
-
-    & .arrow--shop-prev::after {
-        transform: translateY(-50%) rotate(-45deg);
-        left: 0;
-    }
-
-    & .arrow--shop-next::after {
-        transform: translateY(-50%) rotate(135deg);
-        right: 0;
+    & .arrow--shop-prev {
+        transform: scale(-1);
     }
 
     &--doors {
@@ -167,6 +127,7 @@
 
     & .slick-track {
         padding-left: 37px;
+        float:left;
     }
 
 }
