@@ -2,24 +2,64 @@
 import Button from '@components/uikit/Button/Button.astro'
 import './style.scss'
 import Container from '@components/container/container.astro'
+import Picture from '@components/Picture/Picture.astro';
+
+export interface Props{
+    data: {
+        title: string;
+        descr: string;
+        img: string;
+        srcset?: [{
+            src: string;
+            type?: string;
+            media?: string;
+        }]
+    }
+}
+
+let {data} = Astro.props;
+
+if (!data) {
+    data = {
+        title: 'Подберем интерьерное решение?',
+        descr: 'Ответьте на\u00a0мои 10\u00a0вопросов, и\u00a0я\u00a0покажу вам вариант вашей мечты',
+        img: '/images/banner/banner.jpg',
+        srcset: [{
+            src: '/images/banner/banner-desktop.webp',
+            type: 'image/webp',
+            media: '(min-width:1024px)',
+        },
+        {
+            src: '/images/banner/banner-desktop.jpg',
+            type: 'image/jpg',
+            media: '(min-width:1024px)',
+        },
+        {
+            src: '/images/banner/banner.webp',
+            type: 'image/webp'
+        }
+    ]
+    }
+}
 ---
 
 <section class="banner">
     <Container>
         <div class="banner__content">
-            <p class="banner__title">Подберем интерьерное решение?</p>
+            <p class="banner__title">{data.title}</p>
             <div class="banner__wrapper">
                 <div class="banner__gradient">
-                    <p class="banner__descr">Ответьте на&nbsp;мои 10&nbsp;вопросов, и&nbsp;я&nbsp;покажу вам вариант вашей мечты</p>
+                    <p class="banner__descr">{data.descr}</p>
                 </div>
                 <Button class="button button--size">Подобрать</Button>
             </div>
-            <picture class="banner__picture">
-                <source srcset="/images/banner/banner-desktop.webp" type="image/webp" media="(min-width:1024px)" >
-                <source srcset="/images/banner/banner-desktop.jpg" type="image/jpg" media="(min-width:1024px)" >
-                <source srcset="/images/banner/banner.webp" type="image/webp"/>
-                <img class="banner__image" src="/images/banner/banner.jpg" alt="">
-            </picture>
+            <Picture
+            classPicture="banner__picture"
+            classImage="banner__image"
+            image={data.img}
+            srcset={data.srcset}
+            alt={data.title}
+        />
         </div>
     </Container>
 </section>
