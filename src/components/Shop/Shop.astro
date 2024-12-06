@@ -8,14 +8,14 @@ import Icon from '@components/uikit/Icon/Icon.astro'
 
 export interface Props {
     title?: string;
-    modifier?: string;
+    mod?: string;
 }
 
-const { title, modifier } = Astro.props;
+const { title, mod } = Astro.props;
 ---
-<section class:list={["shop", modifier? `shop--${modifier}`:'']}>
+<section class:list={["shop", mod? `shop--${mod}`:'']}>
     {
-        modifier?
+        mod?
         <a href="javascript:void(0);" class="shop__show-map">
             <div class="shop__map-icon">
                 <Icon name="map-pin" mod="white"/>
