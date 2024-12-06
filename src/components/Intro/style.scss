@@ -8,7 +8,7 @@ $intro-height: 100vh;
     margin: 0 auto;
     height: $intro-height;
     max-width: 1600px;
-    overflow: hidden;
+    // overflow: hidden;
 
 
     &__functional {
@@ -17,6 +17,17 @@ $intro-height: 100vh;
         bottom: 0;
         display: inline-block;
         background-color: $cl-green;
+    }
+
+    &__wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $cl-black;
+        opacity: 0.35;
     }
 }
 
@@ -46,6 +57,7 @@ $intro-height: 100vh;
             padding-bottom: 0;
             padding-left: 0;
             padding-top: 121px;
+            z-index: 2;
         }
 
     }
