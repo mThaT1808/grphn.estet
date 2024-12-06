@@ -26,7 +26,7 @@
     &__options {
         display: none;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 1px);
         left: 0;
         max-height: 200px;
         z-index: 2;
@@ -74,18 +74,18 @@
         content: '';
         position: sticky;
         display: block;
-        top: 0;
+        top: -1px;
         right: 0;
         width:100%;
-        height: 12px;
-        background-image: linear-gradient($cl-white 20%, transparent 80%);
+        height: 13px;
+        background-image: linear-gradient($cl-cl-gray-f9 20%, transparent 80%);
         z-index: 3;
     }
 
     &__options::after{
         bottom: 0;
         height: 18px;
-        background-image: linear-gradient(transparent 15%, $cl-white 70%);
+        background-image: linear-gradient(transparent 15%, $cl-cl-gray-f9 70%);
     }
 
     // Иконка местоположения
