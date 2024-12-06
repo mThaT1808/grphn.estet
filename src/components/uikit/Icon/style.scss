@@ -104,4 +104,9 @@
     .button--more:hover &--more {
         transform: rotate(90deg) translateX(6px);
     }
+
+    &--shop {
+        font-size: 9px;
+        color: $cl-green;
+    }
 }

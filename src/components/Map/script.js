@@ -67,7 +67,7 @@ async function initMap() {
     const content = document.createElement('div');
 
     try {
-        let response = await fetch('http://localhost:4000/api/offices', {
+        let response = await fetch('http://localhost:4000/api/offices/all', {
             method: 'get',
         });
         let offices = await response.json()

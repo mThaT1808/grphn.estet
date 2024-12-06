@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import 'slick-slider';
 
-
 const slider = $('.slider--shop');
 var slidesToShow = 1.5;
 var slidesToScroll = 1;
@@ -20,7 +19,6 @@ slider.slick({
 });
 
 function checkWidth() {
-
     slidesToShow = 1.5;
     slidesToScroll = 1;
     rows = 1;
@@ -56,7 +54,6 @@ function checkWidth() {
         infinite= false;
         arrows= false;
 
-
     } else {
         easing= "ease";
         infinite= false;
@@ -78,7 +75,6 @@ function checkWidth() {
 }
 
 checkWidth();
-
 
 $(window).on('resize', checkWidth);
 
