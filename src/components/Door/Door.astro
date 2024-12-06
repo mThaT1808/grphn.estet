@@ -22,17 +22,7 @@ const { slide } = Astro.props;
             <div class="door__price-old">{slide.priceOld}</div>
         </div>
         <div class="door__choice-box">
-            {["dark-brown", "beige", "light-beige", "grey", "marble", "grey-line"].map((texture) => (
-                <label key={texture}>
-                    <img
-                        class="door__choice-textures"
-                        src={`/images/card/texture/${texture}.png`}
-                        alt=""
-                    />
-                    <input class="door__choice" type="radio" name={`card${slide.id}`} value="color" />
-                </label>
-            ))}
-            <button class="door__choice-btn">+5</button>
+            <button class="door__choice-btn"></button>
         </div>
     </div>
 </div>
