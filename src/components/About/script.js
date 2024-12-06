@@ -79,6 +79,25 @@ dots.forEach((dot) => {
     dot.style.animationDelay = `${randomDelay}s`;
 });
 
+const cards = [
+    {
+        imageBox: document.querySelector('.about__image-box--tech'),
+        descriptionBox: document.querySelector('.about__descr--tech'),
+    },
+    {
+        imageBox: document.querySelector('.about__image-box--quality'),
+        descriptionBox: document.querySelector('.about__descr--quality'),
+    },
+    {
+        imageBox: document.querySelector('.about__image-box--solution'),
+        descriptionBox: document.querySelector('.about__descr--solution'),
+    },
+    {
+        imageBox: document.querySelector('.about__image-box--company'),
+        descriptionBox: document.querySelector('.about__descr--company'),
+    },
+];
+
 function toggleCard(imageBox, descriptionBox) {
     const isActive = imageBox.classList.contains('active');
     document.querySelectorAll('.about__image-box.active, .about__descr.active').forEach(box => box.classList.remove('active'));
@@ -86,30 +105,16 @@ function toggleCard(imageBox, descriptionBox) {
     if (!isActive) {
         descriptionBox.classList.add('active');
         imageBox.classList.add('active');
-    } else {
-        descriptionBox.classList.remove('active');
-        imageBox.classList.remove('active');
     }
 
-    dots.forEach((dot) => {
-        if (imageBox.classList.contains('active')) {
-            dot.style.opacity = 0;
-        } else {
-            dot.style.opacity = 1;
-        }
+    dots.forEach((dot, index) => {
+        dot.style.opacity = imageBox.classList.contains('active') && index !== cards.indexOf({ imageBox, descriptionBox }) ? 0 : 1;
     });
 }
 
-const imageSolution = document.querySelector('.about__image-box--solution');
-const descrSolution = document.querySelector('.about__descr--solution');
-const imageQuality = document.querySelector('.about__image-box--quality');
-const descrQuality = document.querySelector('.about__descr--quality');
-const imageTech = document.querySelector('.about__image-box--tech');
-const descrTech = document.querySelector('.about__descr--tech');
-const descrCompany = document.querySelector('.about__descr--company');
-const imageCompany = document.querySelector('.about__image-box--company');
+cards.forEach((card, index) => {
+    card.imageBox.addEventListener('click', () => toggleCard(card.imageBox, card.descriptionBox));
+    card.descriptionBox.addEventListener('click', () => toggleCard(card.imageBox, card.descriptionBox));
 
-imageSolution.addEventListener('click', () => toggleCard(imageSolution, descrSolution));
-imageQuality.addEventListener('click', () => toggleCard(imageQuality, descrQuality));
-imageTech.addEventListener('click', () => toggleCard(imageTech, descrTech));
-descrCompany.addEventListener('click', () => toggleCard(imageCompany, descrCompany));
+    dots[index].addEventListener('click', () => toggleCard(card.imageBox, card.descriptionBox));
+});
