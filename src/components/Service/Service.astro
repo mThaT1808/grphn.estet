@@ -4,7 +4,7 @@ import './style.scss';
 import Button from '@components/uikit/Button/Button.astro';
 import Title from '@components/uikit/Title/Title.astro';
 import Text from '@components/uikit/Text/Text.astro';
-import Icon from '@components/uikit/Icon/Icon.astro';
+import Picture from '@components/Picture/Picture.astro';
 const services = [
     {
         name: 'Гарантия',
@@ -21,7 +21,9 @@ const services = [
         text: 'Мы предоставляем клиентам выезд на замер, консультации на объекте; доставку и подъем продукции; врезку фурнитуры на профессиональном оборудовании; демонтаж и установку межкомнатных дверей; укладку массивной и паркетной доски.',
         linkText: 'Заказать замер',
         srcset: [
-            '/images/service/service.webp'
+            {
+                src: '/images/service/service.webp'
+            }
         ],
         img: '/images/service/service.jpg',
         href: 'javascript:void(0);'
@@ -41,12 +43,13 @@ const services = [
                             ''
                     }
                     {service.mod === 'service' ? (
-                        <picture class="service__wrapper">
-                        {service.srcset.map((src) => (
-                            <source srcset={src}/>
-                        ))}
-                        <img src={service.img} alt={service.name} class="service__image"/>
-                    </picture>
+                        <Picture
+                            classPicture="service__wrapper"
+                            classImage="service__image"
+                            srcset={service.srcset}
+                            image={service.img}
+                            alt={service.name}
+                        />
                     <div class="service__gradient"/>
                     ):''}
                     <Title Tag='h2' class={service.Align === 'left' ? 'service title--left' : 'service title--guarantee'}>{service.name}</Title>
