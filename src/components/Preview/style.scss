@@ -4,19 +4,6 @@
 .preview {
     position: relative;
 
-    @media (min-width: ($tablet + 'px')) {
-        background: linear-gradient($cl-white 27%, $cl-gray-f7 27%);
-        .icon-pause,
-        .icon-play {
-            cursor: pointer;
-        }
-    }
-
-    @media (min-width: ($desktop + 'px')) {
-        padding-bottom: 126px;
-        background: $cl-gray-f7;
-    }
-
     &__video {
         max-width: 100%;
         display: block;
@@ -26,14 +13,27 @@
         }
     }
 
+    .icon-pause,
+    .icon-play {
+        width: 52px;
+        height: 52px;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .icon-pause {
+        display: none;
+    }
+
     &__slider {
         position: relative;
         padding-bottom: 60px;
         margin: 0 -25px;
-
-        @media (min-width: ($tablet + 'px')) {
-            margin: 0;
-        }
     }
 
     .icon--video-review {
@@ -46,25 +46,6 @@
         cursor: pointer;
         border: 1px solid $cl-white;
         border-radius: 50%;
-
-        @media (min-width: ($tablet + 'px')) {
-            padding: 25px;
-        }
-
-        @media (min-width: ($desktop + 'px')) {
-            top: calc((100% - 186px) / 2);
-            font-size: 24px;
-            font-size: 24px;
-            padding: 55px;
-        }
-    }
-
-    .icon-pause {
-        display: none;
-    }
-
-    .slick-dotted.slick-slider {
-        margin-bottom: 0;
     }
 
     .slick-dots {
@@ -75,23 +56,16 @@
         column-gap: 12px;
         width: calc(100% - 136px);
 
-        @media (min-width: ($tablet + 'px')) {
-            left: 0;
-            bottom: 26px;
-            width: calc(100% - 120px);
-        }
-
-         li[role="presentation"] {
+        li[role="presentation"] {
             width: 9px;
             height: 9px;
             margin: 0;
-            padding: 0;
             display: block;
 
             button {
                 width: 100%;
                 height: 100%;
-                padding: 0;
+                padding: 5px;
 
                 &::before {
                     width: 100%;
@@ -113,14 +87,60 @@
         display: flex;
         bottom: 0;
         right: 0;
+    }
 
-        @media (min-width: ($tablet + 'px')) {
+    @media (min-width: ($tablet + 'px')) {
+        background: linear-gradient($cl-white 27%, $cl-gray-f7 27%);
+
+        .icon-pause,
+        .icon-play {
+            cursor: pointer;
+            width: 75px;
+            height: 75px;
+        }
+
+        &__slider {
+            margin: 0;
+        }
+
+        .icon--video-review {
+            padding: 25px;
+        }
+
+        .slick-dots {
+            left: 0;
+            bottom: 26px;
+            width: calc(100% - 120px);
+        }
+
+        &__button-container {
             right: 24px;
         }
+    }
 
-        @media (min-width: ($desktop + 'px')) {
-            bottom: 126px;
-            right: calc((100vw - 1200px) / 2);
+    @media (min-width: ($desktop + 'px')) {
+        padding-bottom: 126px;
+        background: $cl-gray-f7;
+
+        .icon-pause,
+        .icon-play {
+            width: 140px;
+            height: 140px;
         }
+
+        .icon--video-review {
+            top: calc((100% - 186px) / 2);
+            font-size: 24px;
+            font-size: 24px;
+            padding: 55px;
+        }
+    }
+
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+
+    &__button-container {
+        right: calc((100vw - 1200px) / 2);
     }
 }

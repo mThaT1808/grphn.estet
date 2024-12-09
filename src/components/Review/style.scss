@@ -39,6 +39,15 @@
         font-size: 12px;
         border: 1px solid $cl-white;
         border-radius: 50%;
+        width: 52px;
+        height: 52px;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
 
@@ -180,8 +189,9 @@
         .icon-pause,
         .icon-play {
             font-size: 25px;
-            padding: 42px;
             cursor: pointer;
+            width: 75px;
+            height: 75px;
         }
     }
 
@@ -298,6 +308,8 @@
         .icon-play {
             font-size: 30px;
             padding: 54px;
+            width: 140px;
+            height: 140px;
         }
     }
 
