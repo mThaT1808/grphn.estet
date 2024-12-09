@@ -6,64 +6,77 @@ import Title from '@components/uikit/Title/Title.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
 
-const slides = [
-    {
-        text: 'Современный ремонт квартиры-студии!',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'ESTET воплощает мечты',
-        video: '/public/video/review/placeholder.mp4',
-        active: true
-    },
-    {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Современный ремонт квартиры-студии!',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    },
-     {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Современный ремонт квартиры-студии!',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    },
-    {
-        text: 'Двери ESTET. Жизнь фабрики.',
-        video: '/public/video/review/placeholder.mp4'
-    }
-]
+const data = {
+    slides: [
+        {
+            text: 'Современный ремонт квартиры-студии!',
+            video: '/public/video/review/placeholder.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'ESTET воплощает мечты',
+            video: '/public/video/review/christmas.mp4',
+            poster: '/images/review/placeholder.jpg',
+            active: true
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/happy-cat.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Современный ремонт квартиры-студии!',
+            video: '/public/video/review/placeholder.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/christmas.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/happy-cat.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/placeholder.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Современный ремонт квартиры-студии!',
+            video: '/public/video/review/christmas.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/happy-cat.mp4',
+            poster: '/images/review/placeholder.jpg'
+        },
+        {
+            text: 'Двери ESTET. Жизнь фабрики.',
+            video: '/public/video/review/placeholder.mp4',
+            poster: '/images/review/placeholder.jpg'
+        }
+    ],
+    title: 'Видео обзор',
+    text: ['Еще больше новых обзоров вы найдете  на нашем', 'канале']
+}
 ---
 <section class="review">
     <Container >
         <div class="review__slider">
-            <Title Tag='h2' class="review">Видео обзор</Title>
+            <Title Tag='h2' class="review">{data.title}</Title>
             <div class="review__video-container">
-                <video class="review__video" muted="true" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
-                <!-- <Icon name='video' mod='video-play'/> -->
+                <video class="review__video" muted="true" poster={data.slides[1].poster} src={data.slides[1].video}/>
                 <Icon name='play' mod='video-review'/>
                 <Icon name='pause' mod='video-review'/>
             </div>
             <div class="review__wrapper">
                 <div class="review__list">
-                    {slides.map((slide) => (
-                        <div class={`review__item ${slide.active ? 'review__item--active' : ''}`} data-video={slide.video}>
+                    {data.slides.map((slide) => (
+                        <div class={`review__item ${slide.active ? 'review__item--active' : ''}`} data-video={slide.video} data-poster={slide.poster}>
                             <Icon name='video' mod='video-review'/>
                             <Text class="review">{slide.text}</Text>
                         </div>
@@ -73,13 +86,11 @@ const slides = [
                     <Arrow mod='adaptive-left'/>
                     <Arrow mod='adaptive-right'/>
                 </div>
-                <!-- <button class="review__button review__button--prev" type="button">Назад</button>
-                <button class="review__button" type="button">Вперёд</button> -->
             </div>
             <div class="review__container">
                 <Icon name="youtube-video" mod="youtube-video"/>
                 <Text class='review-small'>
-                    Еще больше новых обзоров вы найдете  на нашем <a class="review__link">Youtube</a> канале
+                    {data.text[0]}<a class="review__link" href="javascript:void(0);"> Youtube </a> {data.text[1]}
                 </Text>
             </div>
         </div>
