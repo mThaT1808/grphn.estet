@@ -142,13 +142,11 @@ buttons.forEach(button => {
             suggestions.classList.remove('tab-pane-show');
             newsLink.classList.add('tab-pane-show');
             suggestionsLink.classList.remove('tab-pane-show');
-            console.log('news');
         } if (e.target.classList.contains('button--suggestions')){
             suggestions.classList.add('tab-pane-show');
             news.classList.remove('tab-pane-show');
             suggestionsLink.classList.add('tab-pane-show');
             newsLink.classList.remove('tab-pane-show');
-            console.log('sugg');
         }
     });
 });
