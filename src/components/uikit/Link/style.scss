@@ -23,24 +23,38 @@
         &:hover {
             border-bottom: 1px solid $cl-green;
         }
+
+        &--info:hover {
+            color: var(--cl-green);
+        }
+
+        &--footer:hover {
+            border-bottom: 1px solid $cl-white;
+        }
+
+        &--intro:hover {
+            opacity: 0.8;
+        }
+
+        &--aside:hover {
+            border: none;
+            opacity: 0.8;
+        }
+
+        &--no-line:hover {
+            color: $cl-gray-97;
+            border-bottom: none;
+        }
     }
 
     // Специфичные
 
     &--info {
         color: var(--cl-gray-3c);
-            &:hover{
-                color: var(--cl-green);
-            }
     }
 
     &--white {
         color: $cl-white;
-    }
-
-    &--no-line:hover {
-        color: $cl-gray-97;
-        border-bottom: none;
     }
 
     &--tel {
@@ -55,19 +69,6 @@
         margin-bottom: 22px;
         width: max-content;
         border-bottom: 1px solid transparent;
-
-        @media (min-width: #{$tablet + 'px'}) {
-            display: none;
-        }
-
-        @media (min-width: #{$desktop + 'px'}) {
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        &:hover {
-            border-bottom: 1px solid $cl-white;
-        }
     }
 
     &--intro {
@@ -75,16 +76,8 @@
         border: 1px solid transparent;
     }
 
-    &--intro:hover {
-        opacity: 0.8;
-    }
-
     &--shop {
         font-size: 12px;
-
-        @media (min-width: #{$desktop + 'px'}) {
-            margin-right: 67px;
-        }
     }
 
     &--lamel {
@@ -94,7 +87,6 @@
 }
 
 @media (min-width: ($tablet + 'px')) {
-
     .link {
 
         &--intro {
@@ -119,11 +111,14 @@
                     color: var(--cl-gray-3c);
                 }
         }
+
+        &--footer {
+            display: none;
+        }
     }
 }
 
 @media (min-width: ($desktop + 'px')) {
-
     .link {
 
         &--intro {
@@ -147,11 +142,15 @@
             &::after {
                 display: none;
             }
+        }
 
-            &:hover {
-                border: none;
-                opacity: 0.8;
-            }
+        &--footer {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        &--shop {
+            margin-right: 67px;
         }
     }
 }

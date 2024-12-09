@@ -126,12 +126,28 @@ $(function() {
 });
 
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
         buttons.forEach((button) => {
             button.classList.remove('button--active');
         });
         button.classList.add('button--active');
         buttonContainer.classList.toggle('info__button-wrapper--active-right');
+        const news = document.querySelector('.tab-pane.news');
+        const suggestions = document.querySelector('.tab-pane.suggestions');
+        const newsLink = document.querySelector('.info__link--news');
+        const suggestionsLink = document.querySelector('.info__link--suggestions');
+        console.log(e.target);
+        if (e.target.classList.contains('button--news')){
+            news.classList.add('tab-pane-show');
+            suggestions.classList.remove('tab-pane-show');
+            newsLink.classList.add('tab-pane-show');
+            suggestionsLink.classList.remove('tab-pane-show');
+        } if (e.target.classList.contains('button--suggestions')){
+            suggestions.classList.add('tab-pane-show');
+            news.classList.remove('tab-pane-show');
+            suggestionsLink.classList.add('tab-pane-show');
+            newsLink.classList.remove('tab-pane-show');
+        }
     });
 });
 
@@ -145,43 +161,19 @@ const showTab = (elTabBtn) => {
     if (elTabPane) {
       const elTabBtnActive = elTab.querySelector('.tab-btn-active');
       elTabBtnActive.classList.remove('tab-btn-active');
-      const elTabPaneShow = elTab.querySelector('.tab-pane-show');
-      elTabPaneShow.classList.remove('tab-pane-show');
       elTabBtn.classList.add('tab-btn-active');
-      elTabPane.classList.add('tab-pane-show');
     }
 }
 
 document.addEventListener('click', (e) => {
+    const news = document.querySelector('.tab-pane.news');
+    console.log(news);
     if (e.target && !e.target.closest('.tab-btn')) {
         return;
+    }
+    if(e.target.classList.contains('button--news')){
+
     }
     const elTabBtn = e.target.closest('.tab-btn');
     showTab(elTabBtn);
 });
-
-
-// const showTab = (elTabBtn) => {
-//     const elTab = elTabBtn.closest('.tab');
-//     if (elTabBtn.classList.contains('tab-btn-active')) {
-//       return;
-//     }
-//     const targetId = elTabBtn.dataset.targetId;
-//     const elTabPane = elTab.querySelector(`.tab-pane[data-id="${targetId}"]`);
-//     if (elTabPane) {
-//       const elTabBtnActive = elTab.querySelector('.tab-btn-active');
-//       elTabBtnActive.classList.remove('tab-btn-active');
-//       const elTabPaneShow = elTab.querySelector('.tab-pane-show');
-//       elTabPaneShow.classList.remove('tab-pane-show');
-//       elTabBtn.classList.add('tab-btn-active');
-//       elTabPane.classList.add('tab-pane-show');
-//     }
-// }
-
-// document.addEventListener('click', (e) => {
-//     if (e.target && !e.target.closest('.tab-btn')) {
-//         return;
-//     }
-//     const elTabBtn = e.target.closest('.tab-btn');
-//     showTab(elTabBtn);
-// });
