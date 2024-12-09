@@ -2,6 +2,118 @@
 import Button from '@components/uikit/Button/Button.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import './style.scss'
+
+const filterCollection = [
+    {
+        dataValue: 'bliss',
+        text: 'bliss'
+    },
+    {
+        dataValue: 'urban',
+        text: 'urban'
+    },
+    {
+        dataValue: 'perfect',
+        text: 'perfect'
+    },
+    {
+        dataValue: 'sonata',
+        text: 'sonata'
+    },
+    {
+        dataValue: 'novella',
+        text: 'novella'
+    },
+    {
+        dataValue: 'mio',
+        text: 'mio'
+    },
+    {
+        dataValue: 'ways',
+        text: 'ways'
+    },
+    {
+        dataValue: 'royal',
+        text: 'royal'
+    },
+    {
+        dataValue: 'perfect-volume',
+        text: 'perfect volume'
+    },
+];
+
+const filterStyle = [
+    {
+        dataValue: 'modern',
+        text: 'Современный'
+    },
+    {
+        dataValue: 'classic',
+        text: 'Классический'
+    },
+    {
+        dataValue: 'neo-classic',
+        text: 'Неоклассический'
+    },
+    {
+        dataValue: 'disain',
+        text: 'Дизайнерский'
+    },
+];
+
+const filterColors = [
+    {
+        src: '/images/card/texture/dark.png',
+        value: 'dark',
+        text: 'Темный'
+    },
+    {
+        src: '/images/card/texture/brown.png',
+        value: 'brown',
+        text: 'Коричневый'
+    },
+    {
+        src: '/images/card/texture/beige.png',
+        value: 'beige',
+        text: 'Бежевый'
+    },
+    {
+        src: '/images/card/texture/gray.png',
+        value: 'gray',
+        text: 'Серый'
+    },
+    {
+        src: '/images/card/texture/white.png',
+        value: 'white',
+        text: 'Белый'
+    },
+    {
+        src: '/images/card/texture/marble.png',
+        value: 'marble',
+        text: 'Мраморный'
+    },
+    {
+        src: '/images/card/texture/yellow.png',
+        value: 'yellow',
+        text: 'Жёлтый'
+    },
+    {
+        src: '/images/card/texture/green.png',
+        value: 'Зелёный',
+        text: 'green'
+    },
+];
+
+const filterTrim = [
+    {
+        'dataValue': 'enamel',
+        text: 'Эмаль'
+    },
+    {
+        'dataValue': 'coating',
+        text: 'Покрытие'
+    },
+];
 ---
 
 <aside class="aside">
@@ -21,15 +133,11 @@ import './style.scss'
                     <Icon name="small-arrow" mod="opener" />
                 </div>
                 <ul class="filter__list filter__list--collection" data-name="collection" data-value="">
-                    <li class="filter__item" data-value="bliss">bliss</li>
-                    <li class="filter__item" data-value="urban">urban</li>
-                    <li class="filter__item" data-value="perfect">perfect</li>
-                    <li class="filter__item" data-value="sonata">sonata</li>
-                    <li class="filter__item" data-value="novella">novella</li>
-                    <li class="filter__item" data-value="mio">mio</li>
-                    <li class="filter__item" data-value="ways">ways</li>
-                    <li class="filter__item" data-value="royal">royal</li>
-                    <li class="filter__item" data-value="perfect-volume">perfect volume</li>
+                    {
+                        filterCollection.map((item) => (
+                            <li class="filter__item" data-value={item.dataValue}>{item.text}</li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="filter">
@@ -38,10 +146,11 @@ import './style.scss'
                     <Icon name="small-arrow" mod="opener" />
                 </div>
                 <ul class="filter__list filter__list--style" data-name="style" data-value="">
-                    <li class="filter__item" data-value="modern">Современный</li>
-                    <li class="filter__item" data-value="classic">Классический</li>
-                    <li class="filter__item" data-value="neo-classic">Неоклассический</li>
-                    <li class="filter__item" data-value="disain">Дизайнерский</li>
+                    {
+                        filterStyle.map((item) => (
+                            <li class="filter__item" data-value={item.dataValue}>{item.text}</li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="filter">
@@ -50,63 +159,17 @@ import './style.scss'
                     <Icon name="small-arrow" mod="opener" />
                 </div>
                 <ul class="filter__list filter__list-input filter__list--colors">
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/dark.png" alt="" />
-                            Темный
-                            <input class="filter__choice" type="checkbox" name="color" value="dark" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/brown.png" alt="" />
-                            Коричневый
-                            <input class="filter__choice" type="checkbox" name="color" value="brown" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/beige.png" alt="" />
-                            Бежевый
-                            <input class="filter__choice" type="checkbox" name="color" value="beige" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/gray.png" alt="" />
-                            Серый
-                            <input class="filter__choice" type="checkbox" name="color" value="gray" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/white.png" alt="" />
-                            Белый
-                            <input class="filter__choice" type="checkbox" name="color" value="white" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/marble.png" alt="" />
-                            Мраморный
-                            <input class="filter__choice" type="checkbox" name="color" value="marble" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/yellow.png" alt="" />
-                            Жёлтый
-                            <input class="filter__choice" type="checkbox" name="color" value="yellow" />
-                        </label>
-                    </li>
-                    <li class="filter__item">
-                        <label class="filter__choice-label">
-                            <img class="filter__choice-textures" src="/images/card/texture/green.png" alt="" />
-                            Зелёный
-                            <input class="filter__choice" type="checkbox" name="color" value="green" />
-                        </label>
-                    </li>
-
+                    {
+                        filterColors.map((item) => (
+                            <li class="filter__item">
+                                <label class="filter__choice-label">
+                                    <img class="filter__choice-textures" src={item.src} />
+                                    {item.text}
+                                    <input class="filter__choice" type="checkbox" name="color" value={item.value} />
+                                </label>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="filter">
@@ -115,8 +178,11 @@ import './style.scss'
                     <Icon name="small-arrow" mod="opener" />
                 </div>
                 <ul class="filter__list filter__list--trim" data-name="finishing" data-value="">
-                    <li class="filter__item" data-value="enamel">Эмаль</li>
-                    <li class="filter__item" data-value="coating">Покрытие</li>
+                    {
+                        filterTrim.map((item) => (
+                            <li class="filter__item" data-value={item.dataValue}>{item.text}</li>
+                        ))
+                    }
                 </ul>
             </div>
             <div class="filter">
