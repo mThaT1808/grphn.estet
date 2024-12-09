@@ -133,6 +133,12 @@
             display: none;
         }
 
+        &__popover {
+            width: 100vw;
+            top: -15px;
+            right: -25px;
+        }
+
         &--header-inner {
             display: flex;
             flex-grow: 1;
@@ -174,6 +180,7 @@
             left: auto;
             right: auto;
             width: auto;
+            top: 100%;
 
             .language__item:first-child {
                 display: none;
@@ -256,6 +263,19 @@
             font-size: 40px;
         }
 
+        &--inner .personal {
+
+            &__popover {
+                width: 375px;
+                top: -14px;
+                right: 0;
+            }
+
+            &__popover--open {
+                height: calc(100vw / 1.39);
+            }
+        }
+
         &--inner .hamburger {
             background-color: var(--cl-green);
             top: -14px;
@@ -303,6 +323,16 @@
             max-width: 1600px;
             align-items: flex-start;
             margin: 0 auto;
+        }
+
+        &--inner .personal {
+            &__popover {
+                top: 79px;
+            }
+
+            &__popover--open {
+                height: 65vh;
+            }
         }
 
         &--inner .searchbar {

@@ -81,11 +81,21 @@
         cursor: pointer;
 
         position: absolute;
-        top: 25px;
-        right: 25px;
+        top: 20px;
+        right: 21px;
     }
 }
 
+
+@media (min-width: ($tablet + 'px')) {
+    .personal {
+
+        &__close {
+            top: 22px;
+            right: 22px;
+        }
+    }
+}
 
 @media (min-width: ($desktop + 'px')) {
     .personal {
