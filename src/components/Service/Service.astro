@@ -41,7 +41,7 @@ const services = [
                         ):
                             ''
                     }
-                    {!service.mod? (
+                    {!(service.mod === 'guarantee')? (
                         <Picture
                             classPicture="service__wrapper"
                             classImage="service__image"
