@@ -2,6 +2,7 @@
 import Button from '@components/uikit/Button/Button.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import './style.scss'
+import PriceSlider from '@components/uikit/PriceSlider/PriceSlider.astro';
 
 const filterCollection = [
     {
@@ -190,12 +191,9 @@ const filterTrim = [
                     Цена
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list-input filter__list--price">
-                    <li class="filter__item">
-                        <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000"
-                            step="500">
-                    </li>
-                </ul>
+                <div class="filter__list">
+                    <PriceSlider from={0} to={25000}/>
+                </div>
             </div>
             <button class="filter__button filter__button--reset" type="button">
                 Сбросить все
