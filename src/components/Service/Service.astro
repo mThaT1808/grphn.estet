@@ -17,7 +17,6 @@ const services = [
     {
         name: 'Сервис',
         Align: 'left',
-        mod: 'service',
         text: 'Мы предоставляем клиентам выезд на замер, консультации на объекте; доставку и подъем продукции; врезку фурнитуры на профессиональном оборудовании; демонтаж и установку межкомнатных дверей; укладку массивной и паркетной доски.',
         linkText: 'Заказать замер',
         srcset: [
@@ -42,7 +41,7 @@ const services = [
                         ):
                             ''
                     }
-                    {service.mod === 'service' ? (
+                    {!(service.mod === 'guarantee')? (
                         <Picture
                             classPicture="service__wrapper"
                             classImage="service__image"
@@ -54,7 +53,7 @@ const services = [
                     ):''}
                     <Title Tag='h2' class={service.Align === 'left' ? 'service title--left' : 'service title--guarantee'}>{service.name}</Title>
                     <Text class={service.Align === 'left' ? 'service text--left' : 'service text--guarantee'}>{service.text}</Text>
-                    <Button TagButton='a' href={service.href} class={service.mod === 'service' ? `button--${service.mod} button--block` : `button--guarantee`}>{service.linkText}</Button>
+                    <Button TagButton='a' href={service.href} class={!service.mod? `button--service button--block` : `button--${service.mod}`}>{service.linkText}</Button>
                 </li>
             ))}
         </ul>
