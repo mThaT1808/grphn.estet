@@ -6,13 +6,12 @@ const itemsToShow = 8;
 const itemsToAdd = 4;
 let activeItems = 0;
 let filtered = [];
-let isFiltered = false; 
+let isFiltered = false;
 const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
 const quantityMax = document.querySelector('.card__quantity-total');
 const form = document.querySelector('.aside__filter');
-const doors = await getData();
 const pagination = document.querySelector('.card__quantity');
 
 function checkQuantity() {
@@ -123,7 +122,7 @@ function renderList(list, filter, add) {
         function checkIntroDoors() {
             const innerDoors = document.querySelectorAll('.door--intro');
             if (innerDoors[0].clientHeight > innerDoors[1].clientHeight) {
-                innerDoors[1].style.height = innerDoors[0].clientHeight + 'px';  
+                innerDoors[1].style.height = innerDoors[0].clientHeight + 'px';
             } else {
                 innerDoors[0].style.height = innerDoors[1].clientHeight + 'px';
             }
@@ -140,7 +139,7 @@ function renderList(list, filter, add) {
                     createColorButton(item, button);
             };
             checkIntroDoors();
-            button.style.display = 'none';   
+            button.style.display = 'none';
             });
                break;
             }
@@ -153,7 +152,7 @@ function renderList(list, filter, add) {
                         createColorButton(item, button);
                     };
                     checkIntroDoors();
-                    button.style.display = 'none';    
+                    button.style.display = 'none';
                 });
                 break;
             }
