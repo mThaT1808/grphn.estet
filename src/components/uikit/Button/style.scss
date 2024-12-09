@@ -23,71 +23,6 @@
         display: block;
     }
 
-    &--news,
-    &--suggestions {
-        background: none;
-        border: none;
-        color: $cl-gray-3c;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 28px;
-        width: 85px;
-    }
-
-    &--news {
-        padding: 0;
-        text-align: left;
-    }
-
-    &--suggestions {
-        padding: 0;
-        text-align: right;
-    }
-
-    &--active {
-        color: $cl-green;
-    }
-
-    &--guarantee {
-        display: flex;
-        position: relative;
-        padding: 0;
-        margin-left: auto;
-        font-size: 14px;
-        line-height: 25px;
-        font-weight: 700;
-        max-width: fit-content;
-        border: none;
-        color: $cl-green;
-    }
-
-    &--service {
-        line-height: 24px;
-        padding: 17px 0 19px 0;
-        margin: 0 25px 0 26px;
-        height: 60px;
-    }
-
-    &--size {
-        width: 100%;
-    }
-
-    &--more {
-        display: inline-flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 32px;
-        max-width: 153px;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        border: none;
-        font-weight: 400;
-        font-size: 12px;
-        letter-spacing: 0.17em;
-        text-transform: uppercase;
-    }
-
     @media (hover: none), (pointer: coarse) {
         &:active {
             background-color: $cl-green;
@@ -182,6 +117,71 @@
         &--filter:hover {
             background-color: transparent;
         }
+    }
+
+    &--news,
+    &--suggestions {
+        background: none;
+        border: none;
+        color: $cl-gray-3c;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+        width: 85px;
+    }
+
+    &--news {
+        padding: 0;
+        text-align: left;
+    }
+
+    &--suggestions {
+        padding: 0;
+        text-align: right;
+    }
+
+    &--active {
+        color: $cl-green;
+    }
+
+    &--guarantee {
+        display: flex;
+        position: relative;
+        padding: 0;
+        margin-left: auto;
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 700;
+        max-width: fit-content;
+        border: none;
+        color: $cl-green;
+    }
+
+    &--service {
+        line-height: 24px;
+        padding: 17px 0 19px 0;
+        margin: 0 25px 0 26px;
+        height: 60px;
+    }
+
+    &--size {
+        width: 100%;
+    }
+
+    &--more {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 32px;
+        max-width: 153px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
     }
 
     &--green {

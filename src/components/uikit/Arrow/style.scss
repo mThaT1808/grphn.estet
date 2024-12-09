@@ -52,26 +52,10 @@
 
     &--adaptive-left {
         transform: rotate(270deg);
-
-        @media (min-width: ($tablet + 'px')) {
-            transform: rotate(180deg);
-        }
-
-        @media (min-width: ($desktop + 'px')) {
-            transform: rotate(270deg);
-        }
     }
 
     &--adaptive-right {
         transform: rotate(90deg);
-
-        @media (min-width: ($tablet + 'px')) {
-            transform: rotate(0);
-        }
-
-        @media (min-width: ($desktop + 'px')) {
-            transform: rotate(90deg);
-        }
     }
 
     &--lamel-tech {
@@ -109,6 +93,18 @@
     }
 }
 
+@media (min-width: ($tablet + 'px')) {
+    .arrow {
+        &--adaptive-left {
+            transform: rotate(180deg);
+        }
+
+        &--adaptive-right {
+            transform: rotate(0);
+        }
+    }
+}
+
 @media (min-width: ($desktop + 'px')) {
     .arrow {
         &--sale-slider.arrow--left {
@@ -117,6 +113,14 @@
 
         .sale--inner &--sale-slider.arrow--left {
             display: none;
+        }
+
+        &--adaptive-left {
+            transform: rotate(270deg);
+        }
+
+        &--adaptive-right {
+            transform: rotate(90deg);
         }
     }
 }

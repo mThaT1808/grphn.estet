@@ -22,14 +22,6 @@
     &--footer {
         margin-bottom: 19px;
 
-        @media (min-width: #{$tablet + 'px'}) {
-            margin-bottom: 0;
-        }
-
-        @media (min-width: #{$desktop + 'px'}) {
-            margin-bottom: 19px;
-        }
-
         & .icon {
             transition: color $animation-time;
         }
@@ -46,5 +38,17 @@
 
     &--footer &__list {
         gap: 24px;
+    }
+
+    @media (min-width: #{$tablet + 'px'}) {
+        &--footer {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: #{$desktop + 'px'}) {
+        &--footer {
+            margin-bottom: 19px;
+        }
     }
 }

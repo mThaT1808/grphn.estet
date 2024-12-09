@@ -42,7 +42,6 @@
     }
 
     &--open &__list {
-
         position: absolute;
         max-width: unset;
         max-height: unset;
@@ -52,7 +51,6 @@
         gap: 30px;
         justify-content: space-between;
         background-color: $cl-green;
-
         overflow: unset;
     }
 
