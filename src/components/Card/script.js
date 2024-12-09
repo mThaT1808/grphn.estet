@@ -11,7 +11,7 @@ const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
 const quantityMax = document.querySelector('.card__quantity-total');
-const form = document.querySelector('.aside__filter');;
+const form = document.querySelector('.aside__filter');
 const pagination = document.querySelector('.card__quantity');
 
 function checkQuantity() {
