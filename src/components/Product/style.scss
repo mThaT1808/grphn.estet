@@ -49,6 +49,10 @@
         }
     }
 
+    &__item--image-first &__container {
+        order: -1;
+    }
+
     &__item--overflow &__image {
         aspect-ratio: 112 / 235;
         margin-left: 32px;

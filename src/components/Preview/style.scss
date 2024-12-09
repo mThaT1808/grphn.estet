@@ -89,6 +89,10 @@
         right: 0;
     }
 
+    .slick-dotted.slick-slider {
+        margin-bottom: 0;
+    }
+
     @media (min-width: ($tablet + 'px')) {
         background: linear-gradient($cl-white 27%, $cl-gray-f7 27%);
 
@@ -134,13 +138,10 @@
             font-size: 24px;
             padding: 55px;
         }
-    }
 
-    .slick-dotted.slick-slider {
-        margin-bottom: 0;
-    }
-
-    &__button-container {
-        right: calc((100vw - 1200px) / 2);
+        &__button-container {
+            right: calc((100vw - 1200px) / 2);
+            bottom: 126px;
+        }
     }
 }
