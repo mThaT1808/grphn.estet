@@ -460,6 +460,7 @@
             }
 
             &__options {
+                top: calc(100% - 25px);
                 background-color: $cl-green;
             }
 
@@ -468,16 +469,16 @@
             }
 
             &__options::before {
-                background-image: linear-gradient($cl-green 20%, transparent 80%);
+                background-image: linear-gradient($cl-green 30%, transparent 70%);
             }
 
             &__options::after {
-                background-image: linear-gradient(transparent 15%, $cl-green 70%);
+                background-image: linear-gradient(transparent 30%, $cl-green 70%);
             }
 
             &__box:has(.choice__options.open) .choice__row {
                 position: relative;
-                background-image: linear-gradient(transparent, $cl-green 40%);
+                background-image: linear-gradient(transparent, $cl-green 15%);
                 margin-bottom: -100px;
                 margin-top: 0;
                 padding-bottom: 100px;
