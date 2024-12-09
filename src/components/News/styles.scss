@@ -58,7 +58,8 @@
         position: relative;
         display: inline-block;
 
-        &--news {
+        &--news,
+        &--suggestions {
             line-height: 28px;
         }
     }
@@ -231,7 +232,8 @@
         width: 156.8vw;
     }
 
-    & .news__media-wrapper:hover~.news__content-wrapper .link--info{
+    & .news__media-wrapper:hover~.news__content-wrapper .link--info,
+    & .suggestions__media-wrapper:hover~.suggestions__content-wrapper .link--info{
         color: $cl-green;
     }
 
@@ -262,7 +264,8 @@
         }
 
         &__link {
-            &--news {
+            &--news,
+            &--suggestions {
                 left: 39.08vw;
             }
         }
@@ -323,7 +326,8 @@
         }
 
         &__link {
-            &--news {
+            &--news,
+            &--suggestions {
                 left: calc(34.88vw + 362px);
             }
         }
@@ -381,7 +385,8 @@
 @media (min-width: ($desktop-lg + 'px')){
     .info {
         &__link {
-            &--news {
+            &--news,
+            &--suggestions {
                 left: 921px;
             }
         }
