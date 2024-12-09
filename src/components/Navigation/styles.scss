@@ -277,17 +277,17 @@
     }
 }
 
-.header--inner .nav{
-    &__list{
+.header--inner .nav {
+    &__list {
         padding: 5px 0;
-
-        @media (min-width: ($desktop + 'px')) {
-            justify-content: space-evenly;
-            align-items: center;
-        }
     }
 
     @media (min-width: ($desktop + 'px')) {
+        &__list {
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
         &__item {
             margin-right: 0;
 
