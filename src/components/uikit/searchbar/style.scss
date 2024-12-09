@@ -1,6 +1,5 @@
 @use '/src/assets/styles/global.scss' as *;
 
-
 .searchbar {
     width: 32px;
     height: 32px;
@@ -149,7 +148,8 @@
 
         &--aside &__input {
             font-size: 16px;
-            padding: 0 0 0 15px;
+            color: $cl-gray-3c;
+            padding: 0 15px 0 15px;
             width: 0;
             height: 100%;
             top: 50%;
@@ -160,12 +160,12 @@
             transition: width $animation-time;
         }
 
-        &--aside.searchbar--open &__button {
-            // left: unset;
-        }
+        // &--aside.searchbar--open &__button {
+        //     left: unset;
+        // }
 
         &--aside .icon {
-            color: $cl-black;
+            color: $cl-gray-3c;
         }
 
         &--open &__input {
