@@ -262,7 +262,6 @@
             background-color: transparent;
         }
 
-        
         &:nth-of-type(8n + 1),
         &:nth-of-type(8n - 1) {
             background-color: $cl-white;
@@ -317,7 +316,5 @@
         &:hover &__price {
             visibility: visible;
         }
-
-
     }
 }
