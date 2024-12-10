@@ -15,12 +15,12 @@ if (!step) {step = 1};
 <div class="price-slider">
     <label class="price-slider__label" for="price-from">
         <div class="price-slider__currency"></div>
-        <input type="text" class="price-slider__input" name="price-from">
+        <input type="number" class="price-slider__input" name="price-from">
     </label>
 
     <label class="price-slider__label" for="price-to">
         <span class="price-slider__currency"></span>
-        <input type="text" class="price-slider__input" name="price-to">
+        <input type="number" class="price-slider__input" name="price-to">
     </label>
 
     <div id="sliderPrice" class="price-slider__slider-price" data-min={from} data-max={to} data-step={step}></div>
