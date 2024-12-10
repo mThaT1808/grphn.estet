@@ -1,0 +1,91 @@
+@use '/src/assets/styles/global.scss' as *;
+
+.price-slider {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-bottom: 43px;
+
+    /* custom styles for UiSlider */
+    .noUi-target {
+        cursor: pointer;
+
+        :focus {
+            outline: none;
+        }
+    }
+
+    .noUi-horizontal {
+        height: 1px;
+        width: 100%;
+    }
+
+    .noUi-connect {
+        background: $cl-green;
+        height: 1px;
+        transform-origin: left center;
+    }
+
+    .noUi-base {
+        background: $cl-gray-3c;
+        height: 100%;
+    }
+
+    .noUi-horizontal .noUi-handle {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background: $cl-green;
+        border-radius: 50%;
+        box-shadow: unset;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: none
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    /* styles for filter */
+
+
+    .price-slider__label {
+        width: unset;
+        font-size: 14px;
+        width: 50%;
+
+        cursor: pointer;
+        margin-bottom: 10px;
+
+    }
+
+    .price-slider__label {
+        position: relative;
+    }
+
+    .price-slider__currency {
+        position: absolute;
+        width: 100%;
+        line-height: 38px;
+    }
+
+    .price-slider__input {
+        line-height: 38px;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 0;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .-slider__slider-price {
+        margin: 20px 5px 0;
+    }
+}
