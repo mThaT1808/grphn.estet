@@ -90,6 +90,8 @@ app.get('/api/doors/all', (req, res) => {
   const discount = req.query.discount;
   const from = req.query.from;
   const to = req.query.to;
+  const priceFrom = req.query['price-from'];
+  const priceTo = req.query['price-to'];
 
   function checkFields (item) {
     let active = true;
@@ -103,14 +105,14 @@ app.get('/api/doors/all', (req, res) => {
           return;
         }
       }
-      
+
       if (style) {
         if (!style.split(' ').includes(item.style.toLowerCase())) {
           active = false;
           return;
         }
       }
-      
+
       if (colors) {;
         if (!item.colors.some((color => colors.split(',').includes(color)))) {
           active = false;
@@ -124,6 +126,14 @@ app.get('/api/doors/all', (req, res) => {
           return;
         }
       }
+
+      if (priceFrom && priceTo) {
+        if (parseInt(priceFrom) > parseInt(item.priceNew) || parseInt(priceTo) < parseInt(item.priceNew)) {
+          active = false;
+          return;
+        }
+      }
+
   return active;
 }
 
@@ -136,12 +146,25 @@ app.get('/api/doors/all', (req, res) => {
           return res.status(500).json({ error: 'Ошибка сервера' });
       }
       // Возвращаем данные в формате JSON
-      // const filter = data.filter((item) => item.collection === 'Sonata');
       const filtered = JSON.parse(data).filter((item) => checkFields(item));
+      let min = parseInt(filtered[0].priceNew);
+      let max = parseInt(filtered[0].priceNew);
+
+      JSON.parse(data).map((item) => {
+        if (parseInt(item.priceNew) > max) {
+          max = parseInt(item.priceNew);
+        }
+
+        if (parseInt(item.priceNew) < min) {
+          min = parseInt(item.priceNew);
+        }
+      });
       const result = filtered.slice(from, to);
       const final = {
         items : result,
-        length: filtered.length
+        length: filtered.length,
+        min: min,
+        max: max
       }
       res.json(final);
   });
