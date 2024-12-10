@@ -7,6 +7,180 @@ import Text from '@components/uikit/Text/Text.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import Title from '@components/uikit/Title/Title.astro'
 import Picture from '@components/Picture/Picture.astro'
+
+const itemsNews = [
+    {
+        title: 'Выставки',
+        text: 'ESTET на\u00a0Международной строительно-интерьерной выставке Batimat 2020',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        picture: {
+            image: "../../../images/news/batimat-2020.jpg",
+            srcset: [{src: "../../../images/news/batimat-2020.webp"}],
+            alt: "batimat2020",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Новости и СМИ о нас',
+        text: 'Введены новые оригинальные покрытия серии BOONLAYER',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Видео',
+        text: 'Новые технологии производства коробов для скрытых дверей',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        image: "/src/assets/images/icons/video.svg",
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Новости и СМИ о нас',
+        text: 'Жалюзные межкомнатные двери AIR поражают стилем и притягивают внимание',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        picture: {
+            image: "../../../images/news/air.jpg",
+            srcset: [{src: "../../../images/news/air.webp"}],
+            alt: "air-doors",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Выставки',
+        text: 'ESTET на\u00a0Международной строительно-интерьерной выставке Batimat 2020',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Новости и СМИ о нас',
+        text: 'Введены новые оригинальные покрытия серии BOONLAYER',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Выставки',
+        text: 'ESTET на\u00a0Международной строительно-интерьерной выставке Batimat 2020',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        picture: {
+            image: "../../../images/news/batimat-2020.jpg",
+            srcset: [{src: "../../../images/news/batimat-2020.webp"}],
+            alt: "batimat2020",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Выставки',
+        text: 'ESTET на\u00a0Международной строительно-интерьерной выставке Batimat 2020',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        picture: {
+            image: "../../../images/news/batimat-2020.jpg",
+            srcset: [{src: "../../../images/news/batimat-2020.webp"}],
+            alt: "batimat2020",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Новости и СМИ о нас',
+        text: 'Введены новые оригинальные покрытия серии BOONLAYER',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Новости и СМИ о нас',
+        text: 'Введены новые оригинальные покрытия серии BOONLAYER',
+        dataTime: '2021-01-25',
+        dataTimeText: '25  января 2021 г.',
+        linkHref: 'javascript:void(0);',
+    },
+];
+const itemsSuggestion = [
+    {
+        title: 'Совет дня',
+        text: 'Нужна ли дверь на кухню: все за и против',
+        dataTime: '2024-11-25',
+        dataTimeText: '25 ноября 2024 г.',
+        picture: {
+            image: "../../../images/news/air.jpg",
+            srcset: [{src: "../../../images/news/air.webp"}],
+            alt: "air-doors",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет месяца',
+        text: 'Двухстворчатые межкомнатные двери: особенности, материалы, размеры',
+        dataTime: '2024-08-15',
+        dataTimeText: '15  августа 2024 г.',
+        picture: {
+            image: "../../../images/news/batimat-2020.jpg",
+            srcset: [{src: "../../../images/news/batimat-2020.webp"}],
+            alt: "batimat2020",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет дня',
+        text: 'Одинаковые или разные межкомнатные двери: что выбрать?',
+        dataTime: '2024-02-17',
+        dataTimeText: '17  февраля 2024 г.',
+        picture: {
+            image: "../../../images/news/air.jpg",
+            srcset: [{src: "../../../images/news/air.webp"}],
+            alt: "air-doors",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет года',
+        text: 'Новые технологии производства коробов для скрытых дверей',
+        dataTime: '2023-12-30',
+        dataTimeText: '30  декабря 2023 г.',
+        image: "/src/assets/images/icons/video.svg",
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет года',
+        text: 'Размеры входных дверей: стандарты ключевых параметров',
+        dataTime: '2023-06-09',
+        dataTimeText: '09  июня 2023 г.',
+        image: "/src/assets/images/icons/video.svg",
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет месяца',
+        text: 'Монтаж двери с добором: все особенности выполнения работ',
+        dataTime: '2023-01-14',
+        dataTimeText: '14  января 2023 г.',
+        picture: {
+            image: "../../../images/news/batimat-2020.jpg",
+            srcset: [{src: "../../../images/news/batimat-2020.webp"}],
+            alt: "batimat2020",
+        },
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет года',
+        text: 'Сколько доборов потребуется для установки одной двери?',
+        dataTime: '2022-12-22',
+        dataTimeText: '22  декабря 2022 г.',
+        linkHref: 'javascript:void(0);',
+    },
+    {
+        title: 'Совет месяца',
+        text: 'Как выбрать дверь в ванную комнату',
+        dataTime: '2022-03-18',
+        dataTimeText: '18  марта 2022 г.',
+        linkHref: 'javascript:void(0);',
+    },
+];
 ---
 
 <section class="info tab" id="tab-1">
@@ -49,220 +223,36 @@ import Picture from '@components/Picture/Picture.astro'
                     </div>
                 </div>
                 <div class="news__slider slider--info">
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Picture
-                                classPicture="news__image-group"
-                                classImage="news__image"
-                                image="../../../images/news/batimat-2020.jpg"
-                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
-                                alt="batimat2020"
-                                />
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="title title--news">Выставки</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">ESTET на&nbsp;Международной строительно-интерьерной выставке Batimat 2020</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <img class="news__svg" src="/src/assets/images/icons/video.svg" alt="video" width="32px" height="32px">
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Видео</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Новые технологии производства коробов для скрытых дверей</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Picture
-                                classPicture="news__image-group"
-                                classImage="news__image"
-                                image="../../../images/news/air.jpg"
-                                srcset={[{src: "../../../images/news/air.webp"}]}
-                                alt="air-doors"
-                                />
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Жалюзные межкомнатные двери AIR поражают стилем и притягивают внимание</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Picture
-                                classPicture="news__image-group"
-                                classImage="news__image"
-                                image="../../../images/news/batimat-2020.jpg"
-                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
-                                alt="batimat2020"
-                                />
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Выставки</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">ESTET на&nbsp;Международной строительно-интерьерной выставке Batimat 2020</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper"></div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Введены новые оригинальные покрытия серии BOONLAYER</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Picture
-                                classPicture="news__image-group"
-                                classImage="news__image"
-                                image="../../../images/news/batimat-2020.jpg"
-                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
-                                alt="batimat2020"
-                                />
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Выставки</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">ESTET на&nbsp;Международной строительно-интерьерной выставке Batimat 2020</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Picture
-                                classPicture="news__image-group"
-                                classImage="news__image"
-                                image="../../../images/news/air.jpg"
-                                srcset={[{src: "../../../images/news/air.webp"}]}
-                                alt="air-doors"
-                                />
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Новости и СМИ о нас</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Жалюзные межкомнатные двери AIR поражают стилем и притягивают внимание</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="news__item news__item--small">
-                        <div class="news__media-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <img class="news__svg" src="/src/assets/images/icons/video.svg" alt="video" width="32px" height="32px">
-                            </Link>
-                        </div>
-                        <div class="news__content-wrapper">
-                            <Link class="link--news" href="javascript:void(0);">
-                                <Title class="news">Видео</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="news">Новые технологии производства коробов для скрытых дверей</Text>
-                            </Link>
-                            <time class="news__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
+                    {
+                        itemsNews.map( item => (
+                            <div class="news__item news__item--small">
+                                <div class="news__media-wrapper">
+                                    <Link class="link--news" href={item.linkHref}>
+                                    {
+                                        item.picture?
+                                        <Picture
+                                            classPicture={"news__image-group"}
+                                            classImage={"news__image"}
+                                            image={item.picture.image}
+                                            srcset={item.picture.srcset}
+                                            alt={item.picture.alt}
+                                        />: item.image?
+                                        <img class="news__svg" src={item.image} alt="video" width="32px" height="32px"/>: ''
+                                    }
+                                    </Link>
+                                </div>
+                                <div class="news__content-wrapper">
+                                    <Link class="link--news" href="javascript:void(0);">
+                                        <Title class="title title--news">{item.title}</Title>
+                                    </Link>
+                                    <Link class="link--info link--no-line" href="javascript:void(0);">
+                                        <Text class="news">{item.text}</Text>
+                                    </Link>
+                                    <time class="news__time" datetime={item.dataTime}>{item.dataTimeText}</time>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
@@ -289,134 +279,40 @@ import Picture from '@components/Picture/Picture.astro'
                         <Link class="link--info link--no-line" href="javascript:void(0);">
                             <Text class="suggestions text--suggestions-big">Белые межкомнатные двери - какие выбрать?</Text>
                         </Link>
-                        <time class="suggestions__time" datetime="2021-12-28">28  декабря 2021 г.</time>
+                        <time class="suggestions__time" datetime="2024-12-02">02  декабря 2024 г.</time>
                     </div>
                 </div>
                 <div class="suggestions__slider slider--info">
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Picture
-                                classPicture="suggestions__image-group"
-                                classImage="suggestions__image"
-                                image="../../../images/news/air.jpg"
-                                srcset={[{src: "../../../images/news/air.webp"}]}
-                                alt="air-doors"
-                                />
-                            </Link>
-                        </div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет дня</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Нужна ли дверь на кухню: все за и против</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2022-02-19">19  февраля 2022 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Picture
-                                classPicture="suggestions__image-group"
-                                classImage="suggestions__image"
-                                image="../../../images/news/batimat-2020.jpg"
-                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
-                                alt="batimat2020"
-                                />
-                            </Link>
-                        </div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет дня</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Двухстворчатые межкомнатные двери: особенности, материалы, размеры</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Picture
-                                classPicture="suggestions__image-group"
-                                classImage="suggestions__image"
-                                image="../../../images/news/air.jpg"
-                                srcset={[{src: "../../../images/news/air.webp"}]}
-                                alt="air-doors"
-                                />
-                            </Link>
-                        </div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет дня</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Одинаковые или разные межкомнатные двери: что выбрать?</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2022-03-22">22  марта 2022 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper"></div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет года</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Размеры входных дверей: стандарты ключевых параметров</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Picture
-                                classPicture="suggestions__image-group"
-                                classImage="suggestions__image"
-                                image="../../../images/news/batimat-2020.jpg"
-                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
-                                alt="batimat2020"
-                                />
-                            </Link>
-                        </div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет дня</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Монтаж двери с добором: все особенности выполнения работ</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper"></div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет года</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Сколько доборов потребуется для установки одной двери?</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
-                    <div class="suggestions__item suggestions__item--small">
-                        <div class="suggestions__media-wrapper"></div>
-                        <div class="suggestions__content-wrapper">
-                            <Link class="link--suggestions" href="javascript:void(0);">
-                                <Title class="suggestions">Совет года</Title>
-                            </Link>
-                            <Link class="link--info link--no-line" href="javascript:void(0);">
-                                <Text class="suggestions">Как выбрать дверь в ванную комнату</Text>
-                            </Link>
-                            <time class="suggestions__time" datetime="2021-01-25">25  января 2021 г.</time>
-                        </div>
-                    </div>
+                    {
+                        itemsSuggestion.map( item => (
+                            <div class="suggestions__item suggestions__item--small">
+                                <div class="suggestions__media-wrapper">
+                                    <Link class="link--suggestions" href={item.linkHref}>
+                                    {
+                                        item.picture?
+                                        <Picture
+                                            classPicture={"suggestions__image-group"}
+                                            classImage={"suggestions__image"}
+                                            image={item.picture.image}
+                                            srcset={item.picture.srcset}
+                                            alt={item.picture.alt}
+                                        />: item.image?
+                                        <img class="suggestions__svg" src={item.image} alt="video" width="32px" height="32px"/>: ''
+                                    }
+                                    </Link>
+                                </div>
+                                <div class="suggestions__content-wrapper">
+                                    <Link class="link--suggestions" href="javascript:void(0);">
+                                        <Title class="title title--suggestions">{item.title}</Title>
+                                    </Link>
+                                    <Link class="link--info link--no-line" href="javascript:void(0);">
+                                        <Text class="suggestions">{item.text}</Text>
+                                    </Link>
+                                    <time class="suggestions__time" datetime={item.dataTime}>{item.dataTimeText}</time>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
