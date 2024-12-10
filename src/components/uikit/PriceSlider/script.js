@@ -30,9 +30,13 @@ slider.noUiSlider.on('update', (values, handle) => {
     });
 });
 
+function inputHandler (input, indexInput) {
+    slider.noUiSlider.setHandle(indexInput, input.value);
+    document.querySelector(`label[for="${input.name}"] .price-slider__currency`).innerHTML = `<span style="color: transparent">${input.value}</span> P`
+}
+
 filterInputs.forEach((input, indexInput) => {
-    input.addEventListener('keydown', (e) => {
-        slider.noUiSlider.setHandle(indexInput, input.value);
-        document.querySelector(`label[for="${input.name}"] .price-slider__currency`).innerHTML = `<span style="color: transparent">${input.value + (e.key >= '0' && e.key <= '9'? e.key: '')}</span> P`
-    })
-});
+    input.addEventListener('keyup', () => {inputHandler(input, indexInput)});
+    input.addEventListener('keydown', () => {inputHandler(input, indexInput)});
+    input.addEventListener('change', () => {inputHandler(input, indexInput)});
+})
