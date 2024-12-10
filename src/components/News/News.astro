@@ -6,6 +6,7 @@ import Link from '@components/uikit/Link/Link.astro'
 import Text from '@components/uikit/Text/Text.astro'
 import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import Title from '@components/uikit/Title/Title.astro'
+import Picture from '@components/Picture/Picture.astro'
 ---
 
 <section class="info tab" id="tab-1">
@@ -22,9 +23,19 @@ import Title from '@components/uikit/Title/Title.astro'
                 <div class="news__item news__item--big">
                     <div class="news__media-wrapper news__media-wrapper--big">
                         <Link class="link--news" href="javascript:void(0);">
-                            <picture class="news__image-group news__image-group--big">
-                                <img class="news__image news__image--big" src="../../../images/news/ultratex-tablet.jpg" alt="ultratex">
-                            </picture>
+                            <Picture
+                            classPicture="news__image-group"
+                            modPicture="big"
+                            classImage="news__image"
+                            modImage="big"
+                            image="../../../images/news/ultratex-tablet.jpg"
+                            srcset={[
+                                {src: "../../../images/news/ultratex-tablet.webp", type: "image/webp"},
+                                {src: "../../../images/news/ultratex-desktop.jpg", media: "(min-width: 768px)", type: "image/jpg"},
+                                {src: "../../../images/news/ultratex-desktop.webp", media: "(min-width: 768px)", type: "image/webp"},
+                            ]}
+                            alt="ultratex"
+                            />
                         </Link>
                     </div>
                     <div class="news__content-wrapper news__content-wrapper--big">
@@ -41,9 +52,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="news__item news__item--small">
                         <div class="news__media-wrapper">
                             <Link class="link--news" href="javascript:void(0);">
-                                <picture class="news__image-group">
-                                    <img class="news__image" src="../../../images/news/batimat-2020.jpg" alt="batimat2020">
-                                </picture>
+                                <Picture
+                                classPicture="news__image-group"
+                                classImage="news__image"
+                                image="../../../images/news/batimat-2020.jpg"
+                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
+                                alt="batimat2020"
+                                />
                             </Link>
                         </div>
                         <div class="news__content-wrapper">
@@ -87,9 +102,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="news__item news__item--small">
                         <div class="news__media-wrapper">
                             <Link class="link--news" href="javascript:void(0);">
-                                <picture class="news__image-group">
-                                    <img class="news__image" src="../../../images/news/air.jpg" alt="air-doors">
-                                </picture>
+                                <Picture
+                                classPicture="news__image-group"
+                                classImage="news__image"
+                                image="../../../images/news/air.jpg"
+                                srcset={[{src: "../../../images/news/air.webp"}]}
+                                alt="air-doors"
+                                />
                             </Link>
                         </div>
                         <div class="news__content-wrapper">
@@ -105,9 +124,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="news__item news__item--small">
                         <div class="news__media-wrapper">
                             <Link class="link--news" href="javascript:void(0);">
-                                <picture class="news__image-group">
-                                    <img class="news__image" src="../../../images/news/batimat-2020.jpg" alt="batimat2020">
-                                </picture>
+                                <Picture
+                                classPicture="news__image-group"
+                                classImage="news__image"
+                                image="../../../images/news/batimat-2020.jpg"
+                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
+                                alt="batimat2020"
+                                />
                             </Link>
                         </div>
                         <div class="news__content-wrapper">
@@ -183,9 +206,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="news__item news__item--small">
                         <div class="news__media-wrapper">
                             <Link class="link--news" href="javascript:void(0);">
-                                <picture class="news__image-group">
-                                    <img class="news__image" src="../../../images/news/batimat-2020.jpg" alt="batimat2020">
-                                </picture>
+                                <Picture
+                                classPicture="news__image-group"
+                                classImage="news__image"
+                                image="../../../images/news/batimat-2020.jpg"
+                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
+                                alt="batimat2020"
+                                />
                             </Link>
                         </div>
                         <div class="news__content-wrapper">
@@ -201,9 +228,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="news__item news__item--small">
                         <div class="news__media-wrapper">
                             <Link class="link--news" href="javascript:void(0);">
-                                <picture class="news__image-group">
-                                    <img class="news__image" src="../../../images/news/air.jpg" alt="air-doors">
-                                </picture>
+                                <Picture
+                                classPicture="news__image-group"
+                                classImage="news__image"
+                                image="../../../images/news/air.jpg"
+                                srcset={[{src: "../../../images/news/air.webp"}]}
+                                alt="air-doors"
+                                />
                             </Link>
                         </div>
                         <div class="news__content-wrapper">
@@ -240,9 +271,15 @@ import Title from '@components/uikit/Title/Title.astro'
                 <div class="suggestions__item suggestions__item--big">
                     <div class="suggestions__media-wrapper suggestions__media-wrapper--big">
                         <Link class="link--suggestions" href="javascript:void(0);">
-                            <picture class="suggestions__image-group suggestions__image-group--big">
-                                <img class="suggestions__image suggestions__image--big" src="../../../images/news/air.jpg" alt="air-doors">
-                            </picture>
+                            <Picture
+                            classPicture="suggestions__image-group"
+                            modPicture="big"
+                            classImage="suggestions__image"
+                            modImage="big"
+                            image="../../../images/news/air.jpg"
+                            srcset={[{src: "../../../images/news/air.webp", type: "image/webp"}]}
+                            alt="air-doors"
+                            />
                         </Link>
                     </div>
                     <div class="suggestions__content-wrapper suggestions__content-wrapper--big">
@@ -259,9 +296,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="suggestions__item suggestions__item--small">
                         <div class="suggestions__media-wrapper">
                             <Link class="link--suggestions" href="javascript:void(0);">
-                                <picture class="suggestions__image-group">
-                                    <img class="suggestions__image" src="../../../images/news/air.jpg" alt="air-doors">
-                                </picture>
+                                <Picture
+                                classPicture="suggestions__image-group"
+                                classImage="suggestions__image"
+                                image="../../../images/news/air.jpg"
+                                srcset={[{src: "../../../images/news/air.webp"}]}
+                                alt="air-doors"
+                                />
                             </Link>
                         </div>
                         <div class="suggestions__content-wrapper">
@@ -277,9 +318,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="suggestions__item suggestions__item--small">
                         <div class="suggestions__media-wrapper">
                             <Link class="link--suggestions" href="javascript:void(0);">
-                                <picture class="suggestions__image-group">
-                                    <img class="suggestions__image" src="../../../images/news/batimat-2020.jpg" alt="batimat2020">
-                                </picture>
+                                <Picture
+                                classPicture="suggestions__image-group"
+                                classImage="suggestions__image"
+                                image="../../../images/news/batimat-2020.jpg"
+                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
+                                alt="batimat2020"
+                                />
                             </Link>
                         </div>
                         <div class="suggestions__content-wrapper">
@@ -295,9 +340,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="suggestions__item suggestions__item--small">
                         <div class="suggestions__media-wrapper">
                             <Link class="link--suggestions" href="javascript:void(0);">
-                                <picture class="suggestions__image-group">
-                                    <img class="suggestions__image" src="../../../images/news/air.jpg" alt="air-doors">
-                                </picture>
+                                <Picture
+                                classPicture="suggestions__image-group"
+                                classImage="suggestions__image"
+                                image="../../../images/news/air.jpg"
+                                srcset={[{src: "../../../images/news/air.webp"}]}
+                                alt="air-doors"
+                                />
                             </Link>
                         </div>
                         <div class="suggestions__content-wrapper">
@@ -325,9 +374,13 @@ import Title from '@components/uikit/Title/Title.astro'
                     <div class="suggestions__item suggestions__item--small">
                         <div class="suggestions__media-wrapper">
                             <Link class="link--suggestions" href="javascript:void(0);">
-                                <picture class="suggestions__image-group">
-                                    <img class="suggestions__image" src="../../../images/news/batimat-2020.jpg" alt="batimat2020">
-                                </picture>
+                                <Picture
+                                classPicture="suggestions__image-group"
+                                classImage="suggestions__image"
+                                image="../../../images/news/batimat-2020.jpg"
+                                srcset={[{src: "../../../images/news/batimat-2020.webp"}]}
+                                alt="batimat2020"
+                                />
                             </Link>
                         </div>
                         <div class="suggestions__content-wrapper">
