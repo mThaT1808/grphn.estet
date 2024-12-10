@@ -74,6 +74,7 @@
         position: absolute;
         width: 100%;
         line-height: 38px;
+        text-wrap: nowrap;
     }
 
     &__input {
@@ -84,9 +85,5 @@
         padding: 0;
         cursor: pointer;
         background-color: transparent;
-    }
-
-    .-slider__slider-price {
-        margin: 20px 5px 0;
     }
 }
