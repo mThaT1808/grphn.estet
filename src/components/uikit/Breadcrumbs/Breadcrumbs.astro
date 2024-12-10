@@ -27,7 +27,7 @@ const { links, mod } = Astro.props;
                 if (i + 1 === row.length) {
                     return (
                         <li class="breadcrumbs__item breadcrumbs__item--last">
-                            <span class="breadcrumbs__link" aria-current={link.title}>
+                            <span class="breadcrumbs__link" aria-current={link.current}>
                                 {link.title}
                             </span>
                         </li>
@@ -35,7 +35,7 @@ const { links, mod } = Astro.props;
                 } else {
                     return (
                         <li class="breadcrumbs__item">
-                            <a href={link.href} class="breadcrumbs__link" title={link.title} aria-current={link.title}>
+                            <a href={link.href} class="breadcrumbs__link" title={link.title} aria-current={link.current}>
                                 {link.title}
                             </a>
                         </li>
