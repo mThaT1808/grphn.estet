@@ -19,10 +19,10 @@ const { classPicture, classImage, image, srcset, alt, modPicture, modImage } = A
     {srcset.map((source) => (
       <source
         srcset={source.src}
-        media={source.media || ''}
-        type={source.type || ''}
+        media={source.media}
+        type={source.type}
       />
     ))}
     <img class:list={[classImage, modImage ? `${classImage}--${modImage}` : '']} src={image} alt={alt} />
-  </picture>
+</picture>
 
