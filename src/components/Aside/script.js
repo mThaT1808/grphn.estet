@@ -30,7 +30,7 @@ allDoorsButton.addEventListener('click', () => {
 });
 
 const form = document.querySelector('.aside__filter');
-
+const priceInputs = document.querySelectorAll('.price-slider__input');
 
 const filterLists = document.querySelectorAll('.filter__list');
 filterLists.forEach((list) => {
@@ -64,6 +64,10 @@ const editEvent = new CustomEvent("edit", {bubbles : true, cancelable : true, de
 let formData = new FormData(form);
 function collectData () {
     formData = new FormData(form);
+
+    priceInputs.forEach((input) => {
+        formData.set(input.name, input.value);
+    });
     const colors = [];
     for (let [name, value] of formData) {
         if (name === 'color') {
@@ -74,9 +78,10 @@ function collectData () {
     formData.delete('color');
     filterLists.forEach((list) => {
         if (!list.classList.contains('filter__list-input')) {
-            formData.append(list.dataset.name, list.dataset.value); 
+            formData.append(list.dataset.name, list.dataset.value);
         }
     });
+
     form.dispatchEvent(editEvent);
 }
 
@@ -88,7 +93,10 @@ function reset() {
         const items = list.querySelectorAll('.filter__item[data-value]');
         items.forEach((item) => item.classList.remove('filter__item--active'));
     });
-
+    const minPrice = document.querySelector('.price-slider__input[name="price-from"]');
+    const maxPrice = document.querySelector('.price-slider__input[name="price-to"]');
+    minPrice.value = 0;
+    maxPrice.value = 25000;
 }
 
 
@@ -102,6 +110,13 @@ resetButton.addEventListener('click', () => {
     reset();
     form.dispatchEvent(editEvent);
 });
+
+setTimeout(() => {
+    const priceHandlers = document.querySelectorAll('.noUi-handle');
+    priceHandlers.forEach((handle) => {
+        handle.addEventListener('mouseup', collectData);
+    })
+}, 0);
 
 reset();
 

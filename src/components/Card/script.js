@@ -13,6 +13,8 @@ const quantityCurrent = document.querySelector('.card__quantity-current');
 const quantityMax = document.querySelector('.card__quantity-total');
 const form = document.querySelector('.aside__filter');
 const pagination = document.querySelector('.card__quantity');
+const minPrice = document.querySelector('.price-slider__input[name="price-from"]');
+const maxPrice = document.querySelector('.price-slider__input[name="price-to"]');
 
 function checkQuantity() {
     if (quantityCurrent.textContent === '0') {
@@ -37,7 +39,7 @@ showMore.addEventListener('click', async () => {
     checkQuantity();
 });
 
-function renderList(list, filter, add) {
+function renderList(list, filter) {
     if (filter) {
         for (let i = 0; i < container.children.length; i++) {
             if (container.children[i].classList.contains('door')) {
@@ -46,9 +48,6 @@ function renderList(list, filter, add) {
             }
         }
         activeItems = 0;
-        isFiltered = true;
-    } if (!filter && !add) {
-        isFiltered = false;
     }
 
     for (let i = 0; i < list.length; i++) {
@@ -171,7 +170,7 @@ function renderList(list, filter, add) {
 };
 
 form.addEventListener('edit', async () => {
-    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`; 
+    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`;
     const data = new URLSearchParams(formData).toString() + range;
     const response = await getData(data);
     filtered = response.items;
@@ -179,6 +178,8 @@ form.addEventListener('edit', async () => {
     quantityCurrent.textContent = 0 + response.items.length;
     quantityMax.textContent = response.length;
     checkQuantity();
+    // minPrice.value = response.min;
+    // maxPrice.value = response.max;
 });
 
 const data = new URLSearchParams(formData).toString() + `&from=${activeItems}&to=${itemsToShow}`;
