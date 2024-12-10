@@ -6,7 +6,6 @@ const itemsToShow = 8;
 const itemsToAdd = 4;
 let activeItems = 0;
 let filtered = [];
-let isFiltered = false;
 const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
@@ -37,7 +36,7 @@ showMore.addEventListener('click', async () => {
     checkQuantity();
 });
 
-function renderList(list, filter, add) {
+function renderList(list, filter) {
     if (filter) {
         for (let i = 0; i < container.children.length; i++) {
             if (container.children[i].classList.contains('door')) {
@@ -46,9 +45,6 @@ function renderList(list, filter, add) {
             }
         }
         activeItems = 0;
-        isFiltered = true;
-    } if (!filter && !add) {
-        isFiltered = false;
     }
 
     for (let i = 0; i < list.length; i++) {
@@ -171,7 +167,7 @@ function renderList(list, filter, add) {
 };
 
 form.addEventListener('edit', async () => {
-    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`; 
+    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`;
     const data = new URLSearchParams(formData).toString() + range;
     const response = await getData(data);
     filtered = response.items;
@@ -186,5 +182,9 @@ const response = await getData(data);
 filtered = response.items;
 quantityCurrent.textContent = activeItems + response.items.length;
 quantityMax.textContent = response.length;
+const min = response.min;
+const max = response.max;
 renderList(filtered);
 checkQuantity();
+
+export {min, max};
