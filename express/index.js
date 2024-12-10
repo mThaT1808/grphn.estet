@@ -147,24 +147,24 @@ app.get('/api/doors/all', (req, res) => {
       }
       // Возвращаем данные в формате JSON
       const filtered = JSON.parse(data).filter((item) => checkFields(item));
-      // let min = filtered[0].priceNew;
-      // let max = filtered[0].priceNew;
+      let min = parseInt(filtered[0].priceNew);
+      let max = parseInt(filtered[0].priceNew);
 
-      // filtered.map((item) => {
-      //   if (item.priceNew > max) {
-      //     max = item.priceNew;
-      //   }
+      JSON.parse(data).map((item) => {
+        if (parseInt(item.priceNew) > max) {
+          max = parseInt(item.priceNew);
+        }
 
-      //   if (item.priceNew < min) {
-      //     min = item.priceNew;
-      //   }
-      // });
+        if (parseInt(item.priceNew) < min) {
+          min = parseInt(item.priceNew);
+        }
+      });
       const result = filtered.slice(from, to);
       const final = {
         items : result,
         length: filtered.length,
-        // min: min,
-        // max: max
+        min: min,
+        max: max
       }
       res.json(final);
   });

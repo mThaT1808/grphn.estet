@@ -1,3 +1,5 @@
+import {min, max} from '../Card/script.js'
+
 document.querySelectorAll('.filter__opener').forEach(button => {
     button.addEventListener('click', function() {
         const filterList = this.nextElementSibling;
@@ -64,6 +66,7 @@ const editEvent = new CustomEvent("edit", {bubbles : true, cancelable : true, de
 let formData = new FormData(form);
 function collectData () {
     formData = new FormData(form);
+    console.log(formData);
 
     priceInputs.forEach((input) => {
         formData.set(input.name, input.value);
@@ -95,8 +98,8 @@ function reset() {
     });
     const minPrice = document.querySelector('.price-slider__input[name="price-from"]');
     const maxPrice = document.querySelector('.price-slider__input[name="price-to"]');
-    minPrice.value = 0;
-    maxPrice.value = 25000;
+    minPrice.value = min;
+    maxPrice.value = max;
 }
 
 
@@ -111,13 +114,6 @@ resetButton.addEventListener('click', () => {
     form.dispatchEvent(editEvent);
 });
 
-setTimeout(() => {
-    const priceHandlers = document.querySelectorAll('.noUi-handle');
-    priceHandlers.forEach((handle) => {
-        handle.addEventListener('mouseup', collectData);
-    })
-}, 0);
+// reset();
 
-reset();
-
-export {formData};
+export {formData, collectData};

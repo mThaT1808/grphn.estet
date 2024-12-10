@@ -6,15 +6,12 @@ const itemsToShow = 8;
 const itemsToAdd = 4;
 let activeItems = 0;
 let filtered = [];
-let isFiltered = false;
 const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
 const quantityMax = document.querySelector('.card__quantity-total');
 const form = document.querySelector('.aside__filter');
 const pagination = document.querySelector('.card__quantity');
-const minPrice = document.querySelector('.price-slider__input[name="price-from"]');
-const maxPrice = document.querySelector('.price-slider__input[name="price-to"]');
 
 function checkQuantity() {
     if (quantityCurrent.textContent === '0') {
@@ -178,8 +175,6 @@ form.addEventListener('edit', async () => {
     quantityCurrent.textContent = 0 + response.items.length;
     quantityMax.textContent = response.length;
     checkQuantity();
-    // minPrice.value = response.min;
-    // maxPrice.value = response.max;
 });
 
 const data = new URLSearchParams(formData).toString() + `&from=${activeItems}&to=${itemsToShow}`;
@@ -187,5 +182,9 @@ const response = await getData(data);
 filtered = response.items;
 quantityCurrent.textContent = activeItems + response.items.length;
 quantityMax.textContent = response.length;
+const min = response.min;
+const max = response.max;
 renderList(filtered);
 checkQuantity();
+
+export {min, max};

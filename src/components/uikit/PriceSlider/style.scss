@@ -7,6 +7,10 @@
     padding: 10px;
     margin-bottom: 43px;
 
+    input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
     /* custom styles for UiSlider */
     .noUi-target {
         cursor: pointer;
