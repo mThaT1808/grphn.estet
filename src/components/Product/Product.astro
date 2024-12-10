@@ -2,146 +2,121 @@
 import Container from '@components/container/container.astro'
 import './style.scss'
 import Icon from '@components/uikit/Icon/Icon.astro'
+import Picture from '@components/Picture/Picture.astro'
+
+interface door  {
+    mods: string[],
+    textMods?: string[],
+    text: string,
+    pictureSource?: object[],
+    imageSource?: string,
+    imageAlt?: string,
+    arrowMods?: string[],
+    onlyText?: boolean,
+    href?: string
+}
+
+const doors: door[] = [
+    {
+        mods: ['full', 'right', 'order-one'],
+        textMods: ['top-right', 'white'],
+        text: 'Межкомнатные двери',
+        pictureSource: [
+            {src: '/images/product/inner.webp'}
+        ],
+        imageSource: '/images/product/inner@2x.jpg',
+    },
+    {
+        mods: ['full', 'scale', 'left', 'order-two'],
+        textMods: ['top-left'],
+        text: 'Входные двери',
+        pictureSource: [
+            {src: '/images/product/enter.webp'}
+        ],
+        imageSource: '/images/product/enter@2x.jpg',
+        arrowMods: ['bottom-left'],
+    },
+    {
+        mods: ['image-left', 'image-vertical', 'order-one', 'image-first'],
+        textMods: ['relative-top-left'],
+        text: 'Скрытые двери',
+        pictureSource: [{src: '/images/product/hidden.webp'}],
+        imageSource: '/images/product/hidden@2x.jpg',
+        arrowMods: ['bottom-left'],
+    },
+    {
+        mods: ['image-vertical', 'image-right', 'order-one'],
+        textMods: ['relative-bottom-right'],
+        text: 'Декоративные рейки',
+        pictureSource: [{src: '/images/product/decorate.webp'}],
+        imageSource: '/images/product/decorate@2x.jpg',
+        arrowMods: ['top-right'],
+    },
+    {
+        mods: ['full', 'overflow'],
+        text: 'Раздвижные двери',
+        pictureSource: [{src: '/images/product/door.webp'}],
+        imageSource: '/images/product/door@2x.png',
+    },
+    {
+        mods: ['text'],
+        textMods: ['right'],
+        text: 'В компании ESTET вы можете купить качественные межкомнатные двери. Богатый выбор является гарантией того, что вы обязательно найдете модель, оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.',
+        onlyText: true,
+    },
+    {
+        mods: ['text'],
+        textMods: ['left'],
+        text: 'Мы украшаем жизнь покупателей своей качественной продукцией, даря тепло и уют в их дома, создаем все условия для самореализации сотрудников и успеха партнеров.',
+        onlyText: true,
+    },
+    {
+        mods: ['full', 'right', 'big'],
+        textMods: ['bottom-left'],
+        text: 'Межкомнатные перегородки',
+        pictureSource: [{src: '/images/product/partition.webp'}],
+        imageSource: '/images/product/partition@2x.jpg',
+        arrowMods: ['top-right'],
+    },
+    {
+        mods: ['image-left', 'image-first'],
+        textMods: ['relative-bottom-top'],
+        text: 'Стеновые панели',
+        pictureSource: [{src: '/images/product/panels.webp'}],
+        imageSource: '/images/product/panels@2x.jpg',
+        arrowMods: ['top-middle'],
+    },
+    {
+        mods: ['image-right'],
+        textMods: ['relative-top-bottom'],
+        text: 'Плинтусы',
+        pictureSource: [{src: '/images/product/boards.webp'}],
+        imageSource: '/images/product/boards@2x.jpg',
+        arrowMods: ['bottom-right'],
+    },
+];
+
 ---
 
 <section class="product">
     <Container>
         <ul class="product__list">
-            <li class="product__item product__item--full product__item--right product__item--order-one">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--top-right product__text--white">
-                        Межкомнатные двери
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/inner.webp">
-                        <img class="product__image" src="/images/product/inner@2x.jpg" 
-                        width="350" height="251" alt="">
-                    </picture>
-                    <div class="product__arrow-container">
-                        <Icon name='small-arrow'/>                  
-                    </div>
-                </a>
-            </li>
-            <li class="product__item product__item--full product__item--scale product__item--left product__item--order-two">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--top-left">
-                        Входные двери
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/enter.webp">
-                        <img class="product__image" src="/images/product/enter@2x.jpg" 
-                        width="350" height="261" alt="">
-                    </picture>
-                    <div class="product__arrow-container product__arrow-container--bottom-left">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
-            <li class="product__item product__item--image-left product__item--image-vertical product__item--order-one">
-                <a class="product__link" href="javascript:void(0);">
-                    <picture class="product__container">
-                        <source src="/images/product/hidden.webp">
-                        <img class="product__image" src="/images/product/hidden@2x.jpg" 
-                        width="188" height="226" alt="">
-                    </picture> 
-                    <p class="product__text product__text--relative-top-left">
-                        Скрытые двери
-                    </p>
-                    <div class="product__arrow-container product__arrow-container--bottom-left">
-                        <Icon name='small-arrow'/>                  
-                    </div>
-                </a>
-            </li>
-            <li class="product__item product__item--image-right product__item--image-vertical product__item--order-one">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--relative-bottom-right">
-                        Декоративные рейки
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/decorate.webp">
-                        <img class="product__image" src="/images/product/decorate@2x.jpg" 
-                        width="188" height="226" alt="">
-                    </picture>
-                    <div class="product__arrow-container product__arrow-container--top-right">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
-            <li class="product__item product__item--full product__item--overflow">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text">
-                        Раздвижные двери
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/door.webp">
-                        <img class="product__image" src="/images/product/door@2x.png" 
-                        width="112" height="235" alt="">
-                    </picture>
-                    <div class="product__arrow-container">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
-            <li class="product__item product__item--text">
-                <p class="product__text product__text--right">
-                    В компании ESTET вы можете купить качественные межкомнатные двери. 
-                    Богатый выбор является гарантией того, что вы обязательно найдете модель, 
-                    оптимально соответствующую вашим потребностям, пожеланиям и финансовым возможностям.
-                </p>        
-            </li>
-            
-            <li class="product__item product__item--text">
-                <p class="product__text product__text--left">
-                    Мы украшаем жизнь покупателей своей качественной продукцией, 
-                    даря тепло и уют в их дома, создаем все условия для самореализации сотрудников и 
-                    успеха партнеров.
-                </p>
-            </li>
-            <li class="product__item product__item--right product__item--full product__item--big">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--bottom-left">
-                        Межкомнатные перегородки
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/partition.webp">
-                        <img class="product__image" src="/images/product/partition@2x.jpg" 
-                        width="350" height="311" alt="">
-                    </picture>
-                    <div class="product__arrow-container product__arrow-container--top-right">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
-            <li class="product__item product__item--image-left">
-                <a class="product__link">
-                    <picture class="product__container">
-                        <source src="/images/product/panels.webp">
-                        <img class="product__image" src="/images/product/panels@2x.jpg" 
-                        width="188" height="226" alt="">
-                    </picture> 
-                    <p class="product__text product__text--relative-bottom-top">
-                        Стеновые панели
-                    </p>
-                    <div class="product__arrow-container product__arrow-container--top-middle">
-                        <Icon name='small-arrow'/>                  
-                    </div>
-                </a>
-            </li>
-            <li class="product__item product__item--image-right">
-                <a class="product__link" href="javascript:void(0);">
-                    <p class="product__text product__text--relative-top-bottom">
-                        Плинтусы
-                    </p>
-                    <picture class="product__container">
-                        <source src="/images/product/boards.webp">
-                        <img class="product__image" src="/images/product/boards@2x.jpg" 
-                        width="188" height="226" alt="">
-                    </picture>
-                    <div class="product__arrow-container product__arrow-container--bottom-right">
-                        <Icon name='small-arrow'/>                  
-                    </div> 
-                </a>
-            </li>
+            {
+                doors.map((door) => (
+                    <li class={`product__item ${door.mods? door.mods.map(mod => `product__item--${mod}`).join(' ') : ''}`}>
+                        <a class='product__link' href={door.href? door.href : 'javascript:void(0);'}>
+                            <p class={`product__text ${door.textMods? door.textMods.map(mod => `product__text--${mod}`).join(' ') : ''}`}>{door.text}</p>
+                            {!door.onlyText ?
+                                <Picture classPicture="product__container" classImage="product__image" image={door.imageSource} srcset={door.pictureSource} alt={door.imageAlt ? door.imageAlt : ''}/>
+                                <div class={`product__arrow-container ${door.arrowMods? door.arrowMods.map(mod => `product__arrow-container--${mod}`).join(' ') : ''}`}>
+                                    <Icon name='small-arrow'/>
+                                </div>
+                                : ''
+                            }
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
     </Container>
 </section>

@@ -6,13 +6,12 @@ const itemsToShow = 8;
 const itemsToAdd = 4;
 let activeItems = 0;
 let filtered = [];
-let isFiltered = false; 
+let isFiltered = false;
 const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
 const quantityMax = document.querySelector('.card__quantity-total');
 const form = document.querySelector('.aside__filter');
-const doors = await getData();
 const pagination = document.querySelector('.card__quantity');
 
 function checkQuantity() {
@@ -29,16 +28,16 @@ function checkQuantity() {
     }
 }
 
-showMore.addEventListener('click', () => {
-    if (isFiltered) {
-        renderList(filtered, itemsToAdd, false, true);
-    } else {
-        renderList(doors, itemsToAdd);
-    }
+showMore.addEventListener('click', async () => {
+    const data = new URLSearchParams(formData).toString() + `&from=${quantityCurrent.textContent}&to=${parseInt(quantityCurrent.textContent) + itemsToAdd}`;
+    const response = await getData(data);
+    filtered = response.items;
+    renderList(filtered);
+    quantityCurrent.textContent = parseInt(quantityCurrent.textContent) + response.items.length;
     checkQuantity();
 });
 
-function renderList(list, count, filter, add) {
+function renderList(list, filter, add) {
     if (filter) {
         for (let i = 0; i < container.children.length; i++) {
             if (container.children[i].classList.contains('door')) {
@@ -52,10 +51,8 @@ function renderList(list, count, filter, add) {
         isFiltered = false;
     }
 
-    const activeCount = activeItems + 1 +  count <=  list.length ? count : list.length - activeItems;
-    for (let i = 0; i < activeCount; i++) {
+    for (let i = 0; i < list.length; i++) {
         const door = template.cloneNode(true);
-
         if ((i === 0 || i === 1) && activeItems === 0) {
             door.querySelector('.door').classList.add('door--intro');
         }
@@ -69,43 +66,43 @@ function renderList(list, count, filter, add) {
         door.querySelector('.door__title').textContent = list[i].title;
         door.querySelector('.door__price-new').textContent = `от ${list[i].priceNew}\u20BD`;
         door.querySelector('.door__price-old').textContent = list[i].priceOld;
-        if (document.querySelector('.personal__quantity').textContent > 0) {
-            document.querySelector('.personal__quantity').style.display = 'block';
-        } else {
-            document.querySelector('.personal__quantity').style.display = 'none';
-        }
+        const quantities = document.querySelectorAll('.personal__item:has(.personal__button--like) .personal__quantity');
+        quantities.forEach((quantity) => {
+            if (document.querySelector('.personal__quantity').textContent > 0) {
+                document.querySelector('.personal__quantity').style.display = 'block';
+            } else {
+                document.querySelector('.personal__quantity').style.display = 'none';
+            }
+        })
+
         door.querySelector('.door__mark-like').addEventListener('click', function() {
             const icon = this.querySelector('i');
-            const quantityElement = document.querySelector('.personal__quantity');
             icon.classList.toggle('icon-heart');
             icon.classList.toggle('icon-heart-fill');
 
             if (icon.classList.contains('icon-heart-fill')) {
-                quantityElement.textContent++;
+                quantities.forEach((quantity) => {
+                    quantity.textContent++
+                })
             } else {
-                quantityElement.textContent--;
+                quantities.forEach((quantity) => {
+                    quantity.textContent--
+                })
             }
 
+            quantities.forEach((quantity) => {
+                if (quantity.textContent > 0) {
+                    quantity.style.display = 'block';
+                } else {
+                    quantity.style.display = 'none';
+                }
+            })
 
-            if (quantityElement.textContent > 0) {
-                quantityElement.style.display = 'block';
-            } else {
-                quantityElement.style.display = 'none';
-            }
         });
+
         const colorContainer = door.querySelector('.door__choice-box');
-        for (let j = 0; j < list[i].colors.length; j++) {
-            const button = colorContainer.querySelector('.door__choice-btn');
-            if (j >= 5 && document.documentElement.clientWidth <= 1660) {
-               button.textContent = `+${list[i].colors.length - j}`;
-               break;
-            }
 
-            if (list[i].colors.length - 5 <= 0) {
-                button.style.display = 'none';
-            }
-
-            const item = list[i].colors[j];
+        function createColorButton(item, button) {
             const label = document.createElement('label');
             label.key = item;
             const img = document.createElement('img');
@@ -121,62 +118,73 @@ function renderList(list, count, filter, add) {
             label.appendChild(input);
             colorContainer.insertBefore(label, button);
         };
+
+        function checkIntroDoors() {
+            const innerDoors = document.querySelectorAll('.door--intro');
+            if (innerDoors[0].clientHeight > innerDoors[1].clientHeight) {
+                innerDoors[1].style.height = innerDoors[0].clientHeight + 'px';
+            } else {
+                innerDoors[0].style.height = innerDoors[1].clientHeight + 'px';
+            }
+        }
+
+        for (let j = 0; j < list[i].colors.length; j++) {
+            const button = colorContainer.querySelector('.door__choice-btn');
+
+            if (j >= 4 && document.documentElement.clientWidth <= 1600) {
+               button.textContent = `+${list[i].colors.length - j}`;
+               button.addEventListener('click', () => {
+                for (let k = j; k < list[i].colors.length; k++) {
+                    const item = list[i].colors[k];
+                    createColorButton(item, button);
+            };
+            checkIntroDoors();
+            button.style.display = 'none';
+            });
+               break;
+            }
+
+            if (j >= 6) {
+                button.textContent = `+${list[i].colors.length - j}`;
+                button.addEventListener('click', () => {
+                    for (let k = j; k < list[i].colors.length; k++) {
+                        const item = list[i].colors[k];
+                        createColorButton(item, button);
+                    };
+                    checkIntroDoors();
+                    button.style.display = 'none';
+                });
+                break;
+            }
+
+            if (list[i].colors.length - 5 <= 0) {
+                button.style.display = 'none';
+            }
+
+            const item = list[i].colors[j];
+            createColorButton(item, button);
+        };
         container.appendChild(door);
     }
 
-    activeItems += activeCount;
-    quantityCurrent.textContent = activeItems;
-    quantityMax.textContent = filter || add ? filtered.length : doors.length;
+    activeItems += list.length;
 };
 
-function checkFields (item) {
-    let active = true;
-    for (let [name, value] of formData) {
-        if (name === 'discount' && value === 'on' && item.markClass !== 'promo') {
-            active = false;
-        }
-        
-        if (name === 'colors') {
-            if (value) {
-                value.split(',').forEach((val) => {
-                    if (!item.colors.includes(val)) {
-                        active = false;
-                    }
-                });
-            }
-        }
-
-        if (name === 'style') {
-            if (value) {
-                if (!value.split(' ').includes(item.style.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-
-        if (name === 'collection') {
-            if (value) {
-                if (!value.split(' ').includes(item.collection.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-
-        if (name === 'finishing') {
-            if (value) {
-                if (!value.split(' ').includes(item.finishing.toLowerCase())) {
-                    active = false;
-                }   
-            }
-        }
-    }
-    return active;
-}
-
-form.addEventListener('edit', () => {
-    filtered = doors.filter((door) => checkFields(door));
-    renderList(filtered, itemsToShow, true);
+form.addEventListener('edit', async () => {
+    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`; 
+    const data = new URLSearchParams(formData).toString() + range;
+    const response = await getData(data);
+    filtered = response.items;
+    renderList(filtered, true);
+    quantityCurrent.textContent = 0 + response.items.length;
+    quantityMax.textContent = response.length;
     checkQuantity();
 });
 
-renderList(doors, itemsToShow);
+const data = new URLSearchParams(formData).toString() + `&from=${activeItems}&to=${itemsToShow}`;
+const response = await getData(data);
+filtered = response.items;
+quantityCurrent.textContent = activeItems + response.items.length;
+quantityMax.textContent = response.length;
+renderList(filtered);
+checkQuantity();

@@ -1,14 +1,6 @@
 document.querySelectorAll('.filter__opener').forEach(button => {
     button.addEventListener('click', function() {
-        const filterList = this.nextElementSibling; // Находим следующий элемент (список)
-
-        // Закрываем другие списки
-        // document.querySelectorAll('.filter__list').forEach(list => {
-        //     if (list !== filterList) {
-        //         list.classList.remove('active');
-        //     }
-        // });
-
+        const filterList = this.nextElementSibling;
         // Переключаем активный класс у текущего списка
         filterList.classList.toggle('active');
     });
@@ -54,9 +46,9 @@ filterLists.forEach((list) => {
                     }
                     collectData();
                     return;
-                }            
+                }
             }
-           
+
             if (list.dataset.value) {
                 list.dataset.value += ` ${e.target.dataset.value}`;
             } else {
@@ -101,7 +93,7 @@ function reset() {
 
 
 form.addEventListener('change', () => {
-    collectData();   
+    collectData();
 });
 
 const resetButton = document.querySelector('.filter__button--reset');

@@ -1,4 +1,5 @@
 ---
+import Picture from '@components/Picture/Picture.astro';
 import Text from '../Text/Text.astro';
 import Title from '../Title/Title.astro';
 import './style.scss'
@@ -22,35 +23,28 @@ const {slides} = Astro.props;
         {
             slides.map((slide) => (
                 <div class="intro-slider__slide">
-                    <picture class="intro__wrapper">
-                        {
-                            slide.srcset && slide.srcset.map((src) => (
-                                <source srcset={src.src} media={src.media}/>
-                            ))
-                        }
-                        <img class="intro-slider__image" src={slide.image} alt={slide.title}/>
-                    </picture>
+                    <Picture
+                        classPicture="intro-slider__wrapper"
+                        classImage="intro-slider__image"
+                        srcset={slide.srcset? slide.srcset: ''}
+                        image={slide.image}
+                        alt={slide.title}
+                    />
+                    <a
+                        class="intro-slider__container"
+                        href={slide.href? slide.href: 'javascript:void(0);'}
+                        title={slide.title}
+                    >
+                        <Title Tag="h1" class="intro">
+                            {slide.title}
+                        </Title>
+                        <Text class="intro">
+                            {slide.text}
+                        </Text>
+                    </a>
                 </div>
             ))
         }
-    </div>
-    <div class="intro-slider__container">
-        <div class="intro-slider__text-slider">
-            {
-                slides.map((slide) => (
-                    <div class="intro-slider__slide">
-                        <a href={slide.href? slide.href: 'javascript:void(0);'}>
-                            <Title Tag="h1" class="intro">
-                                {slide.title}
-                            </Title>
-                            <Text class="intro">
-                                {slide.text}
-                            </Text>
-                        </a>
-                    </div>
-                ))
-            }
-        </div>
     </div>
     <button class="intro-slider__button intro-slider__button--left"></button>
     <button class="intro-slider__button intro-slider__button--right"></button>

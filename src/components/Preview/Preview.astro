@@ -3,19 +3,52 @@ import Arrow from '@components/uikit/Arrow/Arrow.astro'
 import './style.scss'
 import Container from '@components/container/container.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
+const videos = [
+    {
+        poster: '/images/preview/doors.jpg',
+        src: '/public/video/review/placeholder.mp4'
+    },
+    {
+        poster: '/images/review/placeholder.jpg',
+        src: '/public/video/review/christmas.mp4'
+
+    },
+    {
+        poster: '/images/preview/doors.jpg',
+        src: '/public/video/review/happy-cat.mp4'
+    },
+    {
+        poster: '/images/review/placeholder.jpg',
+        src: '/public/video/review/christmas.mp4'
+
+    },
+    {
+        poster: '/images/preview/doors.jpg',
+        src: '/public/video/review/placeholder.mp4'
+    },
+    {
+        poster: '/images/review/placeholder.jpg',
+        src: '/public/video/review/happy-cat.mp4'
+
+    },
+    {
+        poster: '/images/preview/doors.jpg',
+        src: '/public/video/review/placeholder.mp4'
+    },
+    {
+        poster: '/images/review/placeholder.jpg',
+        src: '/public/video/review/christmas.mp4'
+
+    }
+];
 ---
 
 <section class="preview">
     <Container>
         <div class="preview__slider">
-            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/preview/doors.jpg" src="/public/video/review/placeholder.mp4"/>
-            <video class="preview__video" poster="/images/review/placeholder.jpg" src="/public/video/review/placeholder.mp4"/>
+            {videos.map((video) => (
+                <video class="preview__video" poster={video.poster} src={video.src}/>
+            ))}
         </div>
         <Icon name='play' mod='video-review'/>
         <Icon name='pause' mod='video-review'/>

@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import 'slick-slider';
 
+const container = document.querySelector('.review__video-container');
 const arrows = document.querySelector('.review__arrow-container').children;
 const slides = document.querySelectorAll('.review__item');
 const video = document.querySelector('.review__video');
@@ -61,8 +62,13 @@ slides.forEach((slide) => {
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'none';
         video.src = slide.dataset.video;
-        video.scrollIntoView({behavior: "smooth", block: "center"});
-        video.play();
+        video.poster = slide.dataset.poster;
+        container.classList.add('review__video-container--fade');
+        setTimeout(() => {
+            container.classList.remove('review__video-container--fade');
+            video.play();
+            video.scrollIntoView({behavior: "smooth", block: "center"});
+        }, 600);
 
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains('review__item--active')) {
@@ -84,9 +90,8 @@ video.addEventListener('click', () => {
         pauseIcon.style.display = 'none';
     } else {
        video.pause();
-       pauseIcon.style.display = 'block'; 
+       pauseIcon.style.display = 'block';
     }
-     
 })
 
 prev.addEventListener('click', () => {

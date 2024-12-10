@@ -22,12 +22,19 @@ const pageConfig = {
     pageImage={pageConfig.image}
     inner={true}
     >
+    <!-- Обёртка для фильтра, списка дверей, интро-->
     <Catalog>
+        <!-- Список дверей -->
         <Card />
     </Catalog>
+    <!-- Слайдер со скидочками -->
     <Sale mod="inner"/>
+    <!-- слайдер с видеороликами -->
     <Preview />
+    <!-- слайдер с технологиями -->
     <LamelTech />
+    <!-- Лучшая на свете карта -->
     <Map />
+    <!-- Слайдер с магазинами -->
     <Shop title="Купить в вашем городе" mod='doors'/>
 </BaseLayout>
