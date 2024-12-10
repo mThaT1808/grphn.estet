@@ -147,8 +147,8 @@ app.get('/api/doors/all', (req, res) => {
       }
       // Возвращаем данные в формате JSON
       const filtered = JSON.parse(data).filter((item) => checkFields(item));
-      let min = parseInt(filtered[0].priceNew);
-      let max = parseInt(filtered[0].priceNew);
+      let min = parseInt(JSON.parse(data)[0].priceNew);
+      let max = parseInt(JSON.parse(data)[0].priceNew);
 
       JSON.parse(data).map((item) => {
         if (parseInt(item.priceNew) > max) {
