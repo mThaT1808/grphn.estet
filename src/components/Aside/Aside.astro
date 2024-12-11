@@ -2,6 +2,7 @@
 import Button from '@components/uikit/Button/Button.astro'
 import Icon from '@components/uikit/Icon/Icon.astro'
 import './style.scss'
+import PriceSlider from '@components/uikit/PriceSlider/PriceSlider.astro';
 
 const filterCollection = [
     {
@@ -99,8 +100,8 @@ const filterColors = [
     },
     {
         src: '/images/card/texture/green.png',
-        value: 'Зелёный',
-        text: 'green'
+        value: 'green',
+        text: 'Зелёный'
     },
 ];
 
@@ -163,7 +164,7 @@ const filterTrim = [
                         filterColors.map((item) => (
                             <li class="filter__item">
                                 <label class="filter__choice-label">
-                                    <img class="filter__choice-textures" src={item.src} />
+                                    <img class="filter__choice-textures" src={item.src} alt=""/>
                                     {item.text}
                                     <input class="filter__choice" type="checkbox" name="color" value={item.value} />
                                 </label>
@@ -190,12 +191,9 @@ const filterTrim = [
                     Цена
                     <Icon name="small-arrow" mod="opener" />
                 </div>
-                <ul class="filter__list filter__list-input filter__list--price">
-                    <li class="filter__item">
-                        <input class="filter__button-range" type="range" id="priceMinRange" min="5000" max="100000"
-                            step="500">
-                    </li>
-                </ul>
+                <div class="filter__list">
+                    <PriceSlider/>
+                </div>
             </div>
             <button class="filter__button filter__button--reset" type="button">
                 Сбросить все

@@ -3,6 +3,8 @@ import 'slick-slider';
 
 const buttonContainer = document.querySelector('.info__button-wrapper');
 const buttons = buttonContainer.querySelectorAll('button');
+const nextArrow = $('.arrow--info.arrow--right');
+const prevArrow = $('.arrow--info.arrow--left');
 
 $(function(){
     const slider = $('.news__slider');
@@ -44,13 +46,13 @@ $(function(){
         })
     );
 
-    $('.arrow--news-prev').on('click', function(e) {
-        e.preventDefault();
-        slider.slick('slickPrev');
-    });
-    $('.arrow--news-next').on('click', function(e) {
+    nextArrow.on('click', function(e) {
         e.preventDefault();
         slider.slick('slickNext');
+    });
+    prevArrow.on('click', function(e) {
+        e.preventDefault();
+        slider.slick('slickPrev');
     });
 });
 
@@ -94,35 +96,34 @@ $(function(){
         })
     );
 
-    $('.arrow--news-prev').on('click', function(e) {
-        e.preventDefault();
-        slider.slick('slickPrev');
-    });
-    $('.arrow--news-next').on('click', function(e) {
+    nextArrow.on('click', function(e) {
         e.preventDefault();
         slider.slick('slickNext');
+    });
+    prevArrow.on('click', function(e) {
+        e.preventDefault();
+        slider.slick('slickPrev');
     });
 });
 
 $(function() {
     function updateArrowOpacity(currentSlide, slideCount) {
-        $('.arrow--news-prev').css('opacity', '1');
-        $('.arrow--news-next').css('opacity', '1');
+        prevArrow.css('opacity', '1');
+        nextArrow.css('opacity', '1');
 
         if (currentSlide === 0) {
-            $('.arrow--news-prev').css('opacity', '0.2');
+            prevArrow.css('opacity', '0.2');
         }
 
         if (currentSlide === slideCount - 1) {
-            $('.arrow--news-next').css('opacity', '0.2');
+            nextArrow.css('opacity', '0.2');
         }
     }
 
-    $('.slider--info').on('afterChange', function (event, slick, currentSlide) {
+    $('.news__slider').on('afterChange', function (event, slick, currentSlide) {
         updateArrowOpacity(currentSlide, slick.slideCount);
     });
-
-    updateArrowOpacity(0, $('.slider--info .slick-slide').length);
+    updateArrowOpacity(0, $('.news__slider .slick-slide').length);
 });
 
 buttons.forEach(button => {
@@ -134,9 +135,8 @@ buttons.forEach(button => {
         buttonContainer.classList.toggle('info__button-wrapper--active-right');
         const news = document.querySelector('.tab-pane.news');
         const suggestions = document.querySelector('.tab-pane.suggestions');
-        const newsLink = document.querySelector('.info__link--news');
-        const suggestionsLink = document.querySelector('.info__link--suggestions');
-        console.log(e.target);
+        const newsLink = document.querySelector('.link--info-news');
+        const suggestionsLink = document.querySelector('.link--info-suggestions');
         if (e.target.classList.contains('button--news')){
             news.classList.add('tab-pane-show');
             suggestions.classList.remove('tab-pane-show');
@@ -167,7 +167,6 @@ const showTab = (elTabBtn) => {
 
 document.addEventListener('click', (e) => {
     const news = document.querySelector('.tab-pane.news');
-    console.log(news);
     if (e.target && !e.target.closest('.tab-btn')) {
         return;
     }

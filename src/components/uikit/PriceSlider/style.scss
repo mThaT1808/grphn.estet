@@ -1,0 +1,93 @@
+@use '/src/assets/styles/global.scss' as *;
+
+.price-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 43px;
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+    /* custom styles for UiSlider */
+    .noUi-target {
+        cursor: pointer;
+
+        :focus {
+            outline: none;
+        }
+    }
+
+    .noUi-horizontal {
+        height: 1px;
+        width: 100%;
+    }
+
+    .noUi-connect {
+        background: $cl-green;
+        height: 1px;
+        transform-origin: left center;
+    }
+
+    .noUi-base {
+        background: $cl-gray-3c;
+        height: 100%;
+    }
+
+    .noUi-horizontal .noUi-handle {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        background: $cl-green;
+        border-radius: 50%;
+        box-shadow: unset;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: none
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    /* styles for filter */
+
+
+    &__label {
+        width: unset;
+        font-size: 14px;
+        width: 28%;
+
+        cursor: pointer;
+        margin-bottom: 10px;
+
+    }
+
+    &__label {
+        position: relative;
+    }
+
+    &__currency {
+        position: absolute;
+        width: 100%;
+        line-height: 38px;
+        text-wrap: nowrap;
+    }
+
+    &__input {
+        line-height: 38px;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 0;
+        cursor: pointer;
+        background-color: transparent;
+    }
+}

@@ -53,6 +53,11 @@
         color: var(--cl-gray-3c);
     }
 
+    &--info-news,
+    &--info-suggestions {
+        line-height: 28px;
+    }
+
     &--white {
         color: $cl-white;
     }
@@ -104,6 +109,11 @@
             }
         }
 
+        &--info-news,
+        &--info-suggestions {
+            left: 39.08vw;
+        }
+
         &--news,
         &--suggestions {
             color: var(--cl-green);
@@ -126,6 +136,11 @@
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
+        }
+
+        &--info-news,
+        &--info-suggestions {
+            left: calc(34.88vw + 362px);
         }
 
         &--aside {
@@ -151,6 +166,15 @@
 
         &--shop {
             margin-right: 67px;
+        }
+    }
+}
+
+@media (min-width: ($desktop-lg + 'px')) {
+    .link {
+        &--info-news,
+        &--info-suggestions {
+            left: 921px;
         }
     }
 }

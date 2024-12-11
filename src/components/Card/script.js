@@ -6,7 +6,6 @@ const itemsToShow = 8;
 const itemsToAdd = 4;
 let activeItems = 0;
 let filtered = [];
-let isFiltered = false;
 const template = document.querySelector('#card__template').content;
 const container = document.querySelector('.card__inner');
 const quantityCurrent = document.querySelector('.card__quantity-current');
@@ -14,6 +13,8 @@ const quantityMax = document.querySelector('.card__quantity-total');
 const form = document.querySelector('.aside__filter');
 const pagination = document.querySelector('.card__quantity');
 
+//проверяем кол-во показанных и максимальное кол-во дверей
+//если больше нечего показывать прячем кнопку показать больше
 function checkQuantity() {
     if (quantityCurrent.textContent === '0') {
         pagination.style.display = 'none';
@@ -28,6 +29,8 @@ function checkQuantity() {
     }
 }
 
+//при клике на кнопку показать больше загружаем новую партию элементов
+//начиная со следующего после загруженного элемента
 showMore.addEventListener('click', async () => {
     const data = new URLSearchParams(formData).toString() + `&from=${quantityCurrent.textContent}&to=${parseInt(quantityCurrent.textContent) + itemsToAdd}`;
     const response = await getData(data);
@@ -37,7 +40,9 @@ showMore.addEventListener('click', async () => {
     checkQuantity();
 });
 
-function renderList(list, filter, add) {
+//при фильтрации перерисовываем элементы исходя из значения фильтра
+//иначе просто отображаем нужное кол-во элементов
+function renderList(list, filter) {
     if (filter) {
         for (let i = 0; i < container.children.length; i++) {
             if (container.children[i].classList.contains('door')) {
@@ -46,11 +51,10 @@ function renderList(list, filter, add) {
             }
         }
         activeItems = 0;
-        isFiltered = true;
-    } if (!filter && !add) {
-        isFiltered = false;
     }
 
+    //для каждого элемента переданного списка
+    //на основе готового шаблона создаём новый элемент
     for (let i = 0; i < list.length; i++) {
         const door = template.cloneNode(true);
         if ((i === 0 || i === 1) && activeItems === 0) {
@@ -80,6 +84,7 @@ function renderList(list, filter, add) {
             icon.classList.toggle('icon-heart');
             icon.classList.toggle('icon-heart-fill');
 
+            //увеличине/уменьшение счётчика лайков
             if (icon.classList.contains('icon-heart-fill')) {
                 quantities.forEach((quantity) => {
                     quantity.textContent++
@@ -90,6 +95,7 @@ function renderList(list, filter, add) {
                 })
             }
 
+            //если лайков нет прячем счётчик
             quantities.forEach((quantity) => {
                 if (quantity.textContent > 0) {
                     quantity.style.display = 'block';
@@ -102,6 +108,8 @@ function renderList(list, filter, add) {
 
         const colorContainer = door.querySelector('.door__choice-box');
 
+        //для каждого возможного цвета двери
+        //создаём label с изображением текстуры
         function createColorButton(item, button) {
             const label = document.createElement('label');
             label.key = item;
@@ -119,31 +127,24 @@ function renderList(list, filter, add) {
             colorContainer.insertBefore(label, button);
         };
 
-        function checkIntroDoors() {
-            const innerDoors = document.querySelectorAll('.door--intro');
-            if (innerDoors[0].clientHeight > innerDoors[1].clientHeight) {
-                innerDoors[1].style.height = innerDoors[0].clientHeight + 'px';
-            } else {
-                innerDoors[0].style.height = innerDoors[1].clientHeight + 'px';
-            }
-        }
-
         for (let j = 0; j < list[i].colors.length; j++) {
             const button = colorContainer.querySelector('.door__choice-btn');
 
-            if (j >= 4 && document.documentElement.clientWidth <= 1600) {
+            //если разрешение меньше 1600 показываем до 4 цвета
+            //остальные прячем
+            if (j >= 4 && document.documentElement.clientWidth < 1600) {
                button.textContent = `+${list[i].colors.length - j}`;
                button.addEventListener('click', () => {
                 for (let k = j; k < list[i].colors.length; k++) {
                     const item = list[i].colors[k];
                     createColorButton(item, button);
             };
-            checkIntroDoors();
             button.style.display = 'none';
             });
                break;
             }
 
+            //при разрешение 1600 и выше показываем до 6 цветов
             if (j >= 6) {
                 button.textContent = `+${list[i].colors.length - j}`;
                 button.addEventListener('click', () => {
@@ -151,7 +152,6 @@ function renderList(list, filter, add) {
                         const item = list[i].colors[k];
                         createColorButton(item, button);
                     };
-                    checkIntroDoors();
                     button.style.display = 'none';
                 });
                 break;
@@ -171,7 +171,7 @@ function renderList(list, filter, add) {
 };
 
 form.addEventListener('edit', async () => {
-    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`; 
+    const range = activeItems === 0 ? '&from=0&to=8' : `&from=0&to=${activeItems}`;
     const data = new URLSearchParams(formData).toString() + range;
     const response = await getData(data);
     filtered = response.items;
@@ -186,5 +186,9 @@ const response = await getData(data);
 filtered = response.items;
 quantityCurrent.textContent = activeItems + response.items.length;
 quantityMax.textContent = response.length;
+const min = response.min;
+const max = response.max;
 renderList(filtered);
 checkQuantity();
+
+export {min, max};

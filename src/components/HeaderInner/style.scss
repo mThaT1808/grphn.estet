@@ -332,6 +332,7 @@
 
             &__popover--open {
                 height: 65vh;
+                width: 100%;
             }
         }
 
@@ -460,7 +461,7 @@
             }
 
             &__options {
-                top: calc(100% - 25px);
+                top: calc(100%);
                 background-color: $cl-green;
             }
 
@@ -476,13 +477,6 @@
                 background-image: linear-gradient(transparent 30%, $cl-green 70%);
             }
 
-            &__box:has(.choice__options.open) .choice__row {
-                position: relative;
-                background-image: linear-gradient(transparent, $cl-green 15%);
-                margin-bottom: -100px;
-                margin-top: 0;
-                padding-bottom: 100px;
-            }
 
             &__box:has(.choice__options.open) .choice__row::before{
                 content: '';
