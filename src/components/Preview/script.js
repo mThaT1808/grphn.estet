@@ -35,52 +35,51 @@ function setActive (direction) {
                 if (i > 0) {
                     dots[i - 1].style.display = 'block';
                 }
-    
                 if (i > 1) {
                     dots[i - 2].style.display = 'block';
                 }
-    
+
                 if (i === dots.length - 1) {
                     dots[i - 3].style.display = 'block';
                 }
-        
+
                 if (i < dots.length - 1) {
                     dots[i + 1].style.display = 'block';
-                } 
-    
+                }
+
                 if (i === 0) {
                     dots[i + 3].style.display = 'block';
                 }
-    
+
                 if (i <= 1) {
                     dots[i + 2].style.display = 'block';
                 }
-    
+
                 if (direction === 'right') {
                         if (i >= 3 && i < dots.length - 1) {
                             setTimeout(() => {
                                 dots[i + 1].style.display = 'block';
-                                dots[i - 3].style.display = 'none';    
+                                dots[i - 3].style.display = 'none';
                             }, 250);
                             dots[i + 1].style.display = 'none';
                             dots[i - 3].style.display = 'block';
                     }
-    
+
                 }
-                
+
                 if (direction === 'left') {
                     if (i >= 2 && i <= dots.length - 1) {
                         {
                             setTimeout(() => {
                                 dots[i + 2].style.display = 'none';
-                                dots[i - 2].style.display = 'block';    
+                                dots[i - 2].style.display = 'block';
                             }, 250);
                             dots[i + 2].style.display = 'block';
                             dots[i - 2].style.display = 'none';
                         }
                     }
                 }
-    
+
                 if (direction === 'dots-right') {
                     if (i >= 2 && i < dots.length - 1) {
                         setTimeout(() => {
@@ -129,7 +128,7 @@ videos.forEach((video) => {
         } else {
             video.pause();
             pauseButton.style.display = 'block';
-        }            
+        }
     });
     video.addEventListener('mouseout', (e) => {
         if (e.relatedTarget && !e.relatedTarget.classList.contains('icon')) {
@@ -142,7 +141,7 @@ videos.forEach((video) => {
             if (!video.paused) {
                 pauseButton.style.display = 'block';
                 playButton.style.display = 'none';
-            } 
+            }
             else {
                 playButton.style.display = 'block';
                 pauseButton.style.display = 'none';
@@ -168,7 +167,8 @@ $('.preview__slider').slick({
     slidesToScroll: 1,
     dots: true,
     arrows: false,
-    infinite: false
+    infinite: false,
+    adaptiveHeight: true
 });
 
 const dots = document.querySelector('.slick-dots').querySelectorAll('li');
