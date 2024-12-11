@@ -135,8 +135,8 @@ buttons.forEach(button => {
         buttonContainer.classList.toggle('info__button-wrapper--active-right');
         const news = document.querySelector('.tab-pane.news');
         const suggestions = document.querySelector('.tab-pane.suggestions');
-        const newsLink = document.querySelector('.info__link--news');
-        const suggestionsLink = document.querySelector('.info__link--suggestions');
+        const newsLink = document.querySelector('.link--info-news');
+        const suggestionsLink = document.querySelector('.link--info-suggestions');
         if (e.target.classList.contains('button--news')){
             news.classList.add('tab-pane-show');
             suggestions.classList.remove('tab-pane-show');
@@ -167,7 +167,6 @@ const showTab = (elTabBtn) => {
 
 document.addEventListener('click', (e) => {
     const news = document.querySelector('.tab-pane.news');
-    console.log(news);
     if (e.target && !e.target.closest('.tab-btn')) {
         return;
     }
