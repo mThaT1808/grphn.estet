@@ -25,7 +25,7 @@ function checkWidth() {
                 speed: 1000
             });
 
-            $('.arrow--about.arrow-left').on('click', function (e) {
+            $('.arrow--about.arrow--left').on('click', function (e) {
                 e.preventDefault();
                 slider.slick('slickPrev');
             });
