@@ -186,6 +186,9 @@
 
                     &--reset {
                         padding: 0 35px 0 0;
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
 
                     &--only-action {
