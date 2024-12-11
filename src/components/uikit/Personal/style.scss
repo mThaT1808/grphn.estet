@@ -27,7 +27,7 @@
         border: 0px solid transparent;
         cursor: pointer;
     }
-    
+
     &__quantity {
         font-size: 10px;
         font-weight: 600;
@@ -129,6 +129,12 @@
             &--open {
                 height: 350px;
                 width: 1200px;
+            }
+        }
+
+        &__close {
+            &:hover {
+                opacity: 0.8;
             }
         }
     }
